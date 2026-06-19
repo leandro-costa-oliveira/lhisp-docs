@@ -67,8 +67,8 @@ Na seção **Dados da Pessoa**, informe:
 10. Demais telefones, e-mail, website e WhatsApp, quando disponíveis.
 11. Marque os checkboxes de **SMS** apenas para telefones que podem receber mensagens.
 
-!!! important "Campos obrigatórios validados no teste"
-    O salvamento validou como obrigatórios: **Filial**, **Categoria**, **Nome**, **CPF/CNPJ**, **Telefone 1** e **Endereço da Instalação**.
+!!! important "Campos obrigatórios"
+O salvamento validou como obrigatórios: **Filial**, **Categoria**, **Nome**, **CPF/CNPJ**, **Telefone 1** e **Endereço da Instalação**.
 
 ### 4. Preencher informações fiscais
 
@@ -94,9 +94,6 @@ Na seção **Endereço da Instalação**, selecione ou cadastre o endereço onde
    - **Condomínio**, se houver;
    - **Complemento**;
    - **Ponto de Referência**.
-
-!!! warning "Endereço deve ser selecionado ou cadastrado"
-    Digitar texto diretamente no campo **Logradouro** não é suficiente para salvar o contrato. O sistema exige um endereço selecionado/cadastrado internamente. Se o endereço não estiver vinculado, o campo fica inválido e o contrato não é salvo.
 
 ### 6. Informar o endereço de cobrança
 
@@ -132,18 +129,18 @@ Use esses campos para contatos administrativos, técnicos ou responsáveis adici
 
 ## Campos importantes
 
-| Campo | Descrição |
-|---|---|
-| **Filial** | Unidade responsável pelo contrato. |
-| **Categoria** | Classificação comercial do contrato, como residencial ou corporativo. |
-| **Segmento** | Segmentação operacional/comercial do contrato. |
-| **Tipo de Pessoa** | Define se o documento será tratado como CPF ou CNPJ. |
-| **CPF/CNPJ** | Documento principal da pessoa. O sistema valida CPF para pessoa física e CNPJ para pessoa jurídica. |
-| **Telefone 1** | Telefone principal do cliente. É obrigatório. |
-| **ISS Retido** | Indica regra fiscal de retenção de ISS. |
-| **Endereço da Instalação** | Endereço técnico onde o serviço será instalado. É obrigatório para salvar. |
-| **Endereço de Cobrança** | Endereço usado para cobrança. Pode ser diferente do endereço de instalação. |
-| **Contatos** | Contatos adicionais relacionados ao cliente/contrato. |
+| Campo                      | Descrição                                                                                           |
+| -------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Filial**                 | Unidade responsável pelo contrato.                                                                  |
+| **Categoria**              | Classificação comercial do contrato, como residencial ou corporativo.                               |
+| **Segmento**               | Segmentação operacional/comercial do contrato.                                                      |
+| **Tipo de Pessoa**         | Define se o documento será tratado como CPF ou CNPJ.                                                |
+| **CPF/CNPJ**               | Documento principal da pessoa. O sistema valida CPF para pessoa física e CNPJ para pessoa jurídica. |
+| **Telefone 1**             | Telefone principal do cliente. É obrigatório.                                                       |
+| **ISS Retido**             | Indica regra fiscal de retenção de ISS.                                                             |
+| **Endereço da Instalação** | Endereço técnico onde o serviço será instalado. É obrigatório para salvar.                          |
+| **Endereço de Cobrança**   | Endereço usado para cobrança. Pode ser diferente do endereço de instalação.                         |
+| **Contatos**               | Contatos adicionais relacionados ao cliente/contrato.                                               |
 
 ## Resultado esperado
 
@@ -157,14 +154,14 @@ Após salvar:
 
 ## Problemas comuns
 
-| Problema | Causa provável | Como resolver |
-|---|---|---|
-| **CPF Inválido** | Documento informado não passa na validação de CPF. | Corrija o CPF ou altere o tipo para Pessoa Jurídica quando o documento for CNPJ. |
-| **CNPJ Inválido** | Documento informado não passa na validação de CNPJ. | Corrija o CNPJ ou altere o tipo para Pessoa Física quando o documento for CPF. |
-| **Endereço da Instalação destacado como inválido** | O logradouro foi digitado sem selecionar/cadastrar endereço interno. | Use a lupa para pesquisar ou o botão `+` para cadastrar o endereço. |
-| **Data de Nascimento Inválida** | Data preenchida em formato inválido. | Preencha a data em formato aceito pelo campo ou deixe em branco quando não for obrigatória. |
-| **Contrato não salva ao clicar no disquete** | Algum campo obrigatório está vazio ou inválido. | Revise Filial, Categoria, Nome, CPF/CNPJ, Telefone 1 e Endereço da Instalação. |
-| **Endereço de cobrança incorreto** | Endereço de cobrança diferente do endereço de instalação não foi conferido. | Revise a seção **Endereço de Cobrança** antes de salvar. |
+| Problema                                           | Causa provável                                                              | Como resolver                                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **CPF Inválido**                                   | Documento informado não passa na validação de CPF.                          | Corrija o CPF ou altere o tipo para Pessoa Jurídica quando o documento for CNPJ.            |
+| **CNPJ Inválido**                                  | Documento informado não passa na validação de CNPJ.                         | Corrija o CNPJ ou altere o tipo para Pessoa Física quando o documento for CPF.              |
+| **Endereço da Instalação destacado como inválido** | O logradouro foi digitado sem selecionar/cadastrar endereço interno.        | Use a lupa para pesquisar ou o botão `+` para cadastrar o endereço.                         |
+| **Data de Nascimento Inválida**                    | Data preenchida em formato inválido.                                        | Preencha a data em formato aceito pelo campo ou deixe em branco quando não for obrigatória. |
+| **Contrato não salva ao clicar no disquete**       | Algum campo obrigatório está vazio ou inválido.                             | Revise Filial, Categoria, Nome, CPF/CNPJ, Telefone 1 e Endereço da Instalação.              |
+| **Endereço de cobrança incorreto**                 | Endereço de cobrança diferente do endereço de instalação não foi conferido. | Revise a seção **Endereço de Cobrança** antes de salvar.                                    |
 
 ## Observações
 
