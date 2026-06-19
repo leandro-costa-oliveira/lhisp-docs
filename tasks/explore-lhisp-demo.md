@@ -45,6 +45,8 @@ Explorar o módulo Contratos do LHISP, com foco em:
 - Adicionar um acesso ao cliente
 - Gerar contas do cliente
 
+Resultado:
+Utilize um background agent, para executar essa tarefa
 Ao final, gere a documentação em formato markdown no repositório lhisp-docs que foi clonado anteriormente.
 Sempre use o branch dev. Não faça commits em main.
 Faça pull do repositório para garantir que está com o código atualizado.
