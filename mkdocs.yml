@@ -1,0 +1,91 @@
+# MkDocs Configuration for LHISP Documentation
+site_name: LHISP Documentation
+site_description: Documentação completa do sistema LHISP para clientes
+site_author: LH Sistemas
+site_url: https://docs.lhsistemas.com.br
+
+# Repository
+repo_name: lhistemas/lhisp-docs
+repo_url: https://github.com/lhsistemas/lhisp-docs
+
+# Copyright
+copyright: "Copyright &copy; 2026 LH Sistemas"
+
+# Documentation directory
+docs_dir: docs
+
+# Site directory
+site_dir: site
+
+# Theme
+theme:
+  name: material
+  language: pt
+  palette:
+    # Primary color scheme
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark color scheme
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+# Plugins
+plugins:
+  - search
+
+# Navigation
+nav:
+  - Início: index.md
+  - Contratos:
+      - cadastrar-novo-cliente.md
+      - adicionar-servico-contratado.md
+      - adicionar-acesso-cliente.md
+      - gerar-contas-cliente.md
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lhsistemas
+    - icon: fontawesome/brands/website
+      link: https://www.lhsistemas.com.br
