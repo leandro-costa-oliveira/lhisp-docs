@@ -108,4 +108,4 @@ Use este fluxo quando for necessário lançar uma nova conta, consultar cobranç
 
 - Aba **Financeiro** do contrato: `docs/assets/screenshots/contratos/financeiro-aba.png`
 
-![Aba Financeiro](../../assets/screenshots/contratos/financeiro-aba.png)
+![Aba Financeiro](../assets/screenshots/contratos/financeiro-aba.png)

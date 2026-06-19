@@ -90,4 +90,4 @@ A aba **Serviços** apresenta uma tabela com as seguintes colunas observadas:
 
 - Aba **Serviços** do contrato: `docs/assets/screenshots/contratos/servicos-aba.png`
 
-![Aba Serviços](../../assets/screenshots/contratos/servicos-aba.png)
+![Aba Serviços](../assets/screenshots/contratos/servicos-aba.png)

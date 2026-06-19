@@ -57,10 +57,10 @@ plugins:
 nav:
   - Início: index.md
   - Contratos:
-      - cadastrar-novo-cliente.md
-      - adicionar-servico-contratado.md
-      - adicionar-acesso-cliente.md
-      - gerar-contas-cliente.md
+      - Cadastrar novo cliente: contratos/cadastrar-novo-cliente.md
+      - Adicionar serviço contratado: contratos/adicionar-servico-contratado.md
+      - Adicionar acesso ao cliente: contratos/adicionar-acesso-cliente.md
+      - Gerar contas do cliente: contratos/gerar-contas-cliente.md
 
 # Extensions
 markdown_extensions:
@@ -87,5 +87,5 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/lhsistemas
-    - icon: fontawesome/brands/website
+    - icon: material/web
       link: https://www.lhsistemas.com.br

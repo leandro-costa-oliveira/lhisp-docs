@@ -93,4 +93,4 @@ A aba **Acessos** apresenta a tabela **Acessos PPPoE / IP Fixo** com as colunas 
 
 - Aba **Acessos** do contrato: `docs/assets/screenshots/contratos/acessos-aba.png`
 
-![Aba Acessos](../../assets/screenshots/contratos/acessos-aba.png)
+![Aba Acessos](../assets/screenshots/contratos/acessos-aba.png)
