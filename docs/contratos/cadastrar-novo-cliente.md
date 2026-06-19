@@ -98,9 +98,8 @@ Na seção **Endereço da Instalação**, selecione ou cadastre o endereço onde
 ### 6. Informar o endereço de cobrança
 
 Na seção **Endereço de Cobrança**, informe o endereço usado para cobrança.
-Se for o mesmo endereço de instalação, deixar em branco.
 
-1. Se for o mesmo endereço de instalação, selecione o mesmo logradouro.
+1. Se for o mesmo endereço de instalação, deixe em branco !
 2. Preencha **Número**, **Complemento** e **Ponto de Referência** conforme necessário.
 3. Use os botões de pesquisa ou cadastro quando o endereço ainda não existir.
 
