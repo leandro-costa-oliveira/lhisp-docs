@@ -34,7 +34,7 @@ Para cada fluxo explorado, gere:
 Formato de saída:
 
 - Markdown compatível com Material for MkDocs.
-- Salvar em docs/rascunhos/{modulo}/{fluxo}.agent.md.
+- Salvar em docs/{modulo}/{fluxo}.agent.md.
 - Salvar screenshots em docs/assets/screenshots/{modulo}/.
 
 Primeiro escopo:
