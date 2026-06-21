@@ -18,12 +18,12 @@ Adicionar um serviço/plano contratado a um contrato de cliente dentro do módul
 
 ## Passo a passo
 1. Acesse **Contratos** (menu lateral).
-2. Pesquise e abra o contrato desejado.
+2. Abra o contrato desejado na lista. Na exploração, a tela do contrato foi carregada em uma URL do tipo `/contratos/{id}`.
 3. Na tela do contrato, clique na aba **Serviços**.
 4. Revise a grade de **serviços contratados**.
 5. Clique em **Novo Serviço**.
 6. Preencha o modal **Contratação de Serviço**:
-   - **Plano** (combo)
+   - **Plano** (combo, com opções como `[699] ACESSO RESIDENCIAL 200mega`, `[700] novo 500mega`, `[701] novo 600mega`, `[702] novo plano para migração` e `[703] 600M DUPLICADO`)
    - **Quantidade** (spin)
    - **Observação** (texto)
    - **Tipo de IP**: *IP PRIVADO* / *IP PÚBLICO* / *NÃO APLICÁVEL*
@@ -55,8 +55,8 @@ Na aba **Serviços**, a grade exibe colunas observadas:
 | **Plano** | Plano/serviço vinculado ao contrato. |
 | **Contratação** | Data/hora de contratação do serviço. |
 | **Ativação** | Data/hora de ativação do serviço. |
-| **Ultimo Reajuste** | Data do último reajuste. |
-| **Ultimo Renovação** | Data da última renovação. |
+| **Ultimo Reajuste** | Data do último reajuste (texto observado na tela: **Ultimo Reajuste**). |
+| **Ultimo Renovação** | Data da última renovação (texto observado na tela: **Ultimo Renovação**). |
 | **Venc.** | Vencimento associado ao ciclo do serviço/cobrança. |
 | **Valor** | Valor contratado (conforme configuração do plano e descontos). |
 | **Desc [%]** | Desconto percentual aplicado. |
@@ -71,13 +71,14 @@ Na aba **Serviços**, a grade exibe colunas observadas:
 | Problema | Como tratar |
 |---|---|
 | Botão **Novo Serviço** não está disponível | Confirme se você está na aba **Serviços** do contrato (e não em outra aba). Verifique também permissão do usuário. |
-| Modal **Contratação de Serviço** não aceita o salvamento / não persiste | No demo, o salvamento não foi validado até a persistência da linha. Como prática, revise principalmente: **Plano**, **Valor**, **Desconto [%]** e **Vencimento**, além das **Contas (Boleto/Pix)** e **Forma de pagamento**. |
+| Modal **Contratação de Serviço** não aceita o salvamento / não persiste | No demo, o fluxo abriu o modal e exibiu os campos esperados, mas a persistência definitiva não foi confirmada para um novo cadastro. Como prática, revise principalmente: **Plano**, **Valor**, **Desconto [%]** e **Vencimento**, além das **Contas (Boleto/Pix)**, **Vendedor**, **Promoção** e **Forma de pagamento**. |
 | Plano/Conta Bancária indisponíveis na lista do modal | Confirme parametrizações do sistema (filial/categoria/provedor, além de contas cadastradas). |
-| Linhas não aparecem após salvar | Atualize/reaqueça a tela do contrato e verifique se o serviço está no status esperado. |
-
+| Linhas não aparecem após salvar | Reabra a tela do contrato e verifique se o serviço está no status esperado. |
+|
 ## Observações
 - A aba **Serviços** utiliza uma tabela embutida (iframe) com a grade e o botão **Novo Serviço**.
-- A coluna **Ações** oferece opções por serviço (ex.: **Editar** e, dependendo do caso, ações adicionais como **Alteração de Plano**).
+- Na tabela, o botão de ação visível por linha costuma aparecer como **Editar** (com título de detalhe do serviço) e, em alguns casos, há ação adicional **Alteração de Plano**.
+- O modal **Contratação de Serviço** abre como sobreposição na própria tela e exibe, além do plano, campos como **Quantidade**, **Observação**, **Tipo de IP**, **Tipo de Equipamento**, **Conta Bancária (Boleto/Pix)**, **Vendedor**, **Promoção**, **Fidelidade** e as regras de cobrança.
 
 ## Dúvidas para revisão
 - Quais são *obrigatórios* no modal **Contratação de Serviço** para que o salvamento persista (especialmente campos relacionados a **Valor**, **Desconto [%]**, **Vencimento** e **Contas/Forma de pagamento**)?
