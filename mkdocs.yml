@@ -61,11 +61,30 @@ nav:
       - Adicionar serviço contratado: contratos/adicionar-servico-contratado.md
       - Adicionar acesso ao cliente: contratos/adicionar-acesso-cliente.md
       - Gerar contas do cliente: contratos/gerar-contas-cliente.md
+  - Financeiro:
+      - Remessa Bancária: financeiro/remessa-bancaria.md
+  - Cadastros:
+      - Administrativo:
+          - Documentos: cadastros/administrativo/documentos.md
+  - Sistema:
+      - Integrações:
+          - Api Parceiros: sistema/api-parceiros.md
+          - Google Maps: sistema/google-maps.md
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
       - CGNAT: rede-infra/cgnat.md
+      - Monitor de Redes: rede-infra/monitor-redes.md
+      - "Mikrotik: Criando Usuário": rede-infra/mikrotik-usuario.md
+      - "Mikrotik: Services": rede-infra/mikrotik-services.md
+      - BRAS Huawei: rede-infra/bras-huawei.md
+      - OLT Huawei: rede-infra/olt-huawei.md
+      - OLT V-Solutions: rede-infra/olt-v-solutions.md
+      - Switchs Huawei: rede-infra/switchs-huawei.md
+      - Bloqueio Judicial com o Bind: rede-infra/dns-bloqueio-judicial.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
+      - Servidores: rede-infra/servidores.md
+      - IPv6: rede-infra/ipv6.md
 
 # Extensions
 markdown_extensions:

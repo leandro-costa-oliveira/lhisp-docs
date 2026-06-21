@@ -107,6 +107,6 @@ Use este fluxo para:
 
 ## Screenshots sugeridos
 
-- Aba **CGNAT** do servidor: `docs/assets/screenshots/rede-infra/cgnat.png`
+- Aba **CGNAT** no demo: `docs/assets/screenshots/rede-infra/cgnat.png`
 
-![CGNAT](../assets/screenshots/rede-infra/cgnat.png)
+![CGNAT no demo](../assets/screenshots/rede-infra/cgnat.png)
