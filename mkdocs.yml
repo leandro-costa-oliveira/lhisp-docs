@@ -61,6 +61,8 @@ nav:
       - Adicionar serviço contratado: contratos/adicionar-servico-contratado.md
       - Adicionar acesso ao cliente: contratos/adicionar-acesso-cliente.md
       - Gerar contas do cliente: contratos/gerar-contas-cliente.md
+  - Rede/Infra:
+      - Cadastrar servidor: rede-infra/cadastrar-servidor.md
 
 # Extensions
 markdown_extensions:
