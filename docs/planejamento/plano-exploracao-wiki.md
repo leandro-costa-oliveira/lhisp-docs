@@ -11,6 +11,17 @@ title: Plano de exploração da Wiki LHISP
 
 Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navegação principal e avançando pelos módulos mais relevantes, para depois transformar cada descoberta em documentação operacional confiável.
 
+## Status atual
+
+| Etapa | Status | Evidência |
+|---|---|---|
+| Mapeamento da navegação principal | Concluído | grupos principais identificados na wiki |
+| Abertura da página **Servidores** | Concluído | conteúdo lido e screenshot capturado |
+| Primeira página migrada para o repositório | Concluído | `docs/rede-infra/servidores.md` |
+| Exploração de **Prefixos de IP** | Pendente | a iniciar |
+| Exploração de **CGNAT** | Pendente | a iniciar |
+| Demais grupos da wiki | Pendente | a iniciar |
+
 ## Escopo inicial observado
 
 Na navegação principal da wiki, já foram identificados os seguintes grupos:

@@ -66,6 +66,7 @@ nav:
       - Prefixos de IP: rede-infra/prefixos-ip.md
       - CGNAT: rede-infra/cgnat.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
+      - Servidores: rede-infra/servidores.md
 
 # Extensions
 markdown_extensions:
