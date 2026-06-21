@@ -1,0 +1,19 @@
+{
+  "name": "lhisp-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo No Tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.lhprovedor.com.br/leandro/lhisp-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
