@@ -67,6 +67,7 @@ nav:
       - CGNAT: rede-infra/cgnat.md
       - Monitor de Redes: rede-infra/monitor-redes.md
       - BRAS Huawei: rede-infra/bras-huawei.md
+      - OLT Huawei: rede-infra/olt-huawei.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
       - Servidores: rede-infra/servidores.md
       - IPv6: rede-infra/ipv6.md

@@ -27,6 +27,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Monitor de Redes** migrada para o repositório | Concluído | `docs/rede-infra/monitor-redes.md` |
 | Exploração de **BRAS Huawei** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Página **BRAS Huawei** migrada para o repositório | Concluído | `docs/rede-infra/bras-huawei.md` |
+| Exploração de **OLT Huawei** | Concluído | conteúdo lido e screenshot capturado no demo |
+| Página **OLT Huawei** migrada para o repositório | Concluído | `docs/rede-infra/olt-huawei.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
