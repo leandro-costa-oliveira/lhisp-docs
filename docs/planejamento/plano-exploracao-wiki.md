@@ -44,6 +44,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Remessa Bancária** migrada para o repositório | Concluído | `docs/financeiro/remessa-bancaria.md` |
 | Exploração de **API de Integração para Parceiros** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **API de Integração para Parceiros** migrada para o repositório | Concluído | `docs/sistema/api-parceiros.md` |
+| Exploração de **Google Maps** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Google Maps** migrada para o repositório | Concluído | `docs/sistema/google-maps.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
