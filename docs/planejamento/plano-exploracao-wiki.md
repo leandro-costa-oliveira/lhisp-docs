@@ -35,6 +35,9 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Switchs Huawei** migrada para o repositório | Concluído | `docs/rede-infra/switchs-huawei.md` |
 | Exploração de **dns-bloqueio-judicial** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Página **Bloqueio Judicial com o Bind** migrada para o repositório | Concluído | `docs/rede-infra/dns-bloqueio-judicial.md` |
+| Exploração de **Mikrotik** | Concluído | conteúdo lido na wiki; demo sem tela 1:1 |
+| Página **Mikrotik: Criando Usuário** migrada para o repositório | Concluído | `docs/rede-infra/mikrotik-usuario.md` |
+| Página **Mikrotik: Services** migrada para o repositório | Concluído | `docs/rede-infra/mikrotik-services.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado

@@ -66,6 +66,8 @@ nav:
       - Prefixos de IP: rede-infra/prefixos-ip.md
       - CGNAT: rede-infra/cgnat.md
       - Monitor de Redes: rede-infra/monitor-redes.md
+      - "Mikrotik: Criando Usuário": rede-infra/mikrotik-usuario.md
+      - "Mikrotik: Services": rede-infra/mikrotik-services.md
       - BRAS Huawei: rede-infra/bras-huawei.md
       - OLT Huawei: rede-infra/olt-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
