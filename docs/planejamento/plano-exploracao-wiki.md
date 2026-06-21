@@ -23,6 +23,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Exploração da aba **CGNAT** no demo | Concluído | screenshot capturado no demo |
 | Screenshot de **CGNAT** migrada para o repositório | Concluído | `docs/rede-infra/cgnat.md` |
 | Exploração de **Prefixos de IP** | Concluído | conteúdo lido e screenshot capturado no demo |
+| Exploração de **Monitor de Redes** | Concluído | conteúdo lido e screenshot capturado no demo |
+| Página **Monitor de Redes** migrada para o repositório | Concluído | `docs/rede-infra/monitor-redes.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado

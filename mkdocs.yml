@@ -65,6 +65,7 @@ nav:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
       - CGNAT: rede-infra/cgnat.md
+      - Monitor de Redes: rede-infra/monitor-redes.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
       - Servidores: rede-infra/servidores.md
       - IPv6: rede-infra/ipv6.md
