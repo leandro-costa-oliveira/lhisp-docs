@@ -22,7 +22,7 @@ jobs:
   build-docker:
     name: Build Docker image
     needs: [build-and-test]
-    if: github.ref == 'refs/heads/development' || github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/development' || github.ref == 'refs/heads/master'
     runs-on: docker
     container:
       image: node:22-alpine
