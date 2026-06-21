@@ -64,6 +64,7 @@ nav:
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
+      - CGNAT: rede-infra/cgnat.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
 
 # Extensions
