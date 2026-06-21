@@ -69,6 +69,7 @@ nav:
       - BRAS Huawei: rede-infra/bras-huawei.md
       - OLT Huawei: rede-infra/olt-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
+      - Switchs Huawei: rede-infra/switchs-huawei.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
       - Servidores: rede-infra/servidores.md
       - IPv6: rede-infra/ipv6.md

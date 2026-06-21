@@ -31,6 +31,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **OLT Huawei** migrada para o repositório | Concluído | `docs/rede-infra/olt-huawei.md` |
 | Exploração de **OLT V-Solutions** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Página **OLT V-Solutions** migrada para o repositório | Concluído | `docs/rede-infra/olt-v-solutions.md` |
+| Exploração de **Switchs Huawei** | Concluído | conteúdo lido e screenshot capturado no demo |
+| Página **Switchs Huawei** migrada para o repositório | Concluído | `docs/rede-infra/switchs-huawei.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
