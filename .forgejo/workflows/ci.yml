@@ -1,0 +1,44 @@
+on:
+  push:
+    branches:
+      - master
+      - development
+  pull_request:
+    branches:
+      - development
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build Node App
+    runs-on: docker
+    container:
+      image: node:22-alpine
+    steps:
+      - uses: https://git.lhprovedor.com.br/leandro/devops/.forgejo/actions/build-node-app@main
+
+  build-docker:
+    name: Build Docker image
+    needs: [build-and-test]
+    if: github.ref == 'refs/heads/development' || github.ref == 'refs/heads/master'
+    runs-on: docker
+    container:
+      image: node:22-alpine
+
+    steps:
+      - name: Install dependencies
+        run: apk add nodejs
+
+      - name: Git Clone
+        uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v3
+        name: Download Artifact
+        with:
+          name: dist
+          path: dist
+
+      - uses: https://git.lhprovedor.com.br/leandro/devops/.forgejo/actions/build-docker@main
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
