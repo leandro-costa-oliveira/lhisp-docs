@@ -1,7 +1,8 @@
 on:
   push:
     branches:
-      - master
+      - main
+      - dev
       - development
   pull_request:
     branches:
