@@ -40,6 +40,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Mikrotik: Services** migrada para o repositório | Concluído | `docs/rede-infra/mikrotik-services.md` |
 | Exploração de **Documentos** em cadastros > administrativo | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Documentos** migrada para o repositório | Concluído | `docs/cadastros/administrativo/documentos.md` |
+| Exploração de **Remessa Bancária** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Remessa Bancária** migrada para o repositório | Concluído | `docs/financeiro/remessa-bancaria.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado

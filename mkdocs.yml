@@ -61,6 +61,8 @@ nav:
       - Adicionar serviço contratado: contratos/adicionar-servico-contratado.md
       - Adicionar acesso ao cliente: contratos/adicionar-acesso-cliente.md
       - Gerar contas do cliente: contratos/gerar-contas-cliente.md
+  - Financeiro:
+      - Remessa Bancária: financeiro/remessa-bancaria.md
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
