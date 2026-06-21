@@ -1,67 +1,71 @@
 ---
-title: Gerar contas do cliente
+title: Gerar contas a receber do contrato
 ---
 
-# Gerar contas do cliente
+# Gerar contas a receber do contrato
 
 !!! warning "Rascunho gerado por agente"
-    Este documento foi elaborado a partir de exploração no ambiente de demonstração. A geração efetiva de cobrança/carnê deve ser revisada por equipe financeira antes de publicação.
+    Este documento foi elaborado a partir de exploração no ambiente de demonstração. A geração de cobrança deve ser revisada pela equipe responsável antes de publicação.
 
 ## Objetivo
 
-Gerar, consultar ou cadastrar contas financeiras vinculadas ao contrato do cliente no módulo **Contratos**, aba **Financeiro**.
+Gerar uma **conta a receber** vinculada a um contrato do cliente na aba **Financeiro**.
 
 ## Quando usar
 
-Use este fluxo quando for necessário lançar uma nova conta, consultar cobranças abertas ou gerar carnê/relatório financeiro para um cliente.
+Use este fluxo quando for necessário lançar uma cobrança individual, revisar contas em aberto ou gerar parcelas financeiras para um contrato.
 
 ## Pré-requisitos
 
-- Cliente/contrato salvo.
-- Serviço contratado cadastrado, quando a cobrança depender do serviço.
-- Regras de vencimento, valor e descontos definidas.
+- Contrato salvo e disponível no módulo **Contratos**.
+- Serviço contratado cadastrado, quando a cobrança depender de um plano/serviço específico.
 - Usuário com permissão financeira no LHISP.
 - Usar apenas dados fictícios no ambiente demo.
-- Não apagar, cancelar ou remover contas reais durante a validação documental.
 
 ## Passo a passo
 
 1. Acesse **Contratos**.
-2. Abra o contrato do cliente.
+2. Abra o contrato desejado na lista.
 3. Clique na aba **Financeiro**.
-4. Use os filtros para consultar contas existentes:
-   - **Data Inicial**;
-   - **Data Final**;
-   - **Situação**;
-   - **Exibir Contas Apagadas?**, somente quando for necessário auditar registros apagados.
-5. Clique na ação de pesquisa/atualização, se necessário.
-6. Para cadastrar uma conta individual, clique em **+ Nova Conta**.
-7. Preencha os campos financeiros solicitados pelo formulário.
-8. Salve a conta.
-9. Verifique se a conta aparece na tabela da aba **Financeiro**.
-10. Para gerar cobrança em formato de carnê, clique em **Gerar Carnê** após validar as contas abertas.
-11. Quando necessário, use **Relatório de Quitação de Débitos** para emitir documento relacionado à situação financeira do contrato.
+4. Revise os filtros de consulta, se necessário:
+   - **Data Inicial**
+   - **Data Final**
+   - **Situação**
+   - **Exibir Contas Apagadas?**
+5. Verifique a grade de contas a receber exibida na tela.
+6. Role até o final da aba **Financeiro** e clique em **Nova Conta**.
+7. No modal **Nova Conta a Receber**, preencha os campos principais:
+   - **Serviço**
+   - **Conta Bancária [Boleto]**
+   - **Conta Bancária [PIX]**
+   - **Tipo**
+   - **Descrição**
+   - **Vencimento**
+   - **Valor**
+   - **Parcelas**
+8. Clique em **Salvar**.
+9. Confirme que a nova linha aparece na grade da aba **Financeiro** com situação **EM ABERTO**.
 
 ## Campos importantes
 
-### Filtros
+### Filtros da aba Financeiro
 
 | Campo | Descrição |
 |---|---|
 | **Data Inicial** | Início do período de consulta. |
 | **Data Final** | Fim do período de consulta. |
-| **Situação** | Filtra contas por status. Opções observadas: Todas, Aberta, Paga, Cancelada e Negociada. |
-| **Exibir Contas Apagadas?** | Inclui contas apagadas na consulta. Use com cuidado. |
+| **Situação** | Filtra contas por status. Opções observadas: **Todas**, **Aberta**, **Paga**, **Cancelada** e **Negociada**. |
+| **Exibir Contas Apagadas?** | Inclui registros apagados na consulta. Use apenas para auditoria. |
 
-### Tabela financeira
+### Grade de contas a receber
 
 | Campo/coluna | Descrição |
 |---|---|
-| **Ações** | Ações por conta. Confirmar quais ações existem e quais são destrutivas. |
+| **Ações** | Ações por conta, incluindo pagamento e outras rotinas. |
 | **Id** | Identificador interno da conta. |
 | **Descrição** | Descrição do lançamento. |
-| **Tipo** | Tipo da conta/cobrança. |
-| **Número** | Número do documento/parcela. |
+| **Tipo** | Tipo da cobrança, como **MENSALIDADE**. |
+| **Número** | Número da parcela/documento. |
 | **Vencimento** | Data de vencimento. |
 | **Pagamento** | Data de pagamento, quando houver. |
 | **Valor** | Valor original da conta. |
@@ -69,43 +73,57 @@ Use este fluxo quando for necessário lançar uma nova conta, consultar cobranç
 | **Valor Pago** | Valor efetivamente pago. |
 | **Tarifa** | Tarifa associada à cobrança. |
 | **NF** | Relação com nota fiscal, quando aplicável. |
-| **Situação** | Status financeiro da conta. |
+| **Situação** | Status da conta, por exemplo **EM ABERTO**. |
+
+### Modal Nova Conta a Receber
+
+| Campo | Descrição |
+|---|---|
+| **Serviço** | Vincula a cobrança ao serviço contratado. |
+| **Conta Bancária [Boleto]** | Conta bancária usada no boleto. |
+| **Conta Bancária [PIX]** | Conta bancária usada no Pix. |
+| **Tipo** | Natureza da cobrança, por exemplo **Mensalidade**, **Serviço**, **Vendas**, **Instalação**, **Acordo** ou **Multas**. |
+| **Descrição** | Texto livre para identificar o lançamento. |
+| **Vencimento** | Data de vencimento da conta. |
+| **Valor** | Valor da cobrança. |
+| **Parcelas** | Quantidade de parcelas geradas para o lançamento. |
 
 ## Resultado esperado
 
-- A conta é criada e vinculada ao contrato do cliente.
-- A conta aparece na aba **Financeiro** conforme os filtros selecionados.
-- O carnê ou relatório é gerado quando houver contas elegíveis.
+- A conta a receber é criada e vinculada ao contrato.
+- A nova linha aparece na tabela da aba **Financeiro**.
+- A situação do registro fica visível como **EM ABERTO** até o pagamento ou outra ação financeira.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| Conta não aparece na grade | Ajuste os filtros de data e situação. |
-| Botão **+ Nova Conta** indisponível | Confirme permissões financeiras e se o contrato está salvo. |
-| Valor divergente | Confira plano, desconto e regras de geração de contas. |
-| Carnê não gera | Verifique se existem contas abertas e elegíveis no período. |
-| Situação incorreta | Confirme se a conta foi paga, cancelada, negociada ou permanece aberta. |
-| Contas apagadas aparecem | Desmarque **Exibir Contas Apagadas?** para operação normal. |
+| A grade não mostra a conta criada | Ajuste os filtros de data e situação, ou recarregue a aba **Financeiro**. |
+| O botão **Nova Conta** não aparece | Role até a parte inferior da tela e confirme que está na aba **Financeiro**. |
+| O modal não permite salvar | Revise principalmente **Serviço**, **Tipo**, **Vencimento**, **Valor** e as contas de boleto/Pix. |
+| A conta não aparece após salvar | Reabra a aba **Financeiro** e confira se a situação está filtrada como **Aberta**. |
+| Contas apagadas aparecem na consulta | Desmarque **Exibir Contas Apagadas?**. |
 
 ## Observações
 
-- A aba **Financeiro** possui botões **Relatório de Quitação de Débitos**, **Gerar Carnê** e **+ Nova Conta**.
-- Durante a exploração, a geração efetiva de contas/carnê não foi concluída para evitar efeitos financeiros mesmo em ambiente demo.
-- O filtro **Exibir Contas Apagadas?** deve ser usado apenas para consulta/auditoria.
-- Evite ações de exclusão, cancelamento ou remoção em contas durante testes de documentação.
+- A aba **Financeiro** possui as ações **Relatório de Quitação de Débitos**, **Gerar Carnê** e **Nova Conta**.
+- Na exploração do demo, foi possível criar uma conta a receber de teste e ela passou a aparecer na grade como **EM ABERTO**.
+- O contrato usado na exploração possuía contas mensais associadas ao serviço **[16250] ACESSO RESIDENCIAL 200mega**.
 
 ## Dúvidas para revisão
 
-- A geração de contas é feita manualmente por **+ Nova Conta** ou há rotina automática por serviço contratado?
-- O botão **Gerar Carnê** considera todas as contas abertas ou apenas contas filtradas/selecionadas?
-- Quais campos são obrigatórios no cadastro de nova conta?
-- Existe regra de vencimento padrão baseada no contrato?
-- O campo **NF** é gerado automaticamente ou preenchido após emissão fiscal?
-- Quais ações da coluna **Ações** são permitidas para operadores comuns?
+- A geração de contas é manual, automática por serviço ou ambas?
+- O botão **Gerar Carnê** usa todas as contas em aberto ou apenas as selecionadas/filtradas?
+- Quais campos são obrigatórios no modal **Nova Conta a Receber** em produção?
+- O campo **Serviço** pode ficar vazio em algum tipo de lançamento?
+- **Conta Bancária [PIX]** é obrigatória para todos os tipos de cobrança?
 
 ## Screenshots sugeridos
 
 - Aba **Financeiro** do contrato: `docs/assets/screenshots/contratos/financeiro-aba.png`
 
 ![Aba Financeiro](../assets/screenshots/contratos/financeiro-aba.png)
+
+- Modal **Nova Conta a Receber**: `docs/assets/screenshots/contratos/nova-conta-receber-modal.png`
+
+![Modal Nova Conta a Receber](../assets/screenshots/contratos/nova-conta-receber-modal.png)
