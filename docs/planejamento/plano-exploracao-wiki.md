@@ -16,12 +16,13 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Etapa | Status | Evidência |
 |---|---|---|
 | Mapeamento da navegação principal | Concluído | grupos principais identificados na wiki |
-| Abertura da página **Servidores** | Concluído | conteúdo lido e screenshot capturado |
+| Abertura da página **Servidores** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Primeira página migrada para o repositório | Concluído | `docs/rede-infra/servidores.md` |
-| Exploração da página **IPv6** | Concluído | conteúdo lido e screenshot capturado |
+| Exploração da página **IPv6** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Página **IPv6** migrada para o repositório | Concluído | `docs/rede-infra/ipv6.md` |
-| Exploração de **Prefixos de IP** | Pendente | a iniciar |
-| Exploração de **CGNAT** | Pendente | a iniciar |
+| Exploração da aba **CGNAT** no demo | Concluído | screenshot capturado no demo |
+| Screenshot de **CGNAT** migrada para o repositório | Concluído | `docs/rede-infra/cgnat.md` |
+| Exploração de **Prefixos de IP** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado

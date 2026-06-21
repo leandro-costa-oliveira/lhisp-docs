@@ -93,6 +93,6 @@ A própria wiki informa que o LHISP pode ajudar no envio desse comando em lote p
 
 ## Screenshots sugeridos
 
-- Página **IPv6** da wiki: `docs/assets/screenshots/rede-infra/ipv6.png`
+- Aba **IPv6** no demo: `docs/assets/screenshots/rede-infra/ipv6.png`
 
-![IPv6](../assets/screenshots/rede-infra/ipv6.png)
+![IPv6 no demo](../assets/screenshots/rede-infra/ipv6.png)

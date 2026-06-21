@@ -83,6 +83,6 @@ Use este fluxo para registrar faixas de endereçamento que serão usadas em rede
 
 ## Screenshots sugeridos
 
-- Tela de **Prefixos de IP** após salvar o registro: `docs/assets/screenshots/rede-infra/prefixos-ip.png`
+- Tela de **Prefixos de IP** no demo após abrir o registro: `docs/assets/screenshots/rede-infra/prefixos-ip.png`
 
-![Prefixos de IP](../assets/screenshots/rede-infra/prefixos-ip.png)
+![Prefixos de IP no demo](../assets/screenshots/rede-infra/prefixos-ip.png)

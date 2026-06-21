@@ -147,6 +147,6 @@ A wiki associa ao módulo as seguintes funcionalidades:
 
 ## Screenshots sugeridos
 
-- Página **Servidores** na wiki: `docs/assets/screenshots/rede-infra/servidores.png`
+- Página **Servidores** no demo: `docs/assets/screenshots/rede-infra/servidores.png`
 
-![Servidores](../assets/screenshots/rede-infra/servidores.png)
+![Servidores no demo](../assets/screenshots/rede-infra/servidores.png)
