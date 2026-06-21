@@ -66,6 +66,9 @@ nav:
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
+  - Sistema:
+      - Integrações:
+          - Api Parceiros: sistema/api-parceiros.md
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
