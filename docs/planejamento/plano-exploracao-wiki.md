@@ -33,6 +33,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **OLT V-Solutions** migrada para o repositório | Concluído | `docs/rede-infra/olt-v-solutions.md` |
 | Exploração de **Switchs Huawei** | Concluído | conteúdo lido e screenshot capturado no demo |
 | Página **Switchs Huawei** migrada para o repositório | Concluído | `docs/rede-infra/switchs-huawei.md` |
+| Exploração de **dns-bloqueio-judicial** | Concluído | conteúdo lido e screenshot capturado no demo |
+| Página **Bloqueio Judicial com o Bind** migrada para o repositório | Concluído | `docs/rede-infra/dns-bloqueio-judicial.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
