@@ -5,6 +5,7 @@ on:
       - development
   pull_request:
     branches:
+      - dev
       - development
   workflow_dispatch:
 
