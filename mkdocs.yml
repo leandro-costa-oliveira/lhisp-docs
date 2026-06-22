@@ -57,6 +57,7 @@ plugins:
 nav:
   - Início: index.md
   - Contratos:
+      - Contrato: contratos/contrato.md
       - Cadastrar novo cliente: contratos/cadastrar-novo-cliente.md
       - Adicionar serviço contratado: contratos/adicionar-servico-contratado.md
       - Adicionar acesso ao cliente: contratos/adicionar-acesso-cliente.md

@@ -67,11 +67,13 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Exploração de **Santander** em cadastros > financeiro | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
 | Página **Santander** migrada para o repositório | Concluído | `docs/cadastros/financeiro/santander.md` |
 | Exploração de **Exportar Boletos do Gerencianet** em misc | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
-| Exploração de **SMS via AWS End User Messaging SMS** em sistema > notificações | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
-| Página **SMS via AWS End User Messaging SMS** migrada para o repositório | Concluído | `docs/sistema/notificacoes/amazon-end-user-messaging-service.md` |
+|| Exploração de **SMS via AWS End User Messaging SMS** em sistema > notificações | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
+|| Página **SMS via AWS End User Messaging SMS** migrada para o repositório | Concluído | `docs/sistema/notificacoes/amazon-end-user-messaging-service.md` |
+|| Exploração de **Contrato** em contratos | Concluído | conteúdo lido na wiki; página principal do módulo |
+|| Página **Contrato** migrada para o repositório | Concluído | `docs/contratos/contrato.md` |
 
-| Exploração de **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
-| Página **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** migrada para o repositório | Concluído | `docs/financeiro/nf-com.md` |
+|| Exploração de **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+
 | Páginas pendentes identificadas até agora | Concluído | nenhuma pendência confirmada |
 
 ## Páginas pendentes identificadas até agora
