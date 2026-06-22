@@ -68,6 +68,7 @@ nav:
   - Financeiro:
       - Remessa Bancária: financeiro/remessa-bancaria.md
       - Gerência Financeira: financeiro/gerencia-financeira.md
+      - Impressão de Carnês: financeiro/impressao-de-carnes.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
   - Dashboards:
