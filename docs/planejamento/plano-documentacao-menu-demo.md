@@ -134,7 +134,7 @@ Prioridade sugerida:
 ### 7) Rede/ Infra
 
 - [x] Prefixos de IP
-- [ ] Servidores *(já documentado)*
+- [x] Servidores
 - [ ] Redes
 - [ ] Ferramentas
 - [ ] Importar Arq. Dude

@@ -83,6 +83,7 @@ nav:
       - Almoxarifados: estoque/almoxarifados.md
   - Rede/ Infra:
       - Prefixos de IP: rede-infra/prefixos-de-ip.md
+      - Servidores: rede-infra/servidores.md
       - Mikrotik - Services: rede-infra/mikrotik-services.md
       - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
