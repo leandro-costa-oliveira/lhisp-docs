@@ -144,7 +144,7 @@ Prioridade sugerida:
 - [x] Monitor de Gráficos
 - [x] GePON OLT
 - [x] GePON PACSWITCH
-- [ ] Configurações Globais
+- [x] Configurações Globais
 - [ ] GPON OLT
 - [ ] Projetos de Rede - Mapas
 - [ ] Central de Alertas
