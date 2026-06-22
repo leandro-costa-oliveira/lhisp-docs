@@ -1,11 +1,11 @@
 ---
-title: Plano de exploração da Wiki LHISP
+title: Plano de exploração da Wiki LHISP (concluído)
 ---
 
-# Plano de exploração da Wiki LHISP
+# Plano de exploração da Wiki LHISP (concluído)
 
-!!! info "Fase atual"
-    Este arquivo contém apenas o plano de exploração gradual da wiki. Nesta etapa, **não** serão produzidas documentações de fluxo nem screenshots finais.
+!!! note "Arquivo histórico"
+    Este arquivo registra a exploração da wiki já concluída. Ele foi preservado apenas para fins históricos de documentação.
 
 ## Objetivo
 
