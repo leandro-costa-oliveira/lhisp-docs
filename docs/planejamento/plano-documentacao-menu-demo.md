@@ -51,10 +51,10 @@ Os seguintes blocos já possuem páginas no `lhisp-docs` e servem como base para
 Criar páginas para os atalhos diretos do topo do menu:
 
 - [x] Contratos
-- [ ] Almoxarifados
-- [ ] Agenda Técnica
+- [x] Almoxarifados
+- [x] Agenda Técnica
 - [ ] Monitor de Redes
-- [ ] Gerência Financeira
+- [x] Gerência Financeira
 
 ### 2) Dashboards
 
@@ -84,7 +84,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 #### Estoque
 
-- [ ] Almoxarifados
+- [x] Almoxarifados
 - [ ] Categorias
 - [ ] Produtos
 - [ ] Kits
@@ -115,7 +115,7 @@ Prioridade sugerida:
 
 ### 5) Financeiro
 
-- [ ] Gerência Financeira
+- [x] Gerência Financeira
 - [ ] Impressão de Carnês
 - [ ] Remessa Bancária *(já documentado)*
 - [ ] Retorno Bancário

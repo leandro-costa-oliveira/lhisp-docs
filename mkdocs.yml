@@ -67,8 +67,12 @@ nav:
       - Gerar contas do cliente: contratos/gerar-contas-cliente.md
   - Financeiro:
       - Remessa Bancária: financeiro/remessa-bancaria.md
+      - Gerência Financeira: financeiro/gerencia-financeira.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
+  - Estoque:
+      - Almoxarifados: estoque/almoxarifados.md
+  - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
