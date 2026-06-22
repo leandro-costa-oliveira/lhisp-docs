@@ -83,6 +83,7 @@ nav:
           - Endereços: cadastros/administrativo/enderecos.md
           - Filiais: cadastros/administrativo/filiais.md
           - Condomínios: cadastros/administrativo/condominios.md
+          - Feriados: cadastros/administrativo/feriados.md
       - Financeiro:
           - Santander: cadastros/financeiro/santander.md
   - Misc:
