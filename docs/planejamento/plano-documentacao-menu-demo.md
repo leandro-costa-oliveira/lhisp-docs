@@ -163,8 +163,8 @@ Prioridade sugerida:
 - [ ] CampSoft
 - [x] Fidelimax
 - [x] Cobli
-- [ ] Google Maps
-- [ ] PlayHub
+- [x] Google Maps
+- [x] PlayHub
 - [ ] Owen Brasil
 - [ ] Alo Fone
 - [ ] Portabilidade de Celular
