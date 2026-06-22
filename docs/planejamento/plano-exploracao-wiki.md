@@ -62,7 +62,9 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Watch Tv** migrada para o repositório | Concluído | `docs/sistema/watch-tv.md` |
 | Exploração de **LHSAC Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
 | Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
-| Páginas pendentes identificadas até agora | Em revisão | nfibra-privacy-policy, misc, financeiro/nf-com, suporte |
+| Exploração de **NFibra Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
+| Página **NFibra Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/nfibra-privacy-policy.md` |
+| Páginas pendentes identificadas até agora | Em revisão | misc, financeiro/nf-com, suporte |
 
 ## Páginas pendentes identificadas até agora
 
