@@ -137,11 +137,11 @@ Prioridade sugerida:
 - [x] Servidores
 - [x] Redes
 - [ ] Ferramentas
-- [x] Importar Arq. Dude
+- [x] Importar Arq. Dude *(não documentado; tela quebrada no demo)*
 - [x] Enviar Comandos
 - [x] TC IRR
 - [x] Setores
-- [ ] Monitor de Gráficos
+- [x] Monitor de Gráficos
 - [ ] GePON OLT
 - [ ] GePON PACSWITCH
 - [ ] Configurações Globais
