@@ -138,7 +138,7 @@ Prioridade sugerida:
 - [x] Redes
 - [ ] Ferramentas
 - [x] Importar Arq. Dude
-- [ ] Enviar Comandos
+- [x] Enviar Comandos
 - [ ] TC IRR
 - [ ] Setores
 - [ ] Monitor de Gráficos
