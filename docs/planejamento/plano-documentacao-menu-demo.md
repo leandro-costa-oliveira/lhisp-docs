@@ -135,7 +135,7 @@ Prioridade sugerida:
 
 - [x] Prefixos de IP
 - [x] Servidores
-- [ ] Redes
+- [x] Redes
 - [ ] Ferramentas
 - [ ] Importar Arq. Dude
 - [ ] Enviar Comandos
