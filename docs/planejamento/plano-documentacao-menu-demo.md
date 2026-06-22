@@ -145,7 +145,7 @@ Prioridade sugerida:
 - [x] GePON OLT
 - [x] GePON PACSWITCH
 - [x] Configurações Globais
-- [ ] GPON OLT
+- [x] GPON OLT
 - [ ] Projetos de Rede - Mapas
 - [ ] Central de Alertas
 - [ ] Dns Bloqueio Judicial
@@ -153,7 +153,7 @@ Prioridade sugerida:
 ### 8) Sistema
 
 - [ ] Trocar a Senha
-- [ ] Empresa
+- [x] Empresa
 - [ ] Usuários
 - [ ] Notificações em Massa
 - [ ] Banners Mobile

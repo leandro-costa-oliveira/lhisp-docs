@@ -94,6 +94,7 @@ nav:
       - GePON OLT: rede-infra/gepon-olt.md
       - GePON PACSWITCH: rede-infra/gepon-pacswitch.md
       - Configurações Globais: rede-infra/configuracoes-globais.md
+      - GPON OLT: rede-infra/gpon-olt.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
@@ -122,6 +123,7 @@ nav:
   - Sistema:
       - Notificações:
           - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
+      - Empresa: sistema/empresa.md
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
           - Google Maps: sistema/google-maps.md
