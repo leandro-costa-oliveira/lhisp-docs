@@ -140,7 +140,7 @@ Prioridade sugerida:
 - [x] Importar Arq. Dude
 - [x] Enviar Comandos
 - [x] TC IRR
-- [ ] Setores
+- [x] Setores
 - [ ] Monitor de Gráficos
 - [ ] GePON OLT
 - [ ] GePON PACSWITCH
