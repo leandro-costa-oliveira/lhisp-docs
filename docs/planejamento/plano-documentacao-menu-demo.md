@@ -161,7 +161,7 @@ Prioridade sugerida:
 - [ ] Integrações
 - [ ] Cruzamento Arv. Csv com Contratos
 - [ ] CampSoft
-- [ ] Fidelimax
+- [x] Fidelimax
 - [ ] Cobli
 - [ ] Google Maps
 - [ ] PlayHub

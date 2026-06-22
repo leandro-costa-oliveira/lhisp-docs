@@ -126,6 +126,7 @@ nav:
       - Empresa: sistema/empresa.md
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
+          - Fidelimax: sistema/fidelimax.md
           - Google Maps: sistema/google-maps.md
           - Campsoft: sistema/campsoft.md
           - Bit Health: sistema/bit-health.md
