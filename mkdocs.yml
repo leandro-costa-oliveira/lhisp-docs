@@ -81,6 +81,14 @@ nav:
       - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Remessa de Material: estoque/remessa-de-material.md
       - Almoxarifados: estoque/almoxarifados.md
+  - Rede/ Infra:
+      - Prefixos de IP: rede-infra/prefixos-de-ip.md
+      - Mikrotik - Services: rede-infra/mikrotik-services.md
+      - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
+      - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
+      - Switchs Huawei: rede-infra/switchs-huawei.md
+      - OLT V-Solutions: rede-infra/olt-v-solutions.md
+      - OLT Huawei: rede-infra/olt-huawei.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:
       - Pre Cadastros: cadastros/pre-cadastros.md

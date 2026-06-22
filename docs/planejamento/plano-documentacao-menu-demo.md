@@ -133,7 +133,7 @@ Prioridade sugerida:
 
 ### 7) Rede/ Infra
 
-- [ ] Prefixos de IP *(já documentado em parte; revisar a navegação real do demo)*
+- [x] Prefixos de IP
 - [ ] Servidores *(já documentado)*
 - [ ] Redes
 - [ ] Ferramentas
