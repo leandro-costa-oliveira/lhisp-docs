@@ -76,6 +76,7 @@ nav:
   - Dashboards:
       - Dashboard Comercial: dashboards/dashboard-comercial.md
   - Estoque:
+      - Ordens de Separação: estoque/ordens-de-separacao.md
       - Almoxarifados: estoque/almoxarifados.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:

@@ -126,7 +126,7 @@ Prioridade sugerida:
 
 ### 6) Estoque
 
-- [ ] Ordens de Separação
+- [x] Ordens de Separação
 - [ ] Notas Fiscais de Compra
 - [ ] Estoque por Funcionário
 - [ ] Remessa de Material
