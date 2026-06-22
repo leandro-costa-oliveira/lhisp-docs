@@ -21,4 +21,4 @@ Esta documentação contém guias passo a passo para operações do módulo **Co
 
 ## Sobre o LHISP
 
-O LHISP é uma plataforma completa de gestão desenvolvida pela [LH Sistemas](https://www.lhsistemas.com.br) para provedores de internet que necessitam de um sistema integrado para gerenciamento de clientes, contratos, serviços e financeiro.
+O LHISP é uma plataforma completa de gestão desenvolvida pela [LH Sistemas](https://lhisp.com.bt) para provedores de internet que necessitam de um sistema integrado para gerenciamento de clientes, contratos, serviços e financeiro.
