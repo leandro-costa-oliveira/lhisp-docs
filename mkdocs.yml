@@ -78,6 +78,7 @@ nav:
   - Estoque:
       - Ordens de Separação: estoque/ordens-de-separacao.md
       - Notas Fiscais de Compra: estoque/notas-fiscais-de-compra.md
+      - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Almoxarifados: estoque/almoxarifados.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:
