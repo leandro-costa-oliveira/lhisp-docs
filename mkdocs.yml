@@ -56,9 +56,6 @@ plugins:
 # Navigation
 nav:
   - Início: index.md
-  - Planejamento:
-      - Plano de documentação do menu do demo LHISP: planejamento/plano-documentacao-menu-demo.md
-      - Plano de exploração da Wiki LHISP (concluído): planejamento/plano-exploracao-wiki-concluido.md
   - Contratos:
       - Contrato: contratos/contrato.md
       - Cadastrar novo cliente: contratos/cadastrar-novo-cliente.md
