@@ -54,6 +54,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Cobrança Terceirizada** migrada para o repositório | Concluído | `docs/sistema/cobranca-terceirizada.md` |
 | Exploração de **Megazap** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Megazap** migrada para o repositório | Concluído | `docs/sistema/megazap.md` |
+| Exploração de **Seventh - Dguard** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Seventh - Dguard** migrada para o repositório | Concluído | `docs/sistema/seventh-dguard.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Páginas pendentes identificadas até agora
@@ -62,7 +64,6 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 
 Páginas já vistas na wiki e ainda não migradas:
 
-- `Seventh - Dguard`
 - `Telegram`
 - `Watch Tv`
 
