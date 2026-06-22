@@ -56,6 +56,47 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Megazap** migrada para o repositório | Concluído | `docs/sistema/megazap.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
+## Páginas pendentes identificadas até agora
+
+### `integracoes`
+
+Páginas já vistas na wiki e ainda não migradas:
+
+- `Seventh - Dguard`
+- `Telegram`
+- `Watch Tv`
+
+### `financeiro`
+
+Páginas/fluxos identificados na wiki e ainda não migrados:
+
+- `nf-com` / **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom**
+
+### `cadastros`
+
+Subárvore já vista, mas ainda não totalmente explorada:
+
+- `administrativo`
+- `financeiro`
+
+### Grupos ainda sem exploração detalhada
+
+- `lhsac`
+- `misc`
+- `sistema`
+- `suporte`
+
+## Estimativa inicial de pendências
+
+Com base no que já foi visto na wiki, a migração ainda tem **pelo menos 4 páginas/fluxos confirmados** para documentar:
+
+1. `Seventh - Dguard`
+2. `Telegram`
+3. `Watch Tv`
+4. `nf-com` / NFCom
+
+Além disso, os grupos **cadastros**, **lhsac**, **misc**, **sistema** e **suporte** ainda não foram mapeados por completo, então a estimativa realista para o restante da migração fica em torno de **10 a 14 páginas/fluxos** no total, podendo variar conforme o conteúdo escondido em subdiretórios.
+
 ## Escopo inicial observado
 
 Na navegação principal da wiki, já foram identificados os seguintes grupos:
