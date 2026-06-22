@@ -137,7 +137,7 @@ Prioridade sugerida:
 - [x] Servidores
 - [x] Redes
 - [ ] Ferramentas
-- [ ] Importar Arq. Dude
+- [x] Importar Arq. Dude
 - [ ] Enviar Comandos
 - [ ] TC IRR
 - [ ] Setores

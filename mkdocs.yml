@@ -87,6 +87,7 @@ nav:
       - Redes: rede-infra/redes.md
       - Mikrotik - Services: rede-infra/mikrotik-services.md
       - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
+      - Importar Arq. Dude: rede-infra/importar-arq-dude.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
