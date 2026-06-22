@@ -38,7 +38,7 @@ Os seguintes blocos já possuem páginas no `lhisp-docs` e servem como base para
 
 - **Contratos**: contrato, cadastrar novo cliente, adicionar serviço contratado, adicionar acesso ao cliente, gerar contas do cliente
 - **Financeiro**: remessa bancária, NFCom
-- **Cadastros**: documentos, Condomínios, Endereços, Filiais, Feriados, Santander, Pessoas, Pre Cadastros
+- **Cadastros**: documentos, Condomínios, Endereços, Filiais, Feriados, Promoções, Santander, Pessoas, Pre Cadastros
 - **Rede/Infra**: servidores, IPv6, CGNAT, prefixos de IP, monitor de redes, BRAS Huawei, OLT Huawei, OLT V-Solutions, Switchs Huawei, bloqueio judicial com o Bind, Mikrotik
 - **Sistema**: API Parceiros, Google Maps, Campsoft, Bit Health, Cobrança Terceirizada, Megazap, Seventh - Dguard, Telegram, Watch Tv, notificações por SMS
 - **Páginas institucionais**: LHSAC Privacy Policy, NFibra Privacy Policy
@@ -68,7 +68,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Filiais
 - [x] Condomínios
 - [x] Feriados
-- [ ] Promoções
+- [x] Promoções
 - [ ] Documentos *(já documentado; revisar apenas se houver ajuste de navegação)*
 
 #### Financeiro
