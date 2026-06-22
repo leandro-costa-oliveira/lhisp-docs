@@ -118,7 +118,7 @@ Prioridade sugerida:
 - [x] Gerência Financeira
 - [x] Impressão de Carnês
 - [x] Remessa Bancária *(já documentado)*
-- [ ] Retorno Bancário
+- [x] Retorno Bancário
 - [ ] Gerar Carnês
 - [ ] Notas Fiscais
 - [ ] Bloqueios por Atraso
