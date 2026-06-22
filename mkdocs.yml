@@ -69,6 +69,7 @@ nav:
       - Retorno Bancário: financeiro/retorno-bancario.md
       - Gerar Carnês: financeiro/gerar-carnes.md
       - Notas Fiscais: financeiro/notas-fiscais.md
+      - Bloqueios por Atraso: financeiro/bloqueios-por-atraso.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
   - Dashboards:

@@ -121,7 +121,7 @@ Prioridade sugerida:
 - [x] Retorno Bancário
 - [x] Gerar Carnês
 - [x] Notas Fiscais
-- [ ] Bloqueios por Atraso
+- [x] Bloqueios por Atraso
 - [ ] Reajuste Serviços Contratados
 
 ### 6) Estoque
