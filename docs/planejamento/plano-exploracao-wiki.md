@@ -50,6 +50,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Campsoft** migrada para o repositório | Concluído | `docs/sistema/campsoft.md` |
 | Exploração de **Bit Health** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Bit Health** migrada para o repositório | Concluído | `docs/sistema/bit-health.md` |
+| Exploração de **Cobrança Terceirizada** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Cobrança Terceirizada** migrada para o repositório | Concluído | `docs/sistema/cobranca-terceirizada.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
