@@ -75,6 +75,7 @@ nav:
           - Cobrança Terceirizada: sistema/cobranca-terceirizada.md
           - Megazap: sistema/megazap.md
           - Seventh - Dguard: sistema/seventh-dguard.md
+          - Telegram: sistema/telegram.md
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
