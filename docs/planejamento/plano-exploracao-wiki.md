@@ -68,7 +68,7 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Exportar Boletos do Gerencianet** migrada para o repositório | Concluído | `docs/misc/exportar-boletos-gerencianet.md` |
 | Exploração de **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** migrada para o repositório | Concluído | `docs/financeiro/nf-com.md` |
-| Páginas pendentes identificadas até agora | Em revisão | suporte |
+| Páginas pendentes identificadas até agora | Concluído | nenhuma pendência confirmada |
 
 ## Páginas pendentes identificadas até agora
 
@@ -76,11 +76,13 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 
 Páginas já vistas na wiki e ainda não migradas:
 
+- nenhuma pendência confirmada no momento
+
 ### `financeiro`
 
 Páginas/fluxos identificados na wiki e ainda não migrados:
 
-- `nf-com` / **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom**
+- nenhuma pendência confirmada no momento
 
 ### `cadastros`
 
@@ -94,18 +96,17 @@ Subárvore já vista, mas ainda não totalmente explorada:
 - `lhsac`
 - `misc`
 - `sistema`
-- `suporte`
 
-## Estimativa inicial de pendências
+## Estimativa atual de exploração restante
 
-Com base no que já foi visto na wiki, a migração ainda tem **pelo menos 4 páginas/fluxos confirmados** para documentar:
+Os 4 fluxos confirmados que apareciam no planejamento já foram concluídos:
 
 1. `Seventh - Dguard`
 2. `Telegram`
 3. `Watch Tv`
 4. `nf-com` / NFCom
 
-Além disso, os grupos **cadastros**, **lhsac**, **misc**, **sistema** e **suporte** ainda não foram mapeados por completo, então a estimativa realista para o restante da migração fica em torno de **10 a 14 páginas/fluxos** no total, podendo variar conforme o conteúdo escondido em subdiretórios.
+Neste ponto, o que ainda pode render novas páginas depende da exploração mais profunda dos grupos **cadastros**, **lhsac**, **misc** e **sistema**. Não há, neste momento, pendências confirmadas na wiki para migração imediata.
 
 ## Escopo inicial observado
 
@@ -120,7 +121,6 @@ Na navegação principal da wiki, já foram identificados os seguintes grupos:
 | `misc` | ainda pendente de exploração detalhada |
 | `rede-infra` | contém páginas operacionais já visíveis na navegação |
 | `sistema` | ainda pendente de exploração detalhada |
-| `suporte` | ainda pendente de exploração detalhada |
 
 No grupo **rede-infra**, foram vistos itens como:
 
@@ -270,14 +270,13 @@ A exploração será feita em camadas:
 - `lhsac`
 - `misc`
 - `sistema`
-- `suporte`
 
 **Objetivo:** descobrir o que esses grupos contém e avaliar se há fluxos relevantes para documentação.
 
 **Saída esperada:**
 
 - lista de páginas encontradas;
-- indicação do que é material de apoio, suporte ou operação;
+- indicação do que é material de apoio ou operação;
 - definição do que entra na próxima rodada de documentação.
 
 ## Critério para transformar exploração em documentação
