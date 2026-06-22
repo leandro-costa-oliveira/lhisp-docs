@@ -143,7 +143,7 @@ Prioridade sugerida:
 - [x] Setores
 - [x] Monitor de Gráficos
 - [x] GePON OLT
-- [ ] GePON PACSWITCH
+- [x] GePON PACSWITCH
 - [ ] Configurações Globais
 - [ ] GPON OLT
 - [ ] Projetos de Rede - Mapas

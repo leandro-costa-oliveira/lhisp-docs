@@ -92,6 +92,7 @@ nav:
       - Setores: rede-infra/setores.md
       - Monitor de Gráficos: rede-infra/monitoramento-de-graficos.md
       - GePON OLT: rede-infra/gepon-olt.md
+      - GePON PACSWITCH: rede-infra/gepon-pacswitch.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
