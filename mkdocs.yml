@@ -77,6 +77,8 @@ nav:
       - LHSAC Privacy Policy: lhsac/lhsac-privacy-policy.md
       - NFibra Privacy Policy: lhsac/nfibra-privacy-policy.md
   - Sistema:
+      - Notificações:
+          - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
           - Google Maps: sistema/google-maps.md
