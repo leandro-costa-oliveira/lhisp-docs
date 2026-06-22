@@ -142,7 +142,7 @@ Prioridade sugerida:
 - [x] TC IRR
 - [x] Setores
 - [x] Monitor de Gráficos
-- [ ] GePON OLT
+- [x] GePON OLT
 - [ ] GePON PACSWITCH
 - [ ] Configurações Globais
 - [ ] GPON OLT
