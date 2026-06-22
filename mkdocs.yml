@@ -80,6 +80,7 @@ nav:
       - Pessoas: cadastros/pessoas.md
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
+          - Endereços: cadastros/administrativo/enderecos.md
       - Financeiro:
           - Santander: cadastros/financeiro/santander.md
   - Misc:
