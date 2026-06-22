@@ -139,7 +139,7 @@ Prioridade sugerida:
 - [ ] Ferramentas
 - [x] Importar Arq. Dude
 - [x] Enviar Comandos
-- [ ] TC IRR
+- [x] TC IRR
 - [ ] Setores
 - [ ] Monitor de Gráficos
 - [ ] GePON OLT
