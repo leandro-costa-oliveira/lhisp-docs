@@ -64,7 +64,9 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
 | Exploração de **NFibra Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
 | Página **NFibra Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/nfibra-privacy-policy.md` |
-| Páginas pendentes identificadas até agora | Em revisão | misc, financeiro/nf-com, suporte |
+| Exploração de **Exportar Boletos do Gerencianet** em misc | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Exportar Boletos do Gerencianet** migrada para o repositório | Concluído | `docs/misc/exportar-boletos-gerencianet.md` |
+| Páginas pendentes identificadas até agora | Em revisão | financeiro/nf-com, suporte |
 
 ## Páginas pendentes identificadas até agora
 

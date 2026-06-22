@@ -66,6 +66,9 @@ nav:
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
+  - Misc:
+      - Exportações:
+          - Exportar Boletos do Gerencianet: misc/exportar-boletos-gerencianet.md
   - LHSAC:
       - LHSAC Privacy Policy: lhsac/lhsac-privacy-policy.md
       - NFibra Privacy Policy: lhsac/nfibra-privacy-policy.md
