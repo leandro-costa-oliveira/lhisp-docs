@@ -70,6 +70,7 @@ nav:
       - Gerar Carnês: financeiro/gerar-carnes.md
       - Notas Fiscais: financeiro/notas-fiscais.md
       - Bloqueios por Atraso: financeiro/bloqueios-por-atraso.md
+      - Reajuste Serviços Contratados: financeiro/reajuste-servicos-contratados.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
   - Dashboards:

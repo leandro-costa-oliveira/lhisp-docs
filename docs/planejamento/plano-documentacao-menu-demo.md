@@ -122,7 +122,7 @@ Prioridade sugerida:
 - [x] Gerar Carnês
 - [x] Notas Fiscais
 - [x] Bloqueios por Atraso
-- [ ] Reajuste Serviços Contratados
+- [x] Reajuste Serviços Contratados
 
 ### 6) Estoque
 
