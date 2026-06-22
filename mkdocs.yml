@@ -81,6 +81,7 @@ nav:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
           - Endereços: cadastros/administrativo/enderecos.md
+          - Filiais: cadastros/administrativo/filiais.md
       - Financeiro:
           - Santander: cadastros/financeiro/santander.md
   - Misc:
