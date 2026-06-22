@@ -129,7 +129,7 @@ Prioridade sugerida:
 - [x] Ordens de Separação
 - [x] Notas Fiscais de Compra
 - [x] Estoque por Funcionário
-- [ ] Remessa de Material
+- [x] Remessa de Material
 
 ### 7) Rede/ Infra
 
