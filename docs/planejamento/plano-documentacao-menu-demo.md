@@ -93,7 +93,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 - [x] Pessoas
 - [x] Pre Cadastros
-- [ ] Cupons Promocionais
+- [x] Cupons Promocionais
 
 ### 4) Relatórios
 

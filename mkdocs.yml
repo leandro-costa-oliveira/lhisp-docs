@@ -78,6 +78,8 @@ nav:
   - Cadastros:
       - Pre Cadastros: cadastros/pre-cadastros.md
       - Pessoas: cadastros/pessoas.md
+      - Marketing:
+          - Cupons Promocionais: cadastros/marketing/cupons-promocionais.md
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
           - Endereços: cadastros/administrativo/enderecos.md
