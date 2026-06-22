@@ -67,6 +67,7 @@ nav:
       - Gerência Financeira: financeiro/gerencia-financeira.md
       - Impressão de Carnês: financeiro/impressao-de-carnes.md
       - Retorno Bancário: financeiro/retorno-bancario.md
+      - Gerar Carnês: financeiro/gerar-carnes.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
   - Dashboards:

@@ -119,7 +119,7 @@ Prioridade sugerida:
 - [x] Impressão de Carnês
 - [x] Remessa Bancária *(já documentado)*
 - [x] Retorno Bancário
-- [ ] Gerar Carnês
+- [x] Gerar Carnês
 - [ ] Notas Fiscais
 - [ ] Bloqueios por Atraso
 - [ ] Reajuste Serviços Contratados
