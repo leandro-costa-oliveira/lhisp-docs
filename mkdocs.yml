@@ -70,6 +70,8 @@ nav:
       - Gerência Financeira: financeiro/gerencia-financeira.md
       - Notas Fiscais:
           - NFCom: financeiro/nf-com.md
+  - Dashboards:
+      - Dashboard Comercial: dashboards/dashboard-comercial.md
   - Estoque:
       - Almoxarifados: estoque/almoxarifados.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md

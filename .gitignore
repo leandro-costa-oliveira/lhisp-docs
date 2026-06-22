@@ -47,6 +47,9 @@ Thumbs.db
 # Local agent / tooling artifacts
 .venv/
 example.png
+docs/assets/screenshots/cadastros/pessoas.png
+docs/assets/screenshots/cadastros/pessoas-lgc.png
+docs/assets/screenshots/cadastros/pessoas-click.png
 
 # Large media files
 *.mp4

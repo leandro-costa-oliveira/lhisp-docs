@@ -53,12 +53,12 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Contratos
 - [x] Almoxarifados
 - [x] Agenda Técnica
-- [ ] Monitor de Redes
+- [x] Monitor de Redes
 - [x] Gerência Financeira
 
 ### 2) Dashboards
 
-- [ ] Dashboard Comercial
+- [x] Dashboard Comercial
 
 ### 3) Cadastros
 
