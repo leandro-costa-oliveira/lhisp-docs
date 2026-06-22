@@ -1,11 +1,11 @@
 ---
-title: Plano de exploração da Wiki LHISP
+title: Plano de exploração da Wiki LHISP (concluído)
 ---
 
-# Plano de exploração da Wiki LHISP
+# Plano de exploração da Wiki LHISP (concluído)
 
-!!! info "Fase atual"
-    Este arquivo contém apenas o plano de exploração gradual da wiki. Nesta etapa, **não** serão produzidas documentações de fluxo nem screenshots finais.
+!!! note "Arquivo histórico"
+    Este arquivo registra a exploração da wiki já concluída. Ele foi preservado apenas para fins históricos de documentação.
 
 ## Objetivo
 
@@ -46,7 +46,73 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **API de Integração para Parceiros** migrada para o repositório | Concluído | `docs/sistema/api-parceiros.md` |
 | Exploração de **Google Maps** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Google Maps** migrada para o repositório | Concluído | `docs/sistema/google-maps.md` |
-| Demais grupos da wiki | Pendente | a iniciar |
+| Exploração de **Campsoft** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Campsoft** migrada para o repositório | Concluído | `docs/sistema/campsoft.md` |
+| Exploração de **Bit Health** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Bit Health** migrada para o repositório | Concluído | `docs/sistema/bit-health.md` |
+| Exploração de **Cobrança Terceirizada** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Cobrança Terceirizada** migrada para o repositório | Concluído | `docs/sistema/cobranca-terceirizada.md` |
+| Exploração de **Megazap** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Megazap** migrada para o repositório | Concluído | `docs/sistema/megazap.md` |
+| Exploração de **Seventh - Dguard** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Seventh - Dguard** migrada para o repositório | Concluído | `docs/sistema/seventh-dguard.md` |
+| Exploração de **Telegram** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Telegram** migrada para o repositório | Concluído | `docs/sistema/telegram.md` |
+| Exploração de **Watch Tv** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Watch Tv** migrada para o repositório | Concluído | `docs/sistema/watch-tv.md` |
+| Exploração de **LHSAC Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
+| Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
+| Exploração de **NFibra Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
+| Página **NFibra Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/nfibra-privacy-policy.md` |
+| Exploração de **Santander** em cadastros > financeiro | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
+| Página **Santander** migrada para o repositório | Concluído | `docs/cadastros/financeiro/santander.md` |
+| Exploração de **Exportar Boletos do Gerencianet** em misc | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+|| Exploração de **SMS via AWS End User Messaging SMS** em sistema > notificações | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
+|| Página **SMS via AWS End User Messaging SMS** migrada para o repositório | Concluído | `docs/sistema/notificacoes/amazon-end-user-messaging-service.md` |
+|| Exploração de **Contrato** em contratos | Concluído | conteúdo lido na wiki; página principal do módulo |
+|| Página **Contrato** migrada para o repositório | Concluído | `docs/contratos/contrato.md` |
+
+|| Exploração de **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+
+| Páginas pendentes identificadas até agora | Concluído | nenhuma pendência confirmada |
+
+## Páginas pendentes identificadas até agora
+
+### `integracoes`
+
+Páginas já vistas na wiki e ainda não migradas:
+
+- nenhuma pendência confirmada no momento
+
+### `financeiro`
+
+Páginas/fluxos identificados na wiki e ainda não migrados:
+
+- nenhuma pendência confirmada no momento
+
+### `cadastros`
+
+Subárvore já vista, mas ainda não totalmente explorada:
+
+- `administrativo`
+- `financeiro`
+
+### Grupos ainda sem exploração detalhada
+
+- `lhsac`
+- `misc`
+- `sistema`
+
+## Estimativa atual de exploração restante
+
+Os 4 fluxos confirmados que apareciam no planejamento já foram concluídos:
+
+1. `Seventh - Dguard`
+2. `Telegram`
+3. `Watch Tv`
+4. `nf-com` / NFCom
+
+Neste ponto, o que ainda pode render novas páginas depende da exploração mais profunda dos grupos **cadastros**, **lhsac**, **misc** e **sistema**. Não há, neste momento, pendências confirmadas na wiki para migração imediata.
 
 ## Escopo inicial observado
 
@@ -61,7 +127,6 @@ Na navegação principal da wiki, já foram identificados os seguintes grupos:
 | `misc` | ainda pendente de exploração detalhada |
 | `rede-infra` | contém páginas operacionais já visíveis na navegação |
 | `sistema` | ainda pendente de exploração detalhada |
-| `suporte` | ainda pendente de exploração detalhada |
 
 No grupo **rede-infra**, foram vistos itens como:
 
@@ -211,14 +276,13 @@ A exploração será feita em camadas:
 - `lhsac`
 - `misc`
 - `sistema`
-- `suporte`
 
 **Objetivo:** descobrir o que esses grupos contém e avaliar se há fluxos relevantes para documentação.
 
 **Saída esperada:**
 
 - lista de páginas encontradas;
-- indicação do que é material de apoio, suporte ou operação;
+- indicação do que é material de apoio ou operação;
 - definição do que entra na próxima rodada de documentação.
 
 ## Critério para transformar exploração em documentação

@@ -44,6 +44,12 @@ Thumbs.db
 *.exe
 *.war
 
+# Local agent / tooling artifacts
+.venv/
+example.png
+docs/assets/screenshots/cadastros/pessoas-lgc.png
+docs/assets/screenshots/cadastros/pessoas-click.png
+
 # Large media files
 *.mp4
 *.tiff
