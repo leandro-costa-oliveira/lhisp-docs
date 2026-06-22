@@ -162,7 +162,7 @@ Prioridade sugerida:
 - [ ] Cruzamento Arv. Csv com Contratos
 - [ ] CampSoft
 - [x] Fidelimax
-- [ ] Cobli
+- [x] Cobli
 - [ ] Google Maps
 - [ ] PlayHub
 - [ ] Owen Brasil
