@@ -165,7 +165,7 @@ Prioridade sugerida:
 - [x] Cobli
 - [x] Google Maps
 - [x] PlayHub
-- [ ] Owen Brasil
+- [x] Owen Brasil
 - [ ] Alo Fone
 - [ ] Portabilidade de Celular
 - [ ] EiTV
