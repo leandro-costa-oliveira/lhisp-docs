@@ -60,15 +60,15 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Telegram** migrada para o repositório | Concluído | `docs/sistema/telegram.md` |
 | Exploração de **Watch Tv** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Watch Tv** migrada para o repositório | Concluído | `docs/sistema/watch-tv.md` |
-| Páginas pendentes identificadas até agora | Em revisão | lhsac, misc, financeiro/nf-com, suporte |
+| Exploração de **LHSAC Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
+| Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
+| Páginas pendentes identificadas até agora | Em revisão | nfibra-privacy-policy, misc, financeiro/nf-com, suporte |
 
 ## Páginas pendentes identificadas até agora
 
 ### `integracoes`
 
 Páginas já vistas na wiki e ainda não migradas:
-
-- `Watch Tv`
 
 ### `financeiro`
 

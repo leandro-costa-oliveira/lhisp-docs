@@ -66,6 +66,8 @@ nav:
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
+  - LHSAC:
+      - LHSAC Privacy Policy: lhsac/lhsac-privacy-policy.md
   - Sistema:
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
