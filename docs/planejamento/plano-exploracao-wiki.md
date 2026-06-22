@@ -64,8 +64,10 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
 | Exploração de **NFibra Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
 | Página **NFibra Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/nfibra-privacy-policy.md` |
+| Exploração de **Santander** em cadastros > financeiro | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
+| Página **Santander** migrada para o repositório | Concluído | `docs/cadastros/financeiro/santander.md` |
 | Exploração de **Exportar Boletos do Gerencianet** em misc | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
-| Página **Exportar Boletos do Gerencianet** migrada para o repositório | Concluído | `docs/misc/exportar-boletos-gerencianet.md` |
+
 | Exploração de **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** em financeiro | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom** migrada para o repositório | Concluído | `docs/financeiro/nf-com.md` |
 | Páginas pendentes identificadas até agora | Concluído | nenhuma pendência confirmada |

@@ -68,6 +68,8 @@ nav:
   - Cadastros:
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
+      - Financeiro:
+          - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:
           - Exportar Boletos do Gerencianet: misc/exportar-boletos-gerencianet.md
