@@ -70,6 +70,7 @@ nav:
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
           - Google Maps: sistema/google-maps.md
+          - Campsoft: sistema/campsoft.md
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
