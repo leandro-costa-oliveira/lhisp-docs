@@ -48,6 +48,8 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Página **Google Maps** migrada para o repositório | Concluído | `docs/sistema/google-maps.md` |
 | Exploração de **Campsoft** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Campsoft** migrada para o repositório | Concluído | `docs/sistema/campsoft.md` |
+| Exploração de **Bit Health** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
+| Página **Bit Health** migrada para o repositório | Concluído | `docs/sistema/bit-health.md` |
 | Demais grupos da wiki | Pendente | a iniciar |
 
 ## Escopo inicial observado
