@@ -91,7 +91,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 #### Outros cadastros visíveis
 
-- [ ] Pessoas
+- [x] Pessoas
 - [ ] Pré-Cadastros
 - [ ] Cupons Promocionais
 

@@ -76,6 +76,7 @@ nav:
       - Almoxarifados: estoque/almoxarifados.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:
+      - Pessoas: cadastros/pessoas.md
       - Administrativo:
           - Documentos: cadastros/administrativo/documentos.md
       - Financeiro:
