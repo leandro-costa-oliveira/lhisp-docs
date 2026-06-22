@@ -166,7 +166,7 @@ Prioridade sugerida:
 - [x] Google Maps
 - [x] PlayHub
 - [x] Owen Brasil
-- [ ] Alo Fone
+- [x] Alo Fone
 - [ ] Portabilidade de Celular
 - [ ] EiTV
 - [ ] Spc Brasil
