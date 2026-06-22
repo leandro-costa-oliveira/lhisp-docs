@@ -73,6 +73,7 @@ nav:
           - Campsoft: sistema/campsoft.md
           - Bit Health: sistema/bit-health.md
           - Cobrança Terceirizada: sistema/cobranca-terceirizada.md
+          - Megazap: sistema/megazap.md
   - Rede/Infra:
       - Cadastrar rede: rede-infra/cadastrar-rede.md
       - Prefixos de IP: rede-infra/prefixos-ip.md
