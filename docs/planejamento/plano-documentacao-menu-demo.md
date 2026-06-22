@@ -167,7 +167,7 @@ Prioridade sugerida:
 - [x] PlayHub
 - [x] Owen Brasil
 - [x] Alo Fone
-- [ ] Portabilidade de Celular
+- [x] Portabilidade de Celular
 - [ ] EiTV
 - [ ] Spc Brasil
 - [ ] Traccar
