@@ -4,9 +4,9 @@ title: Plano de documentação do menu do demo LHISP
 
 # Plano de documentação do menu do demo LHISP
 
-!!! note "Plano encerrado"
+!!! note "Plano revisado"
     Este documento foi criado após a análise direta do menu do demo em `https://demo.lhprovedor.com.br/` com a conta `demo`.
-    A migração incremental foi concluída: cada item confirmado do menu já possui página Markdown, navegação sincronizada e screenshot limpa quando aplicável.
+    A migração incremental está concluída para quase todo o menu, mas a árvore **Relatórios** ainda precisa ser documentada em páginas individuais.
 
 ## Objetivo
 
@@ -97,21 +97,75 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 ### 4) Relatórios
 
-Documentar a árvore de relatórios como páginas independentes, mantendo o nome da interface do demo como referência principal.
+A árvore de relatórios do demo ainda não possui documentação equivalente no repositório. Priorizar a migração em lotes pequenos, mantendo cada página `.md` separada.
 
-Prioridade sugerida:
+#### Lote 4.1 — Prioridade operacional
 
-1. Fluxo de Caixa
-2. Contas a Receber
-3. Clientes por Filial
-4. Clientes para Cobrança
-5. Utilização de IPs
-6. Clientes Cancelados / Bloqueados / Suspensos
-7. Relatórios de Redes
-8. Relatórios de Agenda Técnica
-9. Relatórios Financeiros
-10. Relatórios de Estoque
-11. Demais relatórios operacionais e analíticos
+- [x] Fluxo de Caixa
+- [ ] Contas a Receber
+- [ ] Clientes por Filial
+- [ ] Clientes para Cobrança
+- [ ] Utilização de IPs
+- [ ] Clientes Cancelados / Bloqueados / Suspensos
+
+#### Lote 4.2 — Relatórios de operação e suporte
+
+- [ ] Acessos por Rede
+- [ ] Ativações / Cancelamentos
+- [ ] Contratos Sem Serviço
+- [ ] Contratos Sem Acesso
+- [ ] Acessos Desconectando
+- [ ] Equipamentos Locados
+- [ ] Contratos Sem Mensalidade
+- [ ] Bilhetagem dos Acessos
+- [ ] Movimentações Financeiras por Usuário
+- [ ] Clientes por Endereço
+- [ ] Relatório de Endereços
+- [ ] SICI
+- [ ] Clientes VIP
+- [ ] Clientes por Fidelidade
+- [ ] Lista de Clientes por Plano
+- [ ] Clientes por Aceite
+- [ ] Clientes Negativados - SPC
+- [ ] Clientes Suspensos
+- [ ] Aquisições
+- [ ] Clientes Sem Email
+- [ ] Cobrança Terceirizada
+- [ ] Retenção
+- [ ] Estoque por Filial
+- [ ] Relatório de OTT / SVA
+- [ ] Contas a Receber por Cliente
+- [ ] Serviços Pendentes
+- [ ] Alteração de Plano
+- [ ] Acessos com Velocidade Alterada
+- [ ] Movimentações de Produtos
+- [ ] Clientes com Mensalidades Pagas no Período
+- [ ] Projeções e Recebimentos
+- [ ] Registro.BR
+- [ ] Relatório Fiscal de Regime de Caixa
+- [ ] Vendas por Vendedor
+- [ ] Contas a Pagar
+- [ ] Notificações dos Contratos
+- [ ] Anatel - Trimestral
+- [ ] Relatório de Uso de Banda
+- [ ] Relatório de Usuários Voip
+- [ ] Relatório de Estoque
+- [ ] Relatório de Consultas Spc Brasil
+- [ ] Relatório de Fornecedores
+- [ ] Relatório de Atendimentos por Canal
+- [ ] Relatório de Ordens de Serviço
+- [ ] Comissão de Técnicos por Ordem de Serviço
+- [ ] Tempo Médio de Execução de Ordens de Serviço
+- [ ] Indicadores
+- [ ] Top N Desconexões
+- [ ] Desconexões por Período
+- [ ] Relatório de Atendimentos
+- [ ] Upgrades / Downgrades de Plano
+- [ ] Adimplência por vencimento
+
+#### Lote 4.3 — Demais relatórios analíticos
+
+- [ ] Demais relatórios operacionais e analíticos ainda não listados acima
 
 ### 5) Financeiro
 
@@ -219,6 +273,6 @@ Um item do menu só pode ser marcado como concluído quando:
 
 ## Encerramento
 
-- O plano de documentação do menu do demo foi concluído com a navegação sincronizada ao `mkdocs.yml`.
-- Não há pendências confirmadas de documentação operacional neste inventário.
-- A partir daqui, este arquivo serve como registro histórico do processo de migração.
+- O plano de documentação do menu do demo foi revisado após a validação direta do menu.
+- A maior parte das seções já está documentada, mas a árvore **Relatórios** segue pendente.
+- Este arquivo permanece como registro histórico do processo e como plano de execução para os relatórios ainda não migrados.

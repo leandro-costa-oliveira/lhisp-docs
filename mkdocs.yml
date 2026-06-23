@@ -75,6 +75,8 @@ nav:
           - NFCom: financeiro/nf-com.md
   - Dashboards:
       - Dashboard Comercial: dashboards/dashboard-comercial.md
+  - Relatórios:
+      - Fluxo de Caixa: relatorios/fluxo-de-caixa.md
   - Estoque:
       - Ordens de Separação: estoque/ordens-de-separacao.md
       - Notas Fiscais de Compra: estoque/notas-fiscais-de-compra.md
