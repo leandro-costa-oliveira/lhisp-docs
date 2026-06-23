@@ -134,6 +134,7 @@ nav:
       - Trocar a Senha: sistema/trocar-a-senha.md
       - Usuários: sistema/usuarios.md
       - Notificações em Massa: sistema/notificacoes-em-massa.md
+      - Banners Mobile: sistema/banners-mobile.md
       - Notificações:
           - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
       - Empresa: sistema/empresa.md

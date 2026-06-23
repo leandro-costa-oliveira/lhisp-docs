@@ -156,7 +156,7 @@ Prioridade sugerida:
 - [x] Empresa
 - [x] Usuários
 - [x] Notificações em Massa
-- [ ] Banners Mobile
+- [x] Banners Mobile
 - [ ] Ferramentas
 - [ ] Integrações
 - [ ] Cruzamento Arv. Csv com Contratos
