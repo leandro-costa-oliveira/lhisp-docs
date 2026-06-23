@@ -85,9 +85,9 @@ Criar páginas para os atalhos diretos do topo do menu:
 #### Estoque
 
 - [x] Almoxarifados
-- [ ] Categorias *(não documentado; tela vazia no demo)*
+- [x] Categorias *(não documentado; tela vazia no demo)*
 - [x] Produtos
-- [ ] Kits *(não documentado; tela vazia no demo)*
+- [x] Kits *(não documentado; tela vazia no demo)*
 
 #### Outros cadastros visíveis
 
@@ -158,7 +158,7 @@ Prioridade sugerida:
 - [x] Notificações em Massa
 - [x] Banners Mobile
 - [x] Ferramentas *(não documentado; rota /null no demo)*
-- [ ] Integrações
+- [x] Integrações
 - [x] Cruzamento Arv. Csv com Contratos *(não documentado; tela em branco no demo)*
 - [x] CampSoft
 - [x] Fidelimax
@@ -175,24 +175,23 @@ Prioridade sugerida:
 - [x] Watch Brasil
 - [x] Xtream-UI
 - [x] Megazap
-- [ ] ITTV
+- [x] ITTV
+- [x] Serasa Limpa Nome
 - [x] TC IRR
 - [x] Cobranças Terceirizadas
-- [ ] Serasa Limpa Nome
 - [x] Api Parceiros
-- [ ] A2Billing
-- [ ] Next Billing
-- [ ] Seventh - Dguad
-- [ ] D4Sign
-- [ ] Urbis
+- [x] A2Billing
+- [x] Next Billing
+- [x] D4Sign
+- [x] Serasa Pefin
+- [x] Urbis
 - [x] Bit Health
-- [ ] CelitHub
-- [ ] Serasa Pefin
 - [x] LHNFE - NFCom
 - [x] Configurações Notas Fiscais
-- [ ] Templates de Email
-- [ ] Ações em Massa
-- [ ] Apagar Ott em Massa
+- [x] CelitHub
+- [x] Templates de Email
+- [x] Ações em Massa
+- [x] Apagar Ott em Massa
 
 ## Ordem sugerida de execução
 
