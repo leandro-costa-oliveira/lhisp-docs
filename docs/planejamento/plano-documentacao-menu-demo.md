@@ -73,7 +73,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 #### Financeiro
 
-- [ ] Caixas
+- [x] Caixas
 - [ ] Planos
 - [ ] Centros de Custo
 - [ ] Contas Bancárias

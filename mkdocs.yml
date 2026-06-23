@@ -113,6 +113,7 @@ nav:
           - Feriados: cadastros/administrativo/feriados.md
           - Promoções: cadastros/administrativo/promocoes.md
       - Financeiro:
+          - Caixas: cadastros/financeiro/caixas.md
           - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:
