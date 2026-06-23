@@ -114,6 +114,7 @@ nav:
           - Promoções: cadastros/administrativo/promocoes.md
       - Financeiro:
           - Caixas: cadastros/financeiro/caixas.md
+          - Planos: cadastros/financeiro/planos.md
           - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:
