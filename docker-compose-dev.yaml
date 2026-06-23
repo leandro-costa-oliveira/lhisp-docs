@@ -9,6 +9,9 @@ services:
         condition: service_healthy
     ports:
       - "${WIKI_PORT:-3000}:3000"
+    volumes:
+      - wikijs-dev-data:/wiki/data
+      - ./wiki-ssh:/wiki-ssh
     environment:
       DB_TYPE: postgres
       DB_HOST: postgres
@@ -39,3 +42,4 @@ services:
 
 volumes:
   wikijs-dev-postgres-data:
+  wikijs-dev-data:
