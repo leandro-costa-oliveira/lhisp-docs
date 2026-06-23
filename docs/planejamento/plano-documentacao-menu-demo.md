@@ -170,7 +170,7 @@ Prioridade sugerida:
 - [x] Portabilidade de Celular
 - [x] EiTV
 - [x] Spc Brasil
-- [ ] Traccar
+- [x] Traccar
 - [ ] Leveduca
 - [ ] Watch Brasil
 - [ ] Xtream-UI
