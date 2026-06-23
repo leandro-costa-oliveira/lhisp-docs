@@ -173,7 +173,7 @@ Prioridade sugerida:
 - [x] Traccar
 - [x] Leveduca
 - [x] Watch Brasil
-- [ ] Xtream-UI
+- [x] Xtream-UI
 - [ ] Megazap
 - [ ] ITTV
 - [ ] TC IRR
