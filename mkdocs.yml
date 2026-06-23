@@ -97,6 +97,7 @@ nav:
       - Configurações Globais: rede-infra/configuracoes-globais.md
       - GPON OLT: rede-infra/gpon-olt.md
       - Projetos de Rede - Mapas: rede-infra/projetos-de-rede-mapas.md
+      - Central de Alertas: rede-infra/central-de-alertas.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
