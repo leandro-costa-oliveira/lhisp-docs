@@ -128,7 +128,7 @@ save
 | SNMP não responde no LHISP | Verifique comunidade, versão SNMP e conectividade de rede. |
 | PPPoE não sobe | Confirme interface, VLAN, parâmetros de acesso e serviço associado. |
 | Usuário PPPoE não conecta | Use `display aaa online-fail-record username <NomeDoUsuarioPppoe>` para consultar o motivo da falha de login do usuário. |
-| Erro de conflito de IP | Use `display aaa access-user ip-address <IpAddress>` para localizar o usuário/assinante associado ao IP em conflito. |
+| Erro de conflito de IP | Use `display aaa access-user ip-address <IpAddress>` para localizar o usuário/assinante associado ao IP em conflito e verifique se há algum *pool* configurado no Huawei na mesma faixa do LHISP. Se houver, remova o *pool* do Huawei ou altere o bloco no LHISP. |
 
 ## Debug
 
