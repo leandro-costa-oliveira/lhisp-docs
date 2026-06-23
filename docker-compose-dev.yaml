@@ -3,7 +3,7 @@ services:
     image: ghcr.io/requarks/wiki:2
     restart: unless-stopped
     env_file:
-      - .env-dev
+      - .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -21,7 +21,9 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     env_file:
-      - .env-dev
+      - .env
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
     environment:
       POSTGRES_DB: ${WIKI_DB_NAME:-wikijs-dev}
       POSTGRES_USER: ${WIKI_DB_USER:-wikijs-dev}
