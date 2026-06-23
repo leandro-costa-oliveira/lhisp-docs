@@ -171,7 +171,7 @@ Prioridade sugerida:
 - [x] EiTV
 - [x] Spc Brasil
 - [x] Traccar
-- [ ] Leveduca
+- [x] Leveduca
 - [ ] Watch Brasil
 - [ ] Xtream-UI
 - [ ] Megazap
