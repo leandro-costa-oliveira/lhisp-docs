@@ -1,0 +1,45 @@
+services:
+  wikijs:
+    image: ghcr.io/requarks/wiki:2
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${WIKI_PORT:-3000}:3000"
+    volumes:
+      - wikijs-dev-data:/wiki/data
+      - ./wiki-ssh:/wiki-ssh
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${WIKI_DB_USER:-wikijs-dev}
+      DB_PASS: ${WIKI_DB_PASSWORD:-wikijs-dev}
+      DB_NAME: ${WIKI_DB_NAME:-wikijs-dev}
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ${WIKI_DB_NAME:-wikijs-dev}
+      POSTGRES_USER: ${WIKI_DB_USER:-wikijs-dev}
+      POSTGRES_PASSWORD: ${WIKI_DB_PASSWORD:-wikijs-dev}
+    volumes:
+      - wikijs-dev-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  wikijs-dev-postgres-data:
+  wikijs-dev-data:
