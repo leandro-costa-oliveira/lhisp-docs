@@ -152,7 +152,7 @@ Prioridade sugerida:
 
 ### 8) Sistema
 
-- [ ] Trocar a Senha
+- [x] Trocar a Senha
 - [x] Empresa
 - [ ] Usuários
 - [ ] Notificações em Massa
