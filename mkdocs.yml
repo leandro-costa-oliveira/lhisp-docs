@@ -81,7 +81,7 @@ nav:
       - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Remessa de Material: estoque/remessa-de-material.md
       - Almoxarifados: estoque/almoxarifados.md
-      - Produtos: estoque/produtos.md
+      - Produtos: cadastros/estoque/produtos.md
   - Rede/ Infra:
       - Prefixos de IP: rede-infra/prefixos-de-ip.md
       - Servidores: rede-infra/servidores.md
