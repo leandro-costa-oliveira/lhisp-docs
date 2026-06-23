@@ -75,6 +75,62 @@ nav:
           - NFCom: financeiro/nf-com.md
   - Dashboards:
       - Dashboard Comercial: dashboards/dashboard-comercial.md
+  - Relatórios:
+      - Operação:
+          - Fluxo de Caixa: relatorios/fluxo-de-caixa.md
+          - Acessos por Rede: relatorios/acessos-por-rede.md
+          - Ativações / Cancelamentos: relatorios/ativacoes-cancelamentos.md
+          - Contas a Receber: relatorios/contas-a-receber.md
+          - Contratos Sem Serviço: relatorios/contratos-sem-servico.md
+          - Contratos Sem Acesso: relatorios/contratos-sem-acesso.md
+          - Acessos Desconectando: relatorios/acessos-desconectando.md
+          - Equipamentos Locados: relatorios/equipamentos-locados.md
+          - Contratos Sem Mensalidade: relatorios/contratos-sem-mensalidade.md
+          - Bilhetagem dos Acessos: relatorios/bilhetagem-dos-acessos.md
+          - Movimentações Financeiras por Usuário: relatorios/movimentacoes-financeiras-por-usuario.md
+      - Clientes:
+          - Clientes por Filial: relatorios/clientes-por-filial.md
+          - Clientes para Cobrança: relatorios/clientes-para-cobranca.md
+          - Clientes Cancelados: relatorios/clientes-cancelados.md
+          - Clientes Bloqueados: relatorios/clientes-bloqueados.md
+          - Clientes por Endereço: relatorios/clientes-por-endereco.md
+          - Relatório de Endereços: relatorios/relatorio-de-enderecos.md
+          - Clientes VIP: relatorios/clientes-vip.md
+          - Clientes por Fidelidade: relatorios/clientes-por-fidelidade.md
+          - Lista de Clientes por Plano: relatorios/lista-de-clientes-por-plano.md
+          - Clientes por Aceite: relatorios/clientes-por-aceite.md
+          - Clientes Negativados - SPC: relatorios/clientes-negativados-spc.md
+          - Clientes Suspensos: relatorios/clientes-suspensos.md
+          - Clientes Sem Email: relatorios/clientes-sem-email.md
+          - Relatório de OTT / SVA: relatorios/relatorio-de-ott-sva.md
+          - Contas a Receber por Cliente: relatorios/contas-a-receber-por-cliente.md
+          - Clientes por Plano: relatorios/clientes-por-plano.md
+          - Clientes com Mensalidades Pagas no Período: relatorios/clientes-com-mensalidades-pagas-no-periodo.md
+          - Top N Clientes com mais Ordens de Serviço: relatorios/top-n-clientes-com-mais-ordens-de-servico.md
+          - Top N Clientes com Mais Atendimentos: relatorios/top-n-clientes-com-mais-atendimentos.md
+      - Financeiro / Analíticos:
+          - Alteração de Plano: relatorios/alteracao-de-plano.md
+          - Acessos com Velocidade Alterada: relatorios/acessos-com-velocidade-alterada.md
+          - Movimentações de Produtos: relatorios/movimentacoes-de-produtos.md
+          - Projeções e Recebimentos: relatorios/projecoes-e-recebimentos.md
+          - Registro.BR: relatorios/registro-br.md
+          - Relatório Fiscal de Regime de Caixa: relatorios/relatorio-fiscal-de-regime-de-caixa.md
+          - Vendas por Vendedor: relatorios/vendas-por-vendedor.md
+          - Contas a Pagar: relatorios/contas-a-pagar.md
+          - Notificações dos Contratos: relatorios/notificacoes-dos-contratos.md
+          - Anatel - Trimestral: relatorios/anatel-trimestral.md
+          - Relatório de Uso de Banda: relatorios/relatorio-de-uso-de-banda.md
+          - Relatório de Usuários Voip: relatorios/relatorio-de-usuarios-voip.md
+          - Relatório de Estoque: relatorios/relatorio-de-estoque.md
+          - Relatório de Consultas Spc Brasil: relatorios/relatorio-de-consultas-spc-brasil.md
+          - Relatório de Fornecedores: relatorios/relatorio-de-fornecedores.md
+          - Relatório de Atendimentos por Canal: relatorios/relatorio-de-atendimentos-por-canal.md
+          - Relatório de Ordens de Serviço: relatorios/relatorio-de-ordens-de-servico.md
+          - Comissão de Técnicos por Ordem de Serviço: relatorios/comissao-de-tecnicos-por-ordem-de-servico.md
+          - Tempo Médio de Execução de Ordens de Serviço: relatorios/tempo-medio-de-execucao-de-ordens-de-servico.md
+          - Relatório de Atendimentos: relatorios/relatorio-de-atendimentos.md
+          - Upgrades / Downgrades de Plano: relatorios/upgrades-downgrades-de-plano.md
+          - Adimplência por vencimento: relatorios/adimplencia-por-vencimento.md
   - Estoque:
       - Ordens de Separação: estoque/ordens-de-separacao.md
       - Notas Fiscais de Compra: estoque/notas-fiscais-de-compra.md
