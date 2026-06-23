@@ -129,6 +129,7 @@ save
 | PPPoE não sobe | Confirme interface, VLAN, parâmetros de acesso e serviço associado. |
 | Usuário PPPoE não conecta | Use `display aaa online-fail-record username <NomeDoUsuarioPppoe>` para consultar o motivo da falha de login do usuário. |
 | Erro de conflito de IP | Use `display aaa access-user ip-address <IpAddress>` para localizar o usuário/assinante associado ao IP em conflito e verifique se há algum *pool* configurado no Huawei na mesma faixa do LHISP. Se houver, remova o *pool* do Huawei ou altere o bloco no LHISP. |
+| Preciso localizar o usuário por PPPoE username | Use `display aaa access-user username <NomeUsuarioPppoe>` para localizar a sessão AAA associada ao nome de usuário informado. |
 
 ## Debug
 
@@ -136,6 +137,12 @@ save
 
 ```text
 display aaa access-user ip-address <IpAddress>
+```
+
+- Também é possível localizar a sessão pelo *username* do PPPoE com:
+
+```text
+display aaa access-user username <NomeUsuarioPppoe>
 ```
 
 - O comando ajuda a identificar qual sessão/assinante está usando o IP informado e acelera a análise do incidente.
