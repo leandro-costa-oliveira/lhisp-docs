@@ -155,7 +155,7 @@ Prioridade sugerida:
 - [x] Trocar a Senha
 - [x] Empresa
 - [x] Usuários
-- [ ] Notificações em Massa
+- [x] Notificações em Massa
 - [ ] Banners Mobile
 - [ ] Ferramentas
 - [ ] Integrações
