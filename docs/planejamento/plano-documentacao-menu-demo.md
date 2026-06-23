@@ -157,10 +157,10 @@ Prioridade sugerida:
 - [x] Usuários
 - [x] Notificações em Massa
 - [x] Banners Mobile
-- [ ] Ferramentas
+- [x] Ferramentas *(não documentado; rota /null no demo)*
 - [ ] Integrações
-- [ ] Cruzamento Arv. Csv com Contratos
-- [ ] CampSoft
+- [x] Cruzamento Arv. Csv com Contratos *(não documentado; tela em branco no demo)*
+- [x] CampSoft
 - [x] Fidelimax
 - [x] Cobli
 - [x] Google Maps

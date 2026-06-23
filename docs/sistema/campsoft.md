@@ -1,80 +1,64 @@
 ---
-title: Campsoft
+title: CampSoft
 ---
 
-# Campsoft
-
-!!! warning "Rascunho gerado por agente"
-    Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo é apenas ilustrativo do ambiente de teste e não deve ser reutilizado em produção.
+# CampSoft
 
 ## Objetivo
 
-Configurar a integração com a **Campsoft** para autenticação entre sistemas, mantendo o token de comunicação e os recursos vinculados aos planos.
+Configurar a integração com a API da CampSoft e acompanhar o histórico de eventos.
 
 ## Quando usar
 
-Use este fluxo quando for necessário:
-
-- ativar ou revisar a integração com a Campsoft;
-- cadastrar o token enviado pela equipe da Campsoft;
-- habilitar ou desabilitar a integração;
-- liberar recursos de SVA em um plano associado.
+Use esta tela quando for necessário habilitar, revisar ou salvar a configuração da integração CampSoft.
 
 ## Pré-requisitos
 
-- Acesso ao menu **Sistema > Integrações > Campsoft**.
-- Token fornecido pela equipe da Campsoft.
-- Permissão para alterar integrações e planos relacionados.
+- Acesso ao menu **Sistema > Integrações > CampSoft**.
+- Permissão para editar a integração.
 
 ## Passo a passo
 
-1. Acesse **Sistema > Integrações > Campsoft**.
-2. Insira o token enviado pela equipe da Campsoft.
-3. Verifique se a opção **Ativo** está marcada.
-4. Clique em **Salvar**.
-5. Se necessário, ajuste o plano em **Cadastros > Financeiro > Planos**.
-6. No plano, selecione o gateway **Campsoft** e os recursos desejados.
+1. Acesse **Sistema > Integrações > CampSoft**.
+2. Revise o campo **Token**.
+3. Verifique se a integração está marcada como **Ativo**.
+4. Clique em **Salvar** para persistir as alterações.
+5. Consulte o **Histórico de Eventos** para acompanhar operações registradas.
 
 ## Campos importantes
 
-| Campo / ação | Descrição |
+| Elemento | Descrição |
 |---|---|
-| **Token** | Chave de integração fornecida pela Campsoft. |
-| **Ativo** | Liga ou desliga a integração. |
-| **Salvar** | Persiste a configuração. |
-| **Histórico de Eventos** | Registra alterações feitas na tela. |
+| **Token** | Chave da integração com a API CampSoft. |
+| **Ativo** | Habilita ou desabilita a integração. |
+| **Salvar** | Grava a configuração. |
+| **Histórico de Eventos** | Lista de operações realizadas na integração. |
 
 ## Resultado esperado
 
-- O token da Campsoft fica gravado no LHISP.
-- A integração permanece ativa enquanto a opção **Ativo** estiver marcada.
-- Os planos vinculados podem liberar os recursos previstos pela integração.
+- A configuração da API fica salva com sucesso.
+- O histórico de eventos fica disponível para consulta.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| O token não salva | Verifique se o token foi informado corretamente e se o usuário tem permissão. |
-| A integração não fica ativa | Confirme o estado da opção **Ativo** antes de salvar. |
-| Os recursos não aparecem no plano | Revise a configuração em **Cadastros > Financeiro > Planos**. |
-| O histórico não mostra eventos | Verifique se houve alteração efetiva na configuração. |
+| Token inválido | Revisar a chave informada. |
+| Integração desativada | Marcar a opção **Ativo**. |
+| Sem eventos listados | Verificar se já houve operações registradas. |
 
 ## Observações
 
-- A wiki informa que a Campsoft fornece um serviço de autenticação para comunicação entre sistemas.
-- A wiki orienta inserir o token enviado pela equipe da Campsoft.
-- A wiki também menciona a configuração do plano em **Cadastros > Financeiro > Planos**, com seleção de **GatewayOtt: Campsoft** e do recurso desejado.
-- O demo mostra a tela **Campsoft - Configuração da API** com campo de token, ativação e histórico de eventos.
-- A captura usada nesta página veio do ambiente de demonstração, não da wiki.
+- O token exibido no demo foi **redigido** na captura desta documentação por ser um dado sensível.
+- A tela mostra a configuração da API e o histórico de eventos.
 
 ## Dúvidas para revisão
 
-- A configuração do plano deve virar uma página separada na documentação?
-- O nome do campo **GatewayOtt** é exibido exatamente assim na interface ou há variação de capitalização?
-- Existem mais recursos específicos que devem ser documentados além do token e do plano?
+- O token é único por empresa ou por filial?
+- Quais eventos são gravados no histórico?
 
 ## Screenshots sugeridos
 
-- Tela **Campsoft - Configuração da API** no demo: `docs/assets/screenshots/sistema/campsoft.png`
+- `docs/assets/screenshots/sistema/campsoft.png` — captura limpa da configuração da API CampSoft com token redigido.
 
-![Campsoft no demo](../assets/screenshots/sistema/campsoft.png)
+![CampSoft no demo](../assets/screenshots/sistema/campsoft.png)
