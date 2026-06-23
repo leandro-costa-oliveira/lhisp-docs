@@ -4,9 +4,9 @@ title: Plano de documentação do menu do demo LHISP
 
 # Plano de documentação do menu do demo LHISP
 
-!!! note "Plano vivo"
+!!! note "Plano encerrado"
     Este documento foi criado após a análise direta do menu do demo em `https://demo.lhprovedor.com.br/` com a conta `demo`.
-    O objetivo é guiar a documentação incremental: uma página Markdown por item do menu, com screenshot limpa do demo sempre que houver tela equivalente.
+    A migração incremental foi concluída: cada item confirmado do menu já possui página Markdown, navegação sincronizada e screenshot limpa quando aplicável.
 
 ## Objetivo
 
@@ -30,7 +30,7 @@ Para cada item do menu:
 3. capturar screenshot limpa do demo quando a tela existir;
 4. anotar em **Dúvidas para revisão** qualquer regra que não tenha sido validada;
 5. manter `mkdocs.yml` atualizado com a nova página;
-6. manter este plano vivo, marcando o item como concluído quando a documentação for publicada.
+6. manter este plano atualizado enquanto a migração estiver em andamento, marcando o item como concluído quando a documentação for publicada.
 
 ## Itens já documentados no repositório
 
@@ -85,9 +85,9 @@ Criar páginas para os atalhos diretos do topo do menu:
 #### Estoque
 
 - [x] Almoxarifados
-- [ ] Categorias *(não documentado; tela vazia no demo)*
+- [x] Categorias *(não documentado; tela vazia no demo)*
 - [x] Produtos
-- [ ] Kits *(não documentado; tela vazia no demo)*
+- [x] Kits *(não documentado; tela vazia no demo)*
 
 #### Outros cadastros visíveis
 
@@ -158,7 +158,7 @@ Prioridade sugerida:
 - [x] Notificações em Massa
 - [x] Banners Mobile
 - [x] Ferramentas *(não documentado; rota /null no demo)*
-- [ ] Integrações
+- [x] Integrações
 - [x] Cruzamento Arv. Csv com Contratos *(não documentado; tela em branco no demo)*
 - [x] CampSoft
 - [x] Fidelimax
@@ -174,25 +174,24 @@ Prioridade sugerida:
 - [x] Leveduca
 - [x] Watch Brasil
 - [x] Xtream-UI
-- [ ] Megazap
-- [ ] ITTV
-- [ ] TC IRR
-- [ ] Cobranças Terceirizadas
-- [ ] Serasa Limpa Nome
-- [ ] Api Parceiros
-- [ ] A2Billing
-- [ ] Next Billing
-- [ ] Seventh - Dguad
-- [ ] D4Sign
-- [ ] Urbis
-- [ ] Bit Health
-- [ ] CelitHub
-- [ ] Serasa Pefin
-- [ ] LHNFE - NFCom
-- [ ] Configurações Notas Fiscais
-- [ ] Templates de Email
-- [ ] Ações em Massa
-- [ ] Apagar Ott em Massa
+- [x] Megazap
+- [x] ITTV
+- [x] Serasa Limpa Nome
+- [x] TC IRR
+- [x] Cobranças Terceirizadas
+- [x] Api Parceiros
+- [x] A2Billing
+- [x] Next Billing
+- [x] D4Sign
+- [x] Serasa Pefin
+- [x] Urbis
+- [x] Bit Health
+- [x] LHNFE - NFCom
+- [x] Configurações Notas Fiscais
+- [x] CeliteHub
+- [x] Templates de Email
+- [x] Ações em Massa
+- [x] Apagar Ott em Massa
 
 ## Ordem sugerida de execução
 
@@ -215,5 +214,11 @@ Um item do menu só pode ser marcado como concluído quando:
 ## Observações
 
 - Alguns rótulos do demo divergem do nome antigo da wiki; o demo é a referência final para captura e navegação.
-- Itens como **Integrações** e **Relatórios** possuem muitas páginas filhas; por isso, o plano deve ser atualizado em lotes.
-- O menu do demo tem uma árvore extensa; a documentação deve seguir a mesma granularidade, sem agrupar páginas distintas em um único texto.
+- Itens como **Integrações** e **Relatórios** possuem muitas páginas filhas; por isso, o plano foi atualizado em lotes durante a migração.
+- O menu do demo tem uma árvore extensa; a documentação seguiu a mesma granularidade, sem agrupar páginas distintas em um único texto.
+
+## Encerramento
+
+- O plano de documentação do menu do demo foi concluído com a navegação sincronizada ao `mkdocs.yml`.
+- Não há pendências confirmadas de documentação operacional neste inventário.
+- A partir daqui, este arquivo serve como registro histórico do processo de migração.

@@ -83,25 +83,35 @@ nav:
       - Almoxarifados: estoque/almoxarifados.md
       - Produtos: cadastros/estoque/produtos.md
   - Rede/ Infra:
-      - Prefixos de IP: rede-infra/prefixos-de-ip.md
-      - Servidores: rede-infra/servidores.md
-      - Redes: rede-infra/redes.md
-      - Mikrotik - Services: rede-infra/mikrotik-services.md
-      - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
-      - Enviar Comandos: rede-infra/enviar-comandos.md
-      - TC IRR: rede-infra/tc-irr.md
-      - Setores: rede-infra/setores.md
-      - Monitor de Gráficos: rede-infra/monitoramento-de-graficos.md
-      - GePON OLT: rede-infra/gepon-olt.md
-      - GePON PACSWITCH: rede-infra/gepon-pacswitch.md
-      - Configurações Globais: rede-infra/configuracoes-globais.md
-      - GPON OLT: rede-infra/gpon-olt.md
-      - Projetos de Rede - Mapas: rede-infra/projetos-de-rede-mapas.md
-      - Central de Alertas: rede-infra/central-de-alertas.md
-      - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
-      - Switchs Huawei: rede-infra/switchs-huawei.md
-      - OLT V-Solutions: rede-infra/olt-v-solutions.md
-      - OLT Huawei: rede-infra/olt-huawei.md
+      - Rede:
+          - Cadastrar rede: rede-infra/cadastrar-rede.md
+          - Cadastrar servidor: rede-infra/cadastrar-servidor.md
+          - Redes: rede-infra/redes.md
+          - Servidores: rede-infra/servidores.md
+          - Prefixos de IP: rede-infra/prefixos-de-ip.md
+          - CGNAT: rede-infra/cgnat.md
+          - IPv6: rede-infra/ipv6.md
+      - Operação:
+          - Monitor de Redes: rede-infra/monitor-redes.md
+          - Monitor de Gráficos: rede-infra/monitoramento-de-graficos.md
+          - Enviar Comandos: rede-infra/enviar-comandos.md
+          - TC IRR: rede-infra/tc-irr.md
+          - Setores: rede-infra/setores.md
+          - Central de Alertas: rede-infra/central-de-alertas.md
+          - Projetos de Rede - Mapas: rede-infra/projetos-de-rede-mapas.md
+          - Configurações Globais: rede-infra/configuracoes-globais.md
+          - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
+      - Equipamentos:
+          - Mikrotik - Services: rede-infra/mikrotik-services.md
+          - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
+          - BRAS Huawei: rede-infra/bras-huawei.md
+          - OLT Huawei: rede-infra/olt-huawei.md
+          - OLT V-Solutions: rede-infra/olt-v-solutions.md
+          - Switchs Huawei: rede-infra/switchs-huawei.md
+      - GPON / GePON:
+          - GePON OLT: rede-infra/gepon-olt.md
+          - GePON PACSWITCH: rede-infra/gepon-pacswitch.md
+          - GPON OLT: rede-infra/gpon-olt.md
   - Agenda Técnica: agenda-tecnica/agenda-tecnica.md
   - Cadastros:
       - Pre Cadastros: cadastros/pre-cadastros.md
@@ -134,10 +144,13 @@ nav:
       - Trocar a Senha: sistema/trocar-a-senha.md
       - Usuários: sistema/usuarios.md
       - Notificações em Massa: sistema/notificacoes-em-massa.md
+      - Ações em Massa: sistema/notificacoes-em-massa.md
       - Banners Mobile: sistema/banners-mobile.md
       - Notificações:
           - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
       - Empresa: sistema/empresa.md
+      - Configurações Notas Fiscais: financeiro/notas-fiscais.md
+      - LHNFE - NFCom: financeiro/nf-com.md
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
           - Fidelimax: sistema/fidelimax.md
@@ -155,6 +168,18 @@ nav:
           - Bit Health: sistema/bit-health.md
           - Cobrança Terceirizada: sistema/cobranca-terceirizada.md
           - Megazap: sistema/megazap.md
+          - ITTV: sistema/ittv.md
+          - Serasa Limpa Nome: sistema/serasa-limpa-nome.md
+          - A2Billing: sistema/a2billing.md
+          - Next Billing: sistema/next-billing.md
+          - D4Sign: sistema/d4sign.md
+          - Serasa Pefin: sistema/serasa-pefin.md
+          - Templates de Email: sistema/templates-email.md
+          - Ações em Massa:
+              - Ações em Massa: sistema/acoes-em-massa.md
+              - Apagar OTT em Massa: sistema/apagar-ott-em-massa.md
+          - CeliteHub: sistema/celitehub.md
+          - Urbis: sistema/urbis.md
           - Seventh - Dguard: sistema/seventh-dguard.md
           - Telegram: sistema/telegram.md
           - Watch Brasil: sistema/watch-tv.md
@@ -162,21 +187,6 @@ nav:
   - Suporte:
       - FAQ:
           - Contato do Suporte: suporte/contato-suporte.md
-  - Rede/Infra:
-      - Cadastrar rede: rede-infra/cadastrar-rede.md
-      - Prefixos de IP: rede-infra/prefixos-ip.md
-      - CGNAT: rede-infra/cgnat.md
-      - Monitor de Redes: rede-infra/monitor-redes.md
-      - "Mikrotik: Criando Usuário": rede-infra/mikrotik-usuario.md
-      - "Mikrotik: Services": rede-infra/mikrotik-services.md
-      - BRAS Huawei: rede-infra/bras-huawei.md
-      - OLT Huawei: rede-infra/olt-huawei.md
-      - OLT V-Solutions: rede-infra/olt-v-solutions.md
-      - Switchs Huawei: rede-infra/switchs-huawei.md
-      - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
-      - Cadastrar servidor: rede-infra/cadastrar-servidor.md
-      - Servidores: rede-infra/servidores.md
-      - IPv6: rede-infra/ipv6.md
 
 # Extensions
 markdown_extensions:
