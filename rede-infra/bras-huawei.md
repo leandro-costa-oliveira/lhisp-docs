@@ -127,6 +127,7 @@ save
 | Radius não autentica | Revise o endereço do LHISP, a chave compartilhada e a porta configurada. |
 | SNMP não responde no LHISP | Verifique comunidade, versão SNMP e conectividade de rede. |
 | PPPoE não sobe | Confirme interface, VLAN, parâmetros de acesso e serviço associado. |
+| Usuário PPPoE não conecta | Use `display aaa online-fail-record username <NomeDoUsuarioPppoe>` para consultar o motivo da falha de login do usuário. |
 
 ## Observações
 
