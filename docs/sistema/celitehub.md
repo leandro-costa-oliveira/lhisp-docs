@@ -21,13 +21,13 @@ Use esta tela quando for necessário:
 
 ## Pré-requisitos
 
-- Acesso ao menu **Sistema > Integrações > CelitHub** no demo.
+- Acesso ao menu **Sistema > Integrações > CeliteHub** no demo.
 - Token de acesso fornecido pela plataforma CeliteHub.
 - Permissão para editar a integração.
 
 ## Passo a passo
 
-1. Acesse **Sistema > Integrações > CelitHub**.
+1. Acesse **Sistema > Integrações > CeliteHub**.
 2. Preencha o **Token** fornecido pela plataforma.
 3. Marque **Desenvolvimento ?** se estiver em ambiente de testes.
 4. Marque **Ativo ?** quando a integração estiver pronta para uso.
@@ -64,7 +64,7 @@ Use esta tela quando for necessário:
 
 ## Dúvidas para revisão
 
-- A grafia oficial no menu deve ficar como **CelitHub** ou **CeliteHub** na documentação pública?
+- A grafia oficial no menu deve ficar como **CeliteHub** na documentação pública?
 - O campo **Desenvolvimento ?** tem impacto em outros fluxos além da API principal?
 
 ## Screenshots sugeridos
