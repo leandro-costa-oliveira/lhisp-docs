@@ -1,8 +1,8 @@
 ---
-title: Bloqueio Judicial com o Bind
+title: DNS Bloqueio Judicial
 ---
 
-# Bloqueio Judicial com o Bind
+# DNS Bloqueio Judicial
 
 !!! warning "Rascunho gerado por agente"
     Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização da tela correspondente no ambiente de demonstração. Endereços, caminhos de arquivos e comandos sensíveis devem ser validados pela equipe técnica antes de qualquer uso em produção.

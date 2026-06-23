@@ -5,148 +5,97 @@ title: Servidores
 # Servidores
 
 !!! warning "Rascunho gerado por agente"
-    Este documento foi produzido a partir da exploração da wiki do LHISP. A etapa atual cobre a leitura da página de **Servidores** e o início da migração para a documentação local. Antes de usar como referência operacional definitiva, a equipe técnica deve validar as regras e os campos observados.
+    Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
-Entender a página **Servidores** da wiki e registrar, de forma estruturada, como o módulo organiza o cadastro e o acompanhamento de ativos de rede com endereço IP.
+Consultar e administrar um servidor da rede no módulo de **Rede/Infra**, com seus dados de acesso, parâmetros de monitoramento, credenciais e opções de operação.
 
 ## Quando usar
 
-Use este fluxo para:
+Use esta tela quando precisar:
 
-- consultar a explicação oficial da página **Servidores**;
-- iniciar o cadastro de um servidor/ativo de rede;
-- revisar os campos exigidos para comunicação, monitoramento e integrações;
-- entender como o sistema trata comunicação direta, redirecionamentos, monitoramento, backups e interfaces.
+- localizar um servidor específico;
+- revisar o IP e a identificação do equipamento;
+- conferir credenciais e portas de acesso;
+- validar parâmetros SNMP, ICMP, SSH e NAT;
+- executar ações rápidas como **Ping / Traceroute** ou atualizar o cadastro.
 
 ## Pré-requisitos
 
-- Acesso ao menu **Rede/Infra**.
-- Permissão para consultar e editar a página de servidores.
-- Existência prévia de um **Ponto de Presença**.
-- Dados fictícios quando a validação ocorrer em ambiente de demonstração.
-
-## Estrutura da página observada
-
-A página mostra as seguintes seções principais:
-
-1. **Cadastro**
-2. **Requerimentos**
-3. **Campos**
-4. **Comunicação com o Sistema**
-5. **Funcionalidades**
-
-No índice lateral da própria página também aparecem os tópicos:
-
-- Cadastro
-- Requerimentos
-- Campos
-- Comunicação com o Sistema
-- Direta - Ip Público
-- Direta - Ip Privado
-- Redirecionamento Manual
-- Redirecionamento Via Sistema
-- Funcionalidades
-- Monitoramento
-- Gráficos
-- Backups
-- Interfaces
-- Histórico
+- Estar autenticado no LHISP.
+- Ter permissão para acessar o fluxo **Servidores**.
+- Saber qual servidor será consultado.
 
 ## Passo a passo
 
-1. Abra a wiki do LHISP.
-2. No menu lateral, entre em **Rede/Infra**.
-3. Clique em **Servidores**.
-4. Leia a introdução da página para entender o propósito do cadastro.
-5. Verifique o bloco **Cadastro**, que orienta o uso do **Formulário Padrão** e do botão **Novo**.
-6. Consulte a seção **Requerimentos** para confirmar dependências.
-7. Revise a lista de **Campos** para entender os dados necessários.
-8. Observe a seção **Comunicação com o Sistema** para entender as formas de conexão.
-9. Observe a seção **Funcionalidades** para conhecer o que o módulo habilita após o cadastro.
+1. Acesse **Rede/ Infra > Servidores**.
+2. Confira o registro carregado na tela.
+3. Use **Anterior** e **Próximo** para navegar entre servidores.
+4. Use **Novo**, **Editar** ou **Apagar** para manutenção do cadastro.
+5. Utilize as abas para inspecionar dados relacionados: **Dados**, **Redes**, **IPv4**, **IPv6**, **CGNAT**, **Servidores**, **Gráficos**, **Histórico**, **Interfaces**, **Traps**, **Rotas** e **Backups**.
+6. Quando necessário, pressione **Ping / Traceroute** ou **Atualizar Servidor**.
+7. Para auditoria de acesso, use os botões de visualização de senha e segredo Radius.
 
-## Campos e pontos importantes observados
+## Campos importantes
 
-### Cadastro
-
-A própria wiki informa que o cadastro de servidores é feito por um **Formulário Padrão** e que um novo registro é criado pelo botão **Novo** na barra de ferramentas.
-
-### Requerimentos
-
-A página informa que é necessário ter previamente cadastrado um **Ponto de Presença**.
-
-### Campos principais
-
-| Campo | Observação na wiki |
+| Campo / ação | Descrição |
 |---|---|
-| **Ponto de Presença** | campo requerido; define onde o servidor está localizado |
-| **Conectar por** | aponta para outro servidor usado em redirecionamento de portas |
-| **Nome** | requerido; identifica o servidor |
-| **Tipo** | requerido; representa modelo/fabricante do equipamento |
-| **Interface de Internet** | interface de entrada da internet; obrigatória em cenários Mikrotik com autenticação |
-| **Usuário** | requerido; credencial de acesso ao equipamento |
-| **Senha** | requerida; senha de acesso ao equipamento |
-| **Portas SSH/Web** | indica as portas de acesso ao equipamento; SSH é crítica para configuração e backup |
-| **Comunidade SNMP** | usada para consultas SNMP, gráficos e listagem de interfaces |
-| **Voltagem Mínima** | usada para monitoramento de energia em equipamentos compatíveis |
-| **Ativo** | sinaliza que o servidor está ativo e deve ser monitorado/configurado |
-| **Servidor de Acesso / PPPoE** | indica que o servidor atua como NAS para autenticação e controle de clientes |
-| **Usar Radius** | somente Mikrotik; faz o equipamento consultar o sistema na autenticação |
-| **IP Dinâmico** | somente Mikrotik; atualiza o IP com base em logs do equipamento |
-| **Servidor DNS** | somente Mikrotik; habilita o uso do equipamento como servidor DNS |
-
-### Comunicação com o Sistema
-
-A página lista quatro cenários de comunicação:
-
-- **Direta - Ip Público**
-- **Direta - Ip Privado**
-- **Redirecionamento Manual**
-- **Redirecionamento Via Sistema**
-
-### Funcionalidades
-
-A wiki associa ao módulo as seguintes funcionalidades:
-
-- Monitoramento
-- ICMP
-- Energia
-- Gráficos
-- Backups
-- Interfaces
-- Histórico
+| **Id** | Identificador do registro do servidor. |
+| **Importação** | Campo de referência/importação do cadastro. |
+| **Ponto de Presença** | POP associado ao servidor. |
+| **Conectar por** | Seleção do host/ponte de conexão. |
+| **Tipo** | Tipo do equipamento; no demo, `Mikrotik`. |
+| **Nome** | Nome do servidor. |
+| **Endereço IP** | IP de gerenciamento do equipamento. |
+| **Interface de Internet** | Interface usada como uplink. |
+| **Usuário** | Login administrativo. |
+| **Senha** | Senha administrativa. |
+| **Portas SSH** | Porta SSH configurada. |
+| **Portas Web** | Porta web configurada. |
+| **Porta Syslog** | Porta de syslog utilizada. |
+| **Comunidade SNMP** | Comunidade SNMP do equipamento. |
+| **Versão SNMP** | Versão SNMP habilitada. |
+| **SNMP Max Idx** | Limite de índices SNMP. |
+| **Voltagem Mínima** | Limite mínimo configurado. |
+| **Status Icmp** | Estado do ICMP. |
+| **Status SSH** | Estado do SSH. |
+| **Info** | Mensagens de processamento/erro do servidor. |
+| **Tipo de Nat** | Tipo de NAT aplicado. |
+| **Prefixo Público de Source Nat** | Prefixo de source NAT. |
+| **Portas por IP** | Número de portas por IP. |
+| **Autenticação PPPoE** | Métodos PPPoE habilitados. |
 
 ## Resultado esperado
 
-- O usuário entende que a página **Servidores** concentra o cadastro e a operação dos ativos de rede.
-- A documentação local passa a ter a primeira referência migrada da wiki.
-- Fica mais fácil continuar a migração dos demais itens de **Rede/Infra** com o mesmo padrão.
+- O servidor selecionado aparece com seus dados principais preenchidos.
+- As abas mostram as informações associadas ao equipamento.
+- As ações rápidas podem ser usadas para diagnóstico ou manutenção.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| Não aparece a opção de criar servidor | Verifique se o usuário possui permissão para editar o módulo. |
-| O formulário não pode ser aberto | Confirme se está no contexto correto de **Rede/Infra**. |
-| Falta um **Ponto de Presença** | Cadastre o POP antes de seguir com o servidor. |
-| Campos de comunicação/funcionalidade não fazem sentido | Revise o tipo de equipamento e a forma de conexão prevista para o cenário. |
+| Mensagem de erro na tela | Verifique a integração do equipamento e a compatibilidade dos comandos. |
+| Campos bloqueados | O registro pode estar em modo de consulta. |
+| Credenciais não podem ser vistas | Use as ações próprias de visualização, quando liberadas. |
 
 ## Observações
 
-- A página da wiki é mais ampla que um simples formulário; ela funciona como referência operacional do módulo **Servidores**.
-- O conteúdo observado reforça que o cadastro impacta monitoramento, gráficos, backups e rotinas de integração.
-- A exploração desta página já serviu como base para a primeira migração documental do repositório.
+- A rota observada no demo foi `/lgc/redeinfra%7Cservidores`.
+- A tela é renderizada dentro de um **iframe legado**.
+- O servidor exibido na captura era **ROT-TESTE [127.0.0.2]**.
+- O formulário mostrava o erro: `Erro ao processar comandos: Error: Unsupported algorithm: blowfish-cbc`.
+- A captura limpa mostra o conteúdo do iframe sem anotações visuais.
 
 ## Dúvidas para revisão
 
-- A seção **Conectar por** é obrigatória em quais cenários?
-- O botão **Novo** leva ao mesmo formulário descrito em outras páginas do módulo ou a um formulário mais enxuto?
-- Quais campos são obrigatórios além dos que a wiki marca explicitamente como requeridos?
-- A página de **Servidores** e o fluxo de **Cadastrar servidor** devem permanecer como documentos separados ou serão unificados na próxima rodada de migração?
+- O que exatamente aciona o campo **Conectar por**?
+- O botão **Servidores** na barra de abas representa uma visão relacionada ou apenas uma agrupação do cadastro?
+- A mensagem de erro `Unsupported algorithm: blowfish-cbc` indica um problema do ambiente demo ou uma limitação real do fluxo?
 
 ## Screenshots sugeridos
 
-- Página **Servidores** no demo: `docs/assets/screenshots/rede-infra/servidores.png`
+- Tela **Servidores** no demo: `docs/assets/screenshots/rede-infra/servidores.png`
 
 ![Servidores no demo](../assets/screenshots/rede-infra/servidores.png)

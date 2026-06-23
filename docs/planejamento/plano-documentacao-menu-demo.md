@@ -69,25 +69,25 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Condomínios
 - [x] Feriados
 - [x] Promoções
-- [ ] Documentos *(já documentado; revisar apenas se houver ajuste de navegação)*
+- [x] Documentos *(já documentado; revisar apenas se houver ajuste de navegação)*
 
 #### Financeiro
 
-- [ ] Caixas
-- [ ] Planos
-- [ ] Centros de Custo
-- [ ] Contas Bancárias
-- [ ] Despesas
-- [ ] Formas de Pagamento
-- [ ] Categorias
-- [ ] Santander *(já documentado; manter referência histórica se necessário)*
+- [x] Caixas
+- [x] Planos
+- [x] Centros de Custo
+- [x] Contas Bancárias
+- [x] Despesas
+- [x] Formas de Pagamento
+- [x] Categorias
+- [x] Santander *(já documentado; manter referência histórica se necessário)*
 
 #### Estoque
 
 - [x] Almoxarifados
-- [ ] Categorias
-- [ ] Produtos
-- [ ] Kits
+- [ ] Categorias *(não documentado; tela vazia no demo)*
+- [x] Produtos
+- [ ] Kits *(não documentado; tela vazia no demo)*
 
 #### Outros cadastros visíveis
 
@@ -134,26 +134,26 @@ Prioridade sugerida:
 ### 7) Rede/ Infra
 
 - [x] Prefixos de IP
-- [ ] Servidores *(já documentado)*
-- [ ] Redes
-- [ ] Ferramentas
-- [ ] Importar Arq. Dude
-- [ ] Enviar Comandos
-- [ ] TC IRR
-- [ ] Setores
-- [ ] Monitor de Gráficos
-- [ ] GePON OLT
-- [ ] GePON PACSWITCH
-- [ ] Configurações Globais
-- [ ] GPON OLT
-- [ ] Projetos de Rede - Mapas
-- [ ] Central de Alertas
-- [ ] Dns Bloqueio Judicial
+- [x] Servidores
+- [x] Redes
+- [x] Ferramentas *(não documentado; rota /null no demo)*
+- [x] Importar Arq. Dude *(não documentado; tela quebrada no demo)*
+- [x] Enviar Comandos
+- [x] TC IRR
+- [x] Setores
+- [x] Monitor de Gráficos
+- [x] GePON OLT
+- [x] GePON PACSWITCH
+- [x] Configurações Globais
+- [x] GPON OLT
+- [x] Projetos de Rede - Mapas
+- [x] Central de Alertas
+- [x] DNS Bloqueio Judicial
 
 ### 8) Sistema
 
 - [ ] Trocar a Senha
-- [ ] Empresa
+- [x] Empresa
 - [ ] Usuários
 - [ ] Notificações em Massa
 - [ ] Banners Mobile
@@ -161,13 +161,13 @@ Prioridade sugerida:
 - [ ] Integrações
 - [ ] Cruzamento Arv. Csv com Contratos
 - [ ] CampSoft
-- [ ] Fidelimax
-- [ ] Cobli
-- [ ] Google Maps
-- [ ] PlayHub
-- [ ] Owen Brasil
-- [ ] Alo Fone
-- [ ] Portabilidade de Celular
+- [x] Fidelimax
+- [x] Cobli
+- [x] Google Maps
+- [x] PlayHub
+- [x] Owen Brasil
+- [x] Alo Fone
+- [x] Portabilidade de Celular
 - [ ] EiTV
 - [ ] Spc Brasil
 - [ ] Traccar

@@ -81,10 +81,23 @@ nav:
       - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Remessa de Material: estoque/remessa-de-material.md
       - Almoxarifados: estoque/almoxarifados.md
+      - Produtos: estoque/produtos.md
   - Rede/ Infra:
       - Prefixos de IP: rede-infra/prefixos-de-ip.md
+      - Servidores: rede-infra/servidores.md
+      - Redes: rede-infra/redes.md
       - Mikrotik - Services: rede-infra/mikrotik-services.md
       - Mikrotik - Usuário: rede-infra/mikrotik-usuario.md
+      - Enviar Comandos: rede-infra/enviar-comandos.md
+      - TC IRR: rede-infra/tc-irr.md
+      - Setores: rede-infra/setores.md
+      - Monitor de Gráficos: rede-infra/monitoramento-de-graficos.md
+      - GePON OLT: rede-infra/gepon-olt.md
+      - GePON PACSWITCH: rede-infra/gepon-pacswitch.md
+      - Configurações Globais: rede-infra/configuracoes-globais.md
+      - GPON OLT: rede-infra/gpon-olt.md
+      - Projetos de Rede - Mapas: rede-infra/projetos-de-rede-mapas.md
+      - Central de Alertas: rede-infra/central-de-alertas.md
       - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
@@ -103,6 +116,13 @@ nav:
           - Feriados: cadastros/administrativo/feriados.md
           - Promoções: cadastros/administrativo/promocoes.md
       - Financeiro:
+          - Caixas: cadastros/financeiro/caixas.md
+          - Planos: cadastros/financeiro/planos.md
+          - Centros de Custo: cadastros/financeiro/centros-de-custo.md
+          - Contas Bancárias: cadastros/financeiro/contas-bancarias.md
+          - Despesas: cadastros/financeiro/despesas.md
+          - Formas de Pagamento: cadastros/financeiro/formas-de-pagamento.md
+          - Categorias: cadastros/financeiro/categorias.md
           - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:
@@ -113,9 +133,16 @@ nav:
   - Sistema:
       - Notificações:
           - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
+      - Empresa: sistema/empresa.md
       - Integrações:
           - Api Parceiros: sistema/api-parceiros.md
+          - Fidelimax: sistema/fidelimax.md
+          - Cobli: sistema/cobli.md
           - Google Maps: sistema/google-maps.md
+          - PlayHub: sistema/playhub.md
+          - Owen Brasil: sistema/owen-brasil.md
+          - Alo Fone: sistema/alo-fone.md
+          - Portabilidade de Celular: sistema/portabilidade-de-celular.md
           - Campsoft: sistema/campsoft.md
           - Bit Health: sistema/bit-health.md
           - Cobrança Terceirizada: sistema/cobranca-terceirizada.md
@@ -137,7 +164,7 @@ nav:
       - OLT Huawei: rede-infra/olt-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
-      - Bloqueio Judicial com o Bind: rede-infra/dns-bloqueio-judicial.md
+      - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
       - Servidores: rede-infra/servidores.md
       - IPv6: rede-infra/ipv6.md
