@@ -169,7 +169,7 @@ Prioridade sugerida:
 - [x] Alo Fone
 - [x] Portabilidade de Celular
 - [x] EiTV
-- [ ] Spc Brasil
+- [x] Spc Brasil
 - [ ] Traccar
 - [ ] Leveduca
 - [ ] Watch Brasil
