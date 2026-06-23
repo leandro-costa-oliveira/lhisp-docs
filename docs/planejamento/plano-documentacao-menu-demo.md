@@ -168,7 +168,7 @@ Prioridade sugerida:
 - [x] Owen Brasil
 - [x] Alo Fone
 - [x] Portabilidade de Celular
-- [ ] EiTV
+- [x] EiTV
 - [ ] Spc Brasil
 - [ ] Traccar
 - [ ] Leveduca
