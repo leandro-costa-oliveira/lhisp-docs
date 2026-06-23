@@ -81,6 +81,7 @@ nav:
       - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Remessa de Material: estoque/remessa-de-material.md
       - Almoxarifados: estoque/almoxarifados.md
+      - Produtos: estoque/produtos.md
   - Rede/ Infra:
       - Prefixos de IP: rede-infra/prefixos-de-ip.md
       - Servidores: rede-infra/servidores.md
@@ -116,6 +117,10 @@ nav:
           - Caixas: cadastros/financeiro/caixas.md
           - Planos: cadastros/financeiro/planos.md
           - Centros de Custo: cadastros/financeiro/centros-de-custo.md
+          - Contas Bancárias: cadastros/financeiro/contas-bancarias.md
+          - Despesas: cadastros/financeiro/despesas.md
+          - Formas de Pagamento: cadastros/financeiro/formas-de-pagamento.md
+          - Categorias: cadastros/financeiro/categorias.md
           - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:

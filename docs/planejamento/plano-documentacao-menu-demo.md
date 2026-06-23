@@ -69,25 +69,25 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Condomínios
 - [x] Feriados
 - [x] Promoções
-- [ ] Documentos *(já documentado; revisar apenas se houver ajuste de navegação)*
+- [x] Documentos *(já documentado; revisar apenas se houver ajuste de navegação)*
 
 #### Financeiro
 
 - [x] Caixas
 - [x] Planos
 - [x] Centros de Custo
-- [ ] Contas Bancárias
-- [ ] Despesas
-- [ ] Formas de Pagamento
-- [ ] Categorias
-- [ ] Santander *(já documentado; manter referência histórica se necessário)*
+- [x] Contas Bancárias
+- [x] Despesas
+- [x] Formas de Pagamento
+- [x] Categorias
+- [x] Santander *(já documentado; manter referência histórica se necessário)*
 
 #### Estoque
 
 - [x] Almoxarifados
-- [ ] Categorias
-- [ ] Produtos
-- [ ] Kits
+- [ ] Categorias *(não documentado; tela vazia no demo)*
+- [x] Produtos
+- [ ] Kits *(não documentado; tela vazia no demo)*
 
 #### Outros cadastros visíveis
 
