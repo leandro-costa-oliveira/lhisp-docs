@@ -174,22 +174,22 @@ Prioridade sugerida:
 - [x] Leveduca
 - [x] Watch Brasil
 - [x] Xtream-UI
-- [ ] Megazap
+- [x] Megazap
 - [ ] ITTV
-- [ ] TC IRR
-- [ ] Cobranças Terceirizadas
+- [x] TC IRR
+- [x] Cobranças Terceirizadas
 - [ ] Serasa Limpa Nome
-- [ ] Api Parceiros
+- [x] Api Parceiros
 - [ ] A2Billing
 - [ ] Next Billing
 - [ ] Seventh - Dguad
 - [ ] D4Sign
 - [ ] Urbis
-- [ ] Bit Health
+- [x] Bit Health
 - [ ] CelitHub
 - [ ] Serasa Pefin
-- [ ] LHNFE - NFCom
-- [ ] Configurações Notas Fiscais
+- [x] LHNFE - NFCom
+- [x] Configurações Notas Fiscais
 - [ ] Templates de Email
 - [ ] Ações em Massa
 - [ ] Apagar Ott em Massa
