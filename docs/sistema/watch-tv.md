@@ -1,11 +1,11 @@
 ---
-title: Watch Tv
+title: Watch Brasil
 ---
 
-# Watch Tv
+# Watch Brasil
 
 !!! warning "Rascunho gerado por agente"
-    Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Os dados exibidos pertencem ao ambiente de teste.
+    Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Os dados sensíveis exibidos no demo foram redigidos na captura desta documentação.
 
 ## Objetivo
 
@@ -16,8 +16,8 @@ Configurar a integração com **Watch Brasil** para gerar a URL de callback, inf
 Use este fluxo quando for necessário:
 
 - obter a URL de retorno para a Watch Brasil;
-- informar `Client Id` e `Client Secret`;
-- habilitar o serviço de TV/OTT associado à integração;
+- informar `Id do Projeto`, `Cliente Id` e `Cliente Secret`;
+- habilitar a integração;
 - liberar recursos da Watch Brasil nos planos.
 
 ## Pré-requisitos
@@ -67,17 +67,17 @@ Use este fluxo quando for necessário:
 
 - A wiki nomeia a página como **Watch Tv**.
 - No demo, a tela equivalente aparece como **WatchBrasil - Configuração da API**.
+- A captura usada nesta página foi redigida para ocultar `Id do Projeto`, `Cliente Id` e `Cliente Secret`.
 - A wiki orienta usar a URL de callback `https://Seu-Provedor.lhprovedor.com.br/api/callback/watchtv/token`.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
 
 ## Dúvidas para revisão
 
-- O nome de exibição na documentação deve ficar como **Watch Tv** ou **Watch Brasil**?
 - Os recursos do plano precisam de uma página própria com a lista de opções?
 - Existe algum campo adicional que deva ser documentado além dos visíveis na tela?
 
 ## Screenshots sugeridos
 
-- Tela **WatchBrasil - Configuração da API** no demo: `docs/assets/screenshots/sistema/watch-tv.png`
+- Tela **WatchBrasil - Configuração da API** no demo: `docs/assets/screenshots/sistema/watch-brasil.png`
 
-![Watch Tv no demo](../assets/screenshots/sistema/watch-tv.png)
+![Watch Brasil no demo](../assets/screenshots/sistema/watch-brasil.png)
