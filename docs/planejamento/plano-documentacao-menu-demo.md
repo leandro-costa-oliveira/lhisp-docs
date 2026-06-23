@@ -188,7 +188,7 @@ Prioridade sugerida:
 - [x] Bit Health
 - [x] LHNFE - NFCom
 - [x] Configurações Notas Fiscais
-- [x] CelitHub
+- [x] CeliteHub
 - [x] Templates de Email
 - [x] Ações em Massa
 - [x] Apagar Ott em Massa
