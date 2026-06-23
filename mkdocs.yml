@@ -115,6 +115,7 @@ nav:
       - Financeiro:
           - Caixas: cadastros/financeiro/caixas.md
           - Planos: cadastros/financeiro/planos.md
+          - Centros de Custo: cadastros/financeiro/centros-de-custo.md
           - Santander: cadastros/financeiro/santander.md
   - Misc:
       - Exportações:

@@ -75,7 +75,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 - [x] Caixas
 - [x] Planos
-- [ ] Centros de Custo
+- [x] Centros de Custo
 - [ ] Contas Bancárias
 - [ ] Despesas
 - [ ] Formas de Pagamento
