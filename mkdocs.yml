@@ -81,7 +81,7 @@ nav:
       - Estoque por Funcionário: estoque/estoque-por-funcionario.md
       - Remessa de Material: estoque/remessa-de-material.md
       - Almoxarifados: estoque/almoxarifados.md
-      - Produtos: estoque/produtos.md
+      - Produtos: cadastros/estoque/produtos.md
   - Rede/ Infra:
       - Prefixos de IP: rede-infra/prefixos-de-ip.md
       - Servidores: rede-infra/servidores.md
@@ -131,6 +131,10 @@ nav:
       - LHSAC Privacy Policy: lhsac/lhsac-privacy-policy.md
       - NFibra Privacy Policy: lhsac/nfibra-privacy-policy.md
   - Sistema:
+      - Trocar a Senha: sistema/trocar-a-senha.md
+      - Usuários: sistema/usuarios.md
+      - Notificações em Massa: sistema/notificacoes-em-massa.md
+      - Banners Mobile: sistema/banners-mobile.md
       - Notificações:
           - SMS via AWS End User Messaging SMS: sistema/notificacoes/amazon-end-user-messaging-service.md
       - Empresa: sistema/empresa.md
@@ -143,13 +147,18 @@ nav:
           - Owen Brasil: sistema/owen-brasil.md
           - Alo Fone: sistema/alo-fone.md
           - Portabilidade de Celular: sistema/portabilidade-de-celular.md
+          - EiTV: sistema/eitv.md
+          - Spc Brasil: sistema/spc-brasil.md
+          - Traccar: sistema/traccar.md
+          - Leveduca: sistema/leveduca.md
           - Campsoft: sistema/campsoft.md
           - Bit Health: sistema/bit-health.md
           - Cobrança Terceirizada: sistema/cobranca-terceirizada.md
           - Megazap: sistema/megazap.md
           - Seventh - Dguard: sistema/seventh-dguard.md
           - Telegram: sistema/telegram.md
-          - Watch Tv: sistema/watch-tv.md
+          - Watch Brasil: sistema/watch-tv.md
+          - Xtream-UI: sistema/xtream-ui.md
   - Suporte:
       - FAQ:
           - Contato do Suporte: suporte/contato-suporte.md

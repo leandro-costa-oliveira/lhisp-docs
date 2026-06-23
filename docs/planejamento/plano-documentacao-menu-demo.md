@@ -152,15 +152,15 @@ Prioridade sugerida:
 
 ### 8) Sistema
 
-- [ ] Trocar a Senha
+- [x] Trocar a Senha
 - [x] Empresa
-- [ ] Usuários
-- [ ] Notificações em Massa
-- [ ] Banners Mobile
-- [ ] Ferramentas
+- [x] Usuários
+- [x] Notificações em Massa
+- [x] Banners Mobile
+- [x] Ferramentas *(não documentado; rota /null no demo)*
 - [ ] Integrações
-- [ ] Cruzamento Arv. Csv com Contratos
-- [ ] CampSoft
+- [x] Cruzamento Arv. Csv com Contratos *(não documentado; tela em branco no demo)*
+- [x] CampSoft
 - [x] Fidelimax
 - [x] Cobli
 - [x] Google Maps
@@ -168,12 +168,12 @@ Prioridade sugerida:
 - [x] Owen Brasil
 - [x] Alo Fone
 - [x] Portabilidade de Celular
-- [ ] EiTV
-- [ ] Spc Brasil
-- [ ] Traccar
-- [ ] Leveduca
-- [ ] Watch Brasil
-- [ ] Xtream-UI
+- [x] EiTV
+- [x] Spc Brasil
+- [x] Traccar
+- [x] Leveduca
+- [x] Watch Brasil
+- [x] Xtream-UI
 - [ ] Megazap
 - [ ] ITTV
 - [ ] TC IRR
