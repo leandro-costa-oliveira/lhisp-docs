@@ -97,75 +97,68 @@ Criar páginas para os atalhos diretos do topo do menu:
 
 ### 4) Relatórios
 
-A árvore de relatórios do demo ainda não possui documentação equivalente no repositório. Priorizar a migração em lotes pequenos, mantendo cada página `.md` separada.
+A árvore de relatórios do demo foi comparada com a documentação do repositório e agora está coberta em páginas individuais.
 
-#### Lote 4.1 — Prioridade operacional
+#### Lote 4.1 — Relatórios operacionais
 
 - [x] Fluxo de Caixa
-- [ ] Contas a Receber
-- [ ] Clientes por Filial
-- [ ] Clientes para Cobrança
-- [ ] Utilização de IPs
-- [ ] Clientes Cancelados / Bloqueados / Suspensos
+- [x] Acessos por Rede
+- [x] Ativações / Cancelamentos
+- [x] Contas a Receber
+- [x] Contratos Sem Serviço
+- [x] Contratos Sem Acesso
+- [x] Acessos Desconectando
+- [x] Equipamentos Locados
+- [x] Contratos Sem Mensalidade
+- [x] Bilhetagem dos Acessos
+- [x] Movimentações Financeiras por Usuário
 
-#### Lote 4.2 — Relatórios de operação e suporte
+#### Lote 4.2 — Relatórios de clientes
 
-- [ ] Acessos por Rede
-- [ ] Ativações / Cancelamentos
-- [ ] Contratos Sem Serviço
-- [ ] Contratos Sem Acesso
-- [ ] Acessos Desconectando
-- [ ] Equipamentos Locados
-- [ ] Contratos Sem Mensalidade
-- [ ] Bilhetagem dos Acessos
-- [ ] Movimentações Financeiras por Usuário
-- [ ] Clientes por Endereço
-- [ ] Relatório de Endereços
-- [ ] SICI
-- [ ] Clientes VIP
-- [ ] Clientes por Fidelidade
-- [ ] Lista de Clientes por Plano
-- [ ] Clientes por Aceite
-- [ ] Clientes Negativados - SPC
-- [ ] Clientes Suspensos
-- [ ] Aquisições
-- [ ] Clientes Sem Email
-- [ ] Cobrança Terceirizada
-- [ ] Retenção
-- [ ] Estoque por Filial
-- [ ] Relatório de OTT / SVA
-- [ ] Contas a Receber por Cliente
-- [ ] Serviços Pendentes
-- [ ] Alteração de Plano
-- [ ] Acessos com Velocidade Alterada
-- [ ] Movimentações de Produtos
-- [ ] Clientes com Mensalidades Pagas no Período
-- [ ] Projeções e Recebimentos
-- [ ] Registro.BR
-- [ ] Relatório Fiscal de Regime de Caixa
-- [ ] Vendas por Vendedor
-- [ ] Contas a Pagar
-- [ ] Notificações dos Contratos
-- [ ] Anatel - Trimestral
-- [ ] Relatório de Uso de Banda
-- [ ] Relatório de Usuários Voip
-- [ ] Relatório de Estoque
-- [ ] Relatório de Consultas Spc Brasil
-- [ ] Relatório de Fornecedores
-- [ ] Relatório de Atendimentos por Canal
-- [ ] Relatório de Ordens de Serviço
-- [ ] Comissão de Técnicos por Ordem de Serviço
-- [ ] Tempo Médio de Execução de Ordens de Serviço
-- [ ] Indicadores
-- [ ] Top N Desconexões
-- [ ] Desconexões por Período
-- [ ] Relatório de Atendimentos
-- [ ] Upgrades / Downgrades de Plano
-- [ ] Adimplência por vencimento
+- [x] Clientes por Filial
+- [x] Clientes para Cobrança
+- [x] Clientes Cancelados
+- [x] Clientes Bloqueados
+- [x] Clientes por Endereço
+- [x] Relatório de Endereços
+- [x] Clientes VIP
+- [x] Clientes por Fidelidade
+- [x] Lista de Clientes por Plano
+- [x] Clientes por Aceite
+- [x] Clientes Negativados - SPC
+- [x] Clientes Suspensos
+- [x] Clientes Sem Email
+- [x] Relatório de OTT / SVA
+- [x] Contas a Receber por Cliente
+- [x] Clientes por Plano
+- [x] Clientes com Mensalidades Pagas no Período
+- [x] Top N Clientes com mais Ordens de Serviço
+- [x] Top N Clientes com Mais Atendimentos
 
-#### Lote 4.3 — Demais relatórios analíticos
+#### Lote 4.3 — Relatórios financeiros, técnicos e analíticos
 
-- [ ] Demais relatórios operacionais e analíticos ainda não listados acima
+- [x] Alteração de Plano
+- [x] Acessos com Velocidade Alterada
+- [x] Movimentações de Produtos
+- [x] Projeções e Recebimentos
+- [x] Registro.BR
+- [x] Relatório Fiscal de Regime de Caixa
+- [x] Vendas por Vendedor
+- [x] Contas a Pagar
+- [x] Notificações dos Contratos
+- [x] Anatel - Trimestral
+- [x] Relatório de Uso de Banda
+- [x] Relatório de Usuários Voip
+- [x] Relatório de Estoque
+- [x] Relatório de Consultas Spc Brasil
+- [x] Relatório de Fornecedores
+- [x] Relatório de Atendimentos por Canal
+- [x] Relatório de Ordens de Serviço
+- [x] Comissão de Técnicos por Ordem de Serviço
+- [x] Tempo Médio de Execução de Ordens de Serviço
+- [x] Relatório de Atendimentos
+- [x] Upgrades / Downgrades de Plano
+- [x] Adimplência por vencimento
 
 ### 5) Financeiro
 
@@ -274,5 +267,5 @@ Um item do menu só pode ser marcado como concluído quando:
 ## Encerramento
 
 - O plano de documentação do menu do demo foi revisado após a validação direta do menu.
-- A maior parte das seções já está documentada, mas a árvore **Relatórios** segue pendente.
-- Este arquivo permanece como registro histórico do processo e como plano de execução para os relatórios ainda não migrados.
+- A árvore **Relatórios** foi concluída e sincronizada com o `mkdocs.yml`.
+- Este arquivo permanece como registro histórico do processo de migração.
