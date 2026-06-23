@@ -128,6 +128,17 @@ save
 | SNMP não responde no LHISP | Verifique comunidade, versão SNMP e conectividade de rede. |
 | PPPoE não sobe | Confirme interface, VLAN, parâmetros de acesso e serviço associado. |
 | Usuário PPPoE não conecta | Use `display aaa online-fail-record username <NomeDoUsuarioPppoe>` para consultar o motivo da falha de login do usuário. |
+| Erro de conflito de IP | Use `display aaa access-user ip-address <IpAddress>` para localizar o usuário/assinante associado ao IP em conflito. |
+
+## Debug
+
+- Quando houver suspeita de **conflito de IP**, consulte o usuário AAA associado ao endereço com:
+
+```text
+display aaa access-user ip-address <IpAddress>
+```
+
+- O comando ajuda a identificar qual sessão/assinante está usando o IP informado e acelera a análise do incidente.
 
 ## Observações
 
