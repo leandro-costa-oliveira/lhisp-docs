@@ -136,7 +136,7 @@ Prioridade sugerida:
 - [x] Prefixos de IP
 - [x] Servidores
 - [x] Redes
-- [ ] Ferramentas
+- [x] Ferramentas *(não documentado; rota /null no demo)*
 - [x] Importar Arq. Dude *(não documentado; tela quebrada no demo)*
 - [x] Enviar Comandos
 - [x] TC IRR
