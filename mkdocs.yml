@@ -164,7 +164,7 @@ nav:
       - OLT Huawei: rede-infra/olt-huawei.md
       - OLT V-Solutions: rede-infra/olt-v-solutions.md
       - Switchs Huawei: rede-infra/switchs-huawei.md
-      - Bloqueio Judicial com o Bind: rede-infra/dns-bloqueio-judicial.md
+      - DNS Bloqueio Judicial: rede-infra/dns-bloqueio-judicial.md
       - Cadastrar servidor: rede-infra/cadastrar-servidor.md
       - Servidores: rede-infra/servidores.md
       - IPv6: rede-infra/ipv6.md

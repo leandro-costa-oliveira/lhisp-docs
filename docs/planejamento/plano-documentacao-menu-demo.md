@@ -148,7 +148,7 @@ Prioridade sugerida:
 - [x] GPON OLT
 - [x] Projetos de Rede - Mapas
 - [x] Central de Alertas
-- [ ] Dns Bloqueio Judicial
+- [x] DNS Bloqueio Judicial
 
 ### 8) Sistema
 
