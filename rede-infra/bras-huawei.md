@@ -133,7 +133,7 @@ save
 
 ## Debug
 
-- Quando houver suspeita de **conflito de IP**, consulte o usuário AAA associado ao endereço com:
+- Quando houver suspeita de **conflito de IP**, consulte o usuário associado ao endereço com:
 
 ```text
 display access-user ip-address <IpAddress>
@@ -145,7 +145,42 @@ display access-user ip-address <IpAddress>
 display access-user username <NomeUsuarioPppoe>
 ```
 
-- O comando ajuda a identificar qual sessão/assinante está usando o IP informado e acelera a análise do incidente.
+- Para ver um **sumário geral dos usuários** no BRAS, use:
+
+```text
+display access-user summary
+```
+
+Exemplo de saída:
+
+```text
+display access-user summary
+  Normal users                       : 656
+  RUI Local users                    : 0
+  RUI Remote users                   : 0
+  -----------------------------------------------
+  Radius authentication              : 655
+  Radius proxy authentication        : 0
+  No authentication                  : 0
+  Local authentication               : 1
+  Tacacs authentication              : 0
+  -----------------------------------------------
+  Total users                        : 656
+```
+
+- Para ver um **sumário dos usuários conectados em um domínio específico**, use:
+
+```text
+display access-user domain lhisp summary
+```
+
+- Para listar **todos os usuários conectados no domínio específico**, use:
+
+```text
+display access-user domain lhisp
+```
+
+- O comando ajuda a identificar qual sessão/assinante está usando o IP informado, além de mostrar visão consolidada por domínio e acelerar a análise do incidente.
 
 ## Observações
 
