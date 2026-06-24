@@ -92,6 +92,7 @@ Use esta tela quando for necessário:
 ## Observações
 
 - A listagem do demo exibiu produtos como **ROTEADOR 2 ANTENAS**, **ROTEADOR 5 ANTENAS**, **ONU ABC**, **ONU FIBERHOME**, **ROTEADOR TPLINK 2 ANTENTAS**, **ROTEADOR TPLINK 4 ANTENAS**, **PAPEL A4**, **DETERGENTE**, **HUAWEI AX3** e **Drop SUMEC**.
+- A captura limpa da listagem mostrou os botões principais de **pesquisa**, **inclusão** e **exportação CSV** no topo da tela.
 - O formulário abriu com o título **Alteração**, mesmo quando acionado a partir da inclusão.
 - A tela mostra uma estrutura simples, mas com vários controles de validação para uso operacional.
 - Esta página é base para o fluxo de entrada de material e para a separação do técnico.

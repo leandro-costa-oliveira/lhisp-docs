@@ -75,6 +75,7 @@ Use esta tela quando for necessário:
 
 - A tela observada no demo abriu dentro do *frame* legado.
 - No estado inicial observado, a tela mostrava um registro existente com o nome **INSTALAÇÃO**.
+- A captura limpa confirmou a toolbar com navegação, inclusão, edição, exclusão, gravação, cancelamento e pesquisa.
 - Ao iniciar um novo cadastro, o campo **Nome** aparece em branco e os botões de gravação/cancelamento ficam ativos.
 - Esta página complementa o cadastro de **Produtos**, que depende dessa base de classificação.
 
