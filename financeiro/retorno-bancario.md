@@ -9,7 +9,7 @@ description: ''
 
 > **⚠️ Rascunho gerado por agente**
 >
-> Esta página foi documentada a partir da rota de Retorno Bancário no demo do LHISP. A tela aparece dentro de um iframe legado e, na captura visual obtida neste ambiente, a área principal permaneceu em estado de carregamento. A inspeção da árvore de elementos mostrou os campos abaixo.
+> Esta página foi documentada a partir da rota de Retorno Bancário no demo do LHISP. Na captura visual obtida neste ambiente, a área principal permaneceu em estado de carregamento. A inspeção da árvore de elementos mostrou os campos abaixo.
 
 ## Objetivo
 
@@ -58,14 +58,14 @@ Use esta tela quando precisar:
 
 | Problema | Como tratar |
 |---|---|
-| A área principal fica apenas em carregamento | Verifique se o iframe terminou de carregar ou se o demo está com limitação de renderização. |
+| A área principal fica apenas em carregamento | Verifique se a tela terminou de carregar ou se o demo está com limitação de renderização. |
 | A conta bancária não lista opções | Confirme se há contas cadastradas e se o perfil possui acesso. |
 | A consulta não retorna dados | Ajuste o período e valide se existem retornos no intervalo informado. |
 
 ## Observações
 
 - A rota observada no demo foi `/lgc/financeiro%7Cretorno_bancario`.
-- O conteúdo operacional é renderizado em um iframe legado.
+- O conteúdo operacional é exibido no fluxo principal do sistema.
 - A captura visual obtida neste ambiente ficou em estado de carregamento, mas a inspeção dos elementos mostrou o formulário com **Conta Bancária**, **Data inicial**, **Data final** e uma ação de execução.
 - Como a tela não concluiu o carregamento visual durante a captura, esta página registra a limitação em vez de inventar dados de retorno.
 

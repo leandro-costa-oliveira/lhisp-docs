@@ -67,7 +67,7 @@ Use esta tela para criar, editar ou revisar o cadastro de usuários do sistema.
 
 ## Observações
 
-- A tela do demo abre em um iframe legado com as abas operacionais visíveis.
+- A tela do demo abre com as abas operacionais visíveis.
 - O usuário exibido na captura é **SuporteLH**.
 - O botão **Copiar Configurações de** fica no canto inferior direito da tela.
 

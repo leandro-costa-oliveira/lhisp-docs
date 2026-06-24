@@ -71,7 +71,7 @@ Use esta tela quando precisar:
 - A rota observada no demo foi `/estoque/ordem_separacao`.
 - A captura visual mostra uma tela limpa, com a área de busca e ações no topo e a paginação no rodapé da área de listagem.
 - O conteúdo principal aparece vazio nesta captura, sem registros listados.
-- A tela é apresentada como página operacional normal, não como iframe legado.
+- A tela é apresentada como página operacional normal.
 
 ## Dúvidas para revisão
 

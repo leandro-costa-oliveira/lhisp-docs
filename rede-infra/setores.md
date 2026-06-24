@@ -69,7 +69,7 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/redeinfra%7Csetores`.
-- A tela é renderizada dentro de um **iframe legado**.
+- A tela é exibida no demo.
 - O setor exibido na captura era **GERAL**.
 - As filiais mostradas eram **MATRIZ** marcada e **TESTE** desmarcada.
 - A captura limpa mostra a tela sem anotações visuais.

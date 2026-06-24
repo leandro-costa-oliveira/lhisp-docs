@@ -87,10 +87,10 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/redeinfra%7Cservidores`.
-- A tela é renderizada dentro de um **iframe legado**.
+- A tela é exibida no demo.
 - O servidor exibido na captura era **ROT-TESTE [127.0.0.2]**.
 - O formulário mostrava o erro: `Erro ao processar comandos: Error: Unsupported algorithm: blowfish-cbc`.
-- A captura limpa mostra o conteúdo do iframe sem anotações visuais.
+- A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
 ## Dúvidas para revisão
 

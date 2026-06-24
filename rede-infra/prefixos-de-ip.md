@@ -77,10 +77,10 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/redeinfra%7Cipprefix`.
-- A tela é renderizada dentro de um **iframe legado**.
+- A tela é exibida no demo.
 - O prefixo exibido na captura era **CGNAT - TESTE**, com **Id 32**, **Prefixo 100.64.18.0** e **Bitmask 20**.
 - A árvore mostrava várias sub-redes com estados **LIVRE** e alguns trechos marcados como **EM USO**.
-- A captura limpa mostra o conteúdo do iframe sem anotações visuais.
+- A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
 ## Dúvidas para revisão
 

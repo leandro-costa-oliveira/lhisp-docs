@@ -53,7 +53,7 @@ Use esta tela quando for necessário atualizar a senha do usuário logado.
 ## Observações
 
 - A tela do demo mostra apenas os campos de senha e o botão **Trocar**.
-- A área do formulário aparece dentro de um iframe legado no demo.
+- A área do formulário aparece no demo.
 
 ## Dúvidas para revisão
 

@@ -79,7 +79,7 @@ Na aba **Serviços**, a grade exibe colunas observadas:
 | Linhas não aparecem após salvar | Reabra a tela do contrato e verifique se o serviço está no status esperado. |
 |
 ## Observações
-- A aba **Serviços** utiliza uma tabela embutida (iframe) com a grade e o botão **Novo Serviço**.
+- A aba **Serviços** reúne a grade e o botão **Novo Serviço**.
 - Na tabela, o botão de ação visível por linha costuma aparecer como **Editar** (com título de detalhe do serviço) e, em alguns casos, há ação adicional **Alteração de Plano**.
 - O modal **Contratação de Serviço** abre como sobreposição na própria tela e exibe, além do plano, campos como **Quantidade**, **Observação**, **Tipo de IP**, **Tipo de Equipamento**, **Conta Bancária (Boleto/Pix)**, **Vendedor**, **Promoção**, **Fidelidade** e as regras de cobrança.
 

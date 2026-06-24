@@ -72,7 +72,7 @@ Use este fluxo para:
 
 ## Observações
 
-- A tela foi observada em um **iframe legado**.
+- A tela foi observada no demo.
 - A captura validada estava limpa, sem marcações ou anotações visuais.
 - Os DNS exibidos na tela são apenas os valores observados no demo e não devem ser tratados como padrão universal.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cconfiguracoes`.

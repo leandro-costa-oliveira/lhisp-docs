@@ -57,7 +57,7 @@ Use este fluxo quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/redeinfra%7Cferramentas%7Fenviar_comandos`.
-- A tela é renderizada dentro de um **iframe legado**.
+- A tela é exibida no demo.
 - O demo exibiu apenas a mensagem `Aguarde, carregando [redeinfra/ferramentas%7Fenviar_comandos] ...`.
 - Não houve formulário operacional disponível para documentação além da mensagem de carregamento.
 

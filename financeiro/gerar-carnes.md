@@ -71,8 +71,8 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/financeiro%7Cgerar_carnes`.
-- O título renderizado na área do iframe aparece como **Gerar de Carnês** no ambiente de demonstração.
-- A tela operacional fica dentro de um iframe legado.
+- O título exibido no ambiente de demonstração aparece como **Gerar de Carnês**.
+- A tela operacional é exibida no demo.
 - A captura limpa mostra o formulário principal com **Filial**, **Conta Bancária**, **Faturamento** e dois checkboxes de geração.
 - A área principal abaixo do formulário fica vazia até o operador acionar uma pré-visualização ou a geração.
 

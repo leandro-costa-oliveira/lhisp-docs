@@ -73,7 +73,7 @@ Use esta tela quando precisar:
 - A rota observada no demo foi `/estoque/por_funcionario`.
 - A captura limpa mostra um formulário com seleção de funcionário, categoria e ações no topo.
 - A área de resultados estava vazia no momento da captura.
-- A tela é operacional normal, sem iframe legado.
+- A tela é operacional normal.
 
 ## Dúvidas para revisão
 

@@ -76,10 +76,10 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/redeinfra%7Credes`.
-- A tela é renderizada dentro de um **iframe legado**.
+- A tela é exibida no demo.
 - O registro exibido na captura era **TESTE VIA CABO []**.
 - O formulário mostrava **Tipo** com **Rede de Acesso** selecionado e **Tecnologia** com **Cabo UTP / Outros** marcado.
-- A captura limpa mostra o conteúdo do iframe sem anotações visuais.
+- A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
 ## Dúvidas para revisão
 
