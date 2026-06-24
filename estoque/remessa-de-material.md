@@ -75,7 +75,7 @@ Use esta tela quando precisar:
 - A rota observada no demo foi `/estoque/remessas_de_materiais`.
 - A captura limpa mostra o campo de busca, os botões de ação e uma grade com uma remessa listada.
 - A remessa exibida na captura tinha **Id 10**, **ALMOXARIFADO GERAL** como origem, **FILIAL 2** como destino, data **12/23/2025** e situação **EM_ABERTO**.
-- A tela é operacional normal, sem iframe legado.
+- A tela é operacional normal.
 
 ## Dúvidas para revisão
 

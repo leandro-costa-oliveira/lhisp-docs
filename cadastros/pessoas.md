@@ -83,7 +83,7 @@ Use esta tela quando precisar:
 
 ## Observações
 
-- O demo exibe a tela **Pessoas** como um formulário legado dentro de um iframe.
+- O demo exibe a tela **Pessoas** no fluxo principal do sistema.
 - A captura usada nesta página mostra um cadastro já preenchido com dados fictícios do ambiente de demonstração.
 - A área superior reúne ações rápidas como navegação, criação, edição, exclusão e pesquisa.
 - A captura usada nesta página veio do ambiente de demonstração.

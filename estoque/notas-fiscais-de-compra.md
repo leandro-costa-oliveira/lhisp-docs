@@ -66,7 +66,7 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/estoque/notas_fiscais_compra`.
-- A tela aparece como página operacional normal, sem iframe legado.
+- A tela aparece como página operacional normal.
 - A captura limpa mostra apenas o campo **Procurar**, os botões de ação e a paginação, sem registros listados.
 - O conteúdo principal permanece vazio nesta captura.
 

@@ -67,7 +67,7 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/financeiro%7Cbloqueios`.
-- A tela renderiza dentro de um iframe legado.
+- A tela é apresentada no demo como página operacional.
 - A captura visual obtida no demo mostrou claramente o formulário principal com **Filial**, **Data de Vencimento** e os botões de ação.
 - A área principal abaixo do formulário permanece vazia até que o operador use **Visualizar**.
 

@@ -81,7 +81,7 @@ Use esta tela quando precisar:
 
 ## Observações
 
-- O demo abre a tela dentro de um iframe legado.
+- O demo abre a tela no fluxo principal.
 - A captura mostra a interface com os filtros já exibidos e sem resultados carregados na área inferior.
 - Os botões de ação visíveis são **Confirmar**, **Imprimir** e **Exibir**.
 - A tela já inicia com valores de referência de faturamento preenchidos no demo.

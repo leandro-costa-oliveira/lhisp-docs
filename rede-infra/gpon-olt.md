@@ -79,7 +79,7 @@ Use este fluxo para:
 
 ## Observações
 
-- A tela é um **iframe legado** com abas de navegação próprias.
+- A tela possui abas de navegação próprias.
 - A captura validada estava limpa, sem marcações ou anotações visuais.
 - A presença das abas indica que o fluxo mistura cadastro e operação do equipamento.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cgponolt`.

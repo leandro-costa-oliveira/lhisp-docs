@@ -70,7 +70,7 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/financeiro/reajuste_servicos`.
-- A tela renderiza como página operacional normal, sem iframe no conteúdo principal.
+- A tela renderiza como página operacional normal.
 - A captura limpa mostra o formulário com **Filial**, **Plano**, **Categoria**, **Tipo de Pessoa**, **Carência** e **Reajuste**.
 - A área inferior da tela permanece vazia até a visualização ou execução do reajuste.
 

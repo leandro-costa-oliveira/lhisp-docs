@@ -82,7 +82,7 @@ Use esta tela quando precisar:
 ## Observações
 
 - A rota observada no demo foi `/lgc/financeiro%7Cnotafiscal`.
-- O conteúdo é renderizado em um iframe legado.
+- O conteúdo é exibido no fluxo principal do demo.
 - A tela observada é um painel de filtros e ações, com a listagem abaixo ainda vazia nesta captura.
 - O demo já mostra os filtros de **Situação NFCom** e **Tipo da NF**, indicando que esta área concentra diferentes tipos de nota.
 

@@ -68,7 +68,7 @@ Use esta tela quando for necessário:
 - A tela verificada no demo mostra a rota `/lgc/redeinfra|projetos`.
 - Na listagem do demo, foi observado o projeto **TESTE** na filial **MATRIZ**.
 - O bloco superior permite filtrar por **Filial** e **Descrição**.
-- A tela usa um iframe legado dentro da navegação do demo.
+- A tela é exibida dentro da navegação do demo.
 
 ## Dúvidas para revisão
 

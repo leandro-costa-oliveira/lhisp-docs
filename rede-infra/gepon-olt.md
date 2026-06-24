@@ -74,7 +74,7 @@ Use este fluxo para:
 
 ## Observações
 
-- A tela é um **iframe legado** com cabeçalho próprio do módulo.
+- A tela tem cabeçalho próprio do módulo.
 - A captura validada estava limpa, sem marcações ou anotações visuais.
 - O formulário principal exibe os campos de cadastro e uma aba complementar de **Informações / ONUs**.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Colt`.
