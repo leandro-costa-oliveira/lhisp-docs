@@ -48,9 +48,9 @@ Os seguintes blocos já possuem páginas no `lhisp-docs` e servem como base para
 - **Páginas institucionais**: LHSAC Privacy Policy, NFibra Privacy Policy
 - **Misc**: Exportar Boletos do Gerencianet
 
-## Backlog de documentação por área
+## Backlog de documentação por milestone
 
-### 1) Atalhos principais do menu
+### Milestone 1 — Atalhos principais do menu
 
 Criar páginas para os atalhos diretos do topo do menu:
 
@@ -60,11 +60,11 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Monitor de Redes
 - [x] Gerência Financeira
 
-### 2) Dashboards
+### Milestone 2 — Dashboards
 
 - [x] Dashboard Comercial
 
-### 3) Cadastros
+### Milestone 3 — Cadastros
 
 #### Administrativo
 
@@ -99,7 +99,7 @@ Criar páginas para os atalhos diretos do topo do menu:
 - [x] Pre Cadastros
 - [x] Cupons Promocionais
 
-### 4) Relatórios
+### Milestone 4 — Relatórios
 
 A árvore de relatórios do demo foi comparada com a documentação do repositório e agora está coberta em páginas individuais.
 
@@ -164,7 +164,7 @@ A árvore de relatórios do demo foi comparada com a documentação do repositó
 - [x] Upgrades / Downgrades de Plano
 - [x] Adimplência por vencimento
 
-### 5) Financeiro
+### Milestone 5 — Financeiro
 
 - [x] Gerência Financeira
 - [x] Impressão de Carnês
@@ -175,14 +175,14 @@ A árvore de relatórios do demo foi comparada com a documentação do repositó
 - [x] Bloqueios por Atraso
 - [x] Reajuste Serviços Contratados
 
-### 6) Estoque
+### Milestone 6 — Estoque
 
 - [x] Ordens de Separação
 - [x] Notas Fiscais de Compra
 - [x] Estoque por Funcionário
 - [x] Remessa de Material
 
-### 7) Rede/ Infra
+### Milestone 7 — Rede/Infra
 
 - [x] Prefixos de IP
 - [x] Servidores
@@ -201,7 +201,7 @@ A árvore de relatórios do demo foi comparada com a documentação do repositó
 - [x] Central de Alertas
 - [x] DNS Bloqueio Judicial
 
-### 8) Sistema
+### Milestone 8 — Sistema
 
 - [x] Trocar a Senha
 - [x] Empresa
@@ -244,13 +244,13 @@ A árvore de relatórios do demo foi comparada com a documentação do repositó
 - [x] Ações em Massa
 - [x] Apagar Ott em Massa
 
-## Ordem sugerida de execução
+## Ordem sugerida de execução por milestone
 
-1. fechar os itens de alto uso operacional já visíveis no demo;
+1. fechar os itens de alto uso operacional já visíveis no demo, agrupados nos primeiros milestones;
 2. concluir as páginas com screenshot limpa disponível;
 3. tratar as páginas sem equivalência 1:1 com o demo por último, registrando a limitação em **Observações**;
 4. manter commits pequenos, preferencialmente um por página;
-5. atualizar este plano a cada lote concluído.
+5. atualizar este plano a cada milestone concluído.
 
 ## Critérios de pronto
 
