@@ -11,6 +11,8 @@ description: ''
 >
 > Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP.
 > O fluxo observado abriu dentro do *frame* legado do sistema, com uma tela simples de cadastro de categoria de estoque.
+>
+> Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
 
 ## Objetivo
 

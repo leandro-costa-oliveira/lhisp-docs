@@ -11,6 +11,8 @@ description: ''
 >
 > Esta página foi revisada a partir da tela equivalente no ambiente de demonstração do LHISP.
 > O menu abre primeiro a listagem e, ao clicar em **Cadastrar**, o sistema mostra o formulário de manutenção do produto.
+>
+> Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
 
 ## Objetivo
 
