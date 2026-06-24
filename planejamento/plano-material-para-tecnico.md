@@ -36,6 +36,18 @@ Ao final da documentação, o repositório deve ter:
 4. Fazer uma ordem de separação para o técnico em **Estoque > Ordens de Separação**.
 5. Confirmar a entrega do material ao técnico na tela de ordens de separação.
 
+## Escopo validado no demo
+
+A navegação confirmada no ambiente de demonstração mostra, para este fluxo, os seguintes pontos:
+
+- **Cadastros > Estoque**: `Almoxarifados`, `Categorias`, `Produtos`, `Kits`.
+- **Estoque**: menus operacionais relacionados a entrada, nota fiscal de compra e ordens de separação.
+- **Almoxarifados**: tela operacional com botão de inclusão e fluxo de movimentação.
+- **Nota Fiscal de Compra**: tela operacional para entrada fiscal de material.
+- **Ordens de Separação**: tela operacional para criar a separação e confirmar a entrega ao técnico.
+
+Essa validação confirma que o fluxo pode ser documentado em blocos menores sem depender de páginas inexistentes ou nomes presumidos.
+
 ## Estrutura documental prevista
 
 | Arquivo | Papel na documentação | Situação |
