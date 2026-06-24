@@ -10,6 +10,8 @@ description: ''
 > **⚠️ Rascunho gerado por agente**
 >
 > Esta página documenta o caminho manual de entrada de material a partir de **Almoxarifados**, usando a janela **Nova Movimentação** observada no demo.
+>
+> Veja também a página-resumo do fluxo: [Material para Técnico](/estoque/material-para-tecnico).
 
 ## Objetivo
 

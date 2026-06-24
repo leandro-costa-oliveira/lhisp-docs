@@ -52,12 +52,12 @@ Essa validação confirma que o fluxo pode ser documentado em blocos menores sem
 
 | Arquivo | Papel na documentação | Situação |
 |---|---|---|
-| `estoque/material-para-tecnico.md` | Página-resumo do fluxo fim a fim, com links para todas as etapas | novo |
+| `estoque/material-para-tecnico.md` | Página-resumo do fluxo fim a fim, com links para todas as etapas | criado |
 | `cadastros/estoque/categorias.md` | Cadastro da categoria de estoque usada no fluxo | novo |
 | `cadastros/estoque/produtos.md` | Cadastro do produto de estoque, revisado para o fluxo | já existe, pode ser expandido |
-| `estoque/entrada-de-material.md` | Entrada manual e por nota fiscal, com links para os dois caminhos | novo |
-| `estoque/ordens-de-separacao.md` | Separação para o técnico e confirmação de entrega | já existe, precisa ser expandido |
-| `estoque/notas-fiscais-de-compra.md` | Página de apoio para a entrada por NF, se for necessário detalhar a listagem e o cadastro | já existe, pode ser complementada |
+| `estoque/entrada-de-material.md` | Entrada manual e por nota fiscal, com links para os dois caminhos | existente, expandida |
+| `estoque/ordens-de-separacao.md` | Separação para o técnico e confirmação de entrega | existente, expandida |
+| `estoque/notas-fiscais-de-compra.md` | Página de apoio para a entrada por NF, se for necessário detalhar a listagem e o cadastro | existente, complementada |
 
 ## Estratégia de links entre os arquivos
 

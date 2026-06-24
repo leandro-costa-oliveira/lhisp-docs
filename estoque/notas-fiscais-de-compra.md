@@ -10,6 +10,8 @@ description: ''
 > **⚠️ Rascunho gerado por agente**
 >
 > Esta página foi validada no ambiente de demonstração do LHISP com um XML real de teste. O fluxo documentado abaixo cobre a consulta inicial, a importação do XML e o envio dos produtos para o estoque.
+>
+> Veja também a página-resumo do fluxo: [Material para Técnico](/estoque/material-para-tecnico).
 
 ## Objetivo
 
