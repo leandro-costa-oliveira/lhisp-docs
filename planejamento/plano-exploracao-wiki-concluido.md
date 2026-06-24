@@ -65,7 +65,7 @@ Mapear a estrutura da wiki do LHISP de forma progressiva, começando pela navega
 | Exploração de **Watch Tv** em sistema > integrações | Concluído | conteúdo lido na wiki e tela equivalente aberta no demo |
 | Página **Watch Tv** migrada para o repositório | Concluído | `docs/sistema/watch-tv.md` |
 | Exploração de **LHSAC Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
-| Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/lhsac-privacy-policy.md` |
+| Página **LHSAC Privacy Policy** migrada para o repositório | Concluído | `lhsac/privacy-policy.md` |
 | Exploração de **NFibra Privacy Policy** em lhsac | Concluído | página estática migrada da wiki |
 | Página **NFibra Privacy Policy** migrada para o repositório | Concluído | `docs/lhsac/nfibra-privacy-policy.md` |
 | Exploração de **Santander** em cadastros > financeiro | Concluído | conteúdo lido na wiki; sem tela equivalente limpa no demo |
