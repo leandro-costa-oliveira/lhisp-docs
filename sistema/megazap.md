@@ -73,3 +73,5 @@ Use este fluxo quando for necessário:
 - Tela **Megazap - Configuração da API** no demo: `assets/screenshots/sistema/megazap.png`
 
 ![Megazap no demo](/assets/screenshots/sistema/megazap.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
