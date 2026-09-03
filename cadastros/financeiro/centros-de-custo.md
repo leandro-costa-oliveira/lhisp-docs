@@ -68,12 +68,6 @@ Use esta tela quando for necessário:
 - Na listagem do demo, foram observados os centros de custo **DIVERSOS**, **teste1**, **comercial**, **operações**, **administrativo**, **manutenção de veiculos** e **IMPOSTOS**.
 - A tela inclui a ação adicional **Transferir Item de Centro de Custo** além das ações de listagem padrão.
 
-## Dúvidas para revisão
-
-- A transferência de itens movimenta quais entidades exatamente?
-- Existe alguma relação obrigatória entre centro de custo e planos/contas financeiras?
-- A tela possui filtros adicionais que não ficaram evidentes na listagem do demo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/centros-de-custo.png` — captura limpa da listagem de centros de custo no demo.
