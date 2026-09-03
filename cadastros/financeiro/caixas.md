@@ -44,6 +44,7 @@ Use esta tela quando for necessário:
 | **Baixar Planilha** | Exporta a listagem atual para arquivo de planilha. |
 | **Id** | Identificador do caixa. |
 | **Caixa** | Nome do caixa cadastrado. |
+| **Espécies Aceitas** | No formulário, habilita ou desabilita **Dinheiro**, **Cartão**, **Cheque** e **Outros** para o caixa. As quatro opções iniciam marcadas em um novo cadastro. |
 
 ## Resultado esperado
 
@@ -61,15 +62,9 @@ Use esta tela quando for necessário:
 
 ## Observações
 
-- A tela verificada no demo mostra a rota `/cadastros/financeiro/caixas`.
-- Na listagem do demo, foram observados os registros **CAIXA DA LOJA**, **CAIXA BANCO DO BRASIL**, **Cartoes / cheque** e **Especie**.
-- A tela é objetiva e funciona como uma listagem administrativa simples.
-
-## Dúvidas para revisão
-
-- Existe alguma regra específica de uso para cada caixa cadastrado?
-- O fluxo de cadastro possui campos adicionais que não aparecem na listagem?
-- O sistema exige algum vínculo com contas ou formas de pagamento ao criar um novo caixa?
+- A rota é `/cadastros/financeiro/caixas`.
+- O formulário envia nome e as quatro espécies aceitas para `POST /api/Caixa.salvar`.
+- A tela não exige vínculo com conta bancária ou forma de pagamento ao criar o caixa.
 
 ## Screenshots sugeridos
 
