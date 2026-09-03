@@ -61,14 +61,11 @@ Use esta tela para revisar credenciais, ambiente, produtos e critérios de filtr
 - A captura do demo mostra a senha mascarada.
 - Os campos de produto possuem várias opções de integração SPC.
 
-## Dúvidas para revisão
-
-- O campo **Filtro** é obrigatório para todos os cenários?
-- O botão **Adicionar** cria um novo cadastro ou apenas adiciona uma linha?
-- Há diferença operacional entre os produtos PF e PJ?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/spc-brasil.png` — captura limpa da configuração da API SPC Brasil no demo.
 
 ![Spc Brasil no demo](/assets/screenshots/sistema/spc-brasil.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
