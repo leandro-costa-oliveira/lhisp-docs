@@ -7,10 +7,6 @@ description: ''
 
 # Pessoas
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar e manter o cadastro de pessoas no LHISP, incluindo dados básicos, contato, tipo de pessoa, endereço e vínculos operacionais do registro.
@@ -87,13 +83,6 @@ Use esta tela quando precisar:
 - A captura usada nesta página mostra um cadastro já preenchido com dados fictícios do ambiente de demonstração.
 - A área superior reúne ações rápidas como navegação, criação, edição, exclusão e pesquisa.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- A pessoa cadastrada pode ser vinculada simultaneamente como técnico e vendedor?
-- O campo **Veículo** é obrigatório em algum cenário específico?
-- O botão **Filiais** altera a visibilidade do cadastro ou apenas o acesso operacional?
-- A integração com **Senha Tec.** e **Senha Vend.** deve ser descrita em páginas separadas?
 
 ## Screenshots sugeridos
 
