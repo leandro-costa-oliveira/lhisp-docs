@@ -1,6 +1,6 @@
 ---
 title: Plano de documentação do menu do demo LHISP
-published: true
+published: false
 editor: markdown
 description: ''
 ---
@@ -10,7 +10,7 @@ description: ''
 > **📝 Plano revisado**
 >
 > Este documento foi criado após a análise direta do menu do demo em `https://demo.lhprovedor.com.br/` com a conta `demo`.
-> A migração incremental está concluída para quase todo o menu, mas a árvore **Relatórios** ainda precisa ser documentada em páginas individuais.
+> A migração incremental e a árvore de **Relatórios** foram concluídas. O arquivo permanece como registro histórico interno.
 
 ## Objetivo
 
@@ -32,7 +32,7 @@ Para cada item do menu:
 1. criar ou atualizar uma página `.md` em `docs/{modulo}/{slug}.md`;
 2. registrar o título no padrão exibido pelo LHISP;
 3. capturar screenshot limpa do demo quando a tela existir;
-4. anotar em **Dúvidas para revisão** qualquer regra que não tenha sido validada;
+4. não documentar como fato qualquer regra que não tenha sido validada no código;
 5. manter `mkdocs.yml` atualizado com a nova página;
 6. manter este plano atualizado enquanto a migração estiver em andamento, marcando o item como concluído quando a documentação for publicada.
 
@@ -273,3 +273,5 @@ Um item do menu só pode ser marcado como concluído quando:
 - O plano de documentação do menu do demo foi revisado após a validação direta do menu.
 - A árvore **Relatórios** foi concluída e sincronizada com o `mkdocs.yml`.
 - Este arquivo permanece como registro histórico do processo de migração.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
