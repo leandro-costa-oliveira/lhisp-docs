@@ -7,6 +7,8 @@ description: Regras de entrada e parcelamento usadas no faturamento de vendas.
 
 # Formas de Pagamento
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Uma forma de pagamento define como um valor será dividido entre entrada e parcelas. Ela é usada pelo backend para transformar uma venda faturada em uma ou mais contas a receber e também pode ser adotada por integrações que cobram itens ou ativações, como a AloFone.
 
 O cadastro é uma regra de parcelamento, não o meio pelo qual o cliente pagará o boleto. A conta bancária define a cobrança; a forma de pagamento define a distribuição do total e os vencimentos.
