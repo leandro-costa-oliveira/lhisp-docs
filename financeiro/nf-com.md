@@ -7,6 +7,8 @@ description: Configure certificados, ambientes, filiais, cClass, NF-e de compra 
 
 # Integração LHNFE e emissão de NFCom
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 A integração **Sistema > Integrações > LHNFE** conecta o cadastro fiscal do LHISP ao serviço emissor. Ela é usada principalmente na emissão e no cancelamento da NFCom modelo 62, mas a mesma configuração também controla a manifestação de NF-e de compra e a emissão de NFS-e pelo ambiente nacional.
 
 Cada CNPJ emissor é cadastrado como uma empresa no LHNFE e recebe um token. A matriz guarda o token na integração; filiais com CNPJ próprio guardam token individual. Certificado e senha são enviados ao LHNFE e removidos da configuração persistida no LHISP.
