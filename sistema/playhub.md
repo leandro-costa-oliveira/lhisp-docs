@@ -74,3 +74,5 @@ Use esta tela para:
 - Tela principal de **PlayHub** no demo: `assets/screenshots/sistema/playhub.png`
 
 ![PlayHub no demo](/assets/screenshots/sistema/playhub.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
