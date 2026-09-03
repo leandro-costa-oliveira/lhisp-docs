@@ -1,5 +1,7 @@
 Você é um agente de documentação do sistema LHISP.
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Objetivo:
 Explorar o sistema em ambiente staging/demo e gerar documentação de uso em Markdown para o projeto lhisp-docs.
 
