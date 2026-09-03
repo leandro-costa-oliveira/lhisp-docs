@@ -7,10 +7,6 @@ description: ''
 
 # Documentos
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Modelos de texto, campos dinâmicos e conteúdo jurídico devem ser validados pela equipe técnica antes de qualquer uso em produção.
-
 ## Objetivo
 
 Cadastrar e manter **modelos de documentos** que serão preenchidos automaticamente com dados do cliente, da empresa ou do contrato no momento da impressão.
@@ -85,13 +81,6 @@ Esses grupos alimentam o texto com dados do cadastro correspondente no momento d
 - O conteúdo do documento pode usar códigos substituídos dinamicamente pelo sistema.
 - O demo exibe um modelo já existente, com a descrição **contrato de prestação de internet**.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- Existe algum conjunto oficial de códigos dinâmicos suportados?
-- O modelo de documento é versionado ou sobrescrito a cada edição?
-- Há permissões separadas para criar, editar e excluir modelos?
-- O botão **Visualizar** gera exatamente o mesmo layout da impressão final?
 
 ## Screenshots sugeridos
 
