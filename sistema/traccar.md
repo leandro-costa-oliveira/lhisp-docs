@@ -61,3 +61,5 @@ Use esta tela para informar a URL do servidor, usuário, senha e ativar a integr
 - `assets/screenshots/sistema/traccar.png` — captura limpa da configuração da API Traccar no demo.
 
 ![Traccar no demo](/assets/screenshots/sistema/traccar.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
