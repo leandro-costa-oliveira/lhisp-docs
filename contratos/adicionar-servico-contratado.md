@@ -7,6 +7,8 @@ description: Vincule um plano ao contrato e defina cobrança, instalação, fisc
 
 # Adicionar serviço contratado
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 O serviço contratado é a cópia operacional de um plano dentro do contrato. Ele guarda preço, vencimento, quantidade, bancos, fidelidade, parâmetros técnicos e fiscais próprios. Alterações futuras no cadastro do plano não substituem automaticamente esses dados.
 
 A inclusão pode ativar o serviço, abrir ordem de viabilidade, faturar instalação e reorganizar mensalidades futuras. Faça a revisão financeira antes de salvar.
