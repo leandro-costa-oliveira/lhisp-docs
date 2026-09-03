@@ -7,9 +7,6 @@ description: ''
 
 # Configurações Globais da Rede
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da tela observada no ambiente de demonstração do LHISP. A captura usada nesta página foi validada visualmente e mostra a área principal de configurações globais do módulo de Rede/ Infra.
 
 ## Objetivo
 
@@ -77,15 +74,11 @@ Use este fluxo para:
 - Os DNS exibidos na tela são apenas os valores observados no demo e não devem ser tratados como padrão universal.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cconfiguracoes`.
 
-## Dúvidas para revisão
-
-- Os DNS mostrados são editáveis por ambiente ou herdados de outra configuração?
-- O link **Bloqueio Judicial** abre uma página própria ou apenas um detalhe da mesma configuração?
-- O bloqueio de gerência vale para todos os tipos de equipamento ou só para RBS/Mikrotik?
-- Os scripts PPPoE são globais ou por cliente/POP?
 
 ## Screenshots sugeridos
 
 - Tela principal de **Configurações Globais da Rede** no demo: `assets/screenshots/rede-infra/configuracoes-globais.png`
 
 ![Configurações Globais da Rede no demo](/assets/screenshots/rede-infra/configuracoes-globais.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
