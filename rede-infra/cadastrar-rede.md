@@ -7,9 +7,6 @@ description: ''
 
 # Cadastrar rede
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi elaborado a partir de exploração no ambiente de demonstração. A criação efetiva de redes deve ser validada pela equipe técnica antes de publicação.
 
 ## Objetivo
 
@@ -115,16 +112,11 @@ Use este fluxo para registrar redes de acesso, redes administrativas/backbone e 
 - Os campos e opções mudam conforme a tecnologia escolhida.
 - Foi observada a ação **Transferir Acessos**, que indica integração da rede com migração/liberação de clientes.
 
-## Dúvidas para revisão
-
-- Quais campos são obrigatórios além de **Descrição** e **Servidor**?
-- O campo **Tipo** muda regras de validação ou exibição de outros campos?
-- Em quais cenários **Nat** e **Exigir Pop** devem ser marcados?
-- Como funciona a ação **Transferir Acessos**?
-- O que exatamente deve ser preenchido em **Rede:** e **Máscara:** em cada tecnologia?
 
 ## Screenshots sugeridos
 
 - Formulário de cadastro de rede: `assets/screenshots/rede-infra/cadastrar-rede-form.png`
 
 ![Cadastro de rede](/assets/screenshots/rede-infra/cadastrar-rede-form.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
