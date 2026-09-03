@@ -7,9 +7,6 @@ description: ''
 
 # Bit Health
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo é apenas ilustrativo do ambiente de teste e não deve ser reutilizado em produção.
 
 ## Objetivo
 
@@ -72,12 +69,6 @@ Use este fluxo quando for necessário:
 - A wiki também descreve uma API de autenticação com `x-api-key` e parâmetros enviados como `x-www-form-urlencoded`.
 - O demo mostra a tela **Bit Health - Configuração da API** com token, ativação e histórico de eventos.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- O token deve ser gerado automaticamente sempre ou pode ser informado manualmente?
-- O cabeçalho da API é sempre `x-api-key` em todos os cenários?
-- O valor do campo **Recurso** deve seguir uma lista fixa ou pode ser customizado por plano?
 
 ## Screenshots sugeridos
 
