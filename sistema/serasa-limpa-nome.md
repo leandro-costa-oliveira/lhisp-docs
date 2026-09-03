@@ -61,3 +61,5 @@ Use esta tela quando for necessário habilitar a integração, revisar a chave d
 - `assets/screenshots/sistema/serasa-limpa-nome.png` — captura limpa da tela Serasa Limpa Nome no demo.
 
 ![Serasa Limpa Nome no demo](/assets/screenshots/sistema/serasa-limpa-nome.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
