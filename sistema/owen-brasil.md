@@ -7,9 +7,6 @@ description: ''
 
 # Owen Brasil
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API do Owen.
 
 ## Objetivo
 
@@ -63,12 +60,6 @@ Use esta tela para:
 - A captura do demo estava limpa e sem marcações visuais.
 - A tela exibida no demo é minimalista e contém apenas token, ativação e botão de salvar.
 - O token mostrado no screenshot não foi reproduzido nesta documentação por cautela.
-
-## Dúvidas para revisão
-
-- Existe algum nome oficial distinto de **Owen Brasil** no parceiro?
-- A ativação controla apenas a escrita ou também a leitura de dados?
-- Há parâmetros adicionais não visíveis nesta tela?
 
 ## Screenshots sugeridos
 
