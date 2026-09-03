@@ -7,9 +7,6 @@ description: ''
 
 # Cobrança Terceirizada
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo é apenas ilustrativo do ambiente de teste e não deve ser reutilizado em produção.
 
 ## Objetivo
 
@@ -70,12 +67,6 @@ Use este fluxo quando for necessário:
 - A autenticação é feita via token enviado no header.
 - A wiki também informa que os clientes chamados ficam marcados como **Em Cobrança terceirizada** e podem ser conferidos em relatório próprio.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- O nome oficial no menu deve permanecer como **CobrancaTerceirizada** ou com espaço/acentuação?
-- O relatório correspondente deve virar uma página separada na documentação?
-- O endpoint de pagamentos tem retorno padronizado ou varia por parceiro?
 
 ## Screenshots sugeridos
 
