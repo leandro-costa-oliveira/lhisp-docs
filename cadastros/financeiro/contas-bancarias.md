@@ -69,12 +69,6 @@ Use esta tela quando for necessário:
 - Na listagem do demo, foram observados registros como **BANCO DO NORDESTE**, **BANCO DO BRASIL**, **UNICRED**, **MODOBANK** e **ASAAS**.
 - A tela é objetiva e funciona como uma listagem administrativa simples.
 
-## Dúvidas para revisão
-
-- Existe alguma regra específica de uso para cada conta bancária cadastrada?
-- O fluxo de cadastro possui campos adicionais que não aparecem na listagem?
-- O sistema exige algum vínculo com contratos ou boletos ao criar uma nova conta?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/contas-bancarias.png` — captura limpa da listagem de contas bancárias no demo.
