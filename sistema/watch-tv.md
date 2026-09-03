@@ -7,9 +7,6 @@ description: ''
 
 # Watch Brasil
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Os dados sensíveis exibidos no demo foram redigidos na captura desta documentação.
 
 ## Objetivo
 
@@ -74,11 +71,6 @@ Use este fluxo quando for necessário:
 - A captura usada nesta página foi redigida para ocultar `Id do Projeto`, `Cliente Id` e `Cliente Secret`.
 - A wiki orienta usar a URL de callback `https://Seu-Provedor.lhprovedor.com.br/api/callback/watchtv/token`.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- Os recursos do plano precisam de uma página própria com a lista de opções?
-- Existe algum campo adicional que deva ser documentado além dos visíveis na tela?
 
 ## Screenshots sugeridos
 
