@@ -83,10 +83,6 @@ Na aba **Serviços**, a grade exibe colunas observadas:
 - Na tabela, o botão de ação visível por linha costuma aparecer como **Editar** (com título de detalhe do serviço) e, em alguns casos, há ação adicional **Alteração de Plano**.
 - O modal **Contratação de Serviço** abre como sobreposição na própria tela e exibe, além do plano, campos como **Quantidade**, **Observação**, **Tipo de IP**, **Tipo de Equipamento**, **Conta Bancária (Boleto/Pix)**, **Vendedor**, **Promoção**, **Fidelidade** e as regras de cobrança.
 
-## Dúvidas para revisão
-- Quais são *obrigatórios* no modal **Contratação de Serviço** para que o salvamento persista (especialmente campos relacionados a **Valor**, **Desconto [%]**, **Vencimento** e **Contas/Forma de pagamento**)?
-- Quais valores fazem o serviço iniciar como **ATIVO** vs **CANCELADO** (regra do contrato/serviço)?
-
 ## Screenshots sugeridos
 - Aba **Serviços** do contrato: `assets/screenshots/contratos/servicos-aba.png`
 
