@@ -58,13 +58,11 @@ Use esta tela quando for necessário analisar remessas, retornos ou preparar nov
 - A interface mostra os blocos **Remessas** e **Retornos** em branco quando não há dados.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- A ação **Adicionar** cria remessa manual ou outro tipo de registro?
-- O importador de retorno exige algum layout específico no arquivo?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/serasa-pefin.png` — captura limpa da tela Serasa Pefin no demo.
 
 ![Serasa Pefin no demo](/assets/screenshots/sistema/serasa-pefin.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
