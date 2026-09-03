@@ -7,60 +7,19 @@ description: ''
 
 # Clientes por Aceite
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da entrada de menu equivalente no ambiente de demonstração do LHISP. A tela foi verificada visualmente no demo.
+## Estado atual
 
-## Objetivo
+Não foi localizada uma implementação de relatório **Clientes por Aceite** nos repositórios disponíveis.
 
-Listar clientes por aceite registrado.
+As buscas incluíram rotas e componentes de relatórios no `lhisp-frontend`, formulários e actions no `lhisp-php`, além de rotas, regras de negócio e modelos no `lhisp-backend`.
 
-## Quando usar
+## Funcionalidade relacionada localizada
 
-Use esta tela quando for necessário consultar o relatório **Clientes por Aceite** no demo do LHISP.
+O sistema possui aceite eletrônico de documentos do contrato na central do assinante:
 
-## Pré-requisitos
+- `web/central/central_principal.php` lista documentos pendentes de aceite;
+- `web/central/central_docs.php` registra e apresenta a data do aceite;
+- `web/callback/d4sign.php` também grava `DATA_ACEITE` em retorno da assinatura;
+- planos podem usar a configuração `exigirAceite`.
 
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes por Aceite**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes por Aceite**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use **Imprimir** ou **Baixar Arquivos** quando precisar exportar.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
-## Observações
-
-- O demo expõe esta tela como um relatório operacional do menu.
-- A validação visual foi feita no ambiente de demonstração.
-- Os campos variam entre relatórios, então esta página registra apenas o padrão comum confirmado.
-
-## Dúvidas para revisão
-
-- Há filtros adicionais específicos que ainda não foram detalhados nesta documentação?
-- A saída de impressão/exportação segue o mesmo padrão em todas as variações do relatório?
+Esses fluxos não comprovam a existência de uma tela consolidada **Clientes por Aceite**. Por isso, filtros, colunas, exportação e regras do relatório não são descritos aqui.
