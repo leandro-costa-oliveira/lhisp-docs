@@ -66,3 +66,5 @@ Use esta tela quando for necessário informar a URL da API, revisar credenciais 
 ## Captura de tela
 
 ![A2Billing](/assets/screenshots/sistema/a2billing.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
