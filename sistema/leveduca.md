@@ -55,11 +55,6 @@ Use esta tela para revisar o token, ativar a integração e confirmar a URL asso
 - O token exibido no demo foi **redigido** na captura desta documentação por ser um dado sensível.
 - A tela mostra a URL associada à integração no campo inferior.
 
-## Dúvidas para revisão
-
-- A URL é fixa ou pode ser personalizada?
-- Há validação adicional para o token?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/leveduca.png` — captura limpa da configuração da API Leveduca com token redigido.
