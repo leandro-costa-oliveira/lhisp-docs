@@ -1,93 +1,71 @@
 ---
-title: Impressão de Carnês
+title: Impressão de carnês
 published: true
 editor: markdown
-description: ''
+description: Filtre contas a receber em aberto, confira os boletos e controle sua marcação de impressão.
 ---
 
-# Impressão de Carnês
+# Impressão de carnês
 
+Esta tela prepara boletos de mensalidades já geradas. Ela **não cria contas a receber** e não registra cobranças no banco: transforma os títulos em aberto no modelo de boleto da conta bancária ou incorpora o PDF fornecido pelo gateway.
 
-## Objetivo
+O processamento agrupa itens pelo número do documento (`NRDOC`). Quando várias contas do mesmo contrato, banco e documento compõem uma cobrança, o boleto soma os valores e reúne as descrições, evitando imprimir o mesmo documento mais de uma vez.
 
-Parametrizar a impressão de carnês por filial, conta bancária, rede e critérios de faturamento.
+## Fluxo recomendado
 
-## Quando usar
+1. Informe o período de faturamento. Por padrão, a tela abre com o primeiro e o último dia do mês atual.
+2. Aplique somente os filtros necessários.
+3. Use **Exibir** para carregar a prévia sem alterar o controle de impressão.
+4. Clique em **Imprimir** para abrir a impressão do navegador sobre o conteúdo exibido.
+5. Depois de confirmar que a impressão ocorreu, clique em **Confirmar** e aceite a pergunta. O sistema recarrega o mesmo conjunto e incrementa o contador de impressão de suas contas.
 
-Use esta tela quando precisar:
+**Confirmar** não imprime nem valida a impressora. Ele apenas marca os títulos encontrados como impressos. Não confirme antes de concluir a impressão física ou salvar o PDF.
 
-- filtrar carnês por filial ou conta bancária;
-- selecionar a rede, o plano ou a localidade;
-- definir o período de faturamento;
-- controlar o status de impressão;
-- confirmar, imprimir ou exibir os carnês filtrados.
+## Filtros
 
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo de impressão de carnês.
-- Ter os cadastros de filial, conta bancária, plano e endereços minimamente configurados.
-
-## Passo a passo
-
-1. Acesse o fluxo de **Impressão de Carnês**.
-2. Escolha a **Filial** desejada.
-3. Selecione a **Conta Bancária** e o **Setor de Rede**, quando aplicável.
-4. Informe a **Rede**, o **Vencimento** e o status de **Imprimir**.
-5. Use os campos de **UF**, **Cidade**, **Bairro** e **Logradouro** para refinar a seleção.
-6. Defina o **Plano** e o período de **Faturamento**.
-7. Ajuste a quantidade de **Contratos** e a **Página**, se necessário.
-8. Clique em **Confirmar**, **Imprimir** ou **Exibir** conforme a ação desejada.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo | Efeito |
 |---|---|
-| **Filial** | Filial usada como filtro principal. |
-| **Conta Bancária** | Conta bancária vinculada à impressão. |
-| **Setor de Rede** | Setor operacional associado à seleção. |
-| **Rede** | Rede alvo da impressão. |
-| **Vencimento** | Dia de vencimento considerado. |
-| **Imprimir** | Filtro para não impressos, impressos ou todos. |
-| **UF** | Filtro de unidade federativa. |
-| **Cidade** | Filtro de cidade. |
-| **Bairro** | Filtro de bairro. |
-| **Logradouro** | Filtro de endereço/logradouro. |
-| **Plano** | Plano associado aos contratos filtrados. |
-| **Faturamento** | Intervalo de datas de faturamento. |
-| **Contratos** | Quantidade de contratos por página ou seleção. |
-| **Página** | Número da página em uso. |
-| **Confirmar** | Confirma os filtros informados. |
-| **Imprimir** | Gera a impressão dos carnês. |
-| **Exibir** | Mostra a listagem/resultado antes de imprimir. |
+| **Filial** | Restringe os contratos à filial. |
+| **Conta bancária** | Mantém somente títulos da conta escolhida. Também determina banco, carteira, instruções e modelo do boleto. |
+| **Setor de rede / Rede** | Restringe os contratos pela estrutura de rede. A lista de redes é carregada após escolher o setor. |
+| **Vencimento** | Filtra pelo dia de vencimento. A lista vem dos vencimentos permitidos na empresa. |
+| **Imprimir** | Seleciona títulos **Não impressos**, **Impressos** ou **Todos**. O padrão é **Não impressos**. |
+| **UF, Cidade, Bairro e Logradouro** | Filtram pelo endereço dos contratos. Os campos usam as pesquisas de endereço do sistema. |
+| **Plano** | Restringe aos contratos associados ao plano selecionado. |
+| **Faturamento** | Intervalo obrigatório usado para localizar contas em aberto. |
+| **Contratos** | Quantidade de contratos processada na página: 2, 10, 50 ou 100. Não é quantidade de boletos. |
+| **Página** | Página do conjunto de contratos; começa em 1. |
 
-## Resultado esperado
+Filtros em branco não restringem a consulta. Para lotes grandes, percorra todas as páginas e confirme cada uma separadamente.
 
-- O operador consegue montar um conjunto de filtros para a impressão.
-- O sistema prepara os carnês de acordo com a filial, conta e período escolhidos.
-- A tela responde com confirmação, pré-visualização ou execução da impressão.
+## Como o boleto é montado
 
-## Problemas comuns
+- Apenas contas a receber **em aberto** entram nessa listagem.
+- O valor é recalculado para a data efetiva usada pelo título, considerando as regras financeiras da conta bancária.
+- O endereço de cobrança do contrato tem preferência; sem ele, usa-se o endereço principal.
+- A conta bancária pode incluir o ponto de referência no endereço do boleto.
+- Quando existe URL de boleto e a cobrança está configurada para imprimir PDF externo, a tela incorpora o arquivo do gateway.
+- Nos demais casos, o LHISP renderiza o boleto com cedente, sacado, endereço, descrições e parâmetros da conta bancária.
+- A quebra de página depende da quantidade de boletos por página configurada no meio de cobrança.
 
-| Problema | Como tratar |
+## Controle de impressão
+
+O filtro **Impressos/Não impressos** usa o contador gravado em cada conta. A ação **Confirmar** incrementa esse contador para todos os componentes do documento exibido. Assim, um boleto confirmado deixa de aparecer no filtro padrão de não impressos.
+
+Use **Todos** ou **Impressos** para localizar uma segunda via. Imprimir pelo navegador sem confirmar mantém o título como não impresso; confirmar sem imprimir produz o efeito oposto.
+
+## Diagnóstico
+
+| Situação | Verificação |
 |---|---|
-| A lista de contas bancárias não carrega | Verifique se há contas cadastradas e se a filial foi escolhida corretamente. |
-| A filtragem por endereço não retorna dados | Confirme se UF, cidade, bairro e logradouro existem no cadastro. |
-| Os botões não executam ação | Revise o perfil de acesso e a configuração dos dados financeiros. |
-| O período de faturamento está incoerente | Ajuste as datas antes de confirmar a operação. |
+| Nenhum boleto aparece | Confirme datas válidas, situação em aberto, página, filial e o filtro **Imprimir**. |
+| Há menos boletos que contas | Contas com o mesmo `NRDOC` são consolidadas em um documento. |
+| Rede não aparece | Selecione primeiro o setor de rede. |
+| Endereço ou cedente está incorreto | Revise os endereços do contrato e da conta bancária e os dados da filial. |
+| Valor difere do valor nominal | Confira prorrogação, desconto, juros, multa e composição de contas do mesmo documento. |
+| PDF externo não abre | Verifique a URL salva no título, a integração do gateway e o suporte do navegador a PDF incorporado. |
+| Título sumiu de **Não impressos** sem impressão | Ele provavelmente foi confirmado; procure em **Impressos** ou **Todos**. |
 
-## Observações
+Para criar mensalidades ausentes, use [Gerar carnês](/financeiro/gerar-carnes). Para inspecionar ou corrigir o título antes da impressão, use [Gerência financeira](/financeiro/gerencia-financeira).
 
-- O demo abre a tela no fluxo principal.
-- A captura mostra a interface com os filtros já exibidos e sem resultados carregados na área inferior.
-- Os botões de ação visíveis são **Confirmar**, **Imprimir** e **Exibir**.
-- A tela já inicia com valores de referência de faturamento preenchidos no demo.
-
-
-## Screenshots sugeridos
-
-- Tela **Impressão de Carnês** no demo: `assets/screenshots/financeiro/impressao-de-carnes.png`
-
-![Impressão de Carnês no demo](/assets/screenshots/financeiro/impressao-de-carnes.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Tela Impressão de carnês](/assets/screenshots/financeiro/impressao-de-carnes.png)

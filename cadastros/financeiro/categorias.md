@@ -1,77 +1,56 @@
 ---
-title: Categorias
+title: Categorias Financeiras
 published: true
 editor: markdown
-description: ''
+description: Classificação da natureza das despesas e contas a pagar.
 ---
 
-# Categorias
+# Categorias Financeiras
 
-## Objetivo
+Categorias financeiras classificam **o que** representa um gasto. Exemplos típicos são impostos, pessoal, infraestrutura ou serviços de terceiros. Cada categoria pode conter itens para um nível adicional de detalhamento.
 
-Documentar a tela de listagem e cadastro de **Categorias** em **Cadastros > Financeiro > Categorias**.
+Essa classificação complementa o centro de custo: a categoria descreve a natureza do gasto; o centro de custo informa a área à qual ele foi apropriado. Usados em conjunto, os dois cadastros permitem analisar contas a pagar por finalidade e por área responsável.
 
-## Quando usar
+## Onde a categoria é usada
 
-Use esta tela quando for necessário:
+- [Despesas recorrentes](/cadastros/financeiro/despesas), que copiam categoria e item para cada conta gerada;
+- contas a pagar incluídas ou editadas na Gerência Financeira;
+- geração automática de despesas mensais e anuais;
+- relatórios e resumos de contas a pagar por categoria;
+- projeções financeiras que usam as contas classificadas.
 
-- consultar categorias financeiras cadastradas;
-- cadastrar uma nova categoria;
-- filtrar registros por texto;
-- exportar a listagem para planilha.
-
-## Pré-requisitos
-
-- Acesso ao menu **Cadastros > Financeiro > Categorias**.
-- Permissão para consultar e cadastrar registros financeiros.
-
-## Passo a passo
+## Cadastro
 
 1. Acesse **Cadastros > Financeiro > Categorias**.
-2. Use o campo **Procurar** para filtrar a listagem, se necessário.
-3. Clique em **Procurar** para executar a busca.
-4. Clique em **Cadastrar** para criar uma nova categoria.
-5. Clique em **Baixar Planilha** para exportar a lista exibida.
-6. Clique em um item da listagem para abrir o registro correspondente.
+2. Clique em **Cadastrar** ou abra uma categoria existente.
+3. Informe o nome da categoria.
+4. Adicione os itens necessários.
+5. Salve.
 
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo | Função |
 |---|---|
-| Campo **Procurar** | Campo de filtro textual da listagem. |
-| Botão **Procurar** | Executa a pesquisa com o termo informado. |
-| **Cadastrar** | Inicia o fluxo de inclusão de uma nova categoria. |
-| **Baixar Planilha** | Exporta a listagem atual para arquivo de planilha. |
-| **Id** | Identificador da categoria. |
-| **iCategoria** | Nome da categoria. O texto do cabeçalho é literal na implementação atual. |
-| **Itens** | O formulário permite adicionar ou remover itens, cada um com nome de até 100 caracteres. |
+| **Categoria Financeira** | Agrupamento principal da natureza do gasto. O nome é obrigatório e único na empresa. |
+| **Itens** | Detalhamento interno da categoria, com nome de até 100 caracteres na interface. |
 
-## Resultado esperado
+Ao salvar, os itens enviados são criados ou atualizados. Itens removidos do formulário são excluídos logicamente pelo backend.
 
-- A lista de categorias fica visível com paginação.
-- O usuário consegue abrir uma categoria existente para consulta ou edição.
-- O usuário consegue iniciar o cadastro de uma nova categoria.
+## Regras e efeitos
 
-## Problemas comuns
+- A categoria e seus itens pertencem à empresa do usuário; consultas não devem misturar dados de empresas diferentes.
+- O backend impede duas categorias ativas com o mesmo nome.
+- A categoria é opcional no cadastro de despesa e de conta a pagar no backend, mas pode ser exigida pela configuração administrativa da empresa.
+- Remover uma categoria ou item não reclassifica despesas nem contas já gravadas.
+- Alterar a categoria em uma despesa afeta os lançamentos futuros. Contas a pagar já geradas mantêm a classificação copiada na criação.
 
-| Problema | Como tratar |
-|---|---|
-| Nenhum resultado aparece | Verifique o termo informado no campo **Procurar**. |
-| Registro não abre | Confirme se o usuário possui permissão para consultar o item. |
-| Exportação não baixa | Refaça a ação com a listagem já carregada. |
+> **Atenção:** antes de remover um item em uso, localize despesas recorrentes e contas em aberto vinculadas. Sem essa revisão, novos relatórios podem apresentar registros históricos com uma referência que já não aparece nas seleções normais.
 
-## Observações
+## Boas práticas
 
-- A rota é `/cadastros/financeiro/categorias`.
-- A listagem possui dez registros por página e filtra `nome` por ocorrência do texto digitado.
-- O formulário implementa uma categoria com uma lista simples de itens; não há hierarquia de subcategorias.
+- Evite categorias sobrepostas ou nomes vagos.
+- Mantenha poucos níveis estáveis: categoria e item.
+- Use centro de custo para área/destino e categoria para natureza do gasto.
+- Padronize a classificação antes de cadastrar despesas recorrentes; isso reduz correções em lote nas contas geradas.
 
-## Screenshots sugeridos
+## Captura da tela
 
-- `assets/screenshots/cadastros/financeiro/categorias.png` — captura limpa da listagem de categorias no demo.
-
-## Captura do demo
-
-![Categorias no demo](/assets/screenshots/cadastros/financeiro/categorias.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Listagem de categorias financeiras](/assets/screenshots/cadastros/financeiro/categorias.png)

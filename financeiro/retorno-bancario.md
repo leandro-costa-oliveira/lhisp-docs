@@ -2,57 +2,70 @@
 title: Retorno Bancário
 published: true
 editor: markdown
-description: 'Visualização e processamento de arquivo de retorno bancário'
+description: Conferência e processamento das ocorrências enviadas pelo banco.
 ---
 
 # Retorno Bancário
 
-## Objetivo
+O arquivo de retorno é a resposta do banco sobre cobranças enviadas pelo LHISP. Ele pode informar liquidação, confirmação ou rejeição de registro, baixa no banco e outras ocorrências. O processamento traduz cada registro conforme o banco/layout e atualiza as contas a receber correspondentes.
 
-Visualizar e processar um arquivo de retorno bancário para conferir registros e efetuar as baixas correspondentes.
+Essa importação não é uma simples planilha: ela altera títulos e pode gerar movimentações financeiras. Use primeiro a leitura sem gravação.
 
-## Pré-requisitos
+## Antes de processar
 
-- Permissão para a aba **Retorno Bancário** da Gerência Financeira.
-- Arquivo de retorno fornecido pelo banco em formato compatível com a conta bancária cadastrada.
-- Backup e conferência do arquivo antes do processamento definitivo.
+- obtenha o arquivo diretamente do banco e preserve uma cópia original;
+- confirme que a [conta bancária](/cadastros/financeiro/contas-bancarias) e o padrão de cobrança estão cadastrados;
+- verifique se o layout é suportado para o banco;
+- não renomeie para simular outro formato e não edite posições do arquivo CNAB;
+- confirme se o mesmo retorno já não foi processado.
 
-## Passo a passo
+O LHISP identifica a conta bancária pelo conteúdo do arquivo, calcula o tamanho das linhas para escolher CNAB 240, 400 ou 750 e então instancia o parser específico do banco. Nem toda combinação é implementada: por exemplo, o código legado rejeita retorno Itaú 240, Bradesco 240 e Sicredi 240.
+
+## Visualizar e processar
 
 1. Acesse **Financeiro > Gerência Financeira > Retorno Bancário**.
-2. Selecione o **Arquivo de retorno**.
-3. Clique em **Visualizar**. Essa ação lê o arquivo, mas não altera os títulos.
-4. Confira conta bancária, registros, valores, tarifas, situações e totais.
-5. Se os dados estiverem corretos, clique em **Processar** e confirme. Essa ação executa as baixas.
-6. Se necessário, use **CSV** ou **Imprimir** para obter uma cópia da conferência.
+2. Selecione o arquivo.
+3. Clique em **Visualizar**. O sistema interpreta o conteúdo, mas não altera os títulos.
+4. Confira banco, titular, agência, conta, quantidades e totais.
+5. Investigue rejeições, divergências e títulos não encontrados.
+6. Somente com a prévia validada, clique em **Processar** e confirme.
+7. Salve o CSV ou a impressão da conferência quando necessário.
 
-## Resultado exibido
+O processamento ocorre dentro de uma transação de banco de dados. Se uma exceção interromper o arquivo, o backend executa rollback em vez de confirmar apenas parte daquele processamento.
 
-| Informação | Descrição |
+## Como as linhas são relacionadas
+
+Cada parser extrai convênio, número do documento, datas, valor pago, tarifa, status e ação. O LHISP procura contas a receber pelo número do documento e pela conta bancária. Quando há mais de uma conta para o mesmo documento, soma o valor devido para a comparação exibida.
+
+| Ação bancária | Efeito esperado |
 |---|---|
-| **Conta bancária** | Banco, titular, agência e conta identificados no arquivo. |
-| **Registros** | Filial, contrato, cliente, descrição, documento, vencimento, pagamento, crédito, valores, tarifa, situação e status bancário. |
-| **Totais operacionais** | Baixas, registros confirmados, rejeitados, baixados pelo banco, outras ações e títulos não encontrados. |
-| **Totais financeiros** | Quantidade de títulos, valor a receber, valor pago, tarifas e líquido. |
+| **Efetuar baixa** | Registra o pagamento da conta identificada. |
+| **Entrada confirmada** | Confirma que o título foi registrado pelo banco. |
+| **Entrada rejeitada** | Registra a rejeição e apresenta o motivo/status retornado. |
+| **Cancelamento do banco** | Reflete a baixa/cancelamento informado pelo banco. |
+| **Outros** | Mantém a ocorrência disponível para análise sem tratá-la como liquidação. |
 
-## Atenção
+## Leitura da conferência
 
-- **Visualizar** não altera títulos.
-- **Processar** executa as baixas e exige confirmação.
-- Não processe o mesmo arquivo novamente sem antes conferir o histórico e o resultado anterior.
+- **A receber** considera o valor calculado da conta na data de pagamento.
+- **Pago** soma os valores informados pelo banco.
+- **Tarifas** soma as tarifas do arquivo.
+- **Líquido** é o valor pago menos as tarifas.
+- pagamento maior que o valor calculado recebe destaque informativo;
+- diferença positiva inferior a R$ 0,10 recebe alerta;
+- diferença a partir de R$ 0,10 ou título inexistente recebe destaque de erro.
+
+Esses destaques orientam a conferência; não substituem a validação do financeiro.
 
 ## Problemas comuns
 
-| Problema | Como tratar |
+| Sintoma | Verificação |
 |---|---|
-| Botões desabilitados | Selecione um arquivo. |
-| Arquivo rejeitado | Confirme o layout e a conta bancária correspondente. |
-| Títulos não encontrados | Compare número do documento, carteira e ambiente de emissão. |
-| Valores divergentes | Não processe; valide o arquivo com o banco e o financeiro. |
+| Conta bancária não identificada | Arquivo, convênio, agência/conta e cadastro da carteira. |
+| Formato inválido | Quantidade de colunas e layout CNAB fornecido pelo banco. |
+| Título não encontrado | Número do documento, conta bancária e origem da cobrança. |
+| Valor divergente | Multa, juros, desconto, pagamento parcial e tarifa. |
+| Entrada rejeitada | Motivo retornado pelo banco; corrija o título antes de nova remessa. |
+| Arquivo já processado | Histórico da conta e movimentações antes de repetir a importação. |
 
-## Referências de implementação
-
-- `lhisp-frontend/src/paginas/financeiro/gerencia/TabRetornoBancario.tsx`
-- ações `Financeiro.VisualizarRetornoBancario` e `Financeiro.ProcessarRetornoBancario`
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+> **Atenção:** **Visualizar** é somente leitura. **Processar** executa as ocorrências reconhecidas. Não reprocesse um arquivo para tentar corrigir divergências sem antes confirmar o estado dos títulos.

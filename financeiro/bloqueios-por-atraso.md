@@ -1,78 +1,76 @@
 ---
-title: Bloqueios por Atraso
+title: Bloqueios por atraso
 published: true
 editor: markdown
-description: ''
+description: Audite títulos vencidos e bloqueie ou desbloqueie em lote os serviços associados.
 ---
 
-# Bloqueios por Atraso
+# Bloqueios por atraso
 
+Esta rotina relaciona inadimplência financeira ao estado operacional do serviço contratado. Ela procura contas a receber em aberto que atingiram o limite de atraso da empresa e permite bloquear serviços ativos ou desbloquear serviços já bloqueados.
 
-## Objetivo
+O bloqueio não cancela nem baixa a dívida. Ele muda a situação do serviço, atualiza a situação do contrato, bloqueia os acessos de rede associados e propaga a ação para OTT e telefonia vinculados. O desbloqueio faz o caminho operacional inverso e registra ambas as ações no histórico do serviço.
 
-Consultar contratos em atraso e executar bloqueios ou desbloqueios com base na filial e na data de vencimento.
+## Antes da ação em lote
 
-## Quando usar
+- Use **Visualizar** com os mesmos filtros da ação.
+- Confira pagamentos e retornos bancários ainda pendentes de processamento.
+- Revise títulos prorrogados: os dias de atraso consideram a prorrogação, quando existe.
+- Identifique exceções comerciais. Serviços marcados para não sofrer bloqueio automático também são excluídos desta tela.
+- Garanta comunicação com os servidores de acesso e integrações relacionadas.
 
-Use esta tela quando precisar:
+## Critérios da listagem
 
-- localizar contratos vencidos;
-- filtrar contratos por filial;
-- aplicar bloqueios por atraso;
-- reverter bloqueios já aplicados;
-- revisar contratos antes de executar uma ação em massa.
+A tela considera somente contas a receber em aberto cuja quantidade de dias vencidos seja maior ou igual a **Dias para corte** configurado na empresa. Se esse valor não estiver disponível, a consulta usa o prazo de cobrança da empresa.
 
-## Pré-requisitos
+Também são aplicadas estas regras:
 
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo **Bloqueios por Atraso**.
-- Ter contratos e vencimentos cadastrados.
-- Conhecer o período que será analisado.
+- **Filial** em branco inclui todas; uma filial selecionada restringe os contratos.
+- O intervalo informado filtra o vencimento original do título.
+- **Dias de atraso** é calculado até hoje usando a data de prorrogação, se houver, ou o vencimento original.
+- Apenas serviços em situação **ATIVO** ou **BLOQUEADO** são exibidos.
+- Serviços com **Não bloquear automaticamente** são ignorados.
+- Um serviço desbloqueado recentemente fica fora da lista durante o número de dias de tolerância pós-desbloqueio configurado na empresa.
 
-## Passo a passo
+A tabela apresenta uma linha por título elegível. O mesmo contrato ou serviço pode aparecer mais de uma vez quando possui várias contas vencidas.
 
-1. Acesse **Financeiro > Bloqueios por Atraso**.
-2. Selecione a **Filial** desejada.
-3. Informe o intervalo de **Data de Vencimento**.
-4. Use **Visualizar** para conferir os contratos encontrados.
-5. Execute **Efetuar Bloqueios** ou **Efetuar Desbloqueios** conforme a necessidade.
+## Executar
 
-## Campos importantes
+1. Se necessário, escolha a filial e informe o intervalo de vencimentos.
+2. Clique em **Visualizar**.
+3. Confira contrato, cliente, plano, vencimento, dias de atraso, valor e situação.
+4. Para bloquear, clique em **Efetuar Bloqueios** e confirme. Todos os serviços ativos exibidos pelos filtros serão processados.
+5. Para desbloquear, clique em **Efetuar Desbloqueios** e confirme. Todos os serviços bloqueados exibidos serão processados.
+6. Revise a situação mostrada na tabela e o resumo do rodapé.
 
-| Campo / ação | Descrição |
+Não há seleção individual por linha. Os botões atuam sobre todo o resultado dos filtros. Para tratar uma única exceção, use o serviço dentro do contrato.
+
+## Permissões e efeitos
+
+- **Efetuar Bloqueios** exige `contrato_bloq_servico`.
+- **Efetuar Desbloqueios** exige `contrato_desbloq_servico`.
+- Sem a permissão correspondente, o botão fica desabilitado e o backend não executa a mudança.
+- Bloqueios feitos aqui usam o motivo **PAGAMENTO EM ATRASO**.
+- Desbloqueios feitos aqui usam o motivo **DESBLOQUEIO EM LOTE**.
+- O desbloqueio também remove mensagens de bloqueio pendentes do acesso e restaura velocidades que haviam sido reduzidas, quando houver valores preservados.
+
+Desbloquear não altera a conta a receber. Se a dívida continuar aberta, o serviço volta a ser elegível depois da tolerância pós-desbloqueio.
+
+## Relação com a automação financeira
+
+O daemon financeiro também pode bloquear serviços pós-pagos quando **Bloqueio automático** está habilitado e **Dias para corte** é maior que zero. Essa automação não executa cobranças nem bloqueios aos sábados e domingos e pula feriados no momento do bloqueio. Serviços pré-pagos possuem tratamento próprio: podem ser bloqueados após o vencimento da conta.
+
+A tela manual usa os filtros e confirmações do operador; não depende de ser dia útil. Portanto, não a utilize como simples “prévia” da próxima execução automática sem considerar essas diferenças.
+
+## Diagnóstico
+
+| Situação | Verificação |
 |---|---|
-| **Filial** | Filial usada como filtro principal. |
-| **Data de Vencimento** | Faixa de vencimento dos contratos analisados. |
-| **Visualizar** | Lista os contratos elegíveis para a ação. |
-| **Efetuar Bloqueios** | Aplica bloqueio aos contratos selecionados. |
-| **Efetuar Desbloqueios** | Remove bloqueios já aplicados. |
+| Título vencido não aparece | Confira situação da conta, dias para corte, prorrogação, intervalo e opção **Não bloquear automaticamente** do serviço. |
+| Botão está desabilitado | Falta a permissão específica de bloqueio ou desbloqueio. |
+| Contrato aparece repetido | Existem vários títulos vencidos; a listagem não agrupa por contrato. |
+| Serviço desbloqueado não aparece | Pode estar dentro da tolerância configurada após o último desbloqueio. |
+| Serviço foi desbloqueado e bloqueou novamente depois | A dívida permaneceu aberta e terminou a tolerância pós-desbloqueio. |
+| Situação mudou, mas o cliente continua com acesso | Verifique o vínculo do acesso ao serviço, comunicação com o servidor e histórico operacional. |
 
-## Resultado esperado
-
-- A tela lista os contratos que se enquadram no filtro informado.
-- O operador consegue conferir antes de bloquear ou desbloquear.
-- O sistema aplica a ação escolhida para os contratos elegíveis.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| A lista não retorna contratos | Ajuste o período de vencimento ou a filial. |
-| A ação não executa | Verifique permissões e se existem contratos elegíveis. |
-| Os filtros parecem vazios | Confirme se há contratos vencidos cadastrados no demo. |
-
-## Observações
-
-- A rota observada no demo foi `/lgc/financeiro%7Cbloqueios`.
-- A tela é apresentada no demo como página operacional.
-- A captura visual obtida no demo mostrou claramente o formulário principal com **Filial**, **Data de Vencimento** e os botões de ação.
-- A área principal abaixo do formulário permanece vazia até que o operador use **Visualizar**.
-
-
-## Screenshots sugeridos
-
-- Tela **Bloqueios por Atraso** no demo: `assets/screenshots/financeiro/bloqueios-por-atraso.png`
-
-![Bloqueios por Atraso no demo](/assets/screenshots/financeiro/bloqueios-por-atraso.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Tela Bloqueios por atraso](/assets/screenshots/financeiro/bloqueios-por-atraso.png)

@@ -1,82 +1,101 @@
 ---
-title: Reajuste de Serviços Contratados
+title: Reajuste de serviços contratados
 published: true
 editor: markdown
-description: ''
+description: Simule e aplique reajustes em lote aos serviços contratados e, opcionalmente, ao plano e às mensalidades abertas.
 ---
 
-# Reajuste de Serviços Contratados
+# Reajuste de serviços contratados
 
+Esta rotina altera o valor cobrado nos serviços já contratados. O reajuste pode ser percentual ou um acréscimo fixo e pode, mediante confirmação, alcançar também o preço do plano e mensalidades em aberto ainda não remetidas ao banco.
 
-## Objetivo
+O preço do plano e o preço do serviço contratado são dados distintos. Reajustar apenas o plano não corrige contratos existentes; reajustar apenas os serviços não muda o valor oferecido em novas contratações.
 
-Aplicar reajustes percentuais ou de valor fixo em serviços contratados, com filtros por filial, plano, categoria, tipo de pessoa e carência.
+## Como a elegibilidade é calculada
 
-## Quando usar
+Entram na consulta serviços em situação **ATIVO** ou **BLOQUEADO** que cumpram a carência informada. A data de referência é a mais recente entre:
 
-Use esta tela quando precisar:
+- ativação do serviço;
+- último reajuste;
+- última renovação.
 
-- filtrar contratos elegíveis para reajuste;
-- revisar a base antes de aplicar alterações;
-- informar um percentual ou valor fixo de reajuste;
-- executar a atualização em lote após a validação.
+A carência é a quantidade de meses completos entre essa referência e a data atual. Os filtros opcionais restringem por filial, plano, categoria do contrato (**B2C** ou **B2B**) e tipo de pessoa.
 
-## Pré-requisitos
+## Simular
 
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo **Reajuste de Serviços Contratados**.
-- Ter planos, filiais e categorias disponíveis.
-- Definir previamente a regra de reajuste desejada.
+1. Selecione filial, plano, categoria e tipo de pessoa conforme a política aprovada.
+2. Informe a **Carência** em meses. A consulta só é habilitada com valor maior que zero.
+3. Informe o reajuste e use o botão **%/R$** para escolher:
+   - **%**: `valor atual + (valor atual × percentual ÷ 100)`;
+   - **R$**: `valor atual + acréscimo fixo`.
+4. Clique em **Visualizar**.
+5. Confira categoria, contrato, cliente, ativação, último reajuste, última renovação, referência, valor atual, valor do plano e valor calculado.
+6. Percorra todas as páginas. A listagem mostra dez itens por página.
 
-## Passo a passo
+A prévia é recalculada no navegador e não grava alterações.
 
-1. Acesse **Financeiro > Reajuste Serviços Contratados**.
-2. Preencha a **Filial** e o **Plano** quando necessário.
-3. Escolha a **Categoria** e o **Tipo de Pessoa**.
-4. Informe a **Carência** e o valor de **Reajuste**.
-5. Use o botão ao lado do valor para escolher **%** ou **R$**.
-6. Clique em **Visualizar** para conferir os contratos afetados e o valor reajustado.
-7. Se estiver tudo correto, clique em **Reajustar**.
+## Aplicar o reajuste
 
-## Campos importantes
+1. Mantenha os filtros usados na conferência e clique em **Reajustar**.
+2. No modal, confirme se deseja **Reajustar Plano**.
+3. Confirme se deseja **Reajustar Contas a Receber**.
+4. Revise novamente o tipo e o valor destacados no modal.
+5. Clique em **Reajustar** e aguarde a conclusão.
 
-| Campo / ação | Descrição |
+As duas respostas do modal são obrigatórias, inclusive quando forem **Não**.
+
+### Reajustar plano
+
+Disponível somente quando um plano foi selecionado. Altera o valor cadastral desse plano uma vez, antes de processar os serviços. A alteração é registrada no log do sistema.
+
+### Reajustar serviços contratados
+
+Sempre ocorre para todos os serviços considerados elegíveis na execução. O sistema atualiza o valor e a data do último reajuste, adiciona histórico e dispara a notificação de reajuste configurada para o contrato.
+
+### Reajustar contas a receber
+
+Quando habilitado, alcança apenas contas que atendam simultaneamente a estes critérios:
+
+- pertencem ao serviço reajustado e ao plano filtrado;
+- são mensalidades;
+- estão em aberto;
+- ainda não foram enviadas em remessa bancária.
+
+Contas pagas, canceladas, negociadas, de outro tipo ou já remetidas permanecem inalteradas. Compare os títulos futuros na Gerência Financeira depois do lote.
+
+## Limitações atuais
+
+### Categoria não é preservada na execução
+
+O filtro **Categoria** é enviado à prévia, mas a interface atual não o envia ao confirmar o reajuste. A execução pode, portanto, alcançar serviços B2C e B2B que atendam aos demais filtros, mesmo que a prévia tenha mostrado apenas uma categoria.
+
+Não execute um lote cuja separação dependa somente desse filtro. Combine-o com plano, filial e tipo de pessoa ou faça o tratamento por outro fluxo até a correção da interface.
+
+### Lote pode terminar parcialmente aplicado
+
+Plano, serviços e contas são salvos em operações sucessivas, sem uma transação única envolvendo todo o lote. Se ocorrer erro após parte do processamento, as alterações anteriores podem permanecer. Antes de repetir, refaça a visualização e confira plano, históricos e títulos para evitar um segundo reajuste.
+
+### Auditoria de acréscimo fixo
+
+O cálculo em reais é aplicado corretamente, mas os textos atuais de histórico/log usam a expressão “reajuste percentual” também para o tipo fixo. Use valores anterior e novo para interpretar a auditoria.
+
+## Cuidados
+
+- Se for reajustar mensalidades existentes, selecione explicitamente o plano e confira se nenhuma delas já foi remetida.
+- Valores percentuais são arredondados para duas casas decimais.
+- O acréscimo fixo incide por serviço e por conta elegível, não sobre o total do contrato.
+- Gere uma listagem final e confronte amostras de cada filial antes de comunicar os clientes.
+- Não repita a operação apenas porque a tela perdeu os filtros após o sucesso; o primeiro lote pode já ter sido aplicado.
+
+## Diagnóstico
+
+| Situação | Verificação |
 |---|---|
-| **Filial** | Filtra os contratos por filial. |
-| **Plano** | Limita o reajuste a um plano específico. |
-| **Categoria** | Segmenta os contratos por categoria. |
-| **Tipo de Pessoa** | Filtra pessoa física ou jurídica. |
-| **Carência** | Prazo mínimo considerado para o reajuste. |
-| **Reajuste** | Valor do reajuste. O botão adjacente alterna entre percentual (`%`) e acréscimo fixo (`R$`). |
-| **Visualizar** | Mostra a prévia dos contratos afetados. |
-| **Reajustar** | Executa o reajuste após validação. |
+| A prévia não carrega | A carência precisa ser maior que zero e **Visualizar** deve ser acionado. |
+| Serviço esperado não aparece | Confira situação, data de referência, carência e filtros de plano, filial, categoria e pessoa. |
+| Plano não mudou | **Reajustar Plano** exige resposta **Sim** e um plano selecionado. |
+| Mensalidade não mudou | Ela deve estar aberta, ser mensalidade, pertencer ao plano e não ter remessa. |
+| Resultado alcançou outra categoria | É a limitação atual do modal; suspenda novos lotes e audite os históricos. |
+| Operação retornou erro | Considere possível aplicação parcial; confira os dados antes de tentar novamente. |
 
-## Resultado esperado
-
-- A tela apresenta os filtros do reajuste.
-- O operador consegue revisar a prévia antes de executar.
-- O sistema aplica o reajuste apenas quando a ação final é confirmada.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| A prévia não retorna contratos | Verifique os filtros e a carência informada. |
-| O botão **Reajustar** fica indisponível | Informe um reajuste maior que zero e aguarde o fim do carregamento. |
-| O valor de reajuste está incorreto | Revise a regra aplicada antes de confirmar. |
-
-## Observações
-
-- A rota observada no demo foi `/financeiro/reajuste_servicos`.
-- A tela renderiza como página operacional normal.
-- A captura limpa mostra o formulário com **Filial**, **Plano**, **Categoria**, **Tipo de Pessoa**, **Carência** e **Reajuste**.
-- A área inferior da tela permanece vazia até a visualização ou execução do reajuste.
-
-
-## Screenshots sugeridos
-
-- Tela **Reajuste de Serviços Contratados** no demo: `assets/screenshots/financeiro/reajuste-servicos-contratados.png`
-
-![Reajuste de Serviços Contratados no demo](/assets/screenshots/financeiro/reajuste-servicos-contratados.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Tela Reajuste de serviços contratados](/assets/screenshots/financeiro/reajuste-servicos-contratados.png)
