@@ -7,6 +7,8 @@ description: Conferência e processamento das ocorrências enviadas pelo banco.
 
 # Retorno Bancário
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 O arquivo de retorno é a resposta do banco sobre cobranças enviadas pelo LHISP. Ele pode informar liquidação, confirmação ou rejeição de registro, baixa no banco e outras ocorrências. O processamento traduz cada registro conforme o banco/layout e atualiza as contas a receber correspondentes.
 
 Essa importação não é uma simples planilha: ela altera títulos e pode gerar movimentações financeiras. Use primeiro a leitura sem gravação.
