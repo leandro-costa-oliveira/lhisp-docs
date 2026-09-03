@@ -43,7 +43,8 @@ Use esta tela quando for necessário:
 | **Cadastrar** | Inicia o fluxo de inclusão de uma nova categoria. |
 | **Baixar Planilha** | Exporta a listagem atual para arquivo de planilha. |
 | **Id** | Identificador da categoria. |
-| **iCategoria** | Descrição ou nome da categoria exibida na lista. |
+| **iCategoria** | Nome da categoria. O texto do cabeçalho é literal na implementação atual. |
+| **Itens** | O formulário permite adicionar ou remover itens, cada um com nome de até 100 caracteres. |
 
 ## Resultado esperado
 
@@ -61,15 +62,9 @@ Use esta tela quando for necessário:
 
 ## Observações
 
-- A tela verificada no demo mostra a rota `/cadastros/financeiro/categorias`.
-- Na listagem do demo, foram observadas categorias como **QUE CATEGORIA**, **CATEGORICAMENTE CARO**, **despesas financeiras**, **custos e despesas variaveis**, **despesas administrativas**, **amortização**, **impostos** e **despesas pessoal**.
-- O demo mostra a coluna com o rótulo **iCategoria** para os registros listados.
-
-## Dúvidas para revisão
-
-- A nomenclatura **iCategoria** é apenas herdada do sistema ou tem significado funcional específico?
-- Existem subcategorias ou apenas categorias de primeiro nível?
-- A tela aceita outras colunas ou filtros que não ficaram evidentes no demo?
+- A rota é `/cadastros/financeiro/categorias`.
+- A listagem possui dez registros por página e filtra `nome` por ocorrência do texto digitado.
+- O formulário implementa uma categoria com uma lista simples de itens; não há hierarquia de subcategorias.
 
 ## Screenshots sugeridos
 
