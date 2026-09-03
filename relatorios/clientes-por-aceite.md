@@ -23,3 +23,5 @@ O sistema possui aceite eletrônico de documentos do contrato na central do assi
 - planos podem usar a configuração `exigirAceite`.
 
 Esses fluxos não comprovam a existência de uma tela consolidada **Clientes por Aceite**. Por isso, filtros, colunas, exportação e regras do relatório não são descritos aqui.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
