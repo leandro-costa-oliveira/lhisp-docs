@@ -78,3 +78,5 @@ Use este fluxo quando for necessário:
 - Tela **SeventhDGuard - Configuração da API** no demo: `assets/screenshots/sistema/seventh-dguard.png`
 
 ![Seventh DGuard no demo](/assets/screenshots/sistema/seventh-dguard.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
