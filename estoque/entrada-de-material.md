@@ -89,3 +89,5 @@ Use este fluxo quando o material entrar no estoque sem passar pelo caminho de no
 
 - Tela **Almoxarifados** no demo: `assets/screenshots/estoque/almoxarifados.png`
 - Janela **Nova Movimentação** no demo: `assets/screenshots/estoque/nova-movimentacao.png`
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
