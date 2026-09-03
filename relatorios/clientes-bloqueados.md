@@ -7,60 +7,48 @@ description: ''
 
 # Clientes Bloqueados
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da entrada de menu equivalente no ambiente de demonstração do LHISP. A tela foi verificada visualmente no demo.
-
 ## Objetivo
 
-Acompanhar clientes bloqueados e o motivo operacional da restrição.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes Bloqueados** no demo do LHISP.
+Listar serviços contratados cuja situação é **BLOQUEADO**, com dados do contrato, plano, vencimento, valor e data do bloqueio.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes Bloqueados**.
-- Ter permissão para consultar relatórios.
+- Ter acesso a **Relatórios > Clientes Bloqueados**.
+
+## Filtros
+
+| Campo | Comportamento |
+|---|---|
+| **Filial** | Restringe os contratos à filial escolhida. Vazio inclui todas as filiais disponíveis. |
+| **Plano** | Restringe pelo plano selecionado. A lupa abre a pesquisa de planos e o botão de limpeza remove a seleção. |
+| **Vencimento** | Restringe pelo dia de vencimento. A lista contém somente os dias configurados em `VENCIMENTOS` para a empresa. |
 
 ## Passo a passo
 
 1. Acesse **Relatórios > Clientes Bloqueados**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use **Imprimir** ou **Baixar Arquivos** quando precisar exportar.
+2. Se necessário, selecione filial, plano e/ou vencimento.
+3. Clique em **Exibir**.
+4. Use **Imprimir** para imprimir o conteúdo da listagem.
 
-## Campos importantes
+## Resultado
 
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
+A grade é ordenada pela última atualização, da mais recente para a mais antiga, e contém:
 
-## Resultado esperado
+- contrato;
+- filial;
+- cliente;
+- endereço;
+- telefones;
+- serviço;
+- dia de vencimento;
+- valor;
+- data de bloqueio e quantidade de dias decorridos.
 
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
+O rodapé mostra a quantidade de contratos. Embora o código acumule o valor dos serviços, esse total monetário não é exibido.
 
 ## Observações
 
-- O demo expõe esta tela como um relatório operacional do menu.
-- A validação visual foi feita no ambiente de demonstração.
-- Os campos variam entre relatórios, então esta página registra apenas o padrão comum confirmado.
-
-## Dúvidas para revisão
-
-- Há filtros adicionais específicos que ainda não foram detalhados nesta documentação?
-- A saída de impressão/exportação segue o mesmo padrão em todas as variações do relatório?
+- A tela usa os formulários legados `relatorios/clientes_bloqueados`, `rel_clientes_bloqueados.php` e `rel_clientes_bloqueados_listagem.php`.
+- Não há ação de download de arquivo neste relatório; as ações implementadas são **Exibir** e **Imprimir**.
+- A data de bloqueio apresentada é o campo de última atualização do serviço contratado (`updated_at`).
