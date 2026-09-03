@@ -7,9 +7,6 @@ description: ''
 
 # Xtream-UI
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Os dados sensíveis exibidos no demo foram redigidos na captura desta documentação quando necessário.
 
 ## Objetivo
 
@@ -68,11 +65,6 @@ Use este fluxo quando for necessário:
 - No demo, a tela aparece como **XtreamUI - Configuração da API**.
 - A captura usada nesta página foi validada visualmente e não expõe segredo no campo **Cliente Secret**.
 - O campo **Usuário** aparece preenchido com `streamui` na captura do demo.
-
-## Dúvidas para revisão
-
-- O nome público da documentação deve manter **Xtream-UI** ou seguir a grafia **XtreamUI** do demo?
-- Existe algum campo adicional da integração que não aparece na tela principal?
 
 ## Screenshots sugeridos
 

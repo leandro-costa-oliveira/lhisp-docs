@@ -7,9 +7,6 @@ description: ''
 
 # Cobli
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API da Cobli.
 
 ## Objetivo
 
@@ -64,12 +61,6 @@ Use esta tela para:
 - A tela exibida no demo é bem enxuta e contém apenas token, status e ação de salvar.
 - O valor do token exibido no demo não foi reproduzido nesta documentação por cautela.
 - A página é direta, sem abas ou tabelas auxiliares.
-
-## Dúvidas para revisão
-
-- Existem eventos ou webhooks específicos para Cobli além do token?
-- Há alguma configuração adicional que não aparece nesta tela enxuta?
-- O campo **Ativo** controla apenas a emissão ou também a leitura dos dados?
 
 ## Screenshots sugeridos
 

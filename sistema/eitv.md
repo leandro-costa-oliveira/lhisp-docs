@@ -55,12 +55,6 @@ Use esta tela para revisar ou ajustar os dados de acesso da integração EiTV.
 - A tela do demo mostra apenas o formulário de configuração da API.
 - Os campos de **Instância** e **Login** já aparecem preenchidos na captura.
 
-## Dúvidas para revisão
-
-- A **Instância** é obrigatória em todos os ambientes?
-- Há validação de formato para o login?
-- Existem parâmetros adicionais além dos exibidos na tela?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/eitv.png` — captura limpa da configuração da API EiTV no demo.

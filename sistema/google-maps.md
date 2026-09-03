@@ -7,9 +7,6 @@ description: ''
 
 # Google Maps
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. As chaves exibidas no demo são apenas ilustrativas do ambiente de teste e não devem ser reutilizadas em produção.
 
 ## Objetivo
 
@@ -71,12 +68,6 @@ Use este fluxo quando for necessário:
 - O demo mostra duas credenciais separadas: uma para o **Monitor de Redes** e outra para o **Backend**.
 - A tela do demo também expõe as opções **Importar Feriados Nacionais?** e **Ativo?**.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- A chave do **Monitor de Redes** e a do **Backend** têm escopos diferentes obrigatórios ou são apenas configurações opcionais?
-- A opção **Importar Feriados Nacionais?** depende da credencial do Google ou é totalmente independente?
-- O nome oficial no menu deve ser mantido como **Google Maps** ou apenas **Google**?
 
 ## Screenshots sugeridos
 

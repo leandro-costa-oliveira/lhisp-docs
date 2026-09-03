@@ -7,9 +7,6 @@ description: ''
 
 # Categorias
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP.
 > O fluxo observado abriu dentro do *frame* legado do sistema, com uma tela simples de cadastro de categoria de estoque.
 >
 > Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
@@ -78,12 +75,6 @@ Use esta tela quando for necessário:
 - A captura limpa confirmou a toolbar com navegação, inclusão, edição, exclusão, gravação, cancelamento e pesquisa.
 - Ao iniciar um novo cadastro, o campo **Nome** aparece em branco e os botões de gravação/cancelamento ficam ativos.
 - Esta página complementa o cadastro de **Produtos**, que depende dessa base de classificação.
-
-## Dúvidas para revisão
-
-- A categoria precisa de algum campo além de **Nome** em outros perfis ou versões?
-- O botão **Procurar** abre uma lista de categorias ou uma busca textual simples?
-- Existe alguma validação de duplicidade no nome da categoria?
 
 ## Screenshots sugeridos
 

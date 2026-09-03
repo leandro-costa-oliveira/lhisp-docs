@@ -7,10 +7,6 @@ description: ''
 
 # Almoxarifados
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar e filtrar os almoxarifados e produtos de estoque disponíveis no sistema, com foco em localização, categoria, item e opções de exibição.
@@ -73,12 +69,6 @@ Use esta tela quando precisar:
 - O demo apresenta a tela já carregada com filtros de exemplo e sem resultados visíveis na grade inferior.
 - A interface expõe ações rápidas de atualização, impressão e movimentação.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- Qual é a regra de negócio para exibir ou ocultar produtos com estoque zero?
-- A opção **Adicionar Movimentação** depende de perfil ou de contexto do almoxarifado?
-- A listagem inferior deve mostrar itens, saldos ou histórico de movimentações?
 
 ## Screenshots sugeridos
 

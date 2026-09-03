@@ -70,12 +70,6 @@ Use esta tela quando for necessário:
 - Na listagem do demo, foram observados os planos **600M DUPLICADO**, **ACESSO RESIDENCIAL 200mega**, **novo 500mega**, **novo 600mega** e **novo plano para migração**.
 - Os itens aparecem com a situação **ATIVO**.
 
-## Dúvidas para revisão
-
-- Há regras diferentes para planos de migração e planos comerciais?
-- O campo **Valor** possui alguma validação específica por tipo de plano?
-- A tela inclui outros filtros que não ficaram evidentes na listagem do demo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/planos.png` — captura limpa da listagem de planos no demo.

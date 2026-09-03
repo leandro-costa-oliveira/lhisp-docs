@@ -7,60 +7,22 @@ description: ''
 
 # Tempo Médio de Execução de Ordens de Serviço
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da entrada de menu equivalente no ambiente de demonstração do LHISP. A tela foi verificada visualmente no demo.
+## Disponibilidade atual
 
-## Objetivo
+O frontend contém o componente `DuracaoRelatorioOrdensServico.jsx`, mas ele não está importado e sua rota `/relatorios/agendatecnica/duracao_ordens_de_servico` está comentada. Portanto, esta tela não está acessível pelo roteador React atual.
 
-Analisar o tempo médio de execução das ordens de serviço.
+O componente também depende de referências sem importação local (`IoContext`, `DateTime` e imports absolutos antigos), o que impede tratá-lo como uma funcionalidade pronta apenas reativando a rota.
 
-## Quando usar
+## Comportamento presente no componente inativo
 
-Use esta tela quando for necessário consultar o relatório **Tempo Médio de Execução de Ordens de Serviço** no demo do LHISP.
+O código calcula a diferença, em minutos, entre `hora_execucao_ini` e `hora_execucao_end` das ordens de serviço que possuem os dois horários. Os resultados são agrupados:
 
-## Pré-requisitos
+- no total e por tipo de ordem de serviço;
+- por técnico e tipo;
+- por mês/ano e tipo.
 
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Tempo Médio de Execução de Ordens de Serviço**.
-- Ter permissão para consultar relatórios.
+Os filtros previstos são período de execução, situação da OS, situação da conclusão (**Com Sucesso** e **Sem Sucesso**) e tipos de OS. O componente prevê atualização, impressão, gráfico de média e tabelas detalhadas.
 
-## Passo a passo
+## Limite da documentação
 
-1. Acesse **Relatórios > Tempo Médio de Execução de Ordens de Serviço**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use **Imprimir** ou **Baixar Arquivos** quando precisar exportar.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
-## Observações
-
-- O demo expõe esta tela como um relatório operacional do menu.
-- A validação visual foi feita no ambiente de demonstração.
-- Os campos variam entre relatórios, então esta página registra apenas o padrão comum confirmado.
-
-## Dúvidas para revisão
-
-- Há filtros adicionais específicos que ainda não foram detalhados nesta documentação?
-- A saída de impressão/exportação segue o mesmo padrão em todas as variações do relatório?
+Como a rota está desativada e o componente não está conectado à API HTTP atual, não existe fluxo operacional disponível para documentar. A descrição acima registra somente o código inativo encontrado, não uma tela utilizável.

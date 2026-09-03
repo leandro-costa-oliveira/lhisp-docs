@@ -7,9 +7,6 @@ description: ''
 
 # Seventh - Dguard
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. Credenciais e valores sensíveis não foram documentados.
 
 ## Objetivo
 
@@ -75,12 +72,6 @@ Use este fluxo quando for necessário:
 - No demo, o título da tela aparece como **SeventhDGuard - Configuração da API** e o menu como **Seventh DGuard**.
 - A wiki orienta o uso do gateway **OTT: DGuard** nos planos.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- O nome de exibição deve seguir a wiki (**Seventh - Dguard**) ou o texto do demo (**Seventh DGuard**)?
-- O gateway OTT deve aparecer em uma página própria na documentação de planos?
-- Há mais campos obrigatórios além dos visíveis na tela do demo?
 
 ## Screenshots sugeridos
 

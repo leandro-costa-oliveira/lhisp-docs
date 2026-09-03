@@ -19,6 +19,7 @@ Use esta tela quando for necessário informar a URL da API, revisar credenciais 
 
 - Acesso ao menu **Sistema > Integrações > A2Billing**.
 - Permissão para editar a integração.
+- URL, usuário e senha fornecidos pelo serviço A2Billing.
 
 ## Passo a passo
 
@@ -43,31 +44,25 @@ Use esta tela quando for necessário informar a URL da API, revisar credenciais 
 
 ## Resultado esperado
 
-- A integração fica salva com os parâmetros de acesso corretos.
-- O histórico passa a refletir as operações processadas pela integração.
+- O sistema envia `modulo: "A2Billing"`, `url`, `usuario`, `senha` e o estado de ativação para `POST /api/Integracao.salvar`.
+- Após a gravação, a tela mostra **Configurações Atualizadas com Sucesso !**.
+- O histórico apresenta os eventos persistidos para o módulo `A2Billing`.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| URL ausente | Informar o endpoint correto da API. |
+| URL ausente | A tela permite salvar o campo vazio, mas a integração não terá um endereço para executar chamadas. |
 | Credenciais inválidas | Revisar usuário e senha antes de salvar. |
 | Integração desativada | Marcar a opção **Ativo**. |
 | Histórico vazio | Verificar se já houve operações registradas. |
 
 ## Observações
 
-- A tela do demo exibe os campos **Url**, **Usuário** e **Senha**.
-- O campo de **Usuário** já aparece preenchido com `admin` na captura do demo.
-- A captura desta página foi feita no ambiente de demonstração.
+- A rota da interface é `/sistema/integracoes/a2billing`.
+- O formulário não marca URL, usuário ou senha como obrigatórios e não possui validação condicional ao ativar. A validade é verificada somente quando a integração tenta usar esses dados.
+- A configuração implementada aceita apenas URL, usuário e senha; não há outro método de autenticação nesta tela.
 
-## Dúvidas para revisão
+## Captura de tela
 
-- A URL é obrigatória mesmo quando a integração está desativada?
-- Existem credenciais alternativas além de usuário e senha?
-
-## Screenshots sugeridos
-
-- `assets/screenshots/sistema/a2billing.png` — captura limpa da tela A2Billing no demo.
-
-![A2Billing no demo](/assets/screenshots/sistema/a2billing.png)
+![A2Billing](/assets/screenshots/sistema/a2billing.png)

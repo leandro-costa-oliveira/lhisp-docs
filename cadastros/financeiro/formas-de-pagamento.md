@@ -68,12 +68,6 @@ Use esta tela quando for necessário:
 - Na listagem do demo, foram observadas formas como **A VISTA**, **2X SEM JUROS**, **3X SEM JUROS**, **4X SEM JUROS** e **ISENTO**.
 - Os registros mostram parcelas, entrada e juros por linha.
 
-## Dúvidas para revisão
-
-- O percentual de **Juros** é aplicado automaticamente no checkout ou apenas informativo?
-- Existem regras adicionais para formas de pagamento com parcelas?
-- A tela aceita outros tipos de composição além de entrada e juros?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/formas-de-pagamento.png` — captura limpa da listagem de formas de pagamento no demo.

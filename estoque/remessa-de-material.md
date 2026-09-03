@@ -7,10 +7,6 @@ description: ''
 
 # Remessa de Material
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Pesquisar e gerenciar remessas de material entre almoxarifados, com consulta, filtros, cadastro e exportação.
@@ -76,12 +72,6 @@ Use esta tela quando precisar:
 - A captura limpa mostra o campo de busca, os botões de ação e uma grade com uma remessa listada.
 - A remessa exibida na captura tinha **Id 10**, **ALMOXARIFADO GERAL** como origem, **FILIAL 2** como destino, data **12/23/2025** e situação **EM_ABERTO**.
 - A tela é operacional normal.
-
-## Dúvidas para revisão
-
-- A lista apresenta apenas remessas em aberto ou inclui outros status?
-- O botão **Aplicar Filtros** abre um painel adicional ou apenas executa a pesquisa?
-- Existe algum fluxo de edição ou detalhamento além do cadastro direto?
 
 ## Screenshots sugeridos
 

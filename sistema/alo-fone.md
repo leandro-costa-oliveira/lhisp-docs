@@ -7,9 +7,6 @@ description: ''
 
 # Alo Fone
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API do Alo Fone.
 
 ## Objetivo
 
@@ -77,12 +74,6 @@ Use esta tela para:
 - O screenshot mostra CNPJ, senha, produto, forma de pagamento e valor configurados no tenant de teste.
 - Os valores sensíveis exibidos no demo não foram reproduzidos nesta documentação.
 - A tela inclui um link para o **Painel do Parceiro** abaixo do formulário principal.
-
-## Dúvidas para revisão
-
-- O campo **Controle Patrimonial ?** é obrigatório em algum cenário?
-- O seletor de produto abre uma busca em catálogo próprio ou lista fixa?
-- O valor configurado é mensal, por chip ou por ativação?
 
 ## Screenshots sugeridos
 

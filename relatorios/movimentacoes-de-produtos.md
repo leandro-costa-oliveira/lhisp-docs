@@ -7,17 +7,13 @@ description: ''
 
 # Movimentações de Produtos
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da entrada de menu equivalente no ambiente de demonstração do LHISP. A tela foi verificada visualmente no demo.
-
 ## Objetivo
 
 Acompanhar movimentações de produtos no estoque.
 
 ## Quando usar
 
-Use esta tela quando for necessário consultar o relatório **Movimentações de Produtos** no demo do LHISP.
+Use esta tela quando for necessário consultar o relatório **Movimentações de Produtos** no LHISP.
 
 ## Pré-requisitos
 
@@ -30,7 +26,7 @@ Use esta tela quando for necessário consultar o relatório **Movimentações de
 1. Acesse **Relatórios > Movimentações de Produtos**.
 2. Preencha os filtros disponíveis na tela.
 3. Clique em **Exibir** para gerar o resultado.
-4. Use **Imprimir** ou **Baixar Arquivos** quando precisar exportar.
+4. Use somente as ações de impressão ou download disponibilizadas pela tela.
 
 ## Campos importantes
 
@@ -53,14 +49,3 @@ Use esta tela quando for necessário consultar o relatório **Movimentações de
 | Relatório vazio | Rever filtros, período e recorte escolhido. |
 | Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
 | Exportação não abre | Repetir a ação após gerar a consulta. |
-
-## Observações
-
-- O demo expõe esta tela como um relatório operacional do menu.
-- A validação visual foi feita no ambiente de demonstração.
-- Os campos variam entre relatórios, então esta página registra apenas o padrão comum confirmado.
-
-## Dúvidas para revisão
-
-- Há filtros adicionais específicos que ainda não foram detalhados nesta documentação?
-- A saída de impressão/exportação segue o mesmo padrão em todas as variações do relatório?

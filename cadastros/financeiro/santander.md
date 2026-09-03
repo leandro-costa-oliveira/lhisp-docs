@@ -7,77 +7,50 @@ description: ''
 
 # Santander
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi migrada a partir da wiki do LHISP. Não foi localizada uma tela equivalente no demo para captura de screenshot limpa, então a documentação foi baseada no conteúdo da wiki.
-
 ## Objetivo
 
-Documentar o procedimento para configurar o certificado A1 e a comunicação bancária do Santander no LHISP.
-
-## Quando usar
-
-Use este fluxo quando for necessário:
-
-- adicionar o certificado A1 da empresa ao LHISP;
-- preparar a comunicação com a API bancária do Santander;
-- consultar a orientação oficial da wiki sobre o certificado e a chave pública.
+Configurar uma conta bancária Santander para cobrança, Pix e comunicação por certificado no LHISP.
 
 ## Pré-requisitos
 
-- Acesso ao menu **Cadastro > Financeiro > Contas Bancárias**.
-- Certificado digital **A1** da empresa.
-- Senha do certificado.
-- Acesso à conta bancária Santander configurada no sistema.
+- Acesso a **Cadastros > Financeiro > Contas Bancárias**.
+- Carteira de cobrança do Santander cadastrada.
+- Dados da conta, credenciais fornecidas pelo banco e certificado no formato aceito pela integração.
+- Permissão para alterar contas bancárias. Somente usuários administradores veem a ação de baixar o certificado salvo.
 
 ## Passo a passo
 
-1. Abra a página **Santander** na wiki.
-2. Na seção **Adicionando A1 ao LHISP**, acesse o menu `Cadastro > Financeiro > Contas Bancárias`.
-3. Edite a conta do Santander.
-4. Clique no ícone de lupa no campo **Certificado**.
-5. Selecione o arquivo do certificado A1 no computador.
-6. Informe a **Senha do Certificado**.
-7. Na seção **Adicionando A1 ao Santander**, extraia a **chave pública** do certificado A1.
-8. Utilize a chave pública na configuração exigida pelo Santander.
+1. Acesse **Cadastros > Financeiro > Contas Bancárias**.
+2. Abra a conta Santander ou cadastre uma conta.
+3. Selecione a **Carteira de Cobrança** correspondente ao Santander.
+4. Preencha os dados gerais: moeda, titular e CPF/CNPJ.
+5. Preencha **Convênio/Cedente**, **Agência**, **Conta**, **CNAB** e **Variação da Carteira** conforme o contrato bancário.
+6. Na seção **Dados de Integração com a API - Pix**, informe as credenciais, ambiente e chave Pix exigidos pela modalidade configurada.
+7. No campo **Certificado**, use a lupa para selecionar o arquivo. O navegador lê o arquivo e o envia codificado ao salvar.
+8. Informe a **Senha do Certificado**. A senha só é enviada novamente quando o campo é alterado.
+9. Selecione **Produção** ou **Homologação** em **Ambiente**.
+10. Salve a conta bancária.
 
 ## Campos importantes
 
-| Campo / informação | Descrição |
+| Campo | Comportamento |
 |---|---|
-| **Certificado** | Arquivo A1 da empresa usado na integração bancária. |
-| **Senha do Certificado** | Senha do certificado A1. |
-| **chave pública** | Informação solicitada pelo Santander para validar a comunicação. |
-| **Conta Santander** | Conta bancária que recebe a configuração do certificado. |
+| **Carteira de Cobrança** | Obrigatória. Também determina quais campos específicos de banco aparecem. |
+| **Convênio/Cedente** | Para Santander, aceita até nove dígitos; na remessa CNAB 400 são usados os oito primeiros. |
+| **CNAB** | Permite selecionar 240, 400 ou 750. A escolha deve coincidir com a modalidade contratada. |
+| **Certificado** | Permite selecionar, remover e, para administrador, baixar o arquivo já armazenado. O download usa o nome `Certificado-<id>.pfx`. |
+| **Senha do Certificado** | É persistida quando alterada no formulário. |
+| **Ambiente** | Campo obrigatório com as opções **Produção** (`p`) e **Homologação** (`h`). |
+| **Chave Pix** | Chave associada à conta para operações Pix. |
+| **Webhook Ativo?** | Registra se o webhook da conta está habilitado. |
+| **Datas e horários de consulta** | Controlam as referências salvas para consultas de pagamentos Pix e boleto. |
 
 ## Resultado esperado
 
-- O certificado A1 fica vinculado ao LHISP.
-- A comunicação com o Santander fica preparada para uso.
-- A equipe consegue seguir a configuração descrita na wiki sem depender de instruções soltas.
+Ao salvar, a interface envia os dados para `POST /api/ContaBancaria.salvar`, mostra **Conta Bancária salva com Sucesso !** e retorna à tela anterior.
 
-## Problemas comuns
+## Limites desta configuração
 
-| Problema | Como tratar |
-|---|---|
-| Certificado não localiza | Conferir o arquivo A1 selecionado. |
-| Senha inválida | Validar a senha do certificado antes de salvar. |
-| Comunicação não valida no Santander | Revisar a chave pública extraída e a configuração da conta. |
-| Conta errada editada | Confirmar que a conta selecionada é a do Santander. |
-
-## Observações
-
-- A wiki organiza esta página dentro de `cadastros > financeiro > Contas Bancárias`.
-- O texto orienta a configuração do certificado A1 para uso na API bancária do Santander.
-- A wiki inclui um vídeo explicativo sobre extração da chave pública.
-- Não foi localizada uma tela equivalente no demo para captura de screenshot limpa.
-
-## Dúvidas para revisão
-
-- A configuração deve permanecer sob **Santander** ou merece uma página mais genérica de **Contas Bancárias**?
-- A documentação operacional precisa incluir o passo do vídeo ou apenas o resumo textual?
-- Existe uma tela equivalente no demo que permita uma captura limpa dessa configuração?
-
-## Screenshots sugeridos
-
-- **Não localizado**: nenhum screenshot de demo foi encontrado para esta página.
+- O LHISP permite carregar e armazenar o certificado, mas a interface não extrai nem exibe a chave pública.
+- O cadastro não automatiza etapas externas no portal Santander. Credenciamento, envio de chave pública e liberação de API devem seguir as instruções fornecidas pelo banco.
+- Não use credenciais ou certificados de produção em ambientes de demonstração.

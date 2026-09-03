@@ -7,9 +7,6 @@ description: ''
 
 # Fidelimax
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API do Fidelimax.
 
 ## Objetivo
 
@@ -71,12 +68,6 @@ Use esta tela para:
 - O evento já cadastrado no demo é `ServicoContratado.cadastro`.
 - A configuração visível do evento usa o JSON `{"acao":"pontuar","valor":2}`.
 - A tela exibida no demo é uma página direta de configuração, sem etapas intermediárias.
-
-## Dúvidas para revisão
-
-- A configuração por evento aceita mais de uma ação simultânea?
-- A regra de `pontuar` é exclusiva do evento de cadastro de serviço contratado?
-- O botão **Adicionar Evento** abre um formulário modal ou uma linha editável na tabela?
 
 ## Screenshots sugeridos
 

@@ -56,11 +56,6 @@ Use esta tela para informar a URL do servidor, usuário, senha e ativar a integr
 - A captura do demo mostra o formulário de configuração da API sem valores preenchidos.
 - O botão principal disponível é **Salvar**.
 
-## Dúvidas para revisão
-
-- A URL exige caminho específico além do domínio?
-- Existem campos adicionais de autenticação não exibidos na captura?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/traccar.png` — captura limpa da configuração da API Traccar no demo.

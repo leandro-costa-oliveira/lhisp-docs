@@ -7,10 +7,6 @@ description: ''
 
 # Promoções
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Cadastrar e manter promoções com período de vigência, nome e dados básicos exibidos em uma listagem operacional.
@@ -75,13 +71,6 @@ Use esta tela quando precisar:
 - Os itens visíveis na lista mostram **Id**, **Nome**, **Data Inicial** e **Data Final**.
 - A tela permite consultar promoções como **promo teste**, **desconto até vencimento** e outras entradas já cadastradas no demo.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- O botão de busca é rotulado apenas com ícone ou existe label textual em alguma outra resolução?
-- O cadastro exige campos adicionais além de nome e período de vigência?
-- A lista é filtrada por status ativo/inativo ou apenas por texto livre?
-- A exportação inclui todos os registros ou somente a página atual?
 
 ## Screenshots sugeridos
 

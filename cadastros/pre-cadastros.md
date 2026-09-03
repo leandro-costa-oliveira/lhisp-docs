@@ -7,10 +7,6 @@ description: ''
 
 # Pre Cadastros
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Acompanhar e gerenciar os pré-cadastros recebidos no sistema, com dados básicos de contato, data/hora de solicitação e situação de cada registro.
@@ -79,13 +75,6 @@ Use esta tela quando precisar:
 - A listagem mostra registros com situação **PENDENTE** no ambiente de demonstração.
 - A interface possui ações diretas de busca, filtro, cadastro e exportação.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- O fluxo de **Cadastrar** cria apenas um pré-cadastro ou já inicia um atendimento completo?
-- A coluna **Whatsapp** indica apenas presença de número ou um status de integração?
-- A exportação da planilha respeita os mesmos filtros da listagem?
-- A situação **PENDENTE** possui outros estados possíveis além dos exibidos no demo?
 
 ## Screenshots sugeridos
 

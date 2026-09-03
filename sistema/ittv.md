@@ -56,11 +56,6 @@ Use esta tela quando for necessário habilitar a integração, revisar o token d
 - A captura desta página foi feita no ambiente de demonstração.
 - O campo **Token** aparece em branco na captura de referência.
 
-## Dúvidas para revisão
-
-- O nome público da integração deve ser **ITTV** ou **ItTV**?
-- Existe alguma validação adicional para o token além do preenchimento do campo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/ittv.png` — captura limpa da tela de configuração do ITTV no demo.

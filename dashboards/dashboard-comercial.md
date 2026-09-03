@@ -7,80 +7,80 @@ description: ''
 
 # Dashboard Comercial
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
-Acompanhar indicadores comerciais do provedor, com visualização de cadastros, instalações, contratos por plano, vendas instaladas e distribuição por região.
+Acompanhar os serviços contratados no período, o andamento de suas instalações e a distribuição por plano, filial e atendente.
 
 ## Quando usar
 
-Use este dashboard quando precisar:
-
-- acompanhar o volume de cadastros e instalações;
-- filtrar indicadores por período;
-- filtrar por filial e atendente;
-- visualizar desempenho por plano, região e atendente.
+Use o dashboard para analisar cadastros comerciais, identificar serviços sem ordem de instalação, acompanhar instalações pendentes ou concluídas e exportar os registros da consulta.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
-- Ter permissão para acessar o menu **Dashboard Comercial**.
-- Possuir dados cadastrados para que os indicadores sejam exibidos.
+- Ter acesso ao menu **Dashboard Comercial**.
+- Ter acesso às filiais e aos dados comerciais consultados.
+
+## Filtros
+
+| Campo | Comportamento |
+|---|---|
+| **Período** | Intervalo inclusivo da data de cadastro do serviço contratado. Inicia no primeiro e no último dia do mês atual. As duas datas são obrigatórias e a inicial não pode ser posterior à final. |
+| **Filial** | Restringe os serviços aos contratos da filial escolhida. Vazio consulta todas as filiais permitidas ao usuário. |
+| **Atendente** | Restringe os serviços pelo usuário associado ao cadastro. Vazio consulta todos os atendentes. |
+| **Atualizar** | Aplica os filtros preenchidos. Alterar um campo sem clicar neste botão não muda os indicadores. |
+
+## Indicadores
+
+| Indicador | Regra aplicada |
+|---|---|
+| **Cadastros no período** | Quantidade de serviços contratados criados no intervalo, não a quantidade de pessoas ou contratos novos. |
+| **Instalações concluídas** | Serviços cuja primeira ordem de serviço do tipo instalação está concluída. O cartão também apresenta a proporção sobre os cadastros do período. |
+| **Aguardando instalação** | Serviços que possuem ordem de instalação, mas cuja primeira ordem ainda não está concluída. |
+| **Cadastros sem OS** | Cadastros menos instalações concluídas e instalações em espera, limitado ao mínimo de zero. |
+| **Cadastros por plano e atendente** | Distribuição dos serviços por plano, separada por atendente, com destaque para o plano de maior total. |
+| **Cadastros por filial** | Distribuição dos serviços pela filial do contrato. |
+| **Cadastros por atendente** | Quantidade de serviços vinculados a cada atendente, com destaque para o maior valor. |
+| **Vendas instaladas por atendente** | Instalações concluídas agrupadas pelo atendente associado ao serviço. |
+
+Quando plano, filial ou atendente não está associado ao registro, o agrupamento usa respectivamente **SEM PLANO**, **SEM FILIAL** ou **SEM VENDEDOR**.
 
 ## Passo a passo
 
-1. Acesse o menu **Dashboard Comercial**.
-2. Ajuste o **Período** de análise, se necessário.
-3. Preencha os filtros de **Filial** e **Atendente**, quando aplicável.
-4. Observe os cartões e gráficos exibidos na tela.
-5. Use a opção de **Atualizar** para recarregar os indicadores.
+1. Acesse **Dashboard Comercial**.
+2. Informe o período desejado.
+3. Se necessário, selecione uma filial e/ou um atendente.
+4. Clique em **Atualizar**.
+5. Consulte os cartões e gráficos.
+6. Para obter os registros da consulta, clique em **Baixar cadastros (.csv)**.
 
-## Campos importantes
+## Exportação CSV
 
-| Campo / ação | Descrição |
-|---|---|
-| **Período** | Intervalo usado para filtrar os indicadores. |
-| **Filial** | Restringe os dados da análise a uma unidade. |
-| **Atendente** | Filtra os resultados por responsável. |
-| **Atualizar** | Recarrega os dados exibidos no painel. |
-| **Cadastros** | Cartão-resumo com a quantidade de cadastros no período. |
-| **Instalações** | Cartão-resumo com a quantidade de instalações no período. |
-| **Contratos por Plano** | Gráfico com a distribuição dos contratos por plano. |
-| **Cadastros por Atendente** | Gráfico comparativo por atendente. |
-| **Vendas Instaladas** | Gráfico de evolução das vendas instaladas. |
-| **Por Região** | Gráfico de distribuição regional. |
+O arquivo usa os mesmos filtros já aplicados ao painel e contém:
+
+- ID do serviço;
+- filial;
+- contrato;
+- cliente;
+- plano;
+- atendente;
+- data do cadastro;
+- situação do serviço;
+- situação da instalação (**SEM OS**, **INSTALADA** ou **AGUARDANDO INSTALAÇÃO**);
+- valor do serviço.
+
+O botão de exportação fica indisponível enquanto há consulta/exportação em andamento ou quando o total de cadastros é zero.
 
 ## Resultado esperado
 
-- O usuário consegue visualizar rapidamente o desempenho comercial.
-- Os principais indicadores ficam resumidos em cartões e gráficos.
-- O painel responde aos filtros de período, filial e atendente.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Os cartões aparecem zerados | Verifique se há dados cadastrados no período selecionado. |
-| Os gráficos não mudam | Confirme os filtros de filial e atendente e use atualizar. |
-| O painel demora para carregar | Aguarde a consolidação dos dados ou reduza o período consultado. |
+Os indicadores e gráficos são recalculados com os filtros aplicados. Em caso de falha, a tela exibe **Não foi possível carregar a dashboard** com a mensagem devolvida pela API.
 
 ## Observações
 
-- O demo mostra a dashboard com cards de **Cadastros** e **Instalações** e gráficos de barras para os indicadores.
-- O painel usa filtros de período, filial e atendente no topo da área principal.
-- A captura usada nesta página veio do ambiente de demonstração.
+- A consulta considera a data de criação do **serviço contratado**.
+- A situação da instalação é determinada pela primeira ordem de serviço de instalação retornada para o serviço.
+- O dashboard consulta `POST /api/Relatorios.DashboardComercial`; a exportação usa `POST /api/Relatorios.DashboardComercialCadastros`.
 
-## Dúvidas para revisão
+## Captura de tela
 
-- O indicador **Cadastros** representa apenas novos contratos ou também pré-cadastros?
-- O gráfico **Vendas Instaladas** usa qual critério de data para consolidação?
-- Os filtros têm impacto apenas visual ou alteram também exportações e relatórios associados?
-
-## Screenshots sugeridos
-
-- Tela **Dashboard Comercial** no demo: `assets/screenshots/dashboards/dashboard-comercial.png`
-
-![Dashboard Comercial no demo](/assets/screenshots/dashboards/dashboard-comercial.png)
+![Dashboard Comercial](/assets/screenshots/dashboards/dashboard-comercial.png)

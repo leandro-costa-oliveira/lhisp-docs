@@ -7,10 +7,6 @@ description: ''
 
 # Filiais
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar e manter o cadastro de filiais no LHISP, com pesquisa na listagem, inclusão de novas filiais e exportação dos registros exibidos.
@@ -75,13 +71,6 @@ Use esta tela quando precisar:
 - A rota confirmada no demo é `/cadastros/administrativo/filiais`.
 - A listagem inicial do demo mostra a filial **MATRIZ** e um registro adicional de teste.
 - A captura usada nesta página veio do ambiente de demonstração e mostra a lista principal com as ações visíveis.
-
-## Dúvidas para revisão
-
-- O botão **Cadastrar** abre um formulário completo ou um modal simplificado?
-- O cadastro de filial exige CNPJ válido em todos os cenários?
-- Há validações específicas para os telefones exibidos na listagem?
-- O botão **Baixar Planilha** exporta exatamente os filtros aplicados?
 
 ## Screenshots sugeridos
 

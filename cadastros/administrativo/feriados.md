@@ -7,10 +7,6 @@ description: ''
 
 # Feriados
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar, cadastrar e administrar feriados usados pelo sistema para regras de atendimento, agendamento e operação.
@@ -72,13 +68,6 @@ Use esta tela quando precisar:
 - A área principal mostra um campo de busca, ações de pesquisa/filtro/cadastro/exportação e navegação de páginas.
 - No momento da captura não havia linhas de resultado visíveis na grade.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- O botão **Aplicar Filtros** abre um painel adicional ou apenas reexecuta a pesquisa?
-- O cadastro exige apenas data e descrição, ou existem outros campos obrigatórios?
-- A exportação considera todos os registros ou apenas a página atual?
-- Há algum comportamento especial para feriados recorrentes?
 
 ## Screenshots sugeridos
 

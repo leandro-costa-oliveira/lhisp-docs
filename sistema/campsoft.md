@@ -55,11 +55,6 @@ Use esta tela quando for necessário habilitar, revisar ou salvar a configuraç�
 - O token exibido no demo foi **redigido** na captura desta documentação por ser um dado sensível.
 - A tela mostra a configuração da API e o histórico de eventos.
 
-## Dúvidas para revisão
-
-- O token é único por empresa ou por filial?
-- Quais eventos são gravados no histórico?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/campsoft.png` — captura limpa da configuração da API CampSoft com token redigido.

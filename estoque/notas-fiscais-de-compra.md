@@ -7,9 +7,6 @@ description: ''
 
 # Notas Fiscais de Compra
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi validada no ambiente de demonstração do LHISP com um XML real de teste. O fluxo documentado abaixo cobre a consulta inicial, a importação do XML e o envio dos produtos para o estoque.
 >
 > Veja também a página-resumo do fluxo: [Material para Técnico](/estoque/material-para-tecnico).
 >
@@ -55,25 +52,6 @@ Use este fluxo quando o material chegar por nota fiscal e você precisar:
 9. Clique na ação de lançamento para abrir o diálogo **Lançar Produtos**.
 10. Escolha o **Almoxarifado** de destino.
 11. Confirme em **Lançar Produtos**.
-
-## O que o demo mostrou com o XML de teste
-
-O XML usado no demo trouxe os seguintes dados principais:
-
-- **Fornecedor:** `INTELBRAS S/A - IND DE TEL ELET BRA`
-- **CNPJ:** `82.901.000/0015-22`
-- **Inscrição Estadual:** `062006339`
-- **Telefone:** `(92)3652-4019`
-- **Data de emissão:** `5/16/2026`
-- **Número de série:** `41959958`
-- **Natureza da operação:** `Venda producao do estabelecimento`
-
-Itens carregados na grade:
-
-| Código | Descrição | Un | NCM | Cest | Qtd | Valor Un. | Total |
-|---|---|---|---|---|---:|---:|---:|
-| `4565611` | `CAMERA DE VIDEO WIFI FHD IM5 SC C/ MICROSD 32GB - DCRE 2022/08202-2` | `PEÇ` | `85258929` | `2106500` | `96` | `R$321,87` | `R$30.899,52` |
-| `4565614` | `CAMERA VIDEO WIFI FULL HD IMX C C/MICROSD 32GB - DCRE 2022/08190-5` | `PEÇ` | `85258929` | `2106500` | `200` | `R$228,86` | `R$45.772,00` |
 
 ## Campos importantes
 
@@ -132,12 +110,6 @@ Itens carregados na grade:
 - No teste realizado, o XML carregou automaticamente os dados do fornecedor e dois itens de compra.
 - O diálogo de confirmação exibiu o título **Lançar Produtos** e o seletor de almoxarifado.
 - O demo não apresentou navegação visível após a confirmação final, então a evidência principal ficou no formulário preenchido e no diálogo aberto.
-
-## Dúvidas para revisão
-
-- O botão **Lançar Produtos** grava a entrada imediatamente ou abre outra confirmação?
-- A nota precisa ser salva em alguma etapa adicional antes da importação?
-- Existe algum campo obrigatório que só aparece com outros tipos de XML?
 
 ## Screenshots sugeridos
 

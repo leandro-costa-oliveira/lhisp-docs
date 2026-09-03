@@ -56,11 +56,6 @@ Use esta tela quando for necessário habilitar a integração, revisar a chave d
 - O nome do campo principal na interface é **ApiKey**.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- A integração deve ser documentada com o nome de negócio **Serasa Limpa Nome** ou apenas **Serasa**?
-- Existem validações adicionais para a **ApiKey** além do preenchimento do campo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/serasa-limpa-nome.png` — captura limpa da tela Serasa Limpa Nome no demo.

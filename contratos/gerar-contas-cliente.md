@@ -7,10 +7,6 @@ description: ''
 
 # Gerar contas a receber do contrato
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi elaborado a partir de exploração no ambiente de demonstração. A geração de cobrança deve ser revisada pela equipe responsável antes de publicação.
-
 ## Objetivo
 
 Gerar uma **conta a receber** vinculada a um contrato do cliente na aba **Financeiro**.
@@ -113,14 +109,6 @@ Use este fluxo quando for necessário lançar uma cobrança individual, revisar 
 - A aba **Financeiro** possui as ações **Relatório de Quitação de Débitos**, **Gerar Carnê** e **Nova Conta**.
 - Na exploração do demo, foi possível criar uma conta a receber de teste e ela passou a aparecer na grade como **EM ABERTO**.
 - O contrato usado na exploração possuía contas mensais associadas ao serviço **[16250] ACESSO RESIDENCIAL 200mega**.
-
-## Dúvidas para revisão
-
-- A geração de contas é manual, automática por serviço ou ambas?
-- O botão **Gerar Carnê** usa todas as contas em aberto ou apenas as selecionadas/filtradas?
-- Quais campos são obrigatórios no modal **Nova Conta a Receber** em produção?
-- O campo **Serviço** pode ficar vazio em algum tipo de lançamento?
-- **Conta Bancária [PIX]** é obrigatória para todos os tipos de cobrança?
 
 ## Screenshots sugeridos
 

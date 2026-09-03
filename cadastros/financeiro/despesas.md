@@ -72,12 +72,6 @@ Use esta tela quando for necessário:
 - Na listagem do demo, foram observadas despesas como **ALUGUEL**, **LINK DA OPERADORA** e **SIMPLES NACIONAL**.
 - A listagem aparece com a filial **MATRIZ** e valores em reais.
 
-## Dúvidas para revisão
-
-- O campo **Vencimento** representa data, recorrência mensal ou outra regra?
-- Existem filtros adicionais que não ficaram evidentes na tela do demo?
-- A despesa pode ser vinculada a mais de um fornecedor ou filial?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/despesas.png` — captura limpa da listagem de despesas no demo.

@@ -7,10 +7,6 @@ description: ''
 
 # Fluxo de Caixa
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar o relatório de fluxo de caixa por caixa, período, tipo de movimentação e descrição.
@@ -74,12 +70,6 @@ Use esta tela quando precisar:
 - A captura mostra a tela inicial do relatório, antes da execução de uma consulta.
 - A área central fica em branco até o usuário clicar em **Exibir**.
 - A captura usada nesta página veio do ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- A saída de **Baixar Arquivo** gera qual formato de arquivo?
-- Existe algum filtro adicional que não aparece na tela inicial do demo?
-- O relatório muda de layout após clicar em **Exibir**?
 
 ## Screenshots sugeridos
 

@@ -7,9 +7,6 @@ description: ''
 
 # PlayHub
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API do PlayHub.
 
 ## Objetivo
 
@@ -71,12 +68,6 @@ Use esta tela para:
 - O demo exibiu dois campos de credenciais e duas opções de ambiente/ativação.
 - Os valores mostrados no screenshot são ilustrativos do tenant de teste e não foram reproduzidos aqui.
 - A tela inclui links auxiliares do parceiro logo abaixo da área principal.
-
-## Dúvidas para revisão
-
-- Os links auxiliares são mantidos pela PlayHub ou pelo time interno?
-- A marcação **Desenvolvimento ?** altera apenas o endpoint ou também o comportamento da integração?
-- Existem eventos adicionais além dos campos principais exibidos nesta tela?
 
 ## Screenshots sugeridos
 
