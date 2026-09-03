@@ -79,3 +79,5 @@ Use esta tela quando for necessário:
 ## Screenshots sugeridos
 
 - Tela **Categorias** no demo: `assets/screenshots/cadastros/estoque/categorias.png`
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
