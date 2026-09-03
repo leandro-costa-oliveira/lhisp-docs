@@ -7,9 +7,6 @@ description: ''
 
 # CeliteHub
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo foi redigido na captura desta documentação.
 
 ## Objetivo
 
@@ -65,11 +62,6 @@ Use esta tela quando for necessário:
 - No demo, a tela aparece como **CeliteHub - Configuração da API**.
 - O token visível no demo foi redigido na captura publicada.
 - A captura desta página foi feita no ambiente de demonstração.
-
-## Dúvidas para revisão
-
-- A grafia oficial no menu deve ficar como **CeliteHub** na documentação pública?
-- O campo **Desenvolvimento ?** tem impacto em outros fluxos além da API principal?
 
 ## Screenshots sugeridos
 
