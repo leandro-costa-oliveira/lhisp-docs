@@ -61,11 +61,6 @@ Use esta tela quando for necessário informar credenciais do D4Sign, habilitar a
 - Os rótulos aparecem com o texto **Access Token** e **Crypt Key** entre parênteses na interface.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- A opção **Ativo ?** deve permanecer marcada por padrão no ambiente produtivo?
-- O campo **Cofre (UUID do Safe)** é obrigatório em todos os cenários?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/d4sign.png` — captura limpa da tela D4Sign no demo.
