@@ -119,3 +119,5 @@ Use este fluxo quando for necessário lançar uma cobrança individual, revisar 
 - Modal **Nova Conta a Receber**: `assets/screenshots/contratos/nova-conta-receber-modal.png`
 
 ![Modal Nova Conta a Receber](/assets/screenshots/contratos/nova-conta-receber-modal.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
