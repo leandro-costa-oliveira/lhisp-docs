@@ -56,11 +56,6 @@ Use esta tela quando for necessário informar credenciais de acesso, habilitar a
 - O campo de ativação aparece como **Ativo ?** na interface.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- Existe algum token adicional para a integração Urbis?
-- O campo **Ativo ?** vem desmarcado por padrão no ambiente produtivo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/urbis.png` — captura limpa da tela Urbis no demo.
