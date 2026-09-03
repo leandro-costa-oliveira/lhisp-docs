@@ -7,9 +7,6 @@ description: ''
 
 # Entrada de Material
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página documenta o caminho manual de entrada de material a partir de **Almoxarifados**, usando a janela **Nova Movimentação** observada no demo.
 >
 > Veja também a página-resumo do fluxo: [Material para Técnico](/estoque/material-para-tecnico).
 >
@@ -41,21 +38,6 @@ Use este fluxo quando o material entrar no estoque sem passar pelo caminho de no
 8. Observe a lista de itens exibida na janela.
 9. Selecione o produto desejado para continuar o fluxo operacional.
 10. Siga a confirmação final da movimentação conforme a ação disponível no diálogo.
-
-## O que o demo mostrou na janela Nova Movimentação
-
-A janela aberta pelo botão de inclusão apresenta:
-
-- campo de busca **Procurar por**;
-- lista com colunas **Id**, **Produto** e **Controle Patrimonial**;
-- produtos como **ROTEADOR 2 ANTENAS**, **ROTEADOR 5 ANTENAS**, **ONU ABC**, **ONU FIBERHOME**, **ROTEADOR TPLINK 2 ANTENTAS**, **ROTEADOR TPLINK 4 ANTENAS**, **PAPEL A4** e **HUAWEI AX3**.
-
-Cada linha da listagem expõe duas ações com título visível no HTML do demo:
-
-| Botão | Título observado | Uso |
-|---|---|---|
-| **H** | **Histórico de Movimentações do Produto** | Abre o histórico do item. |
-| **T** | **Transferir de Local** | Inicia a transferência do item entre locais. |
 
 ## Campos importantes
 
@@ -102,12 +84,6 @@ Cada linha da listagem expõe duas ações com título visível no HTML do demo:
 - A seleção de **Entrada** abre uma lista de produtos disponíveis no estoque, com informações de controle patrimonial.
 - As ações **H** e **T** têm significado claro no HTML do demo: histórico e transferência de local.
 - A confirmação final da movimentação precisa ser validada no próximo passo de exploração, caso o fluxo operacional exija outro botão ou formulário após a seleção do produto.
-
-## Dúvidas para revisão
-
-- A entrada manual grava a movimentação ao clicar em qual ação final?
-- Depois de selecionar **Entrada**, o sistema exige quantidade, local de destino ou apenas a seleção do item?
-- O botão **T** é usado para o fluxo de transferência ou também aparece no caminho de entrada manual?
 
 ## Screenshots sugeridos
 
