@@ -70,12 +70,9 @@ Use esta tela quando for necessário:
 - O bloco superior permite filtrar por **Filial** e **Descrição**.
 - A tela é exibida dentro da navegação do demo.
 
-## Dúvidas para revisão
-
-- Quais ações exatas representam os botões da linha na versão atual do sistema?
-- Existem outros filtros além de **Filial** e **Descrição**?
-- O projeto listado é apenas um exemplo ou a tela contém regras de aprovação/ciclo de vida?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/rede-infra/projetos-de-rede-mapas.png` — captura limpa da tela de projetos de rede no demo.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
