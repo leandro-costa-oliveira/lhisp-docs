@@ -1,87 +1,57 @@
 ---
-title: Exportar Boletos do Gerencianet
+title: Imprimir boletos do Gerencianet
 published: true
 editor: markdown
-description: ''
+description: 'Seleção e impressão de boletos emitidos pelo Gerencianet'
 ---
 
-# Exportar Boletos do Gerencianet
-
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração.
+# Imprimir boletos do Gerencianet
 
 ## Objetivo
 
-Documentar o fluxo de exportação/seleção de boletos vinculados ao Gerencianet, permitindo filtrar contratos, período de faturamento e opções de impressão.
-
-## Quando usar
-
-Use este fluxo quando for necessário:
-
-- gerar um conjunto de boletos para impressão;
-- filtrar por filial, conta bancária, rede e setor;
-- revisar quais contratos entram na exportação;
-- preparar a impressão em lote.
+Selecionar e imprimir, pelo fluxo de **Impressão de Carnês**, boletos vinculados a uma conta bancária configurada com cobrança Gerencianet.
 
 ## Pré-requisitos
 
-- Acesso ao menu de relatórios ou financeiro relacionado à impressão/exportação de boletos.
-- Filial, contas e planos previamente cadastrados.
-- Permissão para visualizar os contratos e filtros de faturamento.
+- Conta bancária e carteira de cobrança Gerencianet configuradas.
+- Contas a receber já emitidas e com URL de boleto disponível.
+- Permissão para acessar a impressão de carnês.
 
 ## Passo a passo
 
-1. Abra a tela de exportação de boletos.
-2. Selecione a **Filial** e a **Conta Bancária** desejadas.
-3. Ajuste **Setor de Rede**, **Rede** e **Vencimento**, se necessário.
-4. Defina se deseja listar **Não Impressos**, **Impressos** ou **Todos**.
-5. Informe filtros adicionais como **UF**, **Cidade**, **Bairro** e **Logradouro**.
-6. Escolha o **Plano** e o período de **Faturamento**.
-7. Selecione a quantidade de **Contratos** e a **Página**.
-8. Clique em **Confirmar**, **Imprimir** ou **Exibir** conforme a necessidade.
+1. Acesse **Financeiro > Impressão de Carnês**.
+2. Selecione a filial e a conta bancária do Gerencianet.
+3. Ajuste vencimento, faturamento, rede, plano, endereço e situação de impressão conforme necessário.
+4. Use **Exibir** para conferir os títulos selecionados.
+5. Use **Imprimir** para gerar a saída dos boletos.
 
-## Campos importantes
+## Campos principais
 
-| Campo / ação | Descrição |
+| Campo | Descrição |
 |---|---|
-| **Filial** | Filtra os boletos por unidade. |
-| **Conta Bancária** | Conta usada para a emissão/impressão. |
-| **Setor de Rede / Rede** | Restringe a seleção pelo agrupamento da infraestrutura. |
-| **Vencimento** | Filtra os boletos por dia de vencimento. |
-| **Imprimir** | Alterna entre não impressos, impressos ou todos. |
-| **Faturamento** | Período usado para montar a lista de boletos. |
-| **Contratos** | Quantidade de contratos exibidos por página. |
-| **Confirmar / Imprimir / Exibir** | Ações finais da tela. |
+| **Filial** | Restringe os contratos à unidade selecionada. |
+| **Conta Bancária** | Define a carteira de cobrança; para este fluxo, selecione a conta Gerencianet. |
+| **Vencimento / Faturamento** | Limitam o período dos títulos. |
+| **Setor de Rede / Rede / Plano** | Restringem os contratos selecionados. |
+| **Imprimir** | Filtra títulos não impressos, impressos ou todos. |
+| **Exibir** | Carrega a seleção antes da impressão. |
 
-## Resultado esperado
+## Comportamento específico do Gerencianet
 
-- A listagem de boletos fica filtrada conforme os critérios escolhidos.
-- O operador consegue confirmar, exibir ou imprimir os carnês/boletos.
-- O fluxo fica pronto para uso operacional.
+Quando a conta possui URL de boleto e a carteira Gerencianet está configurada para impressão em PDF, o backend usa o documento fornecido pela integração. A tela não possui um botão separado chamado “Exportar Gerencianet”; a seleção ocorre pela conta bancária no fluxo de impressão.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| Lista vazia | Verifique os filtros de filial, conta, período e plano. |
-| Boletos errados | Confirme se o vencimento e o tipo de impressão foram selecionados corretamente. |
-| Filtros não retornam contratos | Valide se há contratos ativos no período selecionado. |
+| Conta Gerencianet não aparece | Revise a conta bancária, a carteira de cobrança e a filial. |
+| Boleto não é exibido | Confirme a emissão da conta e a presença da URL do boleto. |
+| Seleção vazia | Revise período, vencimento, situação de impressão e demais filtros. |
 
-## Observações
+## Referências de implementação
 
-- A wiki descreve este fluxo como **Exportar Boletos do Gerencianet**.
-- No demo, a tela equivalente aparece como **Impressão de Carnês**.
-- A captura usada nesta página veio do ambiente de demonstração, não da wiki.
+- `lhisp-php/web/form/financeiro/impressao_boletos.php`
+- `lhisp-php/web/form/financeiro/impressao_boletos.js`
+- `lhisp-php/web/form/financeiro/boleto.php`
 
-## Dúvidas para revisão
-
-- O nome de exibição deve seguir a wiki ou o texto do demo?
-- Este fluxo deve morar em **Financeiro** ou em **Misc** na navegação final?
-- Há algum filtro adicional que precise ser documentado em uma página separada?
-
-## Screenshots sugeridos
-
-- Tela **Impressão de Carnês** no demo: `assets/screenshots/misc/exportar-boletos-gerencianet.png`
-
-![Exportar Boletos do Gerencianet no demo](/assets/screenshots/misc/exportar-boletos-gerencianet.png)
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
