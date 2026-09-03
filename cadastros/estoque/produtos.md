@@ -7,9 +7,6 @@ description: ''
 
 # Produtos
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi revisada a partir da tela equivalente no ambiente de demonstração do LHISP.
 > O menu abre primeiro a listagem e, ao clicar em **Cadastrar**, o sistema mostra o formulário de manutenção do produto.
 >
 > Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
@@ -96,13 +93,6 @@ Use esta tela quando for necessário:
 - O formulário abriu com o título **Alteração**, mesmo quando acionado a partir da inclusão.
 - A tela mostra uma estrutura simples, mas com vários controles de validação para uso operacional.
 - Esta página é base para o fluxo de entrada de material e para a separação do técnico.
-
-## Dúvidas para revisão
-
-- A seleção de categoria é obrigatória em todos os perfis?
-- A **Unidade** e o **Preço** são obrigatórios no cadastro ou apenas informativos?
-- As opções de controle patrimonial e série são usadas somente em itens específicos?
-- O botão **Apagar** remove o produto mesmo quando já há movimentação associada?
 
 ## Screenshots sugeridos
 
