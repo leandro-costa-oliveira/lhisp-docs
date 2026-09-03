@@ -2,74 +2,70 @@
 title: Centros de Custo
 published: true
 editor: markdown
-description: ''
+description: Estrutura de apropriação e análise dos gastos da empresa.
 ---
 
 # Centros de Custo
 
-## Objetivo
+Centros de custo classificam **onde** um gasto é apropriado — por exemplo, operação, comercial, administrativo ou manutenção. Seus itens permitem um detalhamento adicional dentro de cada área. Essa classificação acompanha despesas recorrentes e contas a pagar, sustenta filtros financeiros e permite analisar a composição dos gastos.
 
-Documentar a tela de listagem e cadastro de **Centros de Custo** em **Cadastros > Financeiro > Centros de Custo**.
+Centro de custo não é caixa, conta bancária nem categoria financeira. O caixa indica por onde o dinheiro transitou; a categoria indica a natureza do gasto; o centro de custo indica a área ou destino responsável pelo custo.
 
-## Quando usar
+## Estrutura e uso
 
-Use esta tela quando for necessário:
+Cada centro possui um nome único na empresa e uma lista de itens. Um item pertence a um único centro e pode conter uma descrição usada na conciliação OFX.
 
-- consultar os centros de custo cadastrados;
-- cadastrar um novo centro de custo;
-- procurar um centro de custo pelo nome;
-- transferir itens entre centros de custo;
-- exportar a listagem para planilha.
+Os vínculos aparecem principalmente em:
 
-## Pré-requisitos
+- [Despesas](/cadastros/financeiro/despesas), que copiam centro e item para as contas geradas;
+- contas a pagar criadas manualmente ou por automações;
+- importação de folha de pagamento;
+- filtros e relatórios de contas a pagar por centro de custo;
+- conciliação financeira, quando o item possui uma descrição OFX configurada.
 
-- Acesso ao menu **Cadastros > Financeiro > Centros de Custo**.
-- Permissão para consultar, cadastrar e transferir registros financeiros.
-
-## Passo a passo
+## Cadastro
 
 1. Acesse **Cadastros > Financeiro > Centros de Custo**.
-2. Use o campo **Procurar** para localizar registros.
-3. Clique em **Procurar** para executar a busca.
-4. Clique em **Cadastrar** para criar um novo centro de custo.
-5. Clique em **Baixar Planilha** para exportar a listagem atual.
-6. Clique em **Transferir Item de Centro de Custo** para iniciar a movimentação de itens.
-7. Clique em um item da lista para abrir o registro correspondente.
+2. Clique em **Cadastrar** ou abra um registro existente.
+3. Informe um nome que represente a área de apropriação.
+4. Adicione os itens necessários e, quando aplicável, a descrição para conciliação OFX.
+5. Salve.
 
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo | Função |
 |---|---|
-| Campo **Procurar** | Campo de filtro textual da listagem. |
-| **Procurar** | Executa a pesquisa com o texto digitado. |
-| **Cadastrar** | Inicia o fluxo de inclusão de um novo centro de custo. |
-| **Baixar Planilha** | Exporta a lista exibida em planilha. |
-| **Transferir Item de Centro de Custo** | Abre a função de transferência de itens entre centros de custo. |
-| **Id** | Identificador do centro de custo. |
-| **Centro de Custo** | Nome do centro de custo cadastrado. |
+| **Centro de Custo** | Agrupamento principal. O nome é obrigatório e não pode se repetir na empresa. |
+| **Descrição do Item** | Segundo nível de classificação dentro do centro. |
+| **Conciliação OFX** | Texto de referência usado para relacionar o item a lançamentos importados do extrato. |
 
-## Resultado esperado
+Ao salvar uma edição, o backend preserva os itens enviados, cria os novos e remove logicamente os que deixaram de constar no formulário.
 
-- A lista de centros de custo fica visível com paginação.
-- O usuário consegue abrir um centro de custo existente para consulta ou edição.
-- O usuário consegue iniciar o cadastro ou transferência de itens.
+> **Atenção:** antes de remover um item, verifique os lançamentos que o utilizam. A retirada do cadastro não reclassifica contas a pagar existentes.
 
-## Problemas comuns
+## Transferência de item
 
-| Problema | Como tratar |
-|---|---|
-| Nenhum resultado aparece | Revise o termo informado no campo **Procurar**. |
-| Transferência não abre | Verifique as permissões do usuário para a ação. |
-| Exportação não baixa | Refaça a ação com a listagem carregada. |
+A ação **Transferir Item de Centro de Custo** reclassifica contas a pagar em lote. Informe o centro/item de origem e o centro/item de destino.
 
-## Observações
+Por padrão, **Somente Contas a Pagar em Aberto** fica marcado. Se essa opção for desmarcada, contas de outras situações também entram no lote.
 
-- A tela verificada no demo mostra a rota `/cadastros/financeiro/centro_de_custo`.
-- Na listagem do demo, foram observados os centros de custo **DIVERSOS**, **teste1**, **comercial**, **operações**, **administrativo**, **manutenção de veiculos** e **IMPOSTOS**.
-- A tela inclui a ação adicional **Transferir Item de Centro de Custo** além das ações de listagem padrão.
+Antes da execução, a tela conta as contas afetadas e exige uma confirmação adicional. O backend então:
 
-## Screenshots sugeridos
+1. valida a existência dos centros e itens de origem e destino;
+2. seleciona as contas que usam a classificação de origem;
+3. troca centro e item em cada conta;
+4. grava no histórico da conta a origem e o destino da migração.
 
-- `assets/screenshots/cadastros/financeiro/centros-de-custo.png` — captura limpa da listagem de centros de custo no demo.
+Essa operação exige permissão específica de transferência e não oferece desfazer automático. Para corrigir uma transferência indevida, é necessário executar outra transferência com os pares invertidos ou ajustar as contas individualmente.
 
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+> **Importante:** a transferência altera as contas a pagar selecionadas. Ela não troca a classificação gravada nas despesas recorrentes. Atualize também as despesas de origem quando os lançamentos futuros devam usar o novo centro/item.
+
+## Exclusão e efeitos
+
+A exclusão de centro e itens é lógica. O registro deixa de aparecer nas consultas normais, mas vínculos históricos podem continuar armazenados nas contas existentes. Antes de excluir:
+
+- transfira ou reclassifique contas em aberto;
+- revise despesas recorrentes que apontem para o centro/item;
+- confirme o impacto nos relatórios e na conciliação OFX.
+
+## Captura da tela
+
+![Listagem de centros de custo](/assets/screenshots/cadastros/financeiro/centros-de-custo.png)
