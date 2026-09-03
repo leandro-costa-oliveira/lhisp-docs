@@ -87,3 +87,5 @@ Esses grupos alimentam o texto com dados do cadastro correspondente no momento d
 - Tela **Documentos** no demo: `assets/screenshots/cadastros/administrativo/documentos.png`
 
 ![Documentos no demo](/assets/screenshots/cadastros/administrativo/documentos.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
