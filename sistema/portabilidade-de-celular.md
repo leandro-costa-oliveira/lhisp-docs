@@ -7,9 +7,6 @@ description: ''
 
 # Portabilidade de Celular
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi produzida a partir da tela observada no ambiente de demonstração do LHISP. A captura usada aqui foi validada visualmente e mostra a configuração da API da Portabilidade de Celular.
 
 ## Objetivo
 
@@ -68,12 +65,6 @@ Use esta tela para:
 - A captura do demo estava limpa e sem marcações visuais.
 - A tela é objetiva e contém apenas login, senha, ativação, salvar e atalho externo.
 - Os valores sensíveis do demo não foram reproduzidos nesta documentação.
-
-## Dúvidas para revisão
-
-- A integração exige algum parâmetro adicional além de login e senha?
-- O site do parceiro é apenas informativo ou também executa alguma ação operacional?
-- Há políticas de autenticação ou expiração de senha específicas?
 
 ## Screenshots sugeridos
 
