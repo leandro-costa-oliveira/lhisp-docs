@@ -7,6 +7,8 @@ description: Cadastre ou reutilize a pessoa, defina a unidade e os endereços e 
 
 # Cadastrar novo cliente
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 No LHISP, **pessoa** e **contrato** são registros diferentes. A pessoa concentra nome, documento e contatos; o contrato define filial, categoria, origem, segmento e endereços operacionais. Uma pessoa pode possuir mais de um contrato.
 
 Criar o contrato não contrata um plano, não cria acesso e não gera mensalidade. Essas etapas são executadas depois nas abas do contrato.
