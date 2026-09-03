@@ -78,3 +78,5 @@ Use esta tela quando precisar:
 - Tela **Remessa de Material** no demo: `assets/screenshots/estoque/remessa-de-material.png`
 
 ![Remessa de Material no demo](/assets/screenshots/estoque/remessa-de-material.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
