@@ -66,3 +66,5 @@ Use esta tela quando for necessário informar os dados de acesso, habilitar a in
 - `assets/screenshots/sistema/next-billing.png` — captura limpa da tela NextBilling no demo.
 
 ![Next Billing no demo](/assets/screenshots/sistema/next-billing.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
