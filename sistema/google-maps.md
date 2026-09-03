@@ -74,3 +74,5 @@ Use este fluxo quando for necessário:
 - Tela **Google Maps - Configuração da API** no demo: `assets/screenshots/sistema/google-maps.png`
 
 ![Google Maps no demo](/assets/screenshots/sistema/google-maps.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
