@@ -7,6 +7,8 @@ description: Cadastro das despesas recorrentes que originam contas a pagar.
 
 # Despesas
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Uma despesa é o modelo de uma obrigação recorrente da empresa, como aluguel, link de operadora ou imposto. Ela define fornecedor, classificação financeira, valor e vencimento usados para criar as ocorrências no **Contas a Pagar**.
 
 O cadastro não representa, sozinho, um pagamento nem uma conta já vencida. Cada competência gera uma conta a pagar própria; é essa conta que depois pode ser paga, estornada, conciliada e acompanhada na [Gerência Financeira](/financeiro/gerencia-financeira).
