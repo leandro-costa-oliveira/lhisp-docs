@@ -7,9 +7,6 @@ description: ''
 
 # IPv6
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP. O conteúdo descreve a página de **IPv6** e deve ser validado pela equipe técnica antes de virar referência operacional definitiva.
 
 ## Objetivo
 
@@ -89,14 +86,11 @@ A própria wiki informa que o LHISP pode ajudar no envio desse comando em lote p
 - O conteúdo reforça que o LHISP também pode ser usado como apoio para distribuir comandos em rede.
 - A wiki faz referência a uma imagem do menu **Packages**, mas o arquivo local não estava embutido na página; por isso, a documentação foi baseada no texto visível.
 
-## Dúvidas para revisão
-
-- O LHISP apenas distribui o comando ou também acompanha a confirmação da ativação?
-- Há alguma validação adicional após reiniciar o Mikrotik?
-- A ativação em massa via **Enviar Comandos** exige algum template específico?
 
 ## Screenshots sugeridos
 
 - Aba **IPv6** no demo: `assets/screenshots/rede-infra/ipv6.png`
 
 ![IPv6 no demo](/assets/screenshots/rede-infra/ipv6.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
