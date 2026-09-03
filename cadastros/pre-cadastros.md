@@ -81,3 +81,5 @@ Use esta tela quando precisar:
 - Tela **Pre Cadastros** no demo: `assets/screenshots/cadastros/pre-cadastros.png`
 
 ![Pre Cadastros no demo](/assets/screenshots/cadastros/pre-cadastros.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
