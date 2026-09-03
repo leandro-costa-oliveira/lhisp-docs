@@ -91,3 +91,5 @@ Na aba **Serviços**, a grade exibe colunas observadas:
 - Modal **Contratação de Serviço**: `assets/screenshots/contratos/contratacao-servico-modal.png`
 
 ![Modal Contratação de Serviço](/assets/screenshots/contratos/contratacao-servico-modal.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
