@@ -67,3 +67,5 @@ Use esta tela para:
 - Tela principal de **Cobli** no demo: `assets/screenshots/sistema/cobli.png`
 
 ![Cobli no demo](/assets/screenshots/sistema/cobli.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
