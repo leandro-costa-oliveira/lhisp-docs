@@ -2,72 +2,58 @@
 title: Caixas
 published: true
 editor: markdown
-description: ''
+description: Pontos de movimentação usados para registrar entradas e saídas financeiras.
 ---
 
 # Caixas
 
-## Objetivo
+Um caixa representa o destino contábil-operacional em que o LHISP registra movimentações financeiras. Pode corresponder a um caixa físico, a uma conta bancária ou a outro controle de disponibilidade. Recebimentos, pagamentos, sangrias e lançamentos manuais alteram o saldo do caixa escolhido e ficam disponíveis na Gerência Financeira e nos relatórios de movimentação.
 
-Documentar a tela de listagem e cadastro de **Caixas** em **Cadastros > Financeiro > Caixas**.
+O cadastro também restringe as espécies aceitas pelo caixa: **dinheiro**, **cartão**, **cheque** e **outros**. Na baixa manual de uma conta a receber, o backend valida se a espécie escolhida é permitida pelo caixa e rejeita a operação quando ela não for compatível.
 
-## Quando usar
+## Relações no financeiro
 
-Use esta tela quando for necessário:
+- **Contas a receber:** a baixa pode gerar uma entrada e associá-la à conta recebida.
+- **Contas a pagar:** o pagamento gera uma saída ou associa uma movimentação já existente; estornos reabrem saldo conforme o valor desassociado.
+- **Conta bancária:** pode ser vinculada a um caixa. Esse vínculo permite localizar a configuração bancária correspondente ao processar operações financeiras.
+- **Conciliação:** movimentações importadas ou lançadas podem ser associadas a contas a pagar e receber.
+- **Relatórios:** as movimentações alimentam fluxo de caixa e relatórios por usuário, data, espécie e caixa.
 
-- consultar os caixas cadastrados;
-- cadastrar um novo caixa;
-- localizar um caixa pelo campo de busca;
-- exportar a listagem para planilha.
-
-## Pré-requisitos
-
-- Acesso ao menu **Cadastros > Financeiro > Caixas**.
-- Permissão para consultar e cadastrar registros financeiros.
-
-## Passo a passo
+## Cadastro
 
 1. Acesse **Cadastros > Financeiro > Caixas**.
-2. Use o campo **Procurar** para filtrar a listagem, se necessário.
-3. Clique em **Procurar** para executar a busca.
-4. Clique em **Cadastrar** para criar um novo caixa.
-5. Clique em **Baixar Planilha** para exportar a lista exibida.
-6. Clique em um item da listagem para abrir o registro correspondente.
+2. Clique em **Cadastrar** ou abra um caixa existente.
+3. Informe um nome único e reconhecível.
+4. Marque somente as espécies que realmente podem transitar nesse caixa.
+5. Salve.
 
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo | Efeito |
 |---|---|
-| Campo **Procurar** | Campo de filtro para localizar caixas na listagem. |
-| Botão **Procurar** | Executa a busca com o termo digitado. |
-| **Cadastrar** | Abre o fluxo de inclusão de um novo caixa. |
-| **Baixar Planilha** | Exporta a listagem atual para arquivo de planilha. |
-| **Id** | Identificador do caixa. |
-| **Caixa** | Nome do caixa cadastrado. |
-| **Espécies Aceitas** | No formulário, habilita ou desabilita **Dinheiro**, **Cartão**, **Cheque** e **Outros** para o caixa. As quatro opções iniciam marcadas em um novo cadastro. |
+| **Caixa** | Nome exibido na seleção de caixa, movimentações e filtros. É obrigatório e não pode se repetir na empresa. |
+| **Dinheiro** | Permite movimentações em espécie. |
+| **Cartão** | Permite recebimentos ou lançamentos identificados como cartão. |
+| **Cheque** | Permite operações com cheque. |
+| **Outros** | Permite espécies que não pertençam às três anteriores. |
 
-## Resultado esperado
+Em um cadastro novo, a SPA inicia as quatro espécies marcadas. Ajuste-as antes de salvar conforme a finalidade do caixa.
 
-- A lista de caixas fica visível com paginação.
-- O usuário consegue abrir um caixa existente para consulta ou edição.
-- O usuário consegue iniciar o cadastro de um novo caixa.
+## Cuidados operacionais
 
-## Problemas comuns
+- A aceitação da espécie é validada durante a baixa. Uma configuração restritiva pode impedir o recebimento mesmo que o usuário tenha permissão financeira.
+- Alterar as espécies afeta novas operações; não modifica a espécie das movimentações já registradas.
+- Antes de excluir um caixa, verifique movimentações, contas bancárias vinculadas e contas a pagar que o usem como referência.
+- A exclusão é lógica. Ela não apaga o histórico financeiro já relacionado ao caixa.
+- O acesso aos caixas também pode ser limitado pelas permissões e pelos caixas atribuídos ao usuário.
 
-| Problema | Como tratar |
+## Diagnóstico
+
+| Situação | Verificação |
 |---|---|
-| Nenhum resultado aparece | Verifique o termo informado no campo **Procurar**. |
-| Registro não abre | Confirme se o usuário possui permissão para consultar o item. |
-| Exportação não baixa | Refaça a ação em uma página com resultados carregados. |
+| Espécie não aparece ou baixa é recusada | Confirme se a espécie está habilitada no caixa selecionado. |
+| Saldo inesperado | Consulte entradas, saídas, pagamentos, recebimentos e estornos no período. |
+| Conta bancária não é localizada pelo caixa | Confirme o vínculo **Caixa** no cadastro da conta bancária. |
+| Caixa não aparece para o usuário | Revise permissões e a relação de caixas liberados ao usuário. |
 
-## Observações
+## Captura da tela
 
-- A rota é `/cadastros/financeiro/caixas`.
-- O formulário envia nome e as quatro espécies aceitas para `POST /api/Caixa.salvar`.
-- A tela não exige vínculo com conta bancária ou forma de pagamento ao criar o caixa.
-
-## Screenshots sugeridos
-
-- `assets/screenshots/cadastros/financeiro/caixas.png` — captura limpa da listagem de caixas no demo.
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Listagem de caixas](/assets/screenshots/cadastros/financeiro/caixas.png)
