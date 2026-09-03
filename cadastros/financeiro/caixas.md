@@ -69,3 +69,5 @@ Use esta tela quando for necessário:
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/caixas.png` — captura limpa da listagem de caixas no demo.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
