@@ -7,9 +7,6 @@ description: ''
 
 # Empresa
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. Os dados exibidos no demo são apenas ilustrativos do tenant de teste.
 
 ## Objetivo
 
@@ -88,15 +85,11 @@ Use esta tela quando for necessário:
 - A captura usada nesta página foi feita no ambiente de demonstração e está sem marcações visuais.
 - O formulário do demo já vem preenchido com dados ilustrativos do tenant de teste.
 
-## Dúvidas para revisão
-
-- As alterações nesta tela exigem um botão de **Salvar** fora da área visível do screenshot?
-- As abas **Preferências**, **Ordens de Serviço**, **Notificações** e **Financeiro** devem virar páginas próprias ou permanecer como subseções desta página?
-- O campo **SpeedTest** possui alguma validação específica?
-- O bloco de observações fiscais é usado em quais documentos de saída?
 
 ## Screenshots sugeridos
 
 - Tela **Empresa > Dados** no demo: `assets/screenshots/sistema/empresa.png`
 
 ![Empresa no demo](/assets/screenshots/sistema/empresa.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
