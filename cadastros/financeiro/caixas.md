@@ -7,6 +7,8 @@ description: Pontos de movimentação usados para registrar entradas e saídas f
 
 # Caixas
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Um caixa representa o destino contábil-operacional em que o LHISP registra movimentações financeiras. Pode corresponder a um caixa físico, a uma conta bancária ou a outro controle de disponibilidade. Recebimentos, pagamentos, sangrias e lançamentos manuais alteram o saldo do caixa escolhido e ficam disponíveis na Gerência Financeira e nos relatórios de movimentação.
 
 O cadastro também restringe as espécies aceitas pelo caixa: **dinheiro**, **cartão**, **cheque** e **outros**. Na baixa manual de uma conta a receber, o backend valida se a espécie escolhida é permitida pelo caixa e rejeita a operação quando ela não for compatível.
