@@ -7,9 +7,6 @@ description: ''
 
 # SMS via AWS End User Messaging SMS
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi migrada a partir da wiki do LHISP. Não foi localizada uma tela equivalente no demo para captura de screenshot limpa, então a documentação foi baseada no conteúdo da wiki.
 
 ## Objetivo
 
@@ -74,12 +71,9 @@ Use este fluxo quando for necessário:
 - A página inclui orientações de configuração e links para documentação oficial da AWS.
 - A wiki mostra imagens ilustrativas, mas não foi possível capturar uma tela equivalente limpa no demo.
 
-## Dúvidas para revisão
-
-- O nome de exibição deve permanecer como **SMS via AWS End User Messaging SMS** ou ser simplificado na navegação?
-- A documentação precisa incluir um passo a passo mais detalhado do painel AWS ou o resumo atual é suficiente?
-- Existe tela equivalente no demo para esse fluxo de configuração?
 
 ## Screenshots sugeridos
 
 - **Não localizado**: nenhum screenshot de demo foi encontrado para esta página.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
