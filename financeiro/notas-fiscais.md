@@ -7,9 +7,6 @@ description: ''
 
 # Notas Fiscais
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -86,14 +83,11 @@ Use esta tela quando precisar:
 - A tela observada é um painel de filtros e ações, com a listagem abaixo ainda vazia nesta captura.
 - O demo já mostra os filtros de **Situação NFCom** e **Tipo da NF**, indicando que esta área concentra diferentes tipos de nota.
 
-## Dúvidas para revisão
-
-- A tela lista notas somente após clicar em **Exibir** ou também após alterar algum filtro?
-- Qual a diferença operacional entre **Baixar Arquivos**, **Baixar Planilha** e **Unificar XML** no fluxo real?
-- Existe alguma validação adicional para a opção **+ Emitir**?
 
 ## Screenshots sugeridos
 
 - Tela **Notas Fiscais** no demo: `assets/screenshots/financeiro/notas-fiscais.png`
 
 ![Notas Fiscais no demo](/assets/screenshots/financeiro/notas-fiscais.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
