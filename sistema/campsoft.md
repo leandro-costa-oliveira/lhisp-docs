@@ -60,3 +60,5 @@ Use esta tela quando for necessário habilitar, revisar ou salvar a configuraç�
 - `assets/screenshots/sistema/campsoft.png` — captura limpa da configuração da API CampSoft com token redigido.
 
 ![CampSoft no demo](/assets/screenshots/sistema/campsoft.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
