@@ -49,3 +49,5 @@ Use esta tela quando for necessário consultar o relatório **Clientes Negativad
 | Relatório vazio | Rever filtros, período e recorte escolhido. |
 | Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
 | Exportação não abre | Repetir a ação após gerar a consulta. |
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

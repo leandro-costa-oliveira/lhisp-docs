@@ -80,3 +80,5 @@ Use esta tela quando precisar:
 - Tela **Endereços** no demo: `assets/screenshots/cadastros/administrativo/enderecos.png`
 
 ![Endereços no demo](/assets/screenshots/cadastros/administrativo/enderecos.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

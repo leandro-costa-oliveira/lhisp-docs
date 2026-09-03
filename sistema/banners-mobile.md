@@ -60,13 +60,11 @@ Use esta tela para cadastrar, pesquisar, filtrar e revisar banners móveis ativo
 - O demo mostra uma listagem com colunas **Id**, **Descrição** e **Válido Até**.
 - A ação principal exibida é o gerenciamento dos banners e sua exportação.
 
-## Dúvidas para revisão
-
-- Existem regras de imagem/tamanho para o banner mobile?
-- O botão de filtro abre quais critérios adicionais?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/banners-mobile.png` — captura limpa da tela de banners mobile no demo.
 
 ![Banners Mobile no demo](/assets/screenshots/sistema/banners-mobile.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

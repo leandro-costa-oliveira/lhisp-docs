@@ -82,3 +82,5 @@ Use esta tela quando precisar:
 - Tela **Condomínios** no demo: `assets/screenshots/cadastros/administrativo/condominios.png`
 
 ![Condomínios no demo](/assets/screenshots/cadastros/administrativo/condominios.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

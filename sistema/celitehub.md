@@ -68,3 +68,5 @@ Use esta tela quando for necessário:
 - `assets/screenshots/sistema/celitehub.png` — captura limpa da tela CeliteHub no demo.
 
 ![CeliteHub no demo](/assets/screenshots/sistema/celitehub.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

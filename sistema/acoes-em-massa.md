@@ -50,13 +50,11 @@ Use esta seção quando for necessário acessar recursos operacionais que execut
 - No demo, a ação disponível dentro desta área é **Apagar Contratos OTT em Massa**.
 - A documentação da ação específica está em página própria.
 
-## Dúvidas para revisão
-
-- Existirão outras ações em massa além de **Apagar OTT em Massa**?
-- A navegação do menu deve listar essa área como página própria ou como agrupador?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/apagar-ott-em-massa.png` — captura representativa da área de ações em massa.
 
 ![Ações em Massa no demo](/assets/screenshots/sistema/apagar-ott-em-massa.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

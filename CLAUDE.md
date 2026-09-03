@@ -45,7 +45,7 @@ Each new guide should follow this structure (defined in `tasks/explore-lhisp-dem
 ```
 título, objetivo, quando usar, pré-requisitos, passo a passo,
 campos importantes, resultado esperado, problemas comuns,
-observações, dúvidas para revisão, screenshots sugeridos
+observações, limitações verificadas, screenshots sugeridos
 ```
 
 Screenshots go in `assets/screenshots/{modulo}/`.

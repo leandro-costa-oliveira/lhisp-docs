@@ -7,9 +7,6 @@ description: ''
 
 # Monitor de Redes
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização do monitor no ambiente de demonstração. Antes de uso operacional definitivo, a equipe técnica deve validar os detalhes de cadastro, mapa e classificação dos POPs.
 
 ## Objetivo
 
@@ -99,16 +96,11 @@ Use este fluxo para:
 - O cadastro por geolocalização depende da autorização do navegador.
 - O demo confirma a presença da tela principal com mapa e listas laterais de servidores.
 
-## Dúvidas para revisão
-
-- O botão de edição na barra de ferramentas corresponde sempre ao cadastro manual de POP?
-- Quais campos são obrigatórios no cadastro de POP?
-- O campo **IP** fica ativo para algum cenário específico de monitoramento?
-- As **Filiais** restringem apenas a visualização ou também a edição?
-- Há alguma diferença entre os POPs criados manualmente e os criados por geolocalização?
 
 ## Screenshots sugeridos
 
 - Tela principal do **Monitor de Redes** no demo: `assets/screenshots/rede-infra/monitor-redes.png`
 
 ![Monitor de Redes no demo](/assets/screenshots/rede-infra/monitor-redes.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -7,9 +7,6 @@ description: ''
 
 # Cadastrar servidor
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi elaborado a partir de exploração no ambiente de demonstração. A criação efetiva de servidores deve ser validada pela equipe técnica antes de publicação.
 
 ## Objetivo
 
@@ -135,16 +132,11 @@ Use este fluxo para registrar um roteador, concentrador, equipamento de acesso, 
 - Alguns campos possuem botões auxiliares de pesquisa, como **Procurar POP** e **Procurar Servidor**.
 - O módulo possui abas adicionais: **Redes**, **IPv4**, **IPv6**, **CGNAT**, **Servidores**, **Gráficos**, **Histórico**, **Interfaces**, **Traps**, **Rotas** e **Backups**.
 
-## Dúvidas para revisão
-
-- Quais campos são obrigatórios além de **Endereço IP**?
-- O campo **Conectar por** é opcional ou obrigatório para alguns tipos de servidor?
-- Em quais cenários a opção **Servidor de Acesso/ PPPoE** deve ser marcada?
-- O campo **Info** é apenas informativo ou pode ser usado pelo processo de cadastro?
-- Existe validação diferente por tipo de equipamento em **Tipo**?
 
 ## Screenshots sugeridos
 
 - Formulário de cadastro de servidor: `assets/screenshots/rede-infra/cadastrar-servidor-form.png`
 
 ![Cadastro de servidor](/assets/screenshots/rede-infra/cadastrar-servidor-form.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -7,9 +7,6 @@ description: ''
 
 # Contato do Suporte
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi migrada a partir da wiki do LHISP. Não foi localizada uma tela equivalente no demo com a mesma estrutura; por isso, esta documentação foi baseada no conteúdo da wiki.
 
 ## Objetivo
 
@@ -65,12 +62,9 @@ Use esta referência quando for necessário:
 - O conteúdo é institucional e não apresenta um fluxo operacional no demo.
 - Não foi localizada uma tela equivalente no demo para captura de screenshot limpa.
 
-## Dúvidas para revisão
-
-- Esta página deve permanecer em `suporte` ou ser replicada em outra seção pública?
-- Há um canal oficial preferencial entre telefone, Telegram e WhatsApp?
-- As perguntas frequentes devem ser expandidas na documentação operacional?
 
 ## Screenshots sugeridos
 
 - **Não localizado**: nenhum screenshot de demo foi encontrado para esta página.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

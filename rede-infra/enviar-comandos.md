@@ -7,9 +7,6 @@ description: ''
 
 # Enviar Comandos
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página registra o estado observado no ambiente de demonstração do LHISP. Nesta visita, o demo exibiu apenas uma mensagem de carregamento na área principal, sem formulário útil disponível para descrição.
 
 ## Objetivo
 
@@ -61,14 +58,11 @@ Use este fluxo quando precisar:
 - O demo exibiu apenas a mensagem `Aguarde, carregando [redeinfra/ferramentas%7Fenviar_comandos] ...`.
 - Não houve formulário operacional disponível para documentação além da mensagem de carregamento.
 
-## Dúvidas para revisão
-
-- O fluxo **Enviar Comandos** está indisponível no demo ou depende de outra condição para renderizar?
-- Existe uma página equivalente mais estável para capturar os campos reais?
-- O nome do caminho no demo corresponde ao fluxo que a equipe utiliza em produção?
 
 ## Screenshots sugeridos
 
 - Tela de carregamento do fluxo **Enviar Comandos** no demo: `assets/screenshots/rede-infra/enviar-comandos.png`
 
 ![Enviar Comandos em carregamento no demo](/assets/screenshots/rede-infra/enviar-comandos.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

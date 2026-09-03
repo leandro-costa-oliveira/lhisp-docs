@@ -58,13 +58,11 @@ Use esta tela quando for necessário localizar um template existente, criar um n
 - A barra de ações inclui pesquisa, cadastro e exportação CSV.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- O cadastro de template exige campos adicionais além de nome e conteúdo?
-- O CSV exporta apenas os filtros atuais ou toda a listagem?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/templates-email.png` — captura limpa da tela Templates de Email no demo.
 
 ![Templates de Email no demo](/assets/screenshots/sistema/templates-email.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

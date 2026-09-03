@@ -7,9 +7,6 @@ description: ''
 
 # Gerar Carnês
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -76,14 +73,11 @@ Use esta tela quando precisar:
 - A captura limpa mostra o formulário principal com **Filial**, **Conta Bancária**, **Faturamento** e dois checkboxes de geração.
 - A área principal abaixo do formulário fica vazia até o operador acionar uma pré-visualização ou a geração.
 
-## Dúvidas para revisão
-
-- Qual é a diferença funcional exata entre **Visualizar** e **Gerar** no demo?
-- A emissão respeita algum agrupamento adicional por contrato ou serviço?
-- O fluxo produz apenas carnês ou também gera registros auxiliares de cobrança?
 
 ## Screenshots sugeridos
 
 - Tela **Gerar Carnês** no demo: `assets/screenshots/financeiro/gerar-carnes.png`
 
 ![Gerar Carnês no demo](/assets/screenshots/financeiro/gerar-carnes.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

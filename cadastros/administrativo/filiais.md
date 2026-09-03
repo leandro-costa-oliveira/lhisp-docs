@@ -77,3 +77,5 @@ Use esta tela quando precisar:
 - Tela **Filiais** no demo: `assets/screenshots/cadastros/administrativo/filiais.png`
 
 ![Filiais no demo](/assets/screenshots/cadastros/administrativo/filiais.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

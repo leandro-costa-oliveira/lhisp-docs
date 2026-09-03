@@ -189,3 +189,5 @@ Após salvar:
 ### Formulário de novo cliente
 
 ![Formulário de novo cliente](/assets/screenshots/contratos/novo-cliente-formulario.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

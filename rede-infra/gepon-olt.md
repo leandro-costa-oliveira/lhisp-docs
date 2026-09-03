@@ -7,9 +7,6 @@ description: ''
 
 # GePON OLT
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da tela observada no ambiente de demonstração do LHISP. A captura usada nesta página foi validada visualmente e mostra o formulário principal da OLT GePON.
 
 ## Objetivo
 
@@ -79,15 +76,11 @@ Use este fluxo para:
 - O formulário principal exibe os campos de cadastro e uma aba complementar de **Informações / ONUs**.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Colt`.
 
-## Dúvidas para revisão
-
-- A lista de tipos é compartilhada entre **GePON OLT** e **GPON OLT**?
-- A aba **Informações / ONUs** é apenas consulta ou também permite manutenção?
-- O campo **Conectar por** define protocolo, origem da conexão ou outro relacionamento?
-- O fluxo salva a OLT diretamente no LHISP ou apenas registra a integração?
 
 ## Screenshots sugeridos
 
 - Tela principal de **GePON OLT** no demo: `assets/screenshots/rede-infra/gepon-olt.png`
 
 ![GePON OLT no demo](/assets/screenshots/rede-infra/gepon-olt.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

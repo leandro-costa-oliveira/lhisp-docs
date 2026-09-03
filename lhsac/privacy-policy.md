@@ -7,9 +7,6 @@ description: ''
 
 # LHSAC Privacy Policy
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi migrada a partir da wiki do LHISP. Durante a exploração, não foi encontrada uma tela equivalente no demo para captura de screenshot limpa.
 
 ## Objetivo
 
@@ -66,12 +63,9 @@ Use esta referência quando for necessário:
 - O conteúdo é essencialmente institucional e não apresenta um formulário operacional no demo.
 - Não foi localizada uma tela equivalente no demo durante a exploração; por isso, esta página foi migrada sem screenshot.
 
-## Dúvidas para revisão
-
-- Esta política precisa de uma versão publicada também em `lhisp.com.br`?
-- Existe uma página equivalente no site público que deve ser documentada em vez da wiki?
-- O texto atual deve permanecer integral ou pode ser resumido na documentação operacional?
 
 ## Screenshots sugeridos
 
 - **Não localizado**: nenhum screenshot de demo foi encontrado para esta página.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

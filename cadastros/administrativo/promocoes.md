@@ -77,3 +77,5 @@ Use esta tela quando precisar:
 - Tela **Promoções** no demo: `assets/screenshots/cadastros/administrativo/promocoes.png`
 
 ![Promoções no demo](/assets/screenshots/cadastros/administrativo/promocoes.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -60,13 +60,11 @@ Use esta tela quando for necessário importar uma lista e remover contratos OTT 
 - O título da interface aparece como **Apagar Contratos OTT em Massa**.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- O arquivo aceita quais formatos e colunas exatamente?
-- A exclusão é revertível após o processamento?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/apagar-ott-em-massa.png` — captura limpa da tela Apagar OTT em Massa no demo.
 
 ![Apagar OTT em Massa no demo](/assets/screenshots/sistema/apagar-ott-em-massa.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

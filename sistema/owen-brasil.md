@@ -66,3 +66,5 @@ Use esta tela para:
 - Tela principal de **Owen Brasil** no demo: `assets/screenshots/sistema/owen-brasil.png`
 
 ![Owen Brasil no demo](/assets/screenshots/sistema/owen-brasil.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

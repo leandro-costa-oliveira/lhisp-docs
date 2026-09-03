@@ -7,9 +7,6 @@ description: ''
 
 # BRAS Huawei
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização do módulo relacionado no ambiente de demonstração. Os comandos de equipamento e parâmetros sensíveis devem ser validados pela equipe técnica antes de publicação final.
 
 ## Objetivo
 
@@ -189,16 +186,11 @@ display access-user domain lhisp
 - O demo foi usado apenas como referência visual para o contexto de servidores/equipamentos de rede.
 - O conteúdo da wiki mescla instruções para BRAS Huawei e comandos de configuração que afetam a integração com o sistema.
 
-## Dúvidas para revisão
-
-- O conteúdo é aplicado a BRAS Huawei, Switch Huawei ou ambos?
-- Quais parâmetros são obrigatórios para o padrão de produção?
-- A chave Radius é sempre derivada do ID da empresa ou pode ser customizada?
-- O passo de PPPoE varia entre interfaces com e sem VLAN?
-- Quais comandos precisam ser ajustados para versões diferentes do firmware Huawei?
 
 ## Screenshots sugeridos
 
 - Tela de servidor/equipamento no demo usada como referência visual: `assets/screenshots/rede-infra/bras-huawei.png`
 
 ![BRAS Huawei no demo](/assets/screenshots/rede-infra/bras-huawei.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

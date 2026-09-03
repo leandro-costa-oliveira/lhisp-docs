@@ -55,13 +55,11 @@ Use esta tela quando for necessário atualizar a senha do usuário logado.
 - A tela do demo mostra apenas os campos de senha e o botão **Trocar**.
 - A área do formulário aparece no demo.
 
-## Dúvidas para revisão
-
-- Existe política mínima de complexidade para a nova senha?
-- O sistema exige logout imediato após a troca?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/trocar-a-senha.png` — captura limpa da tela de troca de senha no demo.
 
 ![Trocar a Senha no demo](/assets/screenshots/sistema/trocar-a-senha.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

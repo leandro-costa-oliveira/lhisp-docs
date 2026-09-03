@@ -15,7 +15,7 @@ Regras obrigatórias:
 - Use apenas dados fictícios do tenant de demonstração.
 - Gere apenas arquivos Markdown e screenshots.
 - Se encontrar dados sensíveis, mascare antes de registrar.
-- Se não tiver certeza sobre uma regra de negócio, registre em "Dúvidas para revisão".
+- Se uma regra de negócio não puder ser confirmada no código, não a apresente como comportamento do sistema; registre apenas a limitação verificável.
 
 Para cada fluxo explorado, gere:
 
@@ -28,7 +28,7 @@ Para cada fluxo explorado, gere:
 - resultado esperado
 - problemas comuns
 - observações
-- dúvidas para revisão
+- limitações verificadas
 - screenshots sugeridos
 
 Formato de saída:

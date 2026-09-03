@@ -79,3 +79,5 @@ Use esta tela quando for necessário:
 ## Captura do demo
 
 ![Despesas no demo](/assets/screenshots/cadastros/financeiro/despesas.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

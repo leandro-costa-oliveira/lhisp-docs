@@ -7,9 +7,6 @@ description: ''
 
 # Servidores
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -92,14 +89,11 @@ Use esta tela quando precisar:
 - O formulário mostrava o erro: `Erro ao processar comandos: Error: Unsupported algorithm: blowfish-cbc`.
 - A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
-## Dúvidas para revisão
-
-- O que exatamente aciona o campo **Conectar por**?
-- O botão **Servidores** na barra de abas representa uma visão relacionada ou apenas uma agrupação do cadastro?
-- A mensagem de erro `Unsupported algorithm: blowfish-cbc` indica um problema do ambiente demo ou uma limitação real do fluxo?
 
 ## Screenshots sugeridos
 
 - Tela **Servidores** no demo: `assets/screenshots/rede-infra/servidores.png`
 
 ![Servidores no demo](/assets/screenshots/rede-infra/servidores.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

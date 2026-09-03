@@ -71,3 +71,5 @@ Use este fluxo quando for necessário:
 - Tela **XtreamUI - Configuração da API** no demo: `assets/screenshots/sistema/xtream-ui.png`
 
 ![Xtream-UI no demo](/assets/screenshots/sistema/xtream-ui.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

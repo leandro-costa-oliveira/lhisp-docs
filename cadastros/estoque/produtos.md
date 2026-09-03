@@ -98,3 +98,5 @@ Use esta tela quando for necessário:
 
 - Tela **Produtos** na listagem do demo: `assets/screenshots/cadastros/estoque/produtos.png`
 - Tela de cadastro/alteração de produto no demo: `assets/screenshots/cadastros/estoque/produtos-formulario.png`
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -26,3 +26,5 @@ Os filtros previstos são período de execução, situação da OS, situação d
 ## Limite da documentação
 
 Como a rota está desativada e o componente não está conectado à API HTTP atual, não existe fluxo operacional disponível para documentar. A descrição acima registra somente o código inativo encontrado, não uma tela utilizável.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

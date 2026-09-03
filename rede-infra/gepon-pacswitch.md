@@ -7,9 +7,6 @@ description: ''
 
 # GePON PACSWITCH
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da tela observada no ambiente de demonstração do LHISP. A captura usada nesta página foi validada visualmente e mostra o formulário principal do PACSWITCH GePON.
 
 ## Objetivo
 
@@ -82,15 +79,11 @@ Use este fluxo para:
 - O formulário principal exibe as associações de cascateamento separadas por tipo.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cpacswitch`.
 
-## Dúvidas para revisão
-
-- O campo **Cascateamento** é mutuamente exclusivo entre ONU e PACSWITCH em produção?
-- O combo **Porta** muda conforme o tipo de associação escolhido?
-- O PACSWITCH salva somente o cadastro ou também altera parâmetros de rede no equipamento?
-- Existe alguma relação funcional entre este cadastro e o fluxo de **GePON OLT**?
 
 ## Screenshots sugeridos
 
 - Tela principal de **GePON PACSWITCH** no demo: `assets/screenshots/rede-infra/gepon-pacswitch.png`
 
 ![GePON PACSWITCH no demo](/assets/screenshots/rede-infra/gepon-pacswitch.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

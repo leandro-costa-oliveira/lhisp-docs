@@ -71,3 +71,5 @@ Use esta tela quando for necessário:
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/centros-de-custo.png` — captura limpa da listagem de centros de custo no demo.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

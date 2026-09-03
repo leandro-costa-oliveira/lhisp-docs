@@ -7,9 +7,6 @@ description: ''
 
 # CGNAT
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi elaborado a partir de exploração no ambiente de demonstração. A criação efetiva de regras e prefixos de CGNAT deve ser validada pela equipe técnica antes de publicação.
 
 ## Objetivo
 
@@ -101,16 +98,11 @@ Use este fluxo para:
 - A mensagem de validação do sistema, quando os campos ficam vazios, é: **“Informe os prefixos público e privado”**.
 - O sistema exibiu um vínculo já existente com **Prefixo Público** `200.200.200.0/29` e **Prefixo Privado** `192.168.10.0/28`.
 
-## Dúvidas para revisão
-
-- O botão **+ Adicionar** cria apenas o vínculo de prefixos ou também gera automaticamente as portas CGNAT?
-- A faixa de portas exibida é calculada pelo sistema ou configurável manualmente?
-- Há regra de exclusão/edição para vínculos já usados por contratos?
-- O filtro **Listar Somente com Contrato Associado ?** altera somente a tabela inferior ou também a grade superior?
-- Existe limite de quantidade de prefixos CGNAT por servidor?
 
 ## Screenshots sugeridos
 
 - Aba **CGNAT** no demo: `assets/screenshots/rede-infra/cgnat.png`
 
 ![CGNAT no demo](/assets/screenshots/rede-infra/cgnat.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

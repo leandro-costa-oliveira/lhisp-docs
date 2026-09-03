@@ -1,88 +1,67 @@
 ---
-title: Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom
+title: Configurar emissão de NFCom no LHNFE
 published: true
 editor: markdown
-description: ''
+description: 'Configuração da integração LHNFE para emissão de NFCom'
 ---
 
-# Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom
-
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi migrada a partir da wiki do LHISP e da tela equivalente no ambiente de demonstração.
+# Configurar emissão de NFCom no LHNFE
 
 ## Objetivo
 
-Documentar a configuração de emissão de NFCom e o erro 203 citado na wiki, incluindo os códigos cClass usados no faturamento.
-
-## Quando usar
-
-Use este fluxo quando for necessário:
-
-- revisar a configuração de emissão da NFCom;
-- validar token, eCNPJ e senha;
-- ajustar o ambiente NFCom para produção ou homologação;
-- conferir os códigos cClass SCM e cClass SVA usados no faturamento.
+Configurar certificado, ambiente, filiais e códigos cClass usados na emissão de NFCom pelo LHNFE.
 
 ## Pré-requisitos
 
-- Acesso ao menu de integração/financeiro relacionado à NFCom.
-- Certificado digital e credenciais do eCNPJ (A1).
-- Orientação da contabilidade sobre os códigos corretos.
+- Acesso a **Sistema > Integrações > LHNFE**.
+- Certificado digital A1 no formato PFX e respectiva senha.
+- Definição do ambiente de emissão.
+- Códigos cClass validados pela contabilidade.
 
 ## Passo a passo
 
-1. Abra a tela de **NFCom**.
-2. Informe o **Token** quando necessário.
-3. Selecione o arquivo do **eCNPJ (A1)** e informe a senha.
-4. Defina o **Ambiente NFCom** conforme a operação.
-5. Clique em **Salvar**.
-6. Revise os códigos **cClass SCM** e **cClass SVA**.
-7. Clique em **Confirmar** nos códigos escolhidos.
-8. Consulte a lista oficial de códigos e valide com a contabilidade.
+1. Abra **Sistema > Integrações > LHNFE**.
+2. No primeiro cadastro, envie o **eCNPJ (A1)** e informe a senha.
+3. Selecione o **Ambiente NFCom**: desativado, produção ou homologação.
+4. Preencha, se necessário, as **Informações complementares** adicionadas às NFCom.
+5. Configure certificados das filiais com CNPJ diferente da matriz. Filiais com o mesmo CNPJ usam o token da matriz.
+6. Selecione os códigos **cClass SCM** e **cClass SVA** definidos pela contabilidade.
+7. Confirme separadamente os dois códigos. Mesmo com SVA vazio, a ciência dessa escolha precisa ser confirmada.
+8. Clique em **Salvar**.
 
-## Campos importantes
+## Campos principais
 
-| Campo / ação | Descrição |
+| Campo | Descrição |
 |---|---|
-| **Token** | Identificador usado para a integração. |
-| **eCNPJ (A1)** | Certificado digital utilizado na emissão. |
-| **Senha do eCnpj** | Senha do certificado digital. |
-| **Ambiente NFCom** | Define se o ambiente está desativado, produção ou homologação. |
-| **cClass SCM** | Código de faturamento para serviço de comunicação multimídia. |
-| **cClass SVA** | Código de faturamento para serviço de valor agregado. |
-| **Salvar** | Persiste a configuração da tela. |
-| **Confirmar** | Confirma o cClass selecionado. |
+| **Token** | Token retornado pelo LHNFE após o salvamento; é somente leitura. |
+| **eCNPJ (A1)** | Certificado digital PFX usado pela matriz. |
+| **Senha do eCNPJ** | Senha do certificado enviado. |
+| **Ambiente NFCom** | Desativado, produção ou homologação. |
+| **Informações complementares** | Texto incluído automaticamente em todas as NFCom emitidas. |
+| **cClass SCM** | Classificação do valor de Serviço de Comunicação Multimídia. |
+| **cClass SVA** | Classificação do valor de Serviço de Valor Agregado. |
 
-## Resultado esperado
+## Regras confirmadas
 
-- A configuração da NFCom fica registrada.
-- Os códigos cClass são escolhidos de acordo com a regra fiscal.
-- A equipe consegue consultar a tela de emissão e o alerta do erro 203.
+- O salvamento cadastra/atualiza a matriz e as filiais no LHNFE e retorna os tokens.
+- Certificado e senha são enviados ao LHNFE e não permanecem disponíveis para leitura na tela.
+- Sem cClass SVA, não é possível emitir NFCom para planos que possuam SVA.
+- A confirmação dos códigos é obrigatória a cada salvamento.
 
-## Problemas comuns
+## Erro 203 — emissor não habilitado
 
-| Problema | Como tratar |
-|---|---|
-| Erro 203 persiste | Revisar o ambiente NFCom, os certificados e os códigos cClass. |
-| Certificado não carrega | Validar o arquivo eCNPJ e a senha informada. |
-| Códigos fiscais incorretos | Confirmar com a contabilidade antes de salvar. |
-| Ambiente errado | Ajustar entre desativado, produção ou homologação antes de salvar. |
+Esse retorno indica que a autorização fiscal do emissor precisa ser verificada. Confira o ambiente selecionado, o CNPJ do certificado e a habilitação do emissor junto à SEFAZ. Alterar cClass não substitui a habilitação fiscal.
 
-## Observações
+## Segurança e responsabilidade fiscal
 
-- A wiki apresenta a página como **Erro 203 - Rejeição: Emissor não habilitado para emissão da NFCom**.
-- No demo, a tela equivalente aparece como **LHNFE - Emissão de NFCom**.
-- A captura usada nesta página veio do ambiente de demonstração, não da wiki.
+- Não compartilhe o certificado ou sua senha.
+- Use somente códigos cClass definidos pela contabilidade; códigos incorretos podem gerar consequências fiscais.
+- Teste em homologação antes de ativar a emissão em produção.
 
-## Dúvidas para revisão
+## Referências de implementação
 
-- O título deve ficar como o erro da wiki ou como a tela do demo?
-- Esta página deve ficar em **Financeiro** ou em outro grupo específico de NFCom?
-- Há mais campos obrigatórios que não aparecem na tela visível do demo?
+- `lhisp-frontend/src/paginas/sistema/integracoes/lhnfe/LHNfe.tsx`
+- `lhisp-frontend/src/paginas/sistema/integracoes/lhnfe/FiliaisLHNfe.tsx`
+- `lhisp-frontend/src/paginas/sistema/integracoes/lhnfe/nfcom.t.ts`
 
-## Screenshots sugeridos
-
-- Tela **LHNFE - Emissão de NFCom** no demo: `assets/screenshots/financeiro/nf-com.png`
-
-![NFCom no demo](/assets/screenshots/financeiro/nf-com.png)
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

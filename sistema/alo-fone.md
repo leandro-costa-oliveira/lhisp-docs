@@ -80,3 +80,5 @@ Use esta tela para:
 - Tela principal de **Alo Fone** no demo: `assets/screenshots/sistema/alo-fone.png`
 
 ![Alo Fone no demo](/assets/screenshots/sistema/alo-fone.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -7,9 +7,6 @@ description: ''
 
 # Prefixos de IP
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -82,14 +79,11 @@ Use esta tela quando precisar:
 - A árvore mostrava várias sub-redes com estados **LIVRE** e alguns trechos marcados como **EM USO**.
 - A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
-## Dúvidas para revisão
-
-- O botão com ícone na área de ações representa qual operação exata?
-- A árvore principal é apenas leitura ou também permite edição direta?
-- O campo **Exibir Até** influencia apenas a visualização ou também a consulta?
 
 ## Screenshots sugeridos
 
 - Tela **Prefixos de IP** no demo: `assets/screenshots/rede-infra/prefixos-de-ip.png`
 
 ![Prefixos de IP no demo](/assets/screenshots/rede-infra/prefixos-de-ip.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

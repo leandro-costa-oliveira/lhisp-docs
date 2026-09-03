@@ -7,9 +7,6 @@ description: ''
 
 # Monitor de Gráficos
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da tela observada no ambiente de demonstração do LHISP. A captura usada nesta página foi validada visualmente e mostra o conteúdo legível do monitor.
 
 ## Objetivo
 
@@ -77,14 +74,11 @@ Use este fluxo para:
 - A grade exibida no demo contém um exemplo com **Id 658**, **Servidor ROT-TESTE** e **Descrição CORE-CARBON**.
 - A rota exata do demo não foi revalidada nesta continuação; a documentação se baseia na tela observada e validada visualmente.
 
-## Dúvidas para revisão
-
-- A rota do menu é exatamente **Monitor de Gráficos** ou o demo usa apenas o título **Monitoramento de Gráficos**?
-- O botão lateral com ícone de corrente faz o quê exatamente neste fluxo?
-- A tabela principal é apenas consulta ou também permite manutenção dos registros?
 
 ## Screenshots sugeridos
 
 - Tela principal do **Monitor de Gráficos** no demo: `assets/screenshots/rede-infra/monitoramento-de-graficos.png`
 
 ![Monitor de Gráficos no demo](/assets/screenshots/rede-infra/monitoramento-de-graficos.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

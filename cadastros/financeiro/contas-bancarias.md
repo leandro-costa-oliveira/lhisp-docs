@@ -76,3 +76,5 @@ Use esta tela quando for necessário:
 ## Captura do demo
 
 ![Contas Bancárias no demo](/assets/screenshots/cadastros/financeiro/contas-bancarias.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

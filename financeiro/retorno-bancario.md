@@ -2,81 +2,57 @@
 title: Retorno Bancário
 published: true
 editor: markdown
-description: ''
+description: 'Visualização e processamento de arquivo de retorno bancário'
 ---
 
 # Retorno Bancário
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da rota de Retorno Bancário no demo do LHISP. Na captura visual obtida neste ambiente, a área principal permaneceu em estado de carregamento. A inspeção da árvore de elementos mostrou os campos abaixo.
-
 ## Objetivo
 
-Consultar e operar o retorno bancário associado às contas bancárias configuradas no sistema.
-
-## Quando usar
-
-Use esta tela quando precisar:
-
-- consultar retornos por conta bancária;
-- filtrar o período de retorno;
-- validar movimentos processados;
-- localizar arquivos ou lotes relacionados ao retorno bancário.
+Visualizar e processar um arquivo de retorno bancário para conferir registros e efetuar as baixas correspondentes.
 
 ## Pré-requisitos
 
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo de retorno bancário.
-- Ter ao menos uma conta bancária cadastrada.
-- Conhecer o período que será consultado.
+- Permissão para a aba **Retorno Bancário** da Gerência Financeira.
+- Arquivo de retorno fornecido pelo banco em formato compatível com a conta bancária cadastrada.
+- Backup e conferência do arquivo antes do processamento definitivo.
 
 ## Passo a passo
 
-1. Acesse **Financeiro > Retorno Bancário**.
-2. Selecione a **Conta Bancária**.
-3. Informe o período inicial e final.
-4. Execute a consulta/ação disponível na tela.
-5. Valide os retornos exibidos para a conta selecionada.
+1. Acesse **Financeiro > Gerência Financeira > Retorno Bancário**.
+2. Selecione o **Arquivo de retorno**.
+3. Clique em **Visualizar**. Essa ação lê o arquivo, mas não altera os títulos.
+4. Confira conta bancária, registros, valores, tarifas, situações e totais.
+5. Se os dados estiverem corretos, clique em **Processar** e confirme. Essa ação executa as baixas.
+6. Se necessário, use **CSV** ou **Imprimir** para obter uma cópia da conferência.
 
-## Campos importantes
+## Resultado exibido
 
-| Campo / ação | Descrição |
+| Informação | Descrição |
 |---|---|
-| **Conta Bancária** | Conta usada como filtro principal. |
-| **Data inicial** | Início do período de retorno. |
-| **Data final** | Fim do período de retorno. |
-| **Ação de consulta** | Botão/ação usada para carregar os retornos. |
+| **Conta bancária** | Banco, titular, agência e conta identificados no arquivo. |
+| **Registros** | Filial, contrato, cliente, descrição, documento, vencimento, pagamento, crédito, valores, tarifa, situação e status bancário. |
+| **Totais operacionais** | Baixas, registros confirmados, rejeitados, baixados pelo banco, outras ações e títulos não encontrados. |
+| **Totais financeiros** | Quantidade de títulos, valor a receber, valor pago, tarifas e líquido. |
 
-## Resultado esperado
+## Atenção
 
-- A tela deve listar os retornos bancários filtrados pela conta e período.
-- O operador consegue validar o status dos retornos.
-- O fluxo deve permitir conferir o processamento bancário relacionado aos títulos.
+- **Visualizar** não altera títulos.
+- **Processar** executa as baixas e exige confirmação.
+- Não processe o mesmo arquivo novamente sem antes conferir o histórico e o resultado anterior.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| A área principal fica apenas em carregamento | Verifique se a tela terminou de carregar ou se o demo está com limitação de renderização. |
-| A conta bancária não lista opções | Confirme se há contas cadastradas e se o perfil possui acesso. |
-| A consulta não retorna dados | Ajuste o período e valide se existem retornos no intervalo informado. |
+| Botões desabilitados | Selecione um arquivo. |
+| Arquivo rejeitado | Confirme o layout e a conta bancária correspondente. |
+| Títulos não encontrados | Compare número do documento, carteira e ambiente de emissão. |
+| Valores divergentes | Não processe; valide o arquivo com o banco e o financeiro. |
 
-## Observações
+## Referências de implementação
 
-- A rota observada no demo foi `/lgc/financeiro%7Cretorno_bancario`.
-- O conteúdo operacional é exibido no fluxo principal do sistema.
-- A captura visual obtida neste ambiente ficou em estado de carregamento, mas a inspeção dos elementos mostrou o formulário com **Conta Bancária**, **Data inicial**, **Data final** e uma ação de execução.
-- Como a tela não concluiu o carregamento visual durante a captura, esta página registra a limitação em vez de inventar dados de retorno.
+- `lhisp-frontend/src/paginas/financeiro/gerencia/TabRetornoBancario.tsx`
+- ações `Financeiro.VisualizarRetornoBancario` e `Financeiro.ProcessarRetornoBancario`
 
-## Dúvidas para revisão
-
-- Qual é o nome exato do botão/ação usada para consultar os retornos?
-- O retorno bancário mostra apenas leitura ou também permite baixar/reenviar arquivos?
-- Existe um filtro adicional por filial ou status do processamento?
-
-## Screenshots sugeridos
-
-- Tela **Retorno Bancário** no demo: `assets/screenshots/financeiro/retorno-bancario.png`
-
-![Retorno Bancário no demo](/assets/screenshots/financeiro/retorno-bancario.png)
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

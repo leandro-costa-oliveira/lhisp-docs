@@ -7,9 +7,6 @@ description: ''
 
 # Setores
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -74,14 +71,11 @@ Use esta tela quando precisar:
 - As filiais mostradas eram **MATRIZ** marcada e **TESTE** desmarcada.
 - A captura limpa mostra a tela sem anotações visuais.
 
-## Dúvidas para revisão
-
-- A lista de filiais é editável diretamente nessa tela ou depende de outra rotina?
-- Existe relação entre este fluxo e a divisão de acessos por rede?
-- O botão **Procurar** abre uma busca simples ou um cadastro mais avançado?
 
 ## Screenshots sugeridos
 
 - Tela **Setores** no demo: `assets/screenshots/rede-infra/setores.png`
 
 ![Setores no demo](/assets/screenshots/rede-infra/setores.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

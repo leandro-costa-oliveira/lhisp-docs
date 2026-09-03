@@ -32,3 +32,5 @@ Esta documentação contém guias passo a passo para operações do módulo **Co
 ## Sobre o LHISP
 
 O LHISP é uma plataforma completa de gestão desenvolvida pela [Altsoft](https://www.altsoft.com.br) para provedores de internet que necessitam de um sistema integrado para gerenciamento de clientes, contratos, serviços e financeiro.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

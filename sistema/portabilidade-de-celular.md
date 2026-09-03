@@ -71,3 +71,5 @@ Use esta tela para:
 - Tela principal de **Portabilidade de Celular** no demo: `assets/screenshots/sistema/portabilidade-de-celular.png`
 
 ![Portabilidade de Celular no demo](/assets/screenshots/sistema/portabilidade-de-celular.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

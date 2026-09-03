@@ -89,3 +89,5 @@ Use esta tela quando precisar:
 - Tela **Pessoas** no demo: `assets/screenshots/cadastros/pessoas.png`
 
 ![Pessoas no demo](/assets/screenshots/cadastros/pessoas.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

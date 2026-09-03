@@ -124,3 +124,5 @@ Use esta tela quando precisar:
 - Cadastro da ordem com técnico selecionado: `assets/screenshots/estoque/ordens-de-separacao-cadastro.png`
 - Diálogo **Adicionar Item** aberto: `assets/screenshots/estoque/ordens-de-separacao-adicionar-item.png`
 - Ordem aberta com **Confirmar Entrega** visível: `assets/screenshots/estoque/ordens-de-separacao-confirmar-entrega.png`
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

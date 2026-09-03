@@ -7,9 +7,6 @@ description: ''
 
 # OLT V-Solutions
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização de um fluxo relacionado no ambiente de demonstração. Campos sensíveis, credenciais e valores operacionais exatos devem ser validados pela equipe técnica antes de publicação final.
 
 ## Objetivo
 
@@ -129,16 +126,11 @@ A wiki lista a OLT como um equipamento **V-Solutions** e indica que a configura�
 - O demo foi usado apenas como referência visual para o contexto de OLT e cadastro de rede.
 - Os detalhes exatos de criação de VLAN e gravação dependem do ambiente e do firmware do equipamento.
 
-## Dúvidas para revisão
-
-- A tela do LHISP grava a OLT diretamente ou apenas armazena os parâmetros de integração?
-- Há diferença prática entre **GePON OLT** e **GPON OLT** no fluxo de cadastro?
-- Quais perfis de tipo são realmente usados em produção?
-- A definição de VLAN nativa é obrigatória para todos os modelos V-Solutions?
-- Qual é a convenção recomendada para o intervalo de VLANs por PON?
 
 ## Screenshots sugeridos
 
 - Tela de cadastro/integração da OLT no demo usada como referência visual: `assets/screenshots/rede-infra/olt-v-solutions.png`
 
 ![OLT V-Solutions no demo](/assets/screenshots/rede-infra/olt-v-solutions.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

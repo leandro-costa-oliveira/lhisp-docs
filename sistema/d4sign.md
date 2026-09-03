@@ -66,3 +66,5 @@ Use esta tela quando for necessário informar credenciais do D4Sign, habilitar a
 - `assets/screenshots/sistema/d4sign.png` — captura limpa da tela D4Sign no demo.
 
 ![D4Sign no demo](/assets/screenshots/sistema/d4sign.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

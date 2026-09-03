@@ -7,9 +7,6 @@ description: ''
 
 # Mikrotik: Services
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP. Portas, serviços e ajustes de rede devem ser validados pela equipe técnica antes de qualquer uso em produção.
 
 ## Objetivo
 
@@ -85,14 +82,10 @@ Use este fluxo quando for necessário:
 - A wiki reforça que Winbox deve continuar habilitado quando for o meio de acesso administrativo.
 - Não foi encontrada no demo uma tela equivalente 1:1 para essa página; por isso a migração foi feita diretamente a partir da wiki.
 
-## Dúvidas para revisão
-
-- Quais serviços devem permanecer obrigatoriamente habilitados em produção?
-- A porta do SSH pode variar livremente ou existe faixa/padrão recomendado?
-- A mudança de porta deve ser replicada em algum cadastro interno além do servidor?
-- Há política padronizada para desativar Telnet, FTP e Web em todos os clientes?
 
 ## Screenshots sugeridos
 
 - A wiki não fornece uma captura operacional 1:1 e o demo não expõe essa mesma tela.
 - Se surgir uma tela equivalente no demo, ela poderá ser adicionada em `assets/screenshots/rede-infra/mikrotik-services.png`.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

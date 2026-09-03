@@ -59,3 +59,5 @@ Use esta página quando precisar acessar o módulo de contratos como ponto de en
 - As abas **Serviços**, **Acessos**, **OTT** e **Produtos** carregam formulários PHP legados. **Financeiro**, **NF** e **Atendimentos** também reutilizam telas legadas dentro de componentes React. **Telefonia** e **Observações** têm interface React própria.
 - A exclusão na aba **Dados** exige confirmação e chama `Contrato.Apagar`; nas abas legadas, a ação é delegada à barra do formulário carregado.
 - A aba **Documentos** usa a interface React somente quando `localStorage.newTabDocs` é `true`; caso contrário, carrega o formulário legado.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

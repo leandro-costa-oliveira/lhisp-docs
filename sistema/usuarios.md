@@ -71,14 +71,11 @@ Use esta tela para criar, editar ou revisar o cadastro de usuários do sistema.
 - O usuário exibido na captura é **SuporteLH**.
 - O botão **Copiar Configurações de** fica no canto inferior direito da tela.
 
-## Dúvidas para revisão
-
-- Quais abas são obrigatórias para o cadastro mínimo?
-- O botão **Copiar Configurações de** copia permissões, filiais ou ambos?
-- Há validação específica para a lista de IPs?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/usuarios.png` — captura limpa da tela de usuários no demo.
 
 ![Usuários no demo](/assets/screenshots/sistema/usuarios.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

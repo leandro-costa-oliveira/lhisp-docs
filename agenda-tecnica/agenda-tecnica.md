@@ -71,3 +71,5 @@ Essas limitações refletem o comportamento implementado e não devem ser interp
 ## Captura de tela
 
 ![Agenda Técnica](/assets/screenshots/agenda-tecnica/agenda-tecnica.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

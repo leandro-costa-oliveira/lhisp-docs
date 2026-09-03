@@ -75,3 +75,5 @@ Use esta tela quando for necessário:
 ## Captura do demo
 
 ![Formas de Pagamento no demo](/assets/screenshots/cadastros/financeiro/formas-de-pagamento.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

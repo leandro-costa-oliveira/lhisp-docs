@@ -61,3 +61,5 @@ Use esta tela quando for necessário habilitar a integração, revisar o token d
 - `assets/screenshots/sistema/ittv.png` — captura limpa da tela de configuração do ITTV no demo.
 
 ![ITTV no demo](/assets/screenshots/sistema/ittv.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

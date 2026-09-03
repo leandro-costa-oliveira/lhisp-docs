@@ -116,3 +116,5 @@ Use este fluxo quando o material chegar por nota fiscal e você precisar:
 - Tela de listagem **Notas Fiscais de Compra** no demo: `assets/screenshots/estoque/notas-fiscais-de-compra-listagem.png`
 - Formulário preenchido após importação do XML: `assets/screenshots/estoque/notas-fiscais-de-compra-importacao.png`
 - Diálogo **Lançar Produtos** aberto: `assets/screenshots/estoque/notas-fiscais-de-compra-lancar-produtos.png`
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

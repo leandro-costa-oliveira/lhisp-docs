@@ -76,3 +76,5 @@ Use esta tela quando precisar:
 - Tela **Relatório de Fluxo de Caixa** no demo: `assets/screenshots/relatorios/fluxo-de-caixa.png`
 
 ![Fluxo de Caixa no demo](/assets/screenshots/relatorios/fluxo-de-caixa.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

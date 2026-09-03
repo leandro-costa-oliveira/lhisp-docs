@@ -7,9 +7,6 @@ description: ''
 
 # DNS Bloqueio Judicial
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização da tela correspondente no ambiente de demonstração. Endereços, caminhos de arquivos e comandos sensíveis devem ser validados pela equipe técnica antes de qualquer uso em produção.
 
 ## Objetivo
 
@@ -144,16 +141,11 @@ No demo, a página **Bloqueio Judicial de Domínios** mostra:
 - O demo mostra a tela operacional de consulta de domínios bloqueados, com ações de cadastro, exportação e importação.
 - A captura usada neste documento veio do ambiente de demonstração, não da wiki.
 
-## Dúvidas para revisão
-
-- O endpoint `api/dns/bloqueio.judicial.*` é exatamente esse em todos os ambientes?
-- O arquivo de zona deve ser substituído integralmente ou há merge incremental?
-- A tarefa de cron é obrigatória ou apenas recomendada?
-- O botão **Cadastrar** no demo cria um domínio individual ou um lote de registros?
-- O fluxo aceita apenas domínios ou também endereços IP como os mostrados na listagem do demo?
 
 ## Screenshots sugeridos
 
 - Tela **Bloqueio Judicial de Domínios** no demo: `assets/screenshots/rede-infra/dns-bloqueio-judicial.png`
 
 ![Bloqueio Judicial de Domínios no demo](/assets/screenshots/rede-infra/dns-bloqueio-judicial.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

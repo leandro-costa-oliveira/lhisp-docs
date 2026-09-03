@@ -73,3 +73,5 @@ Use esta tela quando for necessário:
 ## Screenshots sugeridos
 
 - `assets/screenshots/cadastros/financeiro/planos.png` — captura limpa da listagem de planos no demo.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

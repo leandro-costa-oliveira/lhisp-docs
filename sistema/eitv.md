@@ -60,3 +60,5 @@ Use esta tela para revisar ou ajustar os dados de acesso da integração EiTV.
 - `assets/screenshots/sistema/eitv.png` — captura limpa da configuração da API EiTV no demo.
 
 ![EiTV no demo](/assets/screenshots/sistema/eitv.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

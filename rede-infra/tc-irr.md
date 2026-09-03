@@ -7,9 +7,6 @@ description: ''
 
 # TC IRR
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -71,14 +68,11 @@ Use esta tela quando precisar:
 - A tabela exibiu vários registros de ASN com botão de exclusão em cada linha.
 - A captura limpa mostra a tela completa sem marcações visuais.
 
-## Dúvidas para revisão
-
-- O campo **ASN** é apenas filtro ou também define o registro editado?
-- A lista exibida é completa ou paginada em outra camada?
-- O botão **Add** cria registro local ou abre um fluxo externo?
 
 ## Screenshots sugeridos
 
 - Tela **TC IRR** no demo: `assets/screenshots/rede-infra/tc-irr.png`
 
 ![TC IRR no demo](/assets/screenshots/rede-infra/tc-irr.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
