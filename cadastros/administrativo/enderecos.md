@@ -7,10 +7,6 @@ description: ''
 
 # Endereços
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar e manter o cadastro de endereços no LHISP, com busca por registros já existentes, inclusão de novos itens e exportação da listagem.
@@ -78,13 +74,6 @@ Use esta tela quando precisar:
 - O demo expõe **Endereços** como uma tela de listagem com busca, filtros, inclusão e exportação.
 - A rota confirmada no demo é `/cadastros/administrativo/enderecos`.
 - A captura usada nesta página veio do ambiente de demonstração e mostra a listagem principal com a barra de ações visível.
-
-## Dúvidas para revisão
-
-- O botão **Cadastrar** abre um formulário completo ou um modal de inclusão rápida?
-- **Aplicar Filtros** possui critérios além dos visíveis na listagem inicial?
-- Há alguma regra de validação específica para CEP, UF e cidade no cadastro?
-- O botão **Baixar Planilha** exporta exatamente os filtros aplicados?
 
 ## Screenshots sugeridos
 
