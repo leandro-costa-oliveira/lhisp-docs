@@ -7,6 +7,8 @@ description: Gere mensalidades de contratos em um período e registre as cobran�
 
 # Gerar carnês
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Esta rotina antecipa ou refaz o processamento que normalmente gera as mensalidades dos serviços contratados. Cada resultado é uma **conta a receber**; “carnê” não significa apenas um documento para impressão. Conforme a conta bancária do serviço, a cobrança também pode ser registrada em um gateway.
 
 Use a tela para gerar mensalidades de um período específico, conferir antecipadamente quais títulos faltam ou processar contratos que não entraram na geração automática.
