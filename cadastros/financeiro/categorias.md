@@ -7,6 +7,8 @@ description: Classificação da natureza das despesas e contas a pagar.
 
 # Categorias Financeiras
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Categorias financeiras classificam **o que** representa um gasto. Exemplos típicos são impostos, pessoal, infraestrutura ou serviços de terceiros. Cada categoria pode conter itens para um nível adicional de detalhamento.
 
 Essa classificação complementa o centro de custo: a categoria descreve a natureza do gasto; o centro de custo informa a área à qual ele foi apropriado. Usados em conjunto, os dois cadastros permitem analisar contas a pagar por finalidade e por área responsável.
