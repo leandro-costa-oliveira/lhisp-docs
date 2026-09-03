@@ -7,9 +7,6 @@ description: ''
 
 # Megazap
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo é apenas ilustrativo do ambiente de teste e não deve ser reutilizado em produção.
 
 ## Objetivo
 
@@ -70,12 +67,6 @@ Use este fluxo quando for necessário:
 - A wiki fornece callbacks de exemplo para cada ação.
 - O demo mostra a tela **Megazap - Configuração da API** com token, ativação e histórico de eventos.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- A URL base deve ser documentada com um exemplo único ou com todas as variações de callback?
-- O nome da ação `desbloqueioEmConfianca` é o identificador oficial ou existe um nome legível equivalente?
-- O histórico de eventos possui filtros adicionais que devem ser documentados em outra página?
 
 ## Screenshots sugeridos
 
