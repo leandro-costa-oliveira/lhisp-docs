@@ -7,9 +7,6 @@ description: ''
 
 # API de Integração para Parceiros
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da wiki do LHISP e da tela equivalente no ambiente de demonstração. O token exibido no demo é apenas ilustrativo do ambiente de teste e não deve ser reaproveitado em produção.
 
 ## Objetivo
 
@@ -74,13 +71,6 @@ Use este fluxo quando for necessário:
 - A página da wiki orienta a ativação em **sistema > integracoes > api parceiros**.
 - O demo mostra a tela **Api Parceiros** com token, ativação, salvamento e link para a documentação dos endpoints.
 - A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Dúvidas para revisão
-
-- O nome oficial do módulo deve ser escrito como **Api Parceiros** ou **API de Integração para Parceiros**?
-- Há expiração automática do token gerado?
-- Existe controle por parceiro ou apenas um token global?
-- A documentação de endpoints é pública ou depende de autenticação adicional?
 
 ## Screenshots sugeridos
 
