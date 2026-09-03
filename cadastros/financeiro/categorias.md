@@ -73,3 +73,5 @@ Use esta tela quando for necessário:
 ## Captura do demo
 
 ![Categorias no demo](/assets/screenshots/cadastros/financeiro/categorias.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
