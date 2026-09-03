@@ -61,3 +61,5 @@ Use esta tela quando for necessário informar credenciais de acesso, habilitar a
 - `assets/screenshots/sistema/urbis.png` — captura limpa da tela Urbis no demo.
 
 ![Urbis no demo](/assets/screenshots/sistema/urbis.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
