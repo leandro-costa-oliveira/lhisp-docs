@@ -67,14 +67,11 @@ Use esta tela quando for necessário disparar um comunicado para um conjunto de 
 - O fluxo exibido contém filtros gerais e filtros por endereço.
 - A captura foi feita no demo e validada visualmente.
 
-## Dúvidas para revisão
-
-- O canal **App** corresponde a push notification?
-- O campo **Rede** depende obrigatoriamente do **Setor**?
-- Há limite de tamanho para o texto da mensagem?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/notificacoes-em-massa.png` — captura limpa da tela de envio em massa no demo.
 
 ![Notificações em Massa no demo](/assets/screenshots/sistema/notificacoes-em-massa.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
