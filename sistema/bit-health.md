@@ -75,3 +75,5 @@ Use este fluxo quando for necessário:
 - Tela **Bit Health - Configuração da API** no demo: `assets/screenshots/sistema/bit-health.png`
 
 ![Bit Health no demo](/assets/screenshots/sistema/bit-health.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
