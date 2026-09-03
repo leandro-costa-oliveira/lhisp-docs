@@ -84,3 +84,5 @@ Os indicadores e gráficos são recalculados com os filtros aplicados. Em caso d
 ## Captura de tela
 
 ![Dashboard Comercial](/assets/screenshots/dashboards/dashboard-comercial.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
