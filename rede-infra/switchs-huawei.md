@@ -7,9 +7,6 @@ description: ''
 
 # Switchs Huawei
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização de um fluxo relacionado no ambiente de demonstração. Credenciais, chaves e valores exatos devem ser validados pela equipe técnica antes de publicação final.
 
 ## Objetivo
 
@@ -118,7 +115,7 @@ ip route-static 0.0.0.0 0 192.168.0.1
 4. Configure autenticação, accounting e o domínio do ambiente.
 5. Valide que o acesso ao switch passará a usar o fluxo integrado ao LHISP.
 
-A wiki informa que a senha do Radius segue o padrão `LhSrv + ID do cadastro da empresa`.
+Use uma chave Radius exclusiva e armazenada com segurança. O valor não deve ser previsível nem exposto nesta documentação.
 
 ### 11. Finalizar e salvar
 
@@ -168,16 +165,11 @@ A wiki informa que a senha do Radius segue o padrão `LhSrv + ID do cadastro da 
 - A documentação mistura comandos de console, configuração de IP e autenticação centralizada.
 - O demo foi usado apenas como referência visual para um fluxo similar de equipamento de rede (`GePON PACSWITCH`), já que não há uma tela 1:1 do switch Huawei no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- O modelo alvo é sempre o mesmo ou há variações de switch Huawei suportadas?
-- O `ssh authentication-type default password` é obrigatório em todos os ambientes?
-- Quais interfaces devem ser usadas como padrão para o IP de gerenciamento?
-- O template Radius `lhisp` é fixo ou pode mudar por cliente/ambiente?
-- A senha `LhSrv<ID>` é sempre derivada do cadastro da empresa?
 
 ## Screenshots sugeridos
 
 - Tela do demo usada como referência visual do fluxo de equipamento de rede: `assets/screenshots/rede-infra/switchs-huawei.png`
 
 ![Switchs Huawei no demo](/assets/screenshots/rede-infra/switchs-huawei.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
