@@ -2,106 +2,79 @@
 title: Remessa Bancária
 published: true
 editor: markdown
-description: ''
+description: 'Consulta, geração e confirmação de remessas bancárias'
 ---
 
 # Remessa Bancária
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da tela equivalente no ambiente de demonstração. A execução de remessas depende da política bancária, da VAN utilizada e da validação da equipe financeira.
-
 ## Objetivo
 
-Registrar o fluxo para **visualizar, gerar, baixar e enviar remessas bancárias** relacionadas aos boletos emitidos no sistema.
-
-## Quando usar
-
-Use este fluxo quando for necessário:
-
-- consultar remessas geradas em determinado período;
-- gerar uma nova remessa bancária;
-- baixar o arquivo para envio ao banco ou à VAN;
-- acompanhar o processamento das remessas.
+Consultar remessas bancárias, selecionar títulos, gerar o arquivo e registrar sua confirmação de envio ao banco.
 
 ## Pré-requisitos
 
-- Acesso ao menu de **Gerência Financeira**.
-- Permissão para gerar e enviar remessas.
-- Conta bancária configurada no sistema.
-- Boletos emitidos no período desejado.
-- Ferramenta externa para envio ao banco ou à VAN, quando aplicável.
+- Conta bancária configurada para remessa.
+- Títulos emitidos no período desejado.
+- Permissões para consultar e operar remessas.
+- Aplicativo do banco ou VAN, quando o envio não for integrado.
 
-## Passo a passo
+## Consultar remessas
 
-### 1. Visualizar remessas bancárias
+1. Acesse **Financeiro > Remessas Bancárias**.
+2. Selecione a **Conta Bancária**, se quiser restringir a consulta.
+3. Informe o período **Gerada em**.
+4. Use o botão de atualização para carregar a lista.
 
-1. Acesse o menu de **Gerência Financeira**.
-2. Abra a aba **Retorno Bancário** ou a área equivalente de remessas.
-3. Selecione a **conta bancária**.
-4. Informe o **período** desejado.
-5. Consulte a lista de remessas geradas.
+Na listagem, conforme o estado da remessa e as permissões, podem estar disponíveis ações para ver detalhes, baixar o arquivo, imprimir títulos, confirmar o envio ou apagar a remessa.
 
-### 2. Gerar uma nova remessa
+## Gerar nova remessa
 
-1. Clique em **Novo** para abrir o formulário de geração.
-2. Selecione a **conta bancária**.
-3. Informe o **período** desejado.
-4. Opcionalmente, filtre contratos **Bloqueados** e **Pendentes**.
-5. Clique em **Visualizar** para listar os títulos que entrarão na remessa.
-6. Confirme a geração.
-7. Verifique a mensagem de sucesso ou erro no resumo exibido.
+1. Clique em **Nova Remessa**.
+2. Selecione a **Conta Bancária**.
+3. Informe **Data Inicial** e **Data Final**.
+4. Se necessário, filtre um **Contrato**.
+5. Escolha se a seleção deve listar serviços **Bloqueados**, **Pendentes** e **Cancelados**.
+6. Clique em **Exibir**.
+7. Confira os títulos retornados e selecione os que entrarão no arquivo.
+8. Use a ação de geração e confirme a operação.
+9. Volte à listagem, baixe o arquivo e envie-o ao banco ou à VAN.
+10. Depois do envio, use **Confirmar** para registrar que a remessa foi enviada ao banco.
 
-### 3. Baixar e enviar a remessa
+## Campos e ações
 
-1. Volte para a listagem de remessas.
-2. Localize a remessa recém-gerada.
-3. Use o botão de **download** para baixar o arquivo.
-4. Envie o arquivo para o banco ou para a VAN conforme o procedimento da instituição.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo ou ação | Descrição |
 |---|---|
-| **Conta bancária** | Conta usada para filtrar ou gerar a remessa. |
-| **Período** | Intervalo de boletos que entrarão na remessa. |
-| **Bloqueados** | Filtro para incluir ou excluir contratos bloqueados. |
-| **Pendentes** | Filtro para incluir ou excluir contratos pendentes. |
-| **Visualizar** | Lista os títulos que serão incluídos. |
-| **Novo** | Inicia a geração de uma nova remessa. |
-| **Download** | Baixa o arquivo gerado para envio externo. |
+| **Conta Bancária** | Carteira usada para gerar ou filtrar remessas. |
+| **Gerada em** | Período de criação usado na consulta das remessas. |
+| **Data Inicial / Data Final** | Período dos títulos considerados na nova remessa. |
+| **Contrato** | Restringe a seleção a um contrato. |
+| **Bloqueados / Pendentes / Cancelados** | Incluem serviços nessas situações na seleção. |
+| **Exibir** | Lista os títulos elegíveis; não gera o arquivo por si só. |
+| **Download** | Baixa o arquivo da remessa. |
+| **Confirmar** | Registra a confirmação de envio ao banco. |
+| **Apagar** | Exclui a remessa após confirmação, quando permitido. |
 
-## Resultado esperado
+## Cuidados
 
-- A remessa fica listada no sistema.
-- O arquivo é gerado para envio ao banco ou VAN.
-- O operador consegue acompanhar o status do envio e da confirmação.
+- **Remessa Bancária** e **Retorno Bancário** são fluxos distintos.
+- Confira conta, período e títulos antes de gerar.
+- Confirmar no LHISP não substitui o envio do arquivo ao banco ou à VAN.
+- Não gere novamente o mesmo conjunto sem conferir a remessa anterior.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| A lista de remessas não aparece | Confirme a conta bancária e o período selecionados. |
-| A remessa gera vazio | Verifique se há boletos dentro do intervalo informado. |
-| O arquivo não baixa | Confira permissões, navegador e bloqueios locais. |
-| O banco rejeita o arquivo | Valide o formato exigido pela instituição e a integração com a VAN. |
+| Nenhum título elegível | Revise período, conta e filtros de situação. |
+| Banco rejeita o arquivo | Valide layout, carteira e configuração bancária. |
+| Download não abre | Verifique permissão do navegador e a existência do arquivo gerado. |
+| Ação não aparece | Confira a situação da remessa e as permissões do perfil. |
 
-## Observações
+## Referências de implementação
 
-- A wiki trata a remessa bancária como um processo periódico e essencial desde a obrigatoriedade dos boletos registrados.
-- O fluxo pode envolver um aplicativo externo da instituição bancária ou uma VAN terceirizada.
-- O demo expõe a área de **Gerência Financeira** com a aba **Retorno Bancário**, que corresponde visualmente ao fluxo de remessa.
-- A captura usada nesta página veio do ambiente de demonstração, não da wiki.
+- `lhisp-php/web/form/financeiro/remessa.php`
+- `lhisp-php/web/form/financeiro/remessa.js`
+- `lhisp-php/web/form/financeiro/remessa/nova.php`
+- `lhisp-php/web/form/financeiro/remessa/nova_listagem.php`
 
-## Dúvidas para revisão
-
-- A aba **Retorno Bancário** é o nome oficial da funcionalidade na aplicação de produção?
-- Há diferença entre remessa gerada e remessa confirmada no fluxo atual?
-- Quais filtros devem ser obrigatórios antes da geração?
-- Existe um procedimento padrão por banco ou VAN para o envio do arquivo?
-
-## Screenshots sugeridos
-
-- Tela **Gerência Financeira > Retorno Bancário** no demo: `assets/screenshots/financeiro/remessa-bancaria.png`
-
-![Remessa Bancária no demo](/assets/screenshots/financeiro/remessa-bancaria.png)
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
