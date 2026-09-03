@@ -76,3 +76,5 @@ Use esta tela quando precisar:
 - Tela **Estoque por Funcionário** no demo: `assets/screenshots/estoque/estoque-por-funcionario.png`
 
 ![Estoque por Funcionário no demo](/assets/screenshots/estoque/estoque-por-funcionario.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
