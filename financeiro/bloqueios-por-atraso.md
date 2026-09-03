@@ -7,9 +7,6 @@ description: ''
 
 # Bloqueios por Atraso
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -71,14 +68,11 @@ Use esta tela quando precisar:
 - A captura visual obtida no demo mostrou claramente o formulário principal com **Filial**, **Data de Vencimento** e os botões de ação.
 - A área principal abaixo do formulário permanece vazia até que o operador use **Visualizar**.
 
-## Dúvidas para revisão
-
-- A tela usa algum status adicional para identificar contratos elegíveis?
-- O botão **Visualizar** apenas consulta ou já prepara a seleção para bloqueio?
-- Os bloqueios/desbloqueios afetam apenas a cobrança ou também outras rotinas financeiras?
 
 ## Screenshots sugeridos
 
 - Tela **Bloqueios por Atraso** no demo: `assets/screenshots/financeiro/bloqueios-por-atraso.png`
 
 ![Bloqueios por Atraso no demo](/assets/screenshots/financeiro/bloqueios-por-atraso.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
