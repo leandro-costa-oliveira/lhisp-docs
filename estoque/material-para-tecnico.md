@@ -71,3 +71,5 @@ Ao seguir as páginas desta trilha, o operador consegue:
 - [Entrada de Material](/estoque/entrada-de-material)
 - [Notas Fiscais de Compra](/estoque/notas-fiscais-de-compra)
 - [Ordens de Separação](/estoque/ordens-de-separacao)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
