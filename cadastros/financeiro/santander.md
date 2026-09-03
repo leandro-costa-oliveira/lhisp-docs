@@ -54,3 +54,5 @@ Ao salvar, a interface envia os dados para `POST /api/ContaBancaria.salvar`, mos
 - O LHISP permite carregar e armazenar o certificado, mas a interface não extrai nem exibe a chave pública.
 - O cadastro não automatiza etapas externas no portal Santander. Credenciamento, envio de chave pública e liberação de API devem seguir as instruções fornecidas pelo banco.
 - Não use credenciais ou certificados de produção em ambientes de demonstração.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
