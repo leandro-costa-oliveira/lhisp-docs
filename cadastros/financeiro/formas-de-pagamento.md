@@ -2,78 +2,66 @@
 title: Formas de Pagamento
 published: true
 editor: markdown
-description: ''
+description: Regras de entrada e parcelamento usadas no faturamento de vendas.
 ---
 
 # Formas de Pagamento
 
-## Objetivo
+Uma forma de pagamento define como um valor será dividido entre entrada e parcelas. Ela é usada pelo backend para transformar uma venda faturada em uma ou mais contas a receber e também pode ser adotada por integrações que cobram itens ou ativações, como a AloFone.
 
-Documentar a tela de listagem e cadastro de **Formas de Pagamento** em **Cadastros > Financeiro > Formas de Pagamento**.
+O cadastro é uma regra de parcelamento, não o meio pelo qual o cliente pagará o boleto. A conta bancária define a cobrança; a forma de pagamento define a distribuição do total e os vencimentos.
 
-## Quando usar
+## Como o parcelamento é calculado
 
-Use esta tela quando for necessário:
+Ao faturar, o LHISP aplica a forma selecionada ao valor total:
 
-- consultar formas de pagamento cadastradas;
-- cadastrar uma nova forma de pagamento;
-- filtrar registros por texto;
-- exportar a listagem para planilha.
+- se houver entrada, cria uma conta com vencimento na data inicial;
+- o percentual de entrada calcula o valor quando o fluxo não fornece uma entrada fixa;
+- quando o fluxo informa um valor fixo de entrada, esse valor prevalece sobre o percentual cadastrado;
+- o saldo é dividido igualmente pela quantidade de parcelas;
+- cada parcela vence um mês depois da anterior; a primeira parcela vence um mês após a data inicial;
+- diferenças de centavos da divisão são acrescentadas à última parcela;
+- as descrições identificam **ENTRADA** ou **PARCELA N DE TOTAL**.
 
-## Pré-requisitos
+Exemplo: entrada de 33% e duas parcelas sobre R$ 100,00 gera R$ 33,00 na data inicial e duas parcelas de R$ 33,50 nos dois meses seguintes.
 
-- Acesso ao menu **Cadastros > Financeiro > Formas de Pagamento**.
-- Permissão para consultar e cadastrar registros financeiros.
-
-## Passo a passo
+## Cadastro
 
 1. Acesse **Cadastros > Financeiro > Formas de Pagamento**.
-2. Use o campo **Procurar** para filtrar a listagem, se necessário.
-3. Clique em **Procurar** para executar a busca.
-4. Clique em **Cadastrar** para criar uma nova forma de pagamento.
-5. Clique em **Baixar Planilha** para exportar a lista exibida.
-6. Clique em um item da listagem para abrir o registro correspondente.
+2. Clique em **Cadastrar** ou abra uma forma existente.
+3. Informe entrada, quantidade de parcelas e juros.
+4. Revise a descrição sugerida automaticamente pela SPA.
+5. Salve.
 
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Campo | Comportamento |
 |---|---|
-| Campo **Procurar** | Campo de filtro textual da listagem. |
-| Botão **Procurar** | Executa a pesquisa com o termo informado. |
-| **Cadastrar** | Inicia o fluxo de inclusão de uma nova forma de pagamento. |
-| **Baixar Planilha** | Exporta a listagem atual para arquivo de planilha. |
-| **Id** | Identificador da forma de pagamento. |
-| **Descrição** | Nome da forma de pagamento. |
-| **Parcelas** | Quantidade de parcelas permitidas. |
-| **Entrada (%)** | Percentual de entrada exibido na listagem. |
-| **Juros (%)** | Percentual de juros exibido na listagem. |
+| **Descrição** | Nome único da regra. A SPA sugere textos como **A VISTA** ou **ENTRADA + 2X SEM JUROS**, mas o texto pode ser editado. |
+| **Parcelas** | Quantidade de contas futuras geradas depois da entrada. O backend aceita no máximo 36. |
+| **Entrada (%)** | Percentual cobrado na data inicial. Aceita de 0% a 100%. |
+| **Juros (%)** | Percentual armazenado na forma de pagamento. |
 
-## Resultado esperado
+> **Limitação verificada:** o cálculo atual do backend divide o total original e não aplica o percentual do campo **Juros** ao valor das parcelas. Não use esse campo como garantia de acréscimo automático sem validar o fluxo de faturamento utilizado.
 
-- A lista de formas de pagamento fica visível com paginação.
-- O usuário consegue abrir uma forma de pagamento existente para consulta ou edição.
-- O usuário consegue iniciar o cadastro de uma nova forma de pagamento.
+## Regras importantes
 
-## Problemas comuns
+- A descrição é obrigatória e não pode duplicar outra forma ativa da empresa.
+- Entrada, parcelas e juros precisam ser numéricos.
+- Entrada superior a 100% é rejeitada.
+- Uma entrada de 100% não pode ser combinada com parcelas.
+- A exclusão é lógica e não altera vendas nem contas a receber já geradas.
+- Alterar uma forma afeta novos cálculos. Faturas já criadas permanecem com valores e vencimentos próprios.
 
-| Problema | Como tratar |
-|---|---|
-| Nenhum resultado aparece | Verifique o termo informado no campo **Procurar**. |
-| Registro não abre | Confirme se o usuário possui permissão para consultar o item. |
-| Exportação não baixa | Refaça a ação com a listagem já carregada. |
+## Relações com outras funcionalidades
 
-## Observações
+- **Vendas:** ao faturar, o total dos itens, descontados os descontos, é parcelado e gera contas a receber vinculadas à venda e ao contrato.
+- **Contas bancárias:** a conta escolhida no faturamento é gravada nas contas a receber geradas.
+- **Estoque:** depois do faturamento, a venda passa a aguardar a entrega/saída de material.
+- **AloFone:** a configuração da integração pode exigir uma forma de pagamento para cobrar a ativação de chip.
 
-- A tela verificada no demo mostra a rota `/cadastros/financeiro/formapagamento`.
-- Na listagem do demo, foram observadas formas como **A VISTA**, **2X SEM JUROS**, **3X SEM JUROS**, **4X SEM JUROS** e **ISENTO**.
-- Os registros mostram parcelas, entrada e juros por linha.
+## Antes de alterar ou excluir
 
-## Screenshots sugeridos
+Identifique os fluxos e integrações que usam a forma. Prefira criar uma nova regra quando a condição comercial mudou; isso preserva a interpretação histórica das vendas antigas.
 
-- `assets/screenshots/cadastros/financeiro/formas-de-pagamento.png` — captura limpa da listagem de formas de pagamento no demo.
+## Captura da tela
 
-## Captura do demo
-
-![Formas de Pagamento no demo](/assets/screenshots/cadastros/financeiro/formas-de-pagamento.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Listagem de formas de pagamento](/assets/screenshots/cadastros/financeiro/formas-de-pagamento.png)
