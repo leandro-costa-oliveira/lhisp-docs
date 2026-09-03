@@ -7,9 +7,6 @@ description: ''
 
 # OLT Huawei
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP e da visualização de um fluxo relacionado no ambiente de demonstração. Credenciais, chaves e valores sensíveis foram omitidos ou resumidos e devem ser validados pela equipe técnica antes de publicação final.
 
 ## Objetivo
 
@@ -128,16 +125,11 @@ A wiki menciona regras de acesso para restringir serviços como telnet/gestão c
 - Credenciais e valores exatos foram omitidos nesta documentação por segurança.
 - O demo foi usado apenas como referência visual para o contexto de servidores/equipamentos de rede.
 
-## Dúvidas para revisão
-
-- Qual modo de gerenciamento é o padrão: *out of band* ou *inband*?
-- Quais placas do chassi precisam obrigatoriamente ser confirmadas em produção?
-- O usuário criado na OLT é sempre o mesmo usado pelo LHISP?
-- Existem diferenças relevantes entre modelos Huawei suportados pela mesma documentação?
-- Quais IPs devem ser liberados no controle de acesso?
 
 ## Screenshots sugeridos
 
 - Tela de servidor/equipamento no demo usada como referência visual: `assets/screenshots/rede-infra/olt-huawei.png`
 
 ![OLT Huawei no demo](/assets/screenshots/rede-infra/olt-huawei.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
