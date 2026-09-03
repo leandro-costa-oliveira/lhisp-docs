@@ -7,9 +7,6 @@ description: ''
 
 # Impressão de Carnês
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -86,15 +83,11 @@ Use esta tela quando precisar:
 - Os botões de ação visíveis são **Confirmar**, **Imprimir** e **Exibir**.
 - A tela já inicia com valores de referência de faturamento preenchidos no demo.
 
-## Dúvidas para revisão
-
-- **Imprimir** e **Exibir** executam ações distintas ou uma abre apenas a pré-visualização?
-- O campo **Contratos** controla quantidade por página, intervalo ou seleção fixa?
-- Existe um fluxo separado para reimpressão de carnês já emitidos?
-- A seleção de rede sempre depende de **Setor de Rede** ou pode ser feita diretamente?
 
 ## Screenshots sugeridos
 
 - Tela **Impressão de Carnês** no demo: `assets/screenshots/financeiro/impressao-de-carnes.png`
 
 ![Impressão de Carnês no demo](/assets/screenshots/financeiro/impressao-de-carnes.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
