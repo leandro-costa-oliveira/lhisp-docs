@@ -2,84 +2,56 @@
 title: Gerência Financeira
 published: true
 editor: markdown
-description: ''
+description: 'Operação das abas da Gerência Financeira'
 ---
 
 # Gerência Financeira
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
-Centralizar a operação financeira diária, incluindo controle de caixa, contas a receber, contas a pagar e retorno bancário.
+Centralizar controle de caixa, contas a receber, contas a pagar e processamento de retorno bancário.
 
-## Quando usar
+## Acesso e permissões
 
-Use esta tela quando precisar:
+Acesse **Financeiro > Gerência Financeira**. As abas são exibidas conforme as permissões do usuário. Sem permissão para nenhuma aba, a tela informa que o acesso não está autorizado.
 
-- acompanhar o caixa do dia;
-- consultar contas a receber;
-- consultar contas a pagar;
-- operar o retorno bancário;
-- acessar rapidamente funções financeiras relacionadas.
+## Abas
 
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o menu **Gerência Financeira**.
-- Ter dados financeiros cadastrados para consulta.
-
-## Passo a passo
-
-1. Acesse o menu **Gerência Financeira**.
-2. Use a aba desejada entre **Controle de Caixa**, **Contas a Receber**, **Contas a Pagar** e **Retorno Bancário**.
-3. Selecione a **Caixa** ou informe a **Data**, quando aplicável.
-4. Use os botões de ação para navegar, atualizar, imprimir ou executar a operação financeira necessária.
-5. Consulte os resultados exibidos na área principal da tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Aba | Uso principal |
 |---|---|
-| **Controle de Caixa** | Aba principal para o controle diário do caixa. |
-| **Contas a Receber** | Aba dedicada aos lançamentos a receber. |
-| **Contas a Pagar** | Aba dedicada aos lançamentos a pagar. |
-| **Retorno Bancário** | Aba para rotinas associadas ao retorno bancário. |
-| **Caixa** | Seleção do caixa utilizado na consulta. |
-| **Data** | Data de referência da operação. |
-| **Ações** | Barra com botões para navegação e execução de comandos financeiros. |
+| **Controle de Caixa** | Selecionar caixa e data; acompanhar movimentos, abrir/fechar caixa, registrar movimentações e sangrias conforme as permissões. |
+| **Contas a Receber** | Pesquisar títulos, consultar detalhes e executar ações de recebimento e manutenção permitidas ao usuário. |
+| **Contas a Pagar** | Pesquisar despesas, consultar detalhes, cadastrar/editar e efetuar pagamentos conforme as permissões. |
+| **Retorno Bancário** | Visualizar arquivo sem alterar títulos e, após conferência, processar as baixas. |
 
-## Resultado esperado
+## Navegação
 
-- O operador consegue alternar entre as rotinas financeiras principais.
-- O caixa e a data podem ser consultados diretamente na tela.
-- O sistema exibe uma área de trabalho única para as ações financeiras do dia.
+A aba ativa faz parte da URL. Na aba **Controle de Caixa**, o caixa selecionado também pode ser mantido no caminho. Caixa e data ficam no cabeçalho da gerência para uso nas operações relacionadas.
+
+O botão com ícone de ambulância abre a Gerência Financeira legada em `/lgc/financeiro`.
+
+## Cuidados
+
+- Confira caixa e data antes de registrar pagamentos, movimentos ou sangrias.
+- Use **Visualizar** no retorno bancário antes de **Processar**.
+- A disponibilidade de botões depende das permissões do perfil e do estado do registro.
+- Operações financeiras podem alterar saldos e títulos; confirme os dados antes de concluir.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| A caixa não carrega | Verifique se há caixas cadastrados e se o usuário tem acesso à filial correta. |
-| Os dados da aba ficam vazios | Confirme a data e o contexto financeiro da consulta. |
-| Os botões parecem indisponíveis | Revise a permissão do perfil e a disponibilidade do módulo. |
+| Aba não aparece | Verifique a permissão correspondente no perfil. |
+| Caixa não aparece | Confirme o cadastro, a filial e o acesso do usuário. |
+| Ação indisponível | Confira permissão e situação do registro financeiro. |
+| Dados não atualizam | Revise filtros e use a atualização da própria aba. |
 
-## Observações
+## Referências de implementação
 
-- O demo expõe quatro abas principais logo no topo da área financeira.
-- A captura usada nesta página mostra a aba **Controle de Caixa** com a data de referência já preenchida.
-- A área principal permanece em branco até que o operador selecione um contexto de caixa ou execute uma consulta.
-- A captura usada nesta página veio do ambiente de demonstração.
+- `lhisp-frontend/src/paginas/financeiro/gerencia/index.tsx`
+- `lhisp-frontend/src/paginas/financeiro/gerencia/TabControleCaixa.tsx`
+- `lhisp-frontend/src/paginas/financeiro/gerencia/TabContasReceber.tsx`
+- `lhisp-frontend/src/paginas/financeiro/gerencia/TabContasPagar.tsx`
+- `lhisp-frontend/src/paginas/financeiro/gerencia/TabRetornoBancario.tsx`
 
-## Dúvidas para revisão
-
-- Quais ações cada botão da barra superior executa exatamente?
-- A aba **Retorno Bancário** é o ponto operacional usado também para remessas, ou existe outro fluxo específico?
-- O controle de caixa depende de fechamento diário ou apenas de consulta?
-
-## Screenshots sugeridos
-
-- Tela **Gerência Financeira > Controle de Caixa** no demo: `assets/screenshots/gerencia-financeira/gerencia-financeira.png`
-
-![Gerência Financeira no demo](/assets/screenshots/gerencia-financeira/gerencia-financeira.png)
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
