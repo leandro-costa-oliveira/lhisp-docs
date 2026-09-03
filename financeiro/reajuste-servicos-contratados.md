@@ -7,13 +7,10 @@ description: ''
 
 # Reajuste de Serviços Contratados
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
-Aplicar reajustes em serviços contratados com base em filial, plano, categoria, tipo de pessoa, carência e percentual informado.
+Aplicar reajustes percentuais ou de valor fixo em serviços contratados, com filtros por filial, plano, categoria, tipo de pessoa e carência.
 
 ## Quando usar
 
@@ -21,7 +18,7 @@ Use esta tela quando precisar:
 
 - filtrar contratos elegíveis para reajuste;
 - revisar a base antes de aplicar alterações;
-- informar o percentual de reajuste;
+- informar um percentual ou valor fixo de reajuste;
 - executar a atualização em lote após a validação.
 
 ## Pré-requisitos
@@ -37,8 +34,9 @@ Use esta tela quando precisar:
 2. Preencha a **Filial** e o **Plano** quando necessário.
 3. Escolha a **Categoria** e o **Tipo de Pessoa**.
 4. Informe a **Carência** e o valor de **Reajuste**.
-5. Clique em **Visualizar** para conferir os contratos afetados.
-6. Se estiver tudo correto, clique em **Reajustar**.
+5. Use o botão ao lado do valor para escolher **%** ou **R$**.
+6. Clique em **Visualizar** para conferir os contratos afetados e o valor reajustado.
+7. Se estiver tudo correto, clique em **Reajustar**.
 
 ## Campos importantes
 
@@ -49,7 +47,7 @@ Use esta tela quando precisar:
 | **Categoria** | Segmenta os contratos por categoria. |
 | **Tipo de Pessoa** | Filtra pessoa física ou jurídica. |
 | **Carência** | Prazo mínimo considerado para o reajuste. |
-| **Reajuste** | Percentual ou valor aplicado, conforme a regra da tela. |
+| **Reajuste** | Valor do reajuste. O botão adjacente alterna entre percentual (`%`) e acréscimo fixo (`R$`). |
 | **Visualizar** | Mostra a prévia dos contratos afetados. |
 | **Reajustar** | Executa o reajuste após validação. |
 
@@ -64,7 +62,7 @@ Use esta tela quando precisar:
 | Problema | Como tratar |
 |---|---|
 | A prévia não retorna contratos | Verifique os filtros e a carência informada. |
-| O botão **Reajustar** fica indisponível | Confirme se a prévia foi carregada e se há contratos elegíveis. |
+| O botão **Reajustar** fica indisponível | Informe um reajuste maior que zero e aguarde o fim do carregamento. |
 | O valor de reajuste está incorreto | Revise a regra aplicada antes de confirmar. |
 
 ## Observações
@@ -74,14 +72,11 @@ Use esta tela quando precisar:
 - A captura limpa mostra o formulário com **Filial**, **Plano**, **Categoria**, **Tipo de Pessoa**, **Carência** e **Reajuste**.
 - A área inferior da tela permanece vazia até a visualização ou execução do reajuste.
 
-## Dúvidas para revisão
-
-- O campo **Reajuste** representa percentual, valor fixo ou ambos?
-- A ação **Visualizar** apenas pré-carrega dados ou já calcula o reajuste?
-- A tela aplica alguma trava adicional por contrato ou categoria?
 
 ## Screenshots sugeridos
 
 - Tela **Reajuste de Serviços Contratados** no demo: `assets/screenshots/financeiro/reajuste-servicos-contratados.png`
 
 ![Reajuste de Serviços Contratados no demo](/assets/screenshots/financeiro/reajuste-servicos-contratados.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
