@@ -7,62 +7,66 @@ description: ''
 
 # Enviar Comandos
 
-
 ## Objetivo
 
-Enviar comandos para equipamentos de rede a partir do módulo **Rede/Infra**, provavelmente para executar ações operacionais em lote ou diagnósticos remotos.
+Executar um comando SSH em um conjunto de servidores de rede selecionado explicitamente ou definido por filtros.
 
-## Quando usar
-
-Use este fluxo quando precisar:
-
-- disparar comandos para um equipamento de rede;
-- executar alguma ação operacional remota;
-- automatizar tarefas de suporte ou manutenção;
-- validar uma fila ou formulário de comandos do LHISP.
+> **Atenção:** esta ação envia comandos aos equipamentos e pode interromper serviços. Use somente comandos revisados, em servidores autorizados e dentro de uma janela operacional adequada.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
-- Ter permissão para acessar **Enviar Comandos**.
-- Saber quais equipamentos ou destinos receberão os comandos.
+- Possuir a permissão `enviar_comandos`.
+- Ter servidores com acesso SSH configurado.
+- Conhecer o efeito do comando no tipo de equipamento selecionado.
 
 ## Passo a passo
 
 1. Acesse **Rede/ Infra > Ferramentas > Enviar Comandos**.
-2. Aguarde o carregamento da tela.
-3. Se o formulário estiver disponível no ambiente real, preencha os destinos e o comando desejado.
-4. Execute e confirme o retorno da operação.
+2. Em **Servidores**, mantenha **Todos** ou use **+** para escolher registros específicos. O botão de limpeza volta a seleção para **Todos**.
+3. Se necessário, selecione o **Tipo** do servidor.
+4. Restrinja os destinos pelas opções **Ativo**, **Transmissor Wireless**, **Servidor de Acesso/PPPoE**, **Enlace**, **OSPF**, **IP Dinâmico** e **iBGP**.
+5. Informe o **Comando**.
+6. Revise a seleção e clique em **Executar**.
+7. Confira o comando efetivo e o retorno de cada servidor na área inferior.
 
-## Campos importantes
+## Seleção de destinos
 
-> Não foi possível identificar campos, botões ou opções de execução na captura do demo. A área principal permaneceu em estado de carregamento.
+- Sem servidores escolhidos, o backend percorre todos os servidores cadastrados e aplica os filtros marcados.
+- Com uma seleção explícita, somente os IDs escolhidos são considerados, ainda sujeitos aos filtros.
+- **Ativo** vem marcado inicialmente.
 
-## Resultado esperado
+## Variáveis do comando
 
-- O formulário de comandos deveria aparecer.
-- O usuário deveria conseguir selecionar o destino e informar o comando.
-- O sistema deveria retornar confirmação ou erro de execução.
+Antes da execução, o sistema substitui os seguintes marcadores para cada servidor:
+
+| Marcador | Valor |
+|---|---|
+| `#ID#` | ID do servidor. |
+| `#EMPRESA_ID#` | ID da empresa. |
+| `#IP#` | IP configurado no servidor. |
+| `#NOME#` | Nome do servidor. |
+
+## Resultado
+
+A área de retorno apresenta **Servidor** e **Retorno**, incluindo o comando após as substituições e a resposta da execução SSH. Falhas por servidor são exibidas sem interromper necessariamente o processamento dos demais.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| Tela fica apenas em carregamento | Registrar como limitação do demo ou falha real do fluxo. |
-| Não há formulário visível | O backend pode não ter concluído o render. |
+| `Acesso Negado` | O usuário não possui a permissão `enviar_comandos`. |
+| `Digite o comando a ser executado` | O campo **Comando** não foi enviado. |
+| Nenhum servidor processado | Revise a seleção, o tipo e os filtros de função. |
+| Erro de SSH | Confira IP, porta, credenciais, conectividade e compatibilidade do comando. |
 
-## Observações
+## Validação
 
-- A rota observada no demo foi `/lgc/redeinfra%7Cferramentas%7Fenviar_comandos`.
-- A tela é exibida no demo.
-- O demo exibiu apenas a mensagem `Aguarde, carregando [redeinfra/ferramentas%7Fenviar_comandos] ...`.
-- Não houve formulário operacional disponível para documentação além da mensagem de carregamento.
+- Formulário validado no staging na rota `/lgc/redeinfra|ferramentas|enviar_comandos` sem executar comandos.
+- Seleção, filtros, substituições e execução foram confirmados em `enviar_comandos.js`, `enviar_comandos.php` e `enviar_comandos_exec.php`.
 
+## Captura de tela
 
-## Screenshots sugeridos
-
-- Tela de carregamento do fluxo **Enviar Comandos** no demo: `assets/screenshots/rede-infra/enviar-comandos.png`
-
-![Enviar Comandos em carregamento no demo](/assets/screenshots/rede-infra/enviar-comandos.png)
+![Enviar Comandos](/assets/screenshots/rede-infra/enviar-comandos.png)
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -9,64 +9,65 @@ description: ''
 
 ## Objetivo
 
-Consultar atendimentos por filial e período e abrir o detalhe de um atendimento na interface legada.
+Consultar e tratar atendimentos, ordens de serviço e ordens internas na interface legada da Agenda Técnica.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
 - Ter acesso ao menu **Agenda Técnica**.
-- Ter a permissão `agenda_tecnica` para que a contagem seja consultada.
+- Possuir as permissões exigidas para consultar ou executar cada ação.
 
-## Abas disponíveis
+## Modos de consulta
 
-| Aba | Comportamento atual |
+| Modo | Conteúdo e ações |
 |---|---|
-| **Atendimentos** | Exibe filtros, consulta atendimentos e mostra a quantidade total. |
-| **Ordens de Serviço** | Exibe apenas o texto **Ordens de Serviço**; a listagem ainda não está implementada nesta tela. |
+| **Atendimentos** | Lista atendimentos. Permite abrir detalhes, selecionar registros, encerrar atendimentos e, quando a situação é **EM ATENDIMENTO**, liberar os itens exibidos. |
+| **Ordens de Serviço** | Lista OS. Permite abrir detalhes, selecionar, agendar, concluir e imprimir ordens conforme permissões e situação. |
+| **OS Interna** | Consulta ordens internas usando os filtros de OS. |
 
-A interface atual não possui a aba **OS Interna**.
+## Filtros
 
-## Filtros de Atendimentos
+Filtros comuns:
 
-| Campo | Comportamento atual |
-|---|---|
-| **Filial** | Filtra pelo identificador da filial. |
-| **Data de Abertura** | Intervalo aplicado a `data_abertura`. Inicia com o primeiro e o último dia do mês atual. |
-| **Data de Conclusão** | Intervalo adicional aplicado a `data_conclusao`, também iniciado com o mês atual. Está disponível no modal de filtros. |
-| **Situação** | Mostra **EM ABERTO**, **AGUARDANDO OS**, **EM ATENDIMENTO**, **PÓS-VENDA**, **CONCLUÍDO** e **CANCELADO**, mas o valor selecionado não é enviado na consulta atual. |
-| **Grupo** | O campo aparece no modal, mas o seletor está desabilitado no código e nenhum grupo pode ser escolhido. |
-| **Registros por Página** | Permite 10, 25, 50, 100 ou 250. A consulta inicia com 10 registros. |
+- **Tipo da Observação**: primeira, última ou todas;
+- **Registros por Página**;
+- **Filial**, **Grupo** e **Período**;
+- **Categoria dos Contratos**;
+- **Aberto por**.
 
-> **Atenção:** os intervalos de abertura e conclusão são aplicados simultaneamente. Assim, o resultado precisa atender aos dois períodos informados.
+Em **Atendimentos**, a tela acrescenta **Filtrar por** (data de abertura ou conclusão), **Situação** e **Atendente**. O filtro de atendente aparece quando a situação selecionada é **EM ATENDIMENTO**.
+
+Em **Ordens de Serviço** e **OS Interna**, aparecem **Filtrar por** (agendamento, abertura, conclusão ou dispensa), **Situação**, **Período**, **Tipo**, **Agendamento**, **Prioridade**, **Técnico** e a opção **Dispensadas**. Marcar **Dispensadas** troca o filtro de data para **Data da Dispensa**.
 
 ## Passo a passo
 
 1. Acesse **Agenda Técnica**.
-2. Mantenha a aba **Atendimentos** selecionada.
-3. Escolha a filial e ajuste o período de abertura.
-4. Use o botão de filtro para ajustar também o período de conclusão e a quantidade por página.
-5. Navegue pelas páginas da listagem.
-6. Use o botão de informação da linha para abrir o detalhe do atendimento no fluxo legado.
+2. Escolha **Atendimentos**, **Ordens de Serviço** ou **OS Interna**.
+3. Ajuste os filtros necessários.
+4. Clique em **Atualizar Lista de Atendimentos/OS**.
+5. Use **Detalhes** em uma linha para abrir o registro.
+6. Para ações em lote, marque os itens e use os botões disponíveis no rodapé.
+7. Use **Fila de Atendimento** para abrir a fila em tela própria.
+8. Quando Cobli ou Traccar estiver configurado, a ação **Otimização de Rotas** também pode ser exibida.
 
 ## Listagem
 
-O cabeçalho contém **Protocolo**, **Aberto Em**, **Grupo**, **Atendente**, **Contrato**, **Filial**, **Cliente**, **Bairro**, **Endereço** e **Telefones**. Entretanto, na implementação atual, as células desses dados estão comentadas: cada resultado renderiza somente o botão de informação. O rodapé ainda mostra o total de atendimentos.
+A grade pode apresentar **Protocolo**, **Aberto Por**, **Endereço**, **Grupo**, **Atendente/Técnico**, **Contato**, **Filial**, **Cliente**, **Plano**, **Telefones**, **Tipo da OS**, **Aberto Em**, **Agendada Para**, **Descrição**, **Prioridade** e **PPPoE**. O contrato é aberto pelo link da coluna **Contato**.
 
-## Limitações atuais
+As linhas usam destaque visual conforme a prioridade: alta, normal ou baixa.
 
-- O botão **Atualizar Lista** altera apenas um contador local que não participa da consulta; ele não força uma nova requisição.
-- O filtro **Situação** não integra os parâmetros enviados à API.
-- O filtro **Grupo** não permite seleção.
-- As colunas de dados da tabela não são preenchidas.
-- A aba **Ordens de Serviço** não possui conteúdo operacional.
+## Cuidados
 
-Essas limitações refletem o comportamento implementado e não devem ser interpretadas como instruções de uso futuro.
+- **Concluir**, **liberar** e **agendar** alteram dados. Revise a seleção antes de confirmar.
+- A impressão e as ações em lote só atuam quando há registros selecionados.
+- A quantidade e as opções exibidas dependem da filial, das permissões e das integrações ativas.
 
-## Integração
+## Validação
 
-- Listagem: `POST /api/Atendimento.findAll`.
-- Contagem: `POST /api/Atendimento.count`.
-- Detalhe: carrega os formulários legados `agendatec/atendimento` e `agendatec/os` e chama `dialogDetalhes(id)`.
+- Menu e rota validados no staging: `/lgc/agenda_tecnica`.
+- A tela legada, seus três modos, filtros e listagem foram confirmados no staging.
+- O fluxo usa `AgendaTecnica.ListarPorFilialStatus`; detalhes e ações são implementados em `form/agendatec/atendimento.js` e `form/agendatec/os.js`.
+- Existe também uma implementação React em `/agenda_tecnica`, mas o item atual do menu abre a interface legada descrita nesta página.
 
 ## Captura de tela
 
