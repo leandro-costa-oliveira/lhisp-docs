@@ -7,6 +7,8 @@ description: Consulte, transmita, exporte, imprima e cancele documentos fiscais 
 
 # Notas fiscais
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Esta área centraliza documentos fiscais gerados pelo LHISP: comunicação modelo 21, SVA, locação, serviço, venda, multas, NFCom modelo 62 e provimento. A tela principal é de consulta e operação; a geração continua no emissor legado aberto pelo botão **Emitir**.
 
 Uma nota registra a competência, o emitente, o destinatário, os itens, os valores fiscais e, quando aplicável, sua conta a receber. Para NFCom, o registro local também acompanha a transmissão ao LHNFE/SEFAZ por status, chave, XML assinado e logs.
