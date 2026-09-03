@@ -7,10 +7,6 @@ description: ''
 
 # Condomínios
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Cadastrar e manter condomínios vinculados ao cadastro de endereços, com dados básicos como logradouro, número e nome do condomínio.
@@ -80,13 +76,6 @@ Use esta tela quando precisar:
 - A barra superior reúne as ações de navegação, cadastro, edição, exclusão, salvamento e busca.
 - A captura usada nesta página veio do ambiente de demonstração.
 - A rota observada no demo foi acessada pelo menu de **Cadastros > Administrativo > Condomínios**.
-
-## Dúvidas para revisão
-
-- O condomínio precisa obrigatoriamente estar vinculado a um endereço completo antes de salvar?
-- **Cadastrar Endereço** cria um novo endereço no mesmo fluxo ou abre uma tela separada?
-- Há campos adicionais que aparecem apenas em registros já salvos?
-- O botão **Procurar** pesquisa por nome, logradouro ou ambos?
 
 ## Screenshots sugeridos
 
