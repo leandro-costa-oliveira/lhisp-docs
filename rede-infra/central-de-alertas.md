@@ -50,11 +50,9 @@ Use esta tela quando for necessário:
 - A tela verificada no demo mostra apenas o bloco **Gráfico com Alerta** e os botões **Atualizar** e **Limpar Alertas**.
 - Não foram observados outros filtros ou tabelas nesta visualização.
 
-## Dúvidas para revisão
-
-- Há confirmação adicional antes de limpar alertas?
-- O gráfico apresenta séries históricas ou apenas o estado corrente?
 
 ## Screenshots sugeridos
 
 - `assets/screenshots/rede-infra/central-de-alertas.png` — captura limpa da Central de Alertas no demo.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
