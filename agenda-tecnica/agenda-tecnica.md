@@ -7,81 +7,67 @@ description: ''
 
 # Agenda Técnica
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura utilizada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
-Acompanhar atendimentos, ordens de serviço e observações técnicas da agenda operacional.
-
-## Quando usar
-
-Use esta tela quando precisar:
-
-- listar atendimentos em aberto ou concluídos;
-- filtrar por tipo de observação;
-- consultar ordens de serviço internas ou externas;
-- acompanhar cliente, protocolo, endereço, prioridade e descrição do atendimento.
+Consultar atendimentos por filial e período e abrir o detalhe de um atendimento na interface legada.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
-- Ter permissão para acessar o menu **Agenda Técnica**.
-- Possuir dados cadastrados para consulta, quando aplicável.
+- Ter acesso ao menu **Agenda Técnica**.
+- Ter a permissão `agenda_tecnica` para que a contagem seja consultada.
+
+## Abas disponíveis
+
+| Aba | Comportamento atual |
+|---|---|
+| **Atendimentos** | Exibe filtros, consulta atendimentos e mostra a quantidade total. |
+| **Ordens de Serviço** | Exibe apenas o texto **Ordens de Serviço**; a listagem ainda não está implementada nesta tela. |
+
+A interface atual não possui a aba **OS Interna**.
+
+## Filtros de Atendimentos
+
+| Campo | Comportamento atual |
+|---|---|
+| **Filial** | Filtra pelo identificador da filial. |
+| **Data de Abertura** | Intervalo aplicado a `data_abertura`. Inicia com o primeiro e o último dia do mês atual. |
+| **Data de Conclusão** | Intervalo adicional aplicado a `data_conclusao`, também iniciado com o mês atual. Está disponível no modal de filtros. |
+| **Situação** | Mostra **EM ABERTO**, **AGUARDANDO OS**, **EM ATENDIMENTO**, **PÓS-VENDA**, **CONCLUÍDO** e **CANCELADO**, mas o valor selecionado não é enviado na consulta atual. |
+| **Grupo** | O campo aparece no modal, mas o seletor está desabilitado no código e nenhum grupo pode ser escolhido. |
+| **Registros por Página** | Permite 10, 25, 50, 100 ou 250. A consulta inicia com 10 registros. |
+
+> **Atenção:** os intervalos de abertura e conclusão são aplicados simultaneamente. Assim, o resultado precisa atender aos dois períodos informados.
 
 ## Passo a passo
 
-1. Acesse o menu **Agenda Técnica**.
-2. Escolha o tipo de agenda entre **Atendimentos**, **Ordens de Serviço** ou **OS Interna**.
-3. Ajuste filtros como **Tipo da Observação**, **Filial**, **Grupo**, **Período**, **Situação** e **Aberto por**.
-4. Revise os dados da listagem.
-5. Use os botões de ação para consultar, imprimir, atualizar ou exportar conforme a necessidade do operador.
+1. Acesse **Agenda Técnica**.
+2. Mantenha a aba **Atendimentos** selecionada.
+3. Escolha a filial e ajuste o período de abertura.
+4. Use o botão de filtro para ajustar também o período de conclusão e a quantidade por página.
+5. Navegue pelas páginas da listagem.
+6. Use o botão de informação da linha para abrir o detalhe do atendimento no fluxo legado.
 
-## Campos importantes
+## Listagem
 
-| Campo / ação | Descrição |
-|---|---|
-| **Tipo da Observação** | Define o tipo de atendimento ou comentário exibido. |
-| **Registros por Página** | Controla a quantidade de linhas exibidas por consulta. |
-| **Filial** | Filtra atendimentos por unidade. |
-| **Grupo** | Filtra por grupo operacional. |
-| **Período** | Define o intervalo de consulta. |
-| **Filtrar por** | Permite escolher o critério temporal usado na busca. |
-| **Situação** | Mostra o status dos registros, como **ABERTO**. |
-| **Categoria dos Contratos** | Restringe os resultados por categoria contratual. |
-| **Aberto por** | Filtra o usuário responsável pela abertura. |
-| **Ações** | Conjunto de botões para consulta, impressão, atualização e exportação. |
-| **Listagem** | Grade com protocolo, endereço, cliente, plano, telefones, tipo de OS, descrição e prioridade. |
+O cabeçalho contém **Protocolo**, **Aberto Em**, **Grupo**, **Atendente**, **Contrato**, **Filial**, **Cliente**, **Bairro**, **Endereço** e **Telefones**. Entretanto, na implementação atual, as células desses dados estão comentadas: cada resultado renderiza somente o botão de informação. O rodapé ainda mostra o total de atendimentos.
 
-## Resultado esperado
+## Limitações atuais
 
-- A agenda exibe os atendimentos filtrados corretamente.
-- O usuário visualiza os protocolos, clientes e descrições relacionados.
-- A tela permite acompanhar o andamento das atividades técnicas.
+- O botão **Atualizar Lista** altera apenas um contador local que não participa da consulta; ele não força uma nova requisição.
+- O filtro **Situação** não integra os parâmetros enviados à API.
+- O filtro **Grupo** não permite seleção.
+- As colunas de dados da tabela não são preenchidas.
+- A aba **Ordens de Serviço** não possui conteúdo operacional.
 
-## Problemas comuns
+Essas limitações refletem o comportamento implementado e não devem ser interpretadas como instruções de uso futuro.
 
-| Problema | Como tratar |
-|---|---|
-| Nenhum atendimento aparece | Verifique filial, período e situação escolhidos. |
-| Os filtros não retornam o esperado | Confirme se a observação e o tipo de agenda estão corretos. |
-| A listagem parece incompleta | Ajuste o número de registros por página. |
+## Integração
 
-## Observações
+- Listagem: `POST /api/Atendimento.findAll`.
+- Contagem: `POST /api/Atendimento.count`.
+- Detalhe: carrega os formulários legados `agendatec/atendimento` e `agendatec/os` e chama `dialogDetalhes(id)`.
 
-- O demo apresenta a tela com várias linhas de exemplo, mostrando protocolos, clientes, telefones e descrições.
-- A interface usa abas para separar **Atendimentos**, **Ordens de Serviço** e **OS Interna**.
-- A captura usada nesta página veio do ambiente de demonstração.
+## Captura de tela
 
-## Dúvidas para revisão
-
-- Qual é a diferença operacional entre **Atendimentos**, **Ordens de Serviço** e **OS Interna**?
-- Os ícones da barra de ações têm algum comportamento adicional que deva ser descrito?
-- A coluna **Tipo da OS** deve ser detalhada com exemplos reais do fluxo?
-
-## Screenshots sugeridos
-
-- Tela **Agenda Técnica** no demo: `assets/screenshots/agenda-tecnica/agenda-tecnica.png`
-
-![Agenda Técnica no demo](/assets/screenshots/agenda-tecnica/agenda-tecnica.png)
+![Agenda Técnica](/assets/screenshots/agenda-tecnica/agenda-tecnica.png)
