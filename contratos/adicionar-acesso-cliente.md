@@ -7,10 +7,6 @@ description: ''
 
 # Adicionar um acesso ao cliente
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi elaborado a partir de exploração no ambiente de demonstração. Revise os campos técnicos e regras de provisionamento antes de publicar.
-
 ## Objetivo
 
 Adicionar um acesso técnico ao cliente/contrato, como **PPPoE** ou **IP Fixo**, vinculando o acesso ao plano/rede correspondente.
@@ -82,16 +78,6 @@ A aba **Acessos** apresenta a tabela **Acessos PPPoE / IP Fixo** com as colunas 
 - A tela observada não exibiu registros de acesso carregados no momento da captura.
 - Evite qualquer ação de bloqueio, cancelamento ou remoção em acessos durante testes de documentação.
 - Cadastros técnicos devem seguir padrões definidos pela operação de rede.
-
-## Dúvidas para revisão
-
-- Quais tipos de acesso o LHISP aceita nessa aba além de PPPoE e IP Fixo?
-- O acesso exige serviço contratado previamente ativo?
-- O sistema gera automaticamente usuário/senha PPPoE?
-- O campo **Up/Down** vem do plano ou pode ser editado no acesso?
-- A seleção de rede reserva IP automaticamente?
-- Quais ações aparecem na coluna **Ações** quando há acesso cadastrado?
-- O botão **Utilização de Banda** exige selecionar um acesso?
 
 ## Screenshots sugeridos
 
