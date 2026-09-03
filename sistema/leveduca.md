@@ -60,3 +60,5 @@ Use esta tela para revisar o token, ativar a integração e confirmar a URL asso
 - `assets/screenshots/sistema/leveduca.png` — captura limpa da configuração da API Leveduca com token redigido.
 
 ![Leveduca no demo](/assets/screenshots/sistema/leveduca.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
