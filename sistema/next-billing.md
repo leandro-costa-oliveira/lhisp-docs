@@ -61,11 +61,6 @@ Use esta tela quando for necessário informar os dados de acesso, habilitar a in
 - O nome apresentado no menu do demo é **NextBilling**.
 - A captura desta página foi feita no ambiente de demonstração.
 
-## Dúvidas para revisão
-
-- O nome público deve ser escrito como **Next Billing** ou **NextBilling**?
-- Existe algum valor padrão para a opção **Ativo** no ambiente produtivo?
-
 ## Screenshots sugeridos
 
 - `assets/screenshots/sistema/next-billing.png` — captura limpa da tela NextBilling no demo.
