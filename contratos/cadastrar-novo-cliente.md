@@ -176,13 +176,6 @@ Após salvar:
 - O cadastro de endereço possui o campo **Tipo**, com opções **Urbano** e **Rural**.
 - A validação feita no ambiente demo confirmou que o contrato é criado com situação inicial pendente até a continuidade do fluxo operacional.
 
-## Dúvidas para revisão
-
-- Confirmar se **Segmento** é obrigatório em alguma categoria específica.
-- Confirmar quando o campo **Possui ISS Retido?** deve ser marcado por regra fiscal.
-- Confirmar se existe configuração para copiar automaticamente o endereço de instalação para cobrança.
-- Confirmar se o número do contrato sempre é sequencial por filial ou por empresa.
-
 ## Capturas de tela
 
 ### Tela de login
