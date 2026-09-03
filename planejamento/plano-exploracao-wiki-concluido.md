@@ -1,6 +1,6 @@
 ---
 title: Plano de exploração da Wiki LHISP (concluído)
-published: true
+published: false
 editor: markdown
 description: ''
 ---
@@ -164,7 +164,7 @@ A exploração será feita em camadas:
 
 3. **Documentação progressiva**
    - só transformar em documento definitivo aquilo que tiver sido observado e validado na wiki;
-   - registrar dúvidas para revisão quando a regra não estiver clara.
+   - registrar apenas limitações confirmadas quando a regra não estiver clara.
 
 4. **Validação visual**
    - sempre que um fluxo for explorado, registrar screenshot da tela principal e de eventuais modais ou abas importantes;
@@ -328,3 +328,5 @@ Para cada página explorada, registrar:
 ## Próximo passo sugerido
 
 Começar pela **Fase 1** e, em seguida, seguir para **Rede/Infra** como primeira frente de documentação.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
