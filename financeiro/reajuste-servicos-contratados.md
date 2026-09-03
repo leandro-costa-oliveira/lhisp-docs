@@ -7,6 +7,8 @@ description: Simule e aplique reajustes em lote aos serviços contratados e, opc
 
 # Reajuste de serviços contratados
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Esta rotina altera o valor cobrado nos serviços já contratados. O reajuste pode ser percentual ou um acréscimo fixo e pode, mediante confirmação, alcançar também o preço do plano e mensalidades em aberto ainda não remetidas ao banco.
 
 O preço do plano e o preço do serviço contratado são dados distintos. Reajustar apenas o plano não corrige contratos existentes; reajustar apenas os serviços não muda o valor oferecido em novas contratações.
