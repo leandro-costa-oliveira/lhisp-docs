@@ -74,3 +74,5 @@ Use esta tela quando precisar:
 - Tela **Feriados** no demo: `assets/screenshots/cadastros/administrativo/feriados.png`
 
 ![Feriados no demo](/assets/screenshots/cadastros/administrativo/feriados.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
