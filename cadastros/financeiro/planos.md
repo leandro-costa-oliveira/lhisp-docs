@@ -7,6 +7,8 @@ description: Catálogo comercial que define cobrança, velocidade, fiscal, fidel
 
 # Planos
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 O plano é o modelo comercial e técnico usado na contratação de um serviço. Ele não define apenas preço: concentra contas de cobrança, velocidade, tecnologia, fidelidade, divisão fiscal, regras de desconto, tipos de serviço e recursos integrados. Ao adicionar o plano a um contrato, o LHISP cria um **serviço contratado** com uma cópia dos parâmetros aplicáveis.
 
 Essa distinção é essencial: o plano é o catálogo; o serviço contratado é a condição efetiva do cliente. Salvar uma mudança no plano normalmente não recalcula contratos existentes. Quando a alteração também deve alcançar a base atual, use conscientemente as ferramentas em massa disponíveis no próprio cadastro.
