@@ -74,3 +74,5 @@ Use esta tela para:
 - Tela principal de **Fidelimax** no demo: `assets/screenshots/sistema/fidelimax.png`
 
 ![Fidelimax no demo](/assets/screenshots/sistema/fidelimax.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
