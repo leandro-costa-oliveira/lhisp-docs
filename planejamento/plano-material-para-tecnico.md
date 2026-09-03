@@ -1,6 +1,6 @@
 ---
 title: Plano de documentação do fluxo de material para o técnico
-published: true
+published: false
 editor: markdown
 description: ''
 ---
@@ -225,3 +225,5 @@ Status final:
 - documentação versionada no branch `dev`.
 
 O arquivo permanece como registro histórico da exploração e como mapa da estrutura publicada.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
