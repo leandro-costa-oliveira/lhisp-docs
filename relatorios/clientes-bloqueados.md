@@ -52,3 +52,5 @@ O rodapé mostra a quantidade de contratos. Embora o código acumule o valor dos
 - A tela usa os formulários legados `relatorios/clientes_bloqueados`, `rel_clientes_bloqueados.php` e `rel_clientes_bloqueados_listagem.php`.
 - Não há ação de download de arquivo neste relatório; as ações implementadas são **Exibir** e **Imprimir**.
 - A data de bloqueio apresentada é o campo de última atualização do serviço contratado (`updated_at`).
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
