@@ -48,25 +48,24 @@ Use esta tela quando precisar:
 
 ## Resultado esperado
 
-- A lista de ASNs aparece carregada.
+- A identificação do ASN/AS-SET configurado e a lista de entradas aparecem carregadas quando a consulta ao serviço retorna dados.
 - O usuário consegue filtrar por ASN ou descrição.
-- As ações de inclusão e atualização ficam disponíveis.
+- As ações de inclusão e atualização ficam disponíveis após a carga da consulta.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| Lista vazia | Verifique os filtros aplicados e a disponibilidade dos dados. |
+| Título mostra `undefined - undefined` ou a lista fica vazia | Aguarde a consulta assíncrona. Se o estado permanecer, verifique a configuração em **Sistema > Integrações > TC IRR** e a disponibilidade do serviço. |
 | Não consigo adicionar ou excluir | Pode haver restrição de permissão. |
 
 ## Observações
 
 - A rota observada no demo foi `/redeinfra/tcirr`.
-- A tela carregou com o título `TC IRR - bgp.net.br`.
-- O conteúdo principal mostrou o subtítulo `TC IRR - AS262532 - AS-NETONDA-CLIENTES-01`.
-- Os campos de filtro estavam aparentando modo somente leitura/disabled no demo.
-- A tabela exibiu vários registros de ASN com botão de exclusão em cada linha.
-- A captura limpa mostra a tela completa sem marcações visuais.
+- O título do navegador é **TC IRR - bgp.net.br**.
+- Na validação atual do staging, o ASN, o AS-SET e as linhas foram carregados após a consulta assíncrona.
+- Os campos ficam desabilitados durante a consulta ou uma inclusão.
+- O botão de exclusão é renderizado, mas sua função está vazia no frontend atual; a remoção não é operacional nessa tela.
 
 
 ## Screenshots sugeridos

@@ -7,47 +7,21 @@ description: ''
 
 # Relatório de Endereços
 
-## Objetivo
+## Disponibilidade atual
 
-Consultar o relatório de endereços cadastrais.
+O item **Relatórios > Clientes > Relatório de Endereços** abre a rota legada `/lgc/relatorios|enderecos`, mas a página apresenta somente a mensagem **NÃO IMPLEMENTADO**. Não existem filtros, consulta, impressão ou exportação disponíveis nesse fluxo.
 
-## Quando usar
+Esse comportamento foi confirmado no staging e no arquivo `lhisp-php/web/form/relatorios/rel_enderecos.php`.
 
-Use esta tela quando for necessário consultar o relatório **Relatório de Endereços** no LHISP.
+## Alternativas disponíveis
 
-## Pré-requisitos
+- **Cadastros > Administrativo > Endereços** (`/cadastros/administrativo/enderecos`): consulta e mantém os endereços cadastrados.
+- **Relatórios > Clientes > Clientes por Endereço** (`/lgc/relatorios|clientes_enderecos`): filtra clientes por UF, cidade, bairro e logradouro; também permite incluir contratos cancelados.
 
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Relatório de Endereços**.
-- Ter permissão para consultar relatórios.
+Essas telas têm finalidades relacionadas, mas não substituem um relatório consolidado de endereços.
 
-## Passo a passo
+## Captura de tela
 
-1. Acesse **Relatórios > Relatório de Endereços**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
+![Relatório de Endereços não implementado](/assets/screenshots/relatorios/relatorio-de-enderecos.png)
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

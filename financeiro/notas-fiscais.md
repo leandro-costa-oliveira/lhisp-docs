@@ -7,87 +7,73 @@ description: ''
 
 # Notas Fiscais
 
-
 ## Objetivo
 
-Filtrar, emitir e administrar notas fiscais no módulo financeiro, com foco em emissão, organização de lotes e exportação de arquivos.
-
-## Quando usar
-
-Use esta tela quando precisar:
-
-- consultar notas fiscais por filial, plano, série ou período;
-- filtrar notas por situação, tipo ou finalidade;
-- emitir uma nova nota fiscal;
-- baixar arquivos ou planilhas;
-- unificar XML ou imprimir a listagem.
+Consultar, emitir e administrar notas fiscais, incluindo NFCom, arquivos fiscais, lotes RPS e exportações.
 
 ## Pré-requisitos
 
 - Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo **Notas Fiscais**.
-- Ter grupos, filiais e planos cadastrados para filtragem.
-- Conhecer o período de referência da consulta.
+- Ter permissão para acessar **Financeiro > Notas Fiscais**.
+- Ter grupo empresarial e filial configurados.
+- Para emissão ou cancelamento, possuir as permissões específicas da operação.
 
 ## Passo a passo
 
 1. Acesse **Financeiro > Notas Fiscais**.
-2. Selecione o **Grupo** e a **Filial**.
-3. Ajuste o **Plano** e a **Referência**.
-4. Informe a faixa de **Número de Série** e os demais filtros desejados.
-5. Use as ações disponíveis para emitir, baixar, imprimir ou exibir os resultados.
+2. Selecione **Filial**, **Mês**, **Ano** e **Situação NFCom**.
+3. Se necessário, abra **Mais filtros** e informe grupo, plano, séries, situação da nota ou fatura, tipo, finalidade, período de geração, ordenação e quantidade por página.
+4. Clique no botão de pesquisa para aplicar os filtros.
+5. Confira os cartões **Notas normais**, **NFCom por cClass** e **Canceladas**.
+6. Abra as ações de uma nota ou marque linhas para imprimir, enviar por e-mail ou cancelar, conforme as permissões.
 
-## Campos importantes
+## Filtros
 
-| Campo / ação | Descrição |
+| Campo | Descrição |
 |---|---|
-| **Grupo** | Grupo empresarial usado como filtro principal. |
-| **Filial** | Filial vinculada às notas consultadas. |
-| **Plano** | Plano de serviço considerado na filtragem. |
-| **Referência** | Mês e ano de referência da consulta. |
-| **Número de Série** | Faixa inicial e final de série. |
-| **Situação** | Situação geral da nota. |
-| **Situação NFCom** | Situação específica da NFCom. |
-| **R. Pag.** | Quantidade de registros por página. |
-| **Ordenação** | Ordem crescente ou decrescente. |
-| **Situação da Fatura** | Estado da fatura vinculada. |
-| **Tipo da NF** | Tipo fiscal da nota. |
-| **Finalidade da Nota** | Finalidade fiscal selecionada. |
-| **Data de Geração** | Faixa de datas para a geração. |
-| **+ Emitir** | Inicia a emissão de nova nota. |
-| **Baixar Arquivos** | Faz download de arquivos fiscais. |
-| **Lotes RPS** | Acessa os lotes RPS. |
-| **Imprimir** | Imprime a listagem. |
-| **Baixar Planilha** | Exporta os dados em planilha. |
-| **Unificar XML** | Consolida XMLs relacionados. |
-| **Exibir** | Atualiza/mostra os registros filtrados. |
+| **Filial** | Filtra a filial emissora. |
+| **Mês / Ano** | Define a referência da consulta. |
+| **Situação NFCom** | Todas, pendente, transmitida, substituída ou com erro. |
+| **Grupo** | Grupo de CNPJ usado na consulta; o primeiro grupo disponível é selecionado inicialmente. |
+| **Plano** | Restringe as notas ao plano informado. |
+| **Série inicial / final** | Define a faixa do número de série. |
+| **Situação da nota** | Todas, normal ou cancelada. |
+| **Situação da fatura** | Todas, pagas ou em aberto. |
+| **Tipo da NF / Finalidade** | Restringe o tipo fiscal e a finalidade NFCom. |
+| **Data de geração** | Intervalo adicional de criação das notas. |
+| **Ordenação** | Crescente ou decrescente. |
+| **Resultados/página** | De 10 a 5.000 registros. |
 
-## Resultado esperado
+## Ações
 
-- A tela exibe a área de filtros e de ações fiscais.
-- O operador consegue localizar notas por combinação de filtros.
-- As ações de emissão e exportação ficam disponíveis na parte superior da área operacional.
+- **Emitir** abre o emissor legado em nova página.
+- **Baixar arquivos** oferece arquivos fiscais e o pacote de XMLs NFCom; as opções dependem da configuração e do período.
+- **Lotes RPS**, **Imprimir**, **Baixar planilha** e **Unificar XML** abrem os respectivos fluxos.
+- O botão final da barra abre a tela legada de notas fiscais.
+- Por nota, podem aparecer detalhes, log de integração, reenvio, DANFE na SEFAZ e download do XML.
+- Para notas selecionadas, a barra inferior oferece impressão, envio por e-mail e cancelamento. O cancelamento exige motivo com ao menos 15 caracteres e pode desassociar a conta a receber.
+
+## Listagem
+
+A tabela apresenta **Ações**, **Gerado por**, **Contrato**, **Cliente**, **Emissão**, **Referência**, **CFOP**, **Número**, **Tipo**, **Finalidade**, **Valor**, **Fatura**, **Baixa** e **Situação**. O rodapé mostra a quantidade de notas e o valor selecionado.
 
 ## Problemas comuns
 
 | Problema | Como tratar |
 |---|---|
-| A lista está vazia | Ajuste os filtros de período, filial ou situação. |
-| A filial não aparece | Verifique permissões e cadastros da filial. |
-| A ação de emissão não responde | Confirme se há permissões e se os parâmetros obrigatórios foram preenchidos. |
+| Pesquisa não é executada | Verifique se existe um grupo de CNPJ disponível. |
+| Nenhuma nota encontrada | Revise filial, referência, situação NFCom e os filtros adicionais. |
+| Ação não aparece | Confirme a situação/tipo da nota e a permissão do usuário. |
+| Cancelamento bloqueado | Informe um motivo com pelo menos 15 caracteres e confirme a permissão `notafiscal_cancel`. |
 
-## Observações
+## Validação
 
-- A rota observada no demo foi `/lgc/financeiro%7Cnotafiscal`.
-- O conteúdo é exibido no fluxo principal do demo.
-- A tela observada é um painel de filtros e ações, com a listagem abaixo ainda vazia nesta captura.
-- O demo já mostra os filtros de **Situação NFCom** e **Tipo da NF**, indicando que esta área concentra diferentes tipos de nota.
+- Tela e rota atuais validadas no staging: `/financeiro/notafiscal`.
+- Os filtros, cartões, colunas e ações foram confrontados com `lhisp-frontend/src/paginas/financeiro/notafiscal/NotasFiscais.tsx`.
+- O menu **Importar Xml NFCom** aponta atualmente para uma rota legada sem o arquivo JavaScript correspondente. A tela implementada está disponível em `/financeiro/notafiscal/importar_nfcom_xml`.
 
+## Captura de tela
 
-## Screenshots sugeridos
-
-- Tela **Notas Fiscais** no demo: `assets/screenshots/financeiro/notas-fiscais.png`
-
-![Notas Fiscais no demo](/assets/screenshots/financeiro/notas-fiscais.png)
+![Notas Fiscais](/assets/screenshots/financeiro/notas-fiscais.png)
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
