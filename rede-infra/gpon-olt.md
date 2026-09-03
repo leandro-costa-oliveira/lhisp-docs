@@ -7,9 +7,6 @@ description: ''
 
 # GPON OLT
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da tela observada no ambiente de demonstração do LHISP. A captura usada nesta página foi validada visualmente e mostra o formulário principal da OLT GPON.
 
 ## Objetivo
 
@@ -84,15 +81,11 @@ Use este fluxo para:
 - A presença das abas indica que o fluxo mistura cadastro e operação do equipamento.
 - A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cgponolt`.
 
-## Dúvidas para revisão
-
-- A aba **Executar Comandos** executa comandos ao vivo ou apenas os registra para auditoria?
-- A opção **Gravar Configurações ?** é obrigatória em todos os cenários?
-- O cadastro de GPON OLT compartilha perfil com **GePON OLT** ou são fluxos independentes?
-- A lista de fabricantes cobre todos os modelos suportados em produção?
 
 ## Screenshots sugeridos
 
 - Tela principal de **GPON OLT** no demo: `assets/screenshots/rede-infra/gpon-olt.png`
 
 ![GPON OLT no demo](/assets/screenshots/rede-infra/gpon-olt.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
