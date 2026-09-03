@@ -73,3 +73,5 @@ Use este fluxo quando for necessário:
 - Tela **Cobrança Terceirizada** no demo: `assets/screenshots/sistema/cobranca-terceirizada.png`
 
 ![Cobrança Terceirizada no demo](/assets/screenshots/sistema/cobranca-terceirizada.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
