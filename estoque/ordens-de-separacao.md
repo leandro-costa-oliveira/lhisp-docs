@@ -7,9 +7,6 @@ description: ''
 
 # Ordens de Separação
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi validada no ambiente de demonstração do LHISP com o fluxo real de criação de ordem para técnico e confirmação de entrega do material.
 >
 > Veja também a página-resumo do fluxo: [Material para Técnico](/estoque/material-para-tecnico).
 
@@ -55,32 +52,6 @@ Use esta tela quando precisar:
 2. Localize a ação **Confirmar Entrega**.
 3. Clique em **Confirmar Entrega**.
 4. Na confirmação exibida, clique em **Ok** para finalizar a entrega.
-
-## O que o demo mostrou com a ordem de teste
-
-No teste realizado, o demo criou uma ordem com os seguintes dados principais:
-
-- **Almoxarifado:** `ALMOXARIFADO GERAL`
-- **Tipo:** `PARA TECNICO`
-- **Técnico Responsável:** `Fulano de Tal`
-- **Status inicial:** `AGUARDANDO_ENTREGA`
-- **Item selecionado:** produto de estoque listado no diálogo **Adicionar Item**
-- **Quantidade adicionada:** `1`
-
-A ordem criada apareceu na listagem com o resumo:
-
-- **Id:** `40`
-- **Almoxarifado:** `ALMOXARIFADO GERAL`
-- **Tipo:** `PARA_TECNICO`
-- **Destino / Responsável:** `Fulano de Tal`
-- **Data:** `6/24/2026`
-- **Situação:** `AGUARDANDO_ENTREGA`
-
-Ao abrir a ordem, a tela exibiu as ações:
-
-- **Confirmar Entrega**
-- **Adicionar Item**
-- **Imprimir**
 
 ## Campos importantes
 
@@ -146,12 +117,6 @@ Ao abrir a ordem, a tela exibiu as ações:
 - Após adicionar o item, o sistema mostrou a ordem na listagem com status **AGUARDANDO_ENTREGA**.
 - Ao abrir a ordem, a ação **Confirmar Entrega** ficou disponível junto com **Adicionar Item** e **Imprimir**.
 - A confirmação final usa um diálogo simples com os botões **Cancelar** e **Ok**.
-
-## Dúvidas para revisão
-
-- O tipo **PARA TECNICO** é o único usado para esse fluxo ou existem variações por equipe?
-- A confirmação de entrega altera alguma informação visível na listagem?
-- O botão **Imprimir** gera um PDF, uma visualização ou uma impressão direta?
 
 ## Screenshots sugeridos
 
