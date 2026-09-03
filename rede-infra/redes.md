@@ -7,9 +7,6 @@ description: ''
 
 # Redes
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
 
 ## Objetivo
 
@@ -81,14 +78,11 @@ Use esta tela quando precisar:
 - O formulário mostrava **Tipo** com **Rede de Acesso** selecionado e **Tecnologia** com **Cabo UTP / Outros** marcado.
 - A captura limpa mostra o conteúdo da tela sem anotações visuais.
 
-## Dúvidas para revisão
-
-- O botão **Transferir Acessos** atua somente no registro atual ou em uma seleção maior?
-- A aba **Detalhes** contém apenas leitura ou pode alterar parâmetros ocultos?
-- O uso de prefixos IPv4/IPv6 é obrigatório para todas as tecnologias?
 
 ## Screenshots sugeridos
 
 - Tela **Redes** no demo: `assets/screenshots/rede-infra/redes.png`
 
 ![Redes no demo](/assets/screenshots/rede-infra/redes.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
