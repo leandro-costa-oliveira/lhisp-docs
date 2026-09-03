@@ -70,3 +70,5 @@ No ambiente de demonstração analisado, **nenhum campo ou lista ficou visível*
 - Tela **Cupons Promocionais** no demo: `assets/screenshots/cadastros/marketing/cupons-promocionais.png`
 
 ![Cupons Promocionais no demo](/assets/screenshots/cadastros/marketing/cupons-promocionais.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
