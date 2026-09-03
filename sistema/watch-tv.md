@@ -77,3 +77,5 @@ Use este fluxo quando for necessário:
 - Tela **WatchBrasil - Configuração da API** no demo: `assets/screenshots/sistema/watch-brasil.png`
 
 ![Watch Brasil no demo](/assets/screenshots/sistema/watch-brasil.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
