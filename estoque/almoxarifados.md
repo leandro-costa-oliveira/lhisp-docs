@@ -75,3 +75,5 @@ Use esta tela quando precisar:
 - Tela **Almoxarifados** no demo: `assets/screenshots/almoxarifados/almoxarifados.png`
 
 ![Almoxarifados no demo](/assets/screenshots/almoxarifados/almoxarifados.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
