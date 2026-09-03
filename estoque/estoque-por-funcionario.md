@@ -7,10 +7,6 @@ description: ''
 
 # Estoque por Funcionário
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da tela equivalente no ambiente de demonstração do LHISP. A captura usada veio do demo e foi mantida sem marcações visuais.
-
 ## Objetivo
 
 Consultar e administrar o estoque associado a um funcionário, com filtros por funcionário e categoria e ações de atualização, histórico, devolução e impressão.
@@ -74,12 +70,6 @@ Use esta tela quando precisar:
 - A captura limpa mostra um formulário com seleção de funcionário, categoria e ações no topo.
 - A área de resultados estava vazia no momento da captura.
 - A tela é operacional normal.
-
-## Dúvidas para revisão
-
-- A opção **Exibir Somente Produtos da iCategoria Selecionada !** é obrigatória em algum cenário?
-- O botão **Histórico** depende de seleção prévia do funcionário?
-- O campo **Produto** pode ser editado ou é apenas informativo?
 
 ## Screenshots sugeridos
 
