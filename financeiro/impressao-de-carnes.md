@@ -7,6 +7,8 @@ description: Filtre contas a receber em aberto, confira os boletos e controle su
 
 # Impressão de carnês
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Esta tela prepara boletos de mensalidades já geradas. Ela **não cria contas a receber** e não registra cobranças no banco: transforma os títulos em aberto no modelo de boleto da conta bancária ou incorpora o PDF fornecido pelo gateway.
 
 O processamento agrupa itens pelo número do documento (`NRDOC`). Quando várias contas do mesmo contrato, banco e documento compõem uma cobrança, o boleto soma os valores e reúne as descrições, evitando imprimir o mesmo documento mais de uma vez.
