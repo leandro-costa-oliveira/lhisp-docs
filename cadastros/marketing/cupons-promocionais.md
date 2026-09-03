@@ -7,10 +7,6 @@ description: ''
 
 # Cupons Promocionais
 
-> **⚠️ Rascunho gerado por agente**
->
-> Esta página foi documentada a partir da navegação no ambiente de demonstração do LHISP. No demo, a rota observada carregou apenas a moldura da aplicação e a área principal permaneceu vazia, sem formulário ou listagem visível.
-
 ## Objetivo
 
 Registrar e administrar cupons promocionais usados pelo sistema para ações de marketing e incentivo.
@@ -68,13 +64,6 @@ No ambiente de demonstração analisado, **nenhum campo ou lista ficou visível*
 - Após autenticação, a página permaneceu vazia na área principal, sem lista, formulário ou tabela de dados.
 - A screenshot usada nesta página mostra apenas a moldura da aplicação e a área principal em branco.
 - Como não houve conteúdo operacional visível, esta documentação registra a limitação do demo em vez de inventar campos.
-
-## Dúvidas para revisão
-
-- A funcionalidade de Cupons Promocionais está desativada no demo ou exige outro perfil de acesso?
-- Existe uma rota diferente para cadastro e listagem?
-- Quais campos são obrigatórios para cadastrar um cupom em produção?
-- O menu mostrado no demo corresponde a uma tela ainda não implementada?
 
 ## Screenshots sugeridos
 
