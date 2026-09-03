@@ -53,7 +53,7 @@ Se você estiver começando do zero, siga esta sequência:
 
 - O fluxo de entrada de material tem dois caminhos e ambos convergem no mesmo objetivo: deixar saldo disponível para separação.
 - A documentação foi estruturada para permitir leitura por etapa, sem uma página única longa.
-- Os screenshots sugeridos ficam distribuídos por página, sempre com capturas limpas do demo.
+- As capturas disponíveis ficam nas páginas específicas de cada etapa.
 
 ## Resultado esperado
 
