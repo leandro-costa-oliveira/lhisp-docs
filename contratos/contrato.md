@@ -7,6 +7,8 @@ description: Localize clientes e opere o ciclo cadastral, comercial, técnico, f
 
 # Contratos
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 O contrato é o eixo operacional do LHISP. Ele vincula uma pessoa e uma filial aos serviços vendidos, acessos de rede, cobranças, notas fiscais, atendimentos, OTT, telefonia, produtos e documentos. A situação do contrato resume o conjunto; cada serviço mantém também sua própria situação.
 
 ## Localizar um contrato
