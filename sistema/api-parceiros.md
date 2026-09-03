@@ -77,3 +77,5 @@ Use este fluxo quando for necessário:
 - Tela **Api Parceiros** no demo: `assets/screenshots/sistema/api-parceiros.png`
 
 ![Api Parceiros no demo](/assets/screenshots/sistema/api-parceiros.png)
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
