@@ -7,9 +7,6 @@ description: ''
 
 # Mikrotik: Criando Usuário
 
-> **⚠️ Rascunho gerado por agente**
->
-> Este documento foi produzido a partir da exploração da wiki do LHISP. Os valores exatos de usuários, senhas e permissões devem ser validados pela equipe técnica antes de qualquer uso em produção.
 
 ## Objetivo
 
@@ -72,14 +69,10 @@ Use este fluxo quando for necessário:
 - O procedimento é simples e focado apenas na criação do usuário administrativo.
 - Não foi encontrada no demo uma tela equivalente 1:1 para essa etapa; por isso esta página foi migrada a partir do texto da wiki.
 
-## Dúvidas para revisão
-
-- O nome de usuário deve seguir algum padrão por cliente ou ambiente?
-- A senha precisa obedecer a política mínima específica?
-- Há outros grupos além de **full** suportados pela integração?
-- O acesso via Winbox é obrigatório ou o fluxo também vale para SSH/terminal?
 
 ## Screenshots sugeridos
 
 - A wiki não fornece uma captura operacional 1:1 e o demo não expõe essa mesma tela.
 - Se surgir uma tela equivalente no demo, ela poderá ser adicionada em `assets/screenshots/rede-infra/mikrotik-usuario.png`.
+
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
