@@ -1,83 +1,55 @@
 ---
-title: Categorias
+title: Categorias de estoque
 published: true
 editor: markdown
-description: ''
+description: Classifique produtos e permita solicitações ou ordens de separação por grupo de material.
 ---
 
-# Categorias
-
-> O fluxo observado abriu dentro do *frame* legado do sistema, com uma tela simples de cadastro de categoria de estoque.
->
-> Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
-
-## Objetivo
-
-Cadastrar e consultar categorias de estoque usadas na organização dos produtos do almoxarifado.
-
-## Quando usar
-
-Use esta tela quando for necessário:
-
-- criar uma nova categoria para produtos de estoque;
-- consultar uma categoria já cadastrada;
-- editar ou apagar uma categoria existente;
-- preparar a base para cadastro de produtos e entradas de material.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter permissão para acessar **Cadastros > Estoque > Categorias**.
-- Saber o nome que será usado para a categoria.
-
-## Passo a passo
-
-1. Acesse **Cadastros > Estoque > Categorias**.
-2. Na tela carregada, use **Novo** para iniciar um cadastro vazio.
-3. Preencha o campo **Nome** com a descrição da categoria.
-4. Clique em **Salvar** para gravar o registro.
-5. Se necessário, use **Anterior** e **Próximo** para navegar entre registros.
-6. Use **Editar** para alterar a categoria selecionada.
-7. Use **Apagar** para remover a categoria, quando permitido.
-8. Use **Cancelar** para sair do modo de edição/inclusão sem gravar.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Nome** | Nome da categoria de estoque. Foi o único campo visível na tela observada. |
-| **Novo** | Inicia o cadastro de uma categoria nova. |
-| **Editar** | Permite alterar o registro atual. |
-| **Apagar** | Remove o registro atual, quando o perfil permite. |
-| **Salvar** | Grava a categoria criada ou editada. |
-| **Cancelar** | Cancela a inclusão/edição em andamento. |
-| **Anterior / Próximo** | Navegam pelos registros existentes. |
-| **Procurar** | Abre a busca de categorias já cadastradas. |
-
-## Resultado esperado
-
-- A categoria fica cadastrada e disponível para uso em cadastros de estoque.
-- O registro pode ser consultado novamente na mesma tela.
-- A categoria passa a servir de base para o cadastro de produtos.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| O botão **Salvar** não grava | Verifique se o campo **Nome** foi preenchido. |
-| A tela não abre | Confirme acesso ao menu **Cadastros > Estoque > Categorias**. |
-| Não consigo navegar entre registros | Pode não haver registros suficientes ou o usuário pode estar em modo de inclusão. |
-
-## Observações
-
-- A tela observada no demo abriu dentro do *frame* legado.
-- No estado inicial observado, a tela mostrava um registro existente com o nome **INSTALAÇÃO**.
-- A captura limpa confirmou a toolbar com navegação, inclusão, edição, exclusão, gravação, cancelamento e pesquisa.
-- Ao iniciar um novo cadastro, o campo **Nome** aparece em branco e os botões de gravação/cancelamento ficam ativos.
-- Esta página complementa o cadastro de **Produtos**, que depende dessa base de classificação.
-
-## Screenshots sugeridos
-
-- Tela **Categorias** no demo: `assets/screenshots/cadastros/estoque/categorias.png`
+# Categorias de estoque
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A categoria agrupa produtos do estoque por finalidade ou natureza, como instalação, equipamentos, cabos ou material de escritório. Ela facilita filtros e também permite solicitar/separar material por categoria quando o item exato ainda não foi definido.
+
+Não confunda com **Categoria Financeira**, usada em contas a pagar. Esta categoria pertence ao estoque e é obrigatória no cadastro de produto.
+
+## Relações no fluxo de materiais
+
+- Cada produto aponta para uma categoria.
+- Solicitações de material podem guardar categoria e produto.
+- Itens de ordens de separação podem ser criados por estoque, produto ou somente categoria.
+- Quando o item parte de um registro de estoque, categoria e produto são copiados desse registro.
+- A importação de NF-e de compra pode localizar/criar categorias para classificar os produtos recebidos.
+
+Assim, nomes estáveis tornam solicitações, separações e relatórios mais compreensíveis. Evite categorias genéricas demais ou duplicadas por variação ortográfica.
+
+## Cadastrar ou alterar
+
+1. Acesse **Cadastros > Estoque > Categorias**.
+2. Pesquise pelo nome antes de criar.
+3. Clique em **Cadastrar/Novo**, informe um nome único e salve.
+4. Ao renomear, confirme se o novo termo continua adequado a todos os produtos vinculados.
+
+Nome é obrigatório e não pode duplicar outra categoria ativa. No fluxo legado, inclusão, alteração e exclusão verificam `categoria_add`, `categoria_edit` e `categoria_del`.
+
+## Exclusão
+
+A exclusão é lógica: a categoria deixa de aparecer nas consultas e seletores comuns, mas referências históricas permanecem. Produtos existentes podem continuar apontando para ela e ficar difíceis de manter em telas que listam apenas categorias ativas.
+
+Antes de apagar:
+
+1. liste os produtos vinculados;
+2. verifique solicitações e ordens de separação abertas;
+3. mova os produtos para outra categoria quando necessário;
+4. só então remova o cadastro.
+
+| Problema | Verificação |
+|---|---|
+| Nome duplicado | Reutilize a categoria existente ou padronize a nomenclatura. |
+| Categoria não aparece no produto | Ela pode ter sido excluída logicamente. |
+| Ordem pede apenas uma categoria | O separador deverá definir o produto/estoque adequado durante o atendimento do material. |
+| Produto ficou sem categoria selecionável | Reclassifique-o antes de excluir o grupo antigo. |
+
+![Categorias de estoque](/assets/screenshots/cadastros/estoque/categorias.png)
+
+Veja também [Produtos](/cadastros/estoque/produtos) e [Material para Técnico](/estoque/material-para-tecnico).
