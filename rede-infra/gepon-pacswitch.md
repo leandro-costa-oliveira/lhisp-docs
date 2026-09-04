@@ -2,88 +2,118 @@
 title: GePON PACSWITCH
 published: true
 editor: markdown
-description: ''
+description: Topologia, ocupação de portas e monitoramento dos Pacswitches GePON
 ---
 
 # GePON PACSWITCH
 
-
-## Objetivo
-
-Registrar a tela de **GePON PACSWITCH** do módulo **Rede/ Infra**, que concentra o cadastro do equipamento, o relacionamento com GePON ONU ou outro PACSWITCH e os parâmetros de comunicação.
-
-## Quando usar
-
-Use este fluxo para:
-
-- cadastrar ou revisar um PACSWITCH GePON;
-- vincular o equipamento a um ponto de presença;
-- definir o tipo do equipamento;
-- escolher o modo de cascateamento;
-- associar uma ONU GePON ou outro PACSWITCH;
-- informar parâmetros de IP, SNMP e identificação.
-
-## Pré-requisitos
-
-- Acesso ao módulo **Rede/ Infra**.
-- Permissão para consultar ou manter cadastros de PACSWITCH.
-- Dados do ponto de presença e dos equipamentos relacionados.
-- Tela carregada no demo com o formulário acessível.
-
-## Passo a passo
-
-1. Acesse **Rede/ Infra > GePON PACSWITCH**.
-2. Use **Anterior** e **Próximo** para navegar entre registros.
-3. Clique em **Novo**, **Editar** ou **Apagar** conforme a necessidade do cadastro.
-4. Preencha os campos do formulário principal.
-5. Escolha o tipo de cascateamento entre **GePON ONU** e **GePON PACSWITCH**.
-6. Use **Salvar** ou **Cancelar** para concluir a operação.
-7. Se precisar localizar um registro, utilize **Procurar**.
-
-## Campos importantes
-
-| Campo / elemento | Observação |
-|---|---|
-| **Ponto de Presença** | Associa o PACSWITCH ao POP correspondente. |
-| **Tipo** | Seletor do tipo do equipamento; a tela exibiu **PACSWITCH FIT 7P** e **PACSWITCH FIT 14P**. |
-| **Cascateamento** | Define se o vínculo será com **GePON ONU** ou **GePON PACSWITCH**. |
-| **GePON ONU** | Campo de associação quando o cascateamento apontar para ONU. |
-| **GePON PACSWITCH** | Campo de associação quando o cascateamento apontar para outro PACSWITCH. |
-| **Porta** | Combo usado para escolher a porta vinculada em cada associação. |
-| **IP** | Endereço de gerenciamento do PACSWITCH. |
-| **Comunidade SNMP** | Comunidade usada para monitoramento. |
-| **Descrição** | Campo livre para identificação do registro. |
-| **Mac** | Endereço MAC do equipamento. |
-
-## Resultado esperado
-
-- O PACSWITCH GePON fica associado ao ponto de presença correto.
-- O modo de cascateamento fica definido de forma consistente.
-- As associações com ONU ou com outro PACSWITCH ficam registradas.
-- O cadastro pode ser consultado e mantido a partir da barra de ações.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Não encontro o POP desejado | Use a busca do campo **Ponto de Presença** ou revise o cadastro base. |
-| O tipo correto não aparece | Confirme se o perfil do PACSWITCH está disponível na lista. |
-| A associação com ONU não aparece | Verifique se o cascateamento está em **GePON ONU**. |
-| A associação com outro PACSWITCH não aparece | Verifique se o cascateamento está em **GePON PACSWITCH**. |
-| Não consigo salvar | Confirme se os campos obrigatórios foram preenchidos. |
-
-## Observações
-
-- A tela tem cabeçalho próprio do módulo.
-- A captura validada estava limpa, sem marcações ou anotações visuais.
-- O formulário principal exibe as associações de cascateamento separadas por tipo.
-- A rota observada no demo é `https://demo.lhprovedor.com.br/lgc/redeinfra%7Cpacswitch`.
-
-
-## Screenshots sugeridos
-
-- Tela principal de **GePON PACSWITCH** no demo: `assets/screenshots/rede-infra/gepon-pacswitch.png`
-
-![GePON PACSWITCH no demo](/assets/screenshots/rede-infra/gepon-pacswitch.png)
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+O Pacswitch representa um switch de acesso instalado depois de uma ONU GePON. Ele expande a quantidade de portas Ethernet disponíveis para clientes e permite registrar, no LHISP, o caminho físico entre OLT, ONU, eventuais switches em cascata e cada acesso.
+
+O cadastro é usado tanto pela equipe de rede quanto pelo fluxo de contratos: ao instalar um cliente em uma porta do Pacswitch, o acesso guarda o equipamento e a porta escolhidos. Isso permite impedir a reutilização de uma porta ocupada e mostrar a qual contrato ela pertence.
+
+## Como a topologia é formada
+
+Todo Pacswitch precisa chegar a uma [OLT GePON](/rede-infra/gepon-olt) por meio de uma ONU. Há dois modos de uplink:
+
+- **GePON ONU:** o switch está ligado diretamente a uma porta Ethernet da ONU.
+- **GePON PACSWITCH:** o switch está ligado a uma porta de outro Pacswitch. Mesmo nesse caso, o registro também herda a ONU raiz e a porta dessa ONU, preservando o caminho de origem.
+
+Ao escolher o equipamento de origem, o sistema determina automaticamente a OLT correspondente. O POP do Pacswitch é informado separadamente e indica onde o equipamento deve aparecer na estrutura física.
+
+No acesso de um cliente em rede do tipo **GePON**, primeiro é escolhida a ONU e sua porta. Se essa porta leva a um Pacswitch, o formulário exige também o switch e sua porta de cliente. O acesso passa a ocupar essa porta até ser alterado ou removido.
+
+## Cadastro
+
+Acesse **Rede/ Infra > GePON > GePON PACSWITCH**, clique em **Novo** e informe:
+
+| Campo | Regra e efeito |
+|---|---|
+| **Ponto de Presença** | Obrigatório. Localização lógica/física do switch. Não é inferida automaticamente a partir do POP da ONU. |
+| **Tipo** | Define a quantidade de portas: **PACSWITCH FIT 7P** cria 7 portas lógicas; **PACSWITCH FIT 14P**, 14. |
+| **Cascateamento** | Obrigatório. Escolhe se o uplink vem diretamente de uma ONU ou de outro Pacswitch. |
+| **GePON ONU / Porta** | No vínculo direto, identifica a ONU de origem e a porta Ethernet usada como uplink. A porta não pode estar ocupada. |
+| **GePON PACSWITCH / Porta** | No vínculo em cascata, identifica o switch anterior e a porta usada como uplink. |
+| **IP** | Obrigatório e normalizado pelo backend. É usado no acesso SNMP e na abertura da interface web. |
+| **Comunidade SNMP** | Credencial para consultar o estado das portas. |
+| **Descrição** | Obrigatória. Identificação operacional nas buscas e seleções de acesso. |
+| **MAC** | Opcional no backend, mas a tela limita a entrada ao formato de seis pares hexadecimais. |
+
+O cadastro exige a permissão `pacswitch_add`; a alteração exige `pacswitch_edit`.
+
+## Regras de portas e cascateamento
+
+- Uma porta da ONU já associada a um acesso ou a um Pacswitch é rejeitada na criação de um novo switch direto.
+- Uma porta do Pacswitch já associada a um acesso é rejeitada no cascateamento e no cadastro de outro acesso.
+- Ao editar e manter exatamente a mesma origem, a associação atual é aceita.
+- O sistema não impede explicitamente que um Pacswitch seja selecionado como origem dele próprio nem percorre a árvore para detectar ciclos. Revise o desenho antes de salvar um cascateamento.
+- A consulta de ocupação das portas do Pacswitch considera os **acessos de clientes**. No código atual, Pacswitches descendentes não entram nessa mesma lista de ocupação; portanto, em topologias em cascata, confirme manualmente se a porta de uplink já está sendo usada por outro switch.
+
+Essa última limitação significa que a cor **LIVRE** na tela não é garantia suficiente para portas usadas apenas por outro Pacswitch em cascata.
+
+## Efeito de alterar a origem
+
+Quando a ONU raiz ou sua porta é alterada, o backend propaga o novo par ONU/porta para acessos e registros de Pacswitch que ainda apontem para o par anterior. Essa atualização pode atingir todo o ramo que compartilha aquela origem, não apenas o equipamento aberto.
+
+Antes de mover um Pacswitch:
+
+1. identifique os acessos e switches abaixo dele;
+2. confirme a nova ONU e a capacidade da porta;
+3. realize a alteração em janela apropriada;
+4. confira os vínculos dos clientes e o estado das portas depois de salvar.
+
+A operação altera apenas os registros do LHISP; não há uma rotina nesta tela que reconfigure fisicamente VLANs ou uplinks do switch.
+
+## Estado das portas
+
+Ao consultar um registro, a tela tenta acessar o equipamento por SNMP e mostra cada porta com:
+
+- estado retornado pelo switch e código correspondente;
+- indicação de porta livre;
+- identificação do acesso associado, incluindo contrato e MAC.
+
+O botão **Atualizar** refaz a leitura. Se uma consulta falha, o erro aparece na porta e o restante daquela rodada deixa de tentar o mesmo adaptador, evitando repetir a espera em todas as portas.
+
+### Suporte dos modelos
+
+Embora a tela permita cadastrar os modelos de 7 e 14 portas, o adaptador SNMP atual é criado somente para **PACSWITCH FIT 7P**. Um registro **FIT 14P** é aceito e mantém 14 portas lógicas, mas a consulta de estado retorna `PacSwitch não suportado` até que exista um adaptador correspondente.
+
+## Acesso web e relay
+
+O botão de acesso web abre a interface HTTP do Pacswitch:
+
+- se a OLT de origem não possui servidor em **Conectar por**, o navegador aponta diretamente para `IP do Pacswitch:80`;
+- se possui, o LHISP acessa esse servidor Mikrotik por SSH, remove uma regra antiga com o mesmo identificador e cria um `dst-nat` na porta `33000 + ID do Pacswitch`, encaminhando para a porta 80 do equipamento.
+
+O navegador abre esse destino dentro de um iframe HTTP. Políticas de conteúdo misto do navegador, bloqueio de iframe ou indisponibilidade da rota podem impedir a exibição mesmo quando o equipamento responde.
+
+O código da página solicita o fechamento do relay ao sair, mas não há uma ação `FecharRelayWeb` implementada para Pacswitch no backend atual. A configuração padrão dos servidores cria um agendador Mikrotik que remove regras com comentário `lhrelay` a cada seis horas; confirme esse agendador e remova manualmente regras residuais quando necessário.
+
+## Exclusão
+
+A exclusão remove fisicamente o registro e não altera a configuração do equipamento. Como acessos e outros Pacswitches possuem chaves estrangeiras para ele, dependências normalmente impedem a operação.
+
+Antes de apagar, migre ou remova:
+
+- acessos associados às portas;
+- Pacswitches que o utilizem como origem;
+- o vínculo físico com a ONU.
+
+Não use a exclusão para representar apenas uma indisponibilidade temporária.
+
+## Diagnóstico de problemas
+
+| Sintoma | Verificação recomendada |
+|---|---|
+| **Porta da ONU já está em uso** | Consulte as associações da ONU; ela pode atender diretamente um acesso ou ser a origem de outro Pacswitch. |
+| **Porta do Pacswitch aparece ocupada** | A tela informa o contrato e o MAC do acesso associado. Migre o acesso antes de reutilizá-la. |
+| **Porta parece livre, mas recebe outro switch** | A lista de ocupação não agrega Pacswitches descendentes. Revise manualmente os cascateamentos. |
+| **PacSwitch não suportado** | O monitoramento SNMP atual suporta apenas o tipo FIT 7P, embora o FIT 14P possa ser cadastrado. |
+| **Estado de todas as portas falha** | Verifique IP, comunidade SNMP, alcance de rede e ACL do equipamento. |
+| **Acesso web não abre** | Confirme a porta 80, o servidor vinculado à OLT, acesso SSH ao Mikrotik, regra `lhrelay-ID`, bloqueio de conteúdo HTTP/iframe e rota até o Pacswitch. |
+| **Não é possível excluir** | Verifique acessos e Pacswitches descendentes que ainda referenciam o registro. |
+
+## Screenshot
+
+![GePON Pacswitch no ambiente de demonstração](/assets/screenshots/rede-infra/gepon-pacswitch.png)
