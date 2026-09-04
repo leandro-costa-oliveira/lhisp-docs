@@ -7,6 +7,8 @@ description: Geração, envio e confirmação de instruções de cobrança em ar
 
 # Remessa Bancária
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 A remessa envia ao banco instruções sobre contas a receber: registrar títulos novos e comunicar alterações aceitas pelo layout. O LHISP seleciona as cobranças elegíveis, agrupa contas pelo número do documento, gera o arquivo CNAB da carteira e registra quais títulos participaram.
 
 Remessa não confirma pagamento. Depois do envio, o banco responde por [Retorno Bancário](/financeiro/retorno-bancario), API ou webhook.

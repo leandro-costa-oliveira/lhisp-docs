@@ -7,6 +7,8 @@ description: Audite títulos vencidos e bloqueie ou desbloqueie em lote os servi
 
 # Bloqueios por atraso
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Esta rotina relaciona inadimplência financeira ao estado operacional do serviço contratado. Ela procura contas a receber em aberto que atingiram o limite de atraso da empresa e permite bloquear serviços ativos ou desbloquear serviços já bloqueados.
 
 O bloqueio não cancela nem baixa a dívida. Ele muda a situação do serviço, atualiza a situação do contrato, bloqueia os acessos de rede associados e propaga a ação para OTT e telefonia vinculados. O desbloqueio faz o caminho operacional inverso e registra ambas as ações no histórico do serviço.

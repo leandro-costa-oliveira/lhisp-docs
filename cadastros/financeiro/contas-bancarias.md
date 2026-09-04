@@ -7,6 +7,8 @@ description: Configuração das carteiras usadas para cobrança, boletos, Pix, r
 
 # Contas Bancárias
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 No LHISP, uma conta bancária é a configuração operacional de uma carteira de cobrança. Ela reúne os dados do beneficiário, o padrão CNAB, regras de multa e juros, credenciais de API/Pix, tarifas e opções de automação. Contratos e contas a receber apontam para esse cadastro para gerar e registrar cobranças.
 
 Não basta informar agência e conta. A **Carteira de Cobrança** selecionada define o banco ou gateway e, consequentemente, as validações, os arquivos de remessa/retorno e os campos de integração usados pelo sistema.

@@ -7,6 +7,8 @@ description: Operação integrada de caixas, contas a receber, contas a pagar e 
 
 # Gerência Financeira
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 A Gerência Financeira é o ponto operacional em que títulos e dinheiro se encontram. Contas a receber representam valores de clientes; contas a pagar representam obrigações da empresa; caixas registram as entradas e saídas efetivas. A baixa de um título cria ou associa uma movimentação, permitindo conciliar o saldo financeiro com a situação das contas.
 
 As abas aparecem conforme as permissões do usuário. Caixa e data selecionados no **Controle de Caixa** permanecem ao trocar de aba e são usados como padrão ao pagar uma conta.

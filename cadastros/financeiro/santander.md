@@ -7,6 +7,8 @@ description: Configuração da carteira Santander para boleto, CNAB, retorno e n
 
 # Santander
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 A conta Santander conecta contratos e contas a receber aos meios de cobrança do banco. O LHISP possui geração de boleto/código de barras Santander, remessa CNAB 400, leitura de retorno CNAB 240 e 400 e processamento de notificações de pagamento recebidas pelo endpoint bancário.
 
 Esta página complementa o cadastro geral de [Contas Bancárias](/cadastros/financeiro/contas-bancarias). Use os parâmetros fornecidos no contrato da empresa com o Santander; formatos ou credenciais de outro convênio não são intercambiáveis.

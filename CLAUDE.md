@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## About

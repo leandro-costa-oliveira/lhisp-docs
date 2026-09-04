@@ -7,6 +7,8 @@ description: Estrutura de apropriação e análise dos gastos da empresa.
 
 # Centros de Custo
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
 Centros de custo classificam **onde** um gasto é apropriado — por exemplo, operação, comercial, administrativo ou manutenção. Seus itens permitem um detalhamento adicional dentro de cada área. Essa classificação acompanha despesas recorrentes e contas a pagar, sustenta filtros financeiros e permite analisar a composição dos gastos.
 
 Centro de custo não é caixa, conta bancária nem categoria financeira. O caixa indica por onde o dinheiro transitou; a categoria indica a natureza do gasto; o centro de custo indica a área ou destino responsável pelo custo.
