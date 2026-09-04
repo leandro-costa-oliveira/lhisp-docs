@@ -2,14 +2,22 @@
 title: Dashboard Comercial
 published: true
 editor: markdown
-description: ''
+description: Indicadores de serviços vendidos e do andamento atual das respectivas instalações
 ---
 
 # Dashboard Comercial
 
-## Objetivo
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Acompanhar os serviços contratados no período, o andamento de suas instalações e a distribuição por plano, filial e atendente.
+O Dashboard Comercial acompanha a conversão dos serviços contratados em instalações concluídas. Sua unidade de contagem é o **serviço contratado**, e não a pessoa ou o contrato: um mesmo cliente com dois serviços adiciona dois cadastros aos indicadores.
+
+O painel conecta dados de [Contratos](/contratos/contrato), [Planos](/cadastros/financeiro/planos), usuários responsáveis pela venda e ordens de serviço de instalação. Ele ajuda a localizar vendas ainda sem OS, medir a fila de instalação e comparar a distribuição por filial, atendente e plano.
+
+## O que o período representa
+
+O período filtra a data em que o **serviço contratado foi criado**. Ele não representa a data de cadastro da pessoa, a assinatura do contrato nem a execução da instalação.
+
+O resultado não é uma fotografia histórica fechada. Para os serviços criados no período escolhido, o LHISP consulta a situação atual das ordens de instalação e os relacionamentos atuais. Assim, o total de instalações concluídas pode crescer quando uma OS antiga for finalizada, mesmo sem novos serviços no intervalo. Serviços hoje cancelados também permanecem na contagem, pois a consulta não filtra a situação do serviço.
 
 ## Quando usar
 
@@ -19,7 +27,7 @@ Use o dashboard para analisar cadastros comerciais, identificar serviços sem or
 
 - Estar autenticado no LHISP.
 - Ter acesso ao menu **Dashboard Comercial**.
-- Ter acesso às filiais e aos dados comerciais consultados.
+- Ter acesso aos dados comerciais e relatórios da empresa.
 
 ## Filtros
 
@@ -37,13 +45,15 @@ Use o dashboard para analisar cadastros comerciais, identificar serviços sem or
 | **Cadastros no período** | Quantidade de serviços contratados criados no intervalo, não a quantidade de pessoas ou contratos novos. |
 | **Instalações concluídas** | Serviços cuja primeira ordem de serviço do tipo instalação está concluída. O cartão também apresenta a proporção sobre os cadastros do período. |
 | **Aguardando instalação** | Serviços que possuem ordem de instalação, mas cuja primeira ordem ainda não está concluída. |
-| **Cadastros sem OS** | Cadastros menos instalações concluídas e instalações em espera, limitado ao mínimo de zero. |
+| **Cadastros sem OS** | Cadastros menos instalações concluídas e instalações em espera, limitado ao mínimo de zero. Representa serviços sem ordem de instalação associada. |
 | **Cadastros por plano e atendente** | Distribuição dos serviços por plano, separada por atendente, com destaque para o plano de maior total. |
 | **Cadastros por filial** | Distribuição dos serviços pela filial do contrato. |
 | **Cadastros por atendente** | Quantidade de serviços vinculados a cada atendente, com destaque para o maior valor. |
 | **Vendas instaladas por atendente** | Instalações concluídas agrupadas pelo atendente associado ao serviço. |
 
 Quando plano, filial ou atendente não está associado ao registro, o agrupamento usa respectivamente **SEM PLANO**, **SEM FILIAL** ou **SEM VENDEDOR**.
+
+Se um serviço tiver mais de uma OS do tipo instalação, o backend classifica o serviço pela primeira ordem devolvida pela consulta. Como não há ordenação explícita nesse relacionamento, divergências nesse cenário devem ser verificadas diretamente no serviço e em suas ordens.
 
 ## Passo a passo
 
@@ -71,18 +81,15 @@ O arquivo usa os mesmos filtros já aplicados ao painel e contém:
 
 O botão de exportação fica indisponível enquanto há consulta/exportação em andamento ou quando o total de cadastros é zero.
 
-## Resultado esperado
-
-Os indicadores e gráficos são recalculados com os filtros aplicados. Em caso de falha, a tela exibe **Não foi possível carregar a dashboard** com a mensagem devolvida pela API.
-
-## Observações
+## Interpretação e conferência
 
 - A consulta considera a data de criação do **serviço contratado**.
-- A situação da instalação é determinada pela primeira ordem de serviço de instalação retornada para o serviço.
-- O dashboard consulta `POST /api/Relatorios.DashboardComercial`; a exportação usa `POST /api/Relatorios.DashboardComercialCadastros`.
+- **Aguardando instalação** significa que existe uma OS de instalação não concluída; não informa se ela já foi agendada ou está em execução.
+- **Cadastros sem OS** sinaliza que a etapa técnica ainda não foi vinculada ao serviço e merece conferência operacional.
+- Compare o total por atendente com o cadastro do serviço, não apenas com o vendedor registrado no contrato: o agrupamento usa o usuário associado ao serviço contratado.
+- O CSV é a melhor forma de identificar os registros que compõem um indicador e investigar diferenças.
+- Em caso de falha, a tela exibe **Não foi possível carregar a dashboard** com a mensagem devolvida pela API.
 
 ## Captura de tela
 
 ![Dashboard Comercial](/assets/screenshots/dashboards/dashboard-comercial.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
