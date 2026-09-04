@@ -2,122 +2,82 @@
 title: Gerar contas a receber do contrato
 published: true
 editor: markdown
-description: ''
+description: Lance cobranças avulsas, entenda o parcelamento e acompanhe seus efeitos bancários e fiscais.
 ---
 
 # Gerar contas a receber do contrato
 
-## Objetivo
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Gerar uma **conta a receber** vinculada a um contrato do cliente na aba **Financeiro**.
+Uma conta a receber representa um valor que a empresa tem a cobrar do cliente. Ela pode nascer automaticamente da mensalidade, instalação ou venda, ou ser lançada manualmente na aba **Financeiro** do contrato para uma cobrança específica.
 
-## Quando usar
+**Nova Conta** não substitui a geração recorrente de mensalidades. Use-a para lançamentos avulsos ou correções operacionais previamente validadas; criar manualmente uma mensalidade pode duplicar uma competência já gerada ou que ainda será processada automaticamente.
 
-Use este fluxo quando for necessário lançar uma cobrança individual, revisar contas em aberto ou gerar parcelas financeiras para um contrato.
+## Relação com contrato, serviço e cobrança
 
-## Pré-requisitos
+Toda conta criada por esta tela pertence ao contrato. O vínculo com **Serviço** é opcional, mas é importante quando a origem e o tratamento fiscal devem identificar o serviço contratado. Ao escolhê-lo, a tela preenche as contas de boleto e Pix configuradas naquele serviço; elas ainda podem ser revisadas antes de salvar.
 
-- Contrato salvo e disponível no módulo **Contratos**.
-- Serviço contratado cadastrado, quando a cobrança depender de um plano/serviço específico.
-- Usuário com permissão financeira no LHISP.
-- Usar apenas dados fictícios no ambiente demo.
+A **Conta Bancária [Boleto]** é obrigatória e define a carteira, multa, juros, numeração do documento e integração de cobrança. **Conta Bancária [PIX]** só lista carteiras habilitadas para Pix e pode complementar a cobrança.
 
-## Passo a passo
+Contas abertas do mesmo contrato, banco e vencimento podem compartilhar o mesmo número de documento (`NRDOC`) enquanto o agrupamento ainda não tiver sido remetido. Na impressão ou registro, esses itens podem compor uma única cobrança pelo valor somado.
 
-1. Acesse **Contratos**.
-2. Abra o contrato desejado na lista.
-3. Clique na aba **Financeiro**.
-4. Revise os filtros de consulta, se necessário:
-   - **Data Inicial**
-   - **Data Final**
-   - **Situação**
-   - **Exibir Contas Apagadas?**
-5. Verifique a grade de contas a receber exibida na tela.
-6. Role até o final da aba **Financeiro** e clique em **Nova Conta**.
-7. No modal **Nova Conta a Receber**, preencha os campos principais:
-   - **Serviço**
-   - **Conta Bancária [Boleto]**
-   - **Conta Bancária [PIX]**
-   - **Tipo**
-   - **Descrição**
-   - **Vencimento**
-   - **Valor**
-   - **Parcelas**
-8. Clique em **Salvar**.
-9. Confirme que a nova linha aparece na grade da aba **Financeiro** com situação **EM ABERTO**.
+## Como lançar
 
-## Campos importantes
+1. Abra **Contratos**, localize o cliente e acesse **Financeiro**.
+2. Confira a grade e os filtros de data/situação para evitar duplicidade.
+3. Clique em **Nova Conta**.
+4. Se a cobrança tiver origem em um item contratado, selecione o **Serviço** e confira as contas bancárias preenchidas.
+5. Escolha a carteira de **Boleto** e, se aplicável, a de **PIX**.
+6. Selecione o **Tipo**, descreva a origem do valor e informe o primeiro vencimento.
+7. Informe o **Valor** de cada conta e a quantidade de **Parcelas**.
+8. Quando exibido, limite o **Número Máximo de Parcelas para Pagamento no Cartão**.
+9. Salve e confira todas as contas criadas, seus vencimentos, banco, documento e situação.
 
-### Filtros da aba Financeiro
+## Tipos e efeitos
 
-| Campo | Descrição |
+A tela permite **Mensalidade**, **Serviço**, **Vendas**, **Instalação**, **Acordo** e **Multas**. O tipo não é apenas uma etiqueta: ele participa de relatórios e da seleção de valores para emissão fiscal.
+
+No lançamento manual, promoções são ignoradas para os tipos que não são mensalidade. Para **Mensalidade**, o código atual ainda consulta a promoção vinculada ao serviço e pode aplicar seu desconto. Confirme o valor resultante na grade.
+
+## Como funciona o campo Parcelas
+
+**Valor é o valor de cada parcela, não o total a dividir.** Por exemplo, valor de R$ 100,00 e três parcelas cria três contas de R$ 100,00, totalizando R$ 300,00.
+
+Cada parcela recebe um vencimento mensal a partir da data informada. O sistema tenta preservar o dia original ao avançar os meses. O cadastro não grava numeração “1/3” específica nessa rotina; são contas independentes com a mesma descrição.
+
+Valores não positivos, datas inválidas e tipos fora da lista são recusados. Se **Parcelas** for zero, vazia ou inválida, o backend assume uma parcela.
+
+## Registro no banco ou gateway
+
+Depois de gravar cada conta, o LHISP chama o processador da carteira. Dependendo da conta bancária, isso pode registrar imediatamente boleto/Pix ou preparar o estado de integração. Assim, salvar pode produzir uma cobrança externa, não apenas uma linha local.
+
+Cada parcela é processada em sua própria transação. Se uma parcela posterior falhar no gateway, as anteriores podem já ter sido criadas e registradas. Após qualquer erro, confira a grade e o portal do banco/gateway antes de repetir o lançamento; refazer o formulário inteiro pode duplicar as parcelas concluídas.
+
+## Consulta e ciclo posterior
+
+A grade mostra descrição, tipo, número do documento, vencimento, pagamento, valor, desconto, valor pago, tarifa, nota fiscal e situação. Os estados principais são **Em aberto**, **Paga**, **Cancelada** e **Negociada**. **Exibir Contas Apagadas** serve para auditoria de registros removidos.
+
+Depois da criação, a conta pode participar de:
+
+- impressão ou registro de boleto e Pix;
+- remessa e retorno bancário;
+- baixa manual ou automática, com movimentação no caixa;
+- prorrogação, negociação, cancelamento ou exclusão, conforme permissões e estado bancário;
+- emissão fiscal, quando o tipo e as demais regras forem elegíveis.
+
+O botão **Gerar Carnê** da mesma aba executa outra rotina: procura mensalidades ausentes em um período e as gera com base nos serviços contratados. **Relatório de Quitação de Débitos** apenas produz o relatório correspondente.
+
+## Conferências antes e depois de salvar
+
+| Situação | Conferência recomendada |
 |---|---|
-| **Data Inicial** | Início do período de consulta. |
-| **Data Final** | Fim do período de consulta. |
-| **Situação** | Filtra contas por status. Opções observadas: **Todas**, **Aberta**, **Paga**, **Cancelada** e **Negociada**. |
-| **Exibir Contas Apagadas?** | Inclui registros apagados na consulta. Use apenas para auditoria. |
-
-### Grade de contas a receber
-
-| Campo/coluna | Descrição |
-|---|---|
-| **Ações** | Ações por conta, incluindo pagamento e outras rotinas. |
-| **Id** | Identificador interno da conta. |
-| **Descrição** | Descrição do lançamento. |
-| **Tipo** | Tipo da cobrança, como **MENSALIDADE**. |
-| **Número** | Número da parcela/documento. |
-| **Vencimento** | Data de vencimento. |
-| **Pagamento** | Data de pagamento, quando houver. |
-| **Valor** | Valor original da conta. |
-| **Desconto** | Desconto aplicado. |
-| **Valor Pago** | Valor efetivamente pago. |
-| **Tarifa** | Tarifa associada à cobrança. |
-| **NF** | Relação com nota fiscal, quando aplicável. |
-| **Situação** | Status da conta, por exemplo **EM ABERTO**. |
-
-### Modal Nova Conta a Receber
-
-| Campo | Descrição |
-|---|---|
-| **Serviço** | Vincula a cobrança ao serviço contratado. |
-| **Conta Bancária [Boleto]** | Conta bancária usada no boleto. |
-| **Conta Bancária [PIX]** | Conta bancária usada no Pix. |
-| **Tipo** | Natureza da cobrança, por exemplo **Mensalidade**, **Serviço**, **Vendas**, **Instalação**, **Acordo** ou **Multas**. |
-| **Descrição** | Texto livre para identificar o lançamento. |
-| **Vencimento** | Data de vencimento da conta. |
-| **Valor** | Valor da cobrança. |
-| **Parcelas** | Quantidade de parcelas geradas para o lançamento. |
-
-## Resultado esperado
-
-- A conta a receber é criada e vinculada ao contrato.
-- A nova linha aparece na tabela da aba **Financeiro**.
-- A situação do registro fica visível como **EM ABERTO** até o pagamento ou outra ação financeira.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| A grade não mostra a conta criada | Ajuste os filtros de data e situação, ou recarregue a aba **Financeiro**. |
-| O botão **Nova Conta** não aparece | Role até a parte inferior da tela e confirme que está na aba **Financeiro**. |
-| O modal não permite salvar | Revise principalmente **Serviço**, **Tipo**, **Vencimento**, **Valor** e as contas de boleto/Pix. |
-| A conta não aparece após salvar | Reabra a aba **Financeiro** e confira se a situação está filtrada como **Aberta**. |
-| Contas apagadas aparecem na consulta | Desmarque **Exibir Contas Apagadas?**. |
-
-## Observações
-
-- A aba **Financeiro** possui as ações **Relatório de Quitação de Débitos**, **Gerar Carnê** e **Nova Conta**.
-- Na exploração do demo, foi possível criar uma conta a receber de teste e ela passou a aparecer na grade como **EM ABERTO**.
-- O contrato usado na exploração possuía contas mensais associadas ao serviço **[16250] ACESSO RESIDENCIAL 200mega**.
-
-## Screenshots sugeridos
-
-- Aba **Financeiro** do contrato: `assets/screenshots/contratos/financeiro-aba.png`
+| Serviço não selecionado | Confirme se a cobrança pode ficar sem rastreabilidade para um serviço e sem suas contas bancárias padrão. |
+| Carteira não aparece | Verifique o cadastro da conta bancária e o acesso da filial. |
+| Valor total inesperado | Multiplique o valor informado pela quantidade de parcelas; o sistema não divide um total. |
+| Conta não aparece | Amplie o período e selecione situação **Aberta** ou **Todas**. |
+| Erro de gateway | Não repita imediatamente; confira quais parcelas já existem local e externamente. |
+| Mensalidade manual | Pesquise a mesma competência e considere a geração automática/futura antes de criar. |
 
 ![Aba Financeiro](/assets/screenshots/contratos/financeiro-aba.png)
 
-- Modal **Nova Conta a Receber**: `assets/screenshots/contratos/nova-conta-receber-modal.png`
-
 ![Modal Nova Conta a Receber](/assets/screenshots/contratos/nova-conta-receber-modal.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
