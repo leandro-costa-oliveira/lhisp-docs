@@ -2,90 +2,60 @@
 title: Documentos
 published: true
 editor: markdown
-description: ''
+description: Crie modelos versionados usados em contratos, aceite eletrônico, impressão e assinatura digital.
 ---
 
 # Documentos
 
-## Objetivo
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Cadastrar e manter **modelos de documentos** que serão preenchidos automaticamente com dados do cliente, da empresa ou do contrato no momento da impressão.
+Este cadastro mantém **modelos de documentos**, não arquivos já assinados por clientes. O texto do modelo é associado a planos e depois lançado na aba **Documentos** de cada contrato, onde passa a representar uma ocorrência própria para impressão, aceite ou assinatura.
 
-## Quando usar
+Campos dinâmicos inseridos no texto são substituídos no momento da impressão com dados da empresa, do cliente, do endereço, do contrato e do serviço. Portanto, o resultado depende tanto da sintaxe do marcador quanto da qualidade dos cadastros de origem.
 
-Use este fluxo quando for necessário:
+## Fluxo no sistema
 
-- criar um novo modelo de documento;
-- editar um modelo já existente;
-- manter textos jurídicos ou operacionais padronizados;
-- reutilizar campos dinâmicos em contratos, cartas de cobrança, anexos e outros impressos.
+1. Crie o modelo e valide sua pré-visualização.
+2. Associe o modelo ao plano quando ele fizer parte da contratação daquele serviço.
+3. Na aba **Documentos** do contrato, associe o modelo ao contrato e, quando aplicável, ao serviço contratado.
+4. Imprima ou gere o PDF com os dados substituídos.
+5. Conforme a configuração, colete aceite no portal/app ou envie o PDF à D4Sign.
 
-## Pré-requisitos
+Planos marcados para **Exigir aceite** impedem a criação do acesso até existir um documento vinculado ao serviço e seu aceite estar validado. O modelo, assim, participa diretamente da liberação técnica do cliente.
 
-- Acesso ao menu **Cadastros > Administrativo > Documentos**.
-- Permissão para criar e editar modelos.
-- Conhecimento do conteúdo que será impresso.
-- Definição dos campos dinâmicos que serão usados no texto.
+## Cadastrar e validar um modelo
 
-## Passo a passo
+1. Acesse **Cadastros > Administrativo > Documentos** e clique em **Novo**.
+2. Informe uma **Descrição** única e reconhecível.
+3. Escreva o **Texto** no editor e insira somente marcadores suportados pela tela.
+4. Salve e use **Visualizar** para conferir conteúdo, substituições, quebras e paginação.
+5. Teste com contrato fictício que possua todos os dados usados pelo documento.
 
-1. Acesse **Cadastros > Administrativo > Documentos**.
-2. Clique em **Novo** para criar um modelo ou selecione um registro existente para edição.
-3. Preencha a **Descrição** do documento.
-4. Escreva ou ajuste o texto do modelo no editor rico.
-5. Use os **Campos Dinâmicos** para inserir substituições automáticas do sistema.
-6. Clique em **Salvar** quando terminar.
-7. Use **Visualizar** para conferir a aparência final do documento.
+Descrição e texto são obrigatórios. O sistema não permite duas descrições exatamente iguais entre os modelos ativos.
 
-## Campos importantes
+## Versionamento ao editar
 
-| Campo / ação | Descrição |
-|---|---|
-| **Id** | Identificador do modelo de documento. |
-| **Descrição** | Nome do modelo apresentado ao usuário. |
-| **Texto** | Conteúdo principal do documento, editado em um editor rico. |
-| **Visualizar** | Mostra uma prévia do documento. |
-| **Novo** | Inicia o cadastro de um novo modelo. |
-| **Editar** | Abre um modelo existente para alteração. |
-| **Apagar** | Remove o modelo selecionado. |
-| **Salvar** | Persiste as alterações. |
+Alterar um modelo não sobrescreve o registro anterior. O backend marca a versão atual como excluída e cria outro documento com novo ID. Os planos que apontavam para o modelo antigo são migrados para o novo ID.
 
-### Campos dinâmicos observados na wiki
+Esse comportamento preserva os documentos já associados aos contratos, que continuam referenciando a versão usada naquela ocorrência. Consequências práticas:
 
-A wiki divide os campos dinâmicos em grupos, como:
+- editar o modelo não reescreve automaticamente contratos ou PDFs anteriores;
+- uma nova contratação usa a versão apontada pelo plano após a alteração;
+- o novo ID deve ser considerado em integrações ou referências externas;
+- para corrigir um documento já lançado, trate a ocorrência no contrato conforme o processo jurídico adotado.
 
-- **Empresa**
-- **Endereço**
-- **Contrato**
+## Documentos do contrato e assinatura
 
-Esses grupos alimentam o texto com dados do cadastro correspondente no momento da impressão.
+A associação no contrato registra uma ocorrência separada do modelo e pode guardar serviço, número, aceite, arquivo e estado D4Sign. Remover essa associação não apaga o modelo global. Se o documento estiver aguardando assinatura na D4Sign, a remoção também tenta cancelar o documento externo.
 
-## Resultado esperado
+O envio à D4Sign gera um PDF A4 e exige ao menos um e-mail válido da pessoa. O aceite eletrônico pode armazenar comprovante próprio; aceitar ou rejeitar atualiza a ocorrência do contrato, não o texto-base.
 
-- O modelo de documento fica salvo no sistema.
-- A pré-visualização mostra o texto formatado com os campos dinâmicos.
-- O documento passa a estar disponível para uso em contratos e outros fluxos de impressão.
+## Cuidados
 
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| O documento não salva | Verifique se a descrição foi preenchida e se houve alteração válida no texto. |
-| Os campos dinâmicos não são substituídos | Confirme se os códigos foram usados exatamente como a wiki descreve. |
-| A visualização fica desformatada | Revise a estrutura do texto no editor rico. |
-| O modelo aparece incorreto no contrato | Reabra o cadastro e valide o conteúdo salvo. |
-
-## Observações
-
-- A wiki descreve este cadastro como uma ferramenta para agilizar a emissão de contratos, cartas de cobrança e anexos.
-- O conteúdo do documento pode usar códigos substituídos dinamicamente pelo sistema.
-- O demo exibe um modelo já existente, com a descrição **contrato de prestação de internet**.
-- A captura usada nesta página veio do ambiente de demonstração, não da wiki.
-
-## Screenshots sugeridos
-
-- Tela **Documentos** no demo: `assets/screenshots/cadastros/administrativo/documentos.png`
+- Faça revisão jurídica antes de publicar nova versão.
+- Não altere marcadores manualmente sem confirmar a sintaxe exibida pelo sistema.
+- **Visualizar** o modelo não garante que todos os campos existam em todo contrato; teste cenários de pessoa física e jurídica quando aplicável.
+- A exclusão do modelo é lógica: ele deixa de aparecer nas buscas usuais, mas versões já usadas podem permanecer referenciadas.
+- Evite colocar credenciais, tokens ou dados pessoais fixos no texto do modelo.
 
 ![Documentos no demo](/assets/screenshots/cadastros/administrativo/documentos.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
