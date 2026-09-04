@@ -2,101 +2,68 @@
 title: Produtos
 published: true
 editor: markdown
-description: ''
+description: Defina os itens movimentados no estoque e as regras de rastreabilidade patrimonial e devolução.
 ---
 
 # Produtos
 
-> O menu abre primeiro a listagem e, ao clicar em **Cadastrar**, o sistema mostra o formulário de manutenção do produto.
->
-> Veja também a trilha completa: [Material para Técnico](/estoque/material-para-tecnico).
-
-## Objetivo
-
-Cadastrar, consultar e revisar produtos de estoque usados no fluxo de entrada de material e separação para o técnico.
-
-## Quando usar
-
-Use esta tela quando for necessário:
-
-- consultar produtos cadastrados;
-- cadastrar um novo produto;
-- vincular o produto a uma categoria de estoque;
-- definir unidade, preço e opções do item;
-- revisar itens que serão usados em entrada de estoque ou ordem de separação.
-
-## Pré-requisitos
-
-- Acesso ao menu **Cadastros > Estoque > Produtos**.
-- Permissão para consultar e cadastrar registros de estoque.
-- Categoria de estoque previamente cadastrada, quando o produto precisar de classificação.
-
-## Passo a passo
-
-### Na listagem
-
-1. Acesse **Cadastros > Estoque > Produtos**.
-2. Use o campo **Procurar** para filtrar a listagem, se necessário.
-3. Clique em **Procurar** para executar a busca.
-4. Clique em um item da lista para abrir o produto correspondente.
-5. Clique em **Cadastrar** para abrir o formulário de inclusão/manutenção.
-6. Clique em **Baixar Planilha** para exportar a listagem exibida.
-
-### No formulário
-
-1. Preencha o campo **Produto** com o nome do item.
-2. Selecione a **Categoria** desejada.
-3. Informe a **Unidade** do produto.
-4. Defina o **Preço**, quando aplicável.
-5. Marque as opções operacionais que fizerem sentido para o item.
-6. Clique em **Salvar** para gravar o cadastro.
-7. Use **Cancelar** para sair sem salvar.
-8. Use o botão de exclusão, quando houver permissão para apagar o item.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Id** | Identificador interno do produto. |
-| **Produto** | Nome do item cadastrado. É o principal campo obrigatório. |
-| **Categoria** | Classificação do produto. No demo, o seletor apresentou opções como **ESCRITORIO**, **INSTALAÇÃO** e **LIMPEZA**. |
-| **Unidade** | Unidade de medida do produto. |
-| **Preço** | Valor associado ao item. |
-| **Produto Retornável de Locação do Contrato ?** | Indica se o item pode ser tratado como retornável em locação. |
-| **Habilitar Controle Patrimonial** | Marca o item para controle patrimonial. |
-| **Exigir Número de Série** | Obriga o preenchimento de número de série. |
-| **Exigir Número de Patrimônio** | Obriga o preenchimento de patrimônio. |
-| **Exigir Endereço Mac** | Obriga o preenchimento do endereço MAC. |
-| **Salvar** | Grava o produto criado ou editado. |
-| **Cancelar** | Cancela a alteração/inclusão em andamento. |
-| **Apagar** | Remove o produto, quando o perfil permite. |
-
-## Resultado esperado
-
-- O produto fica cadastrado e disponível na listagem.
-- O item pode ser vinculado à categoria correta de estoque.
-- O cadastro fica pronto para uso nos fluxos de entrada de material e separação.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| O botão **Salvar** não grava | Verifique se os campos obrigatórios, como **Produto**, foram preenchidos. |
-| A categoria não aparece | Confirme se a categoria já foi cadastrada em **Cadastros > Estoque > Categorias**. |
-| O produto não aparece na listagem | Use **Procurar** ou revise se a página está filtrada. |
-| Não consigo apagar o item | O perfil pode não ter permissão para exclusão. |
-
-## Observações
-
-- A listagem do demo exibiu produtos como **ROTEADOR 2 ANTENAS**, **ROTEADOR 5 ANTENAS**, **ONU ABC**, **ONU FIBERHOME**, **ROTEADOR TPLINK 2 ANTENTAS**, **ROTEADOR TPLINK 4 ANTENAS**, **PAPEL A4**, **DETERGENTE**, **HUAWEI AX3** e **Drop SUMEC**.
-- A captura limpa da listagem mostrou os botões principais de **pesquisa**, **inclusão** e **exportação CSV** no topo da tela.
-- O formulário abriu com o título **Alteração**, mesmo quando acionado a partir da inclusão.
-- A tela mostra uma estrutura simples, mas com vários controles de validação para uso operacional.
-- Esta página é base para o fluxo de entrada de material e para a separação do técnico.
-
-## Screenshots sugeridos
-
-- Tela **Produtos** na listagem do demo: `assets/screenshots/cadastros/estoque/produtos.png`
-- Tela de cadastro/alteração de produto no demo: `assets/screenshots/cadastros/estoque/produtos-formulario.png`
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+Produto é o cadastro mestre do material movimentado pelo LHISP. Entradas de compra, saldos de almoxarifado, remessas, estoque de técnicos, solicitações, ordens de separação, locações e patrimônios apontam para esse registro.
+
+O cadastro define **o que** é o item e como deve ser controlado; a quantidade e a localização pertencem aos registros de estoque. Criar um produto não gera saldo.
+
+## Identificação e unicidade
+
+- **Categoria**, **Produto** e **Unidade** são obrigatórios.
+- A unidade tem no máximo dois caracteres; padronize abreviações como `UN`, `MT` ou `KG`.
+- A combinação categoria + nome + unidade deve ser única entre produtos ativos.
+- **Preço** é o valor de referência do cadastro; custos efetivos também podem vir dos documentos e movimentações de entrada.
+
+Pesquise antes de criar. Duplicar o mesmo item fragmenta saldo, conciliação de NF-e e histórico entre IDs diferentes.
+
+## Controle patrimonial
+
+**Habilitar Controle Patrimonial** transforma cada unidade relevante em um patrimônio individual. Esse modo permite rastrear localização, contrato/locação, técnico, nota de compra e histórico do equipamento.
+
+As opções **Exigir Número de Série**, **Exigir Número de Patrimônio** e **Exigir Endereço MAC** definem identificadores obrigatórios no patrimônio. Ao salvar, qualquer uma dessas exigências habilita automaticamente o controle patrimonial, mesmo que a opção geral esteja desmarcada.
+
+Use controle patrimonial para ONUs, roteadores, switches e outros equipamentos individualizáveis. Materiais consumíveis ou medidos por quantidade normalmente permanecem sem esse controle.
+
+## Produto retornável
+
+**Produto Retornável de Locação do Contrato** indica equipamento cedido ao cliente que deve retornar ao estoque no encerramento ou troca da locação. A marcação se relaciona com a aba de produtos/locações do contrato e com o histórico patrimonial; não significa que qualquer saída para técnico será revertida automaticamente.
+
+## Fluxo recomendado
+
+1. Cadastre primeiro a [Categoria](/cadastros/estoque/categorias).
+2. Em **Cadastros > Estoque > Produtos**, pesquise nome e unidade.
+3. Informe nome padronizado, categoria, unidade e preço de referência.
+4. Defina se é retornável e se exige rastreabilidade individual.
+5. Salve.
+6. Para item patrimonial, teste uma entrada com série/patrimônio/MAC conforme as exigências.
+7. Faça o saldo entrar por NF-e de compra ou [Entrada de Material](/estoque/entrada-de-material).
+
+## Relação com NF-e e movimentações
+
+Na importação de nota fiscal de compra, a conciliação relaciona o código/descrição/unidade do fornecedor ao produto interno e pode aplicar multiplicador. Depois, o item é lançado no estoque e, quando patrimonial, cada unidade precisa de patrimônio compatível.
+
+Remessas e ordens de separação validam se produto, estoque e patrimônio correspondem. Um patrimônio sempre tem quantidade unitária e não pode ser movimentado como várias unidades numa única identificação.
+
+## Alteração e exclusão
+
+Renomear, trocar categoria/unidade ou mudar o controle patrimonial afeta operações futuras e a leitura do histórico. Não desative rastreabilidade de produto que já possui patrimônios sem antes avaliar os vínculos.
+
+A exclusão da SPA é lógica. O produto some das consultas usuais, mas estoques, notas, patrimônios e movimentos podem continuar referenciando seu ID. Faça inventário e encerre saldos/vínculos antes de apagar. O fluxo legado possui comportamento diferente e remove também conciliações; prefira o procedimento atual da SPA.
+
+| Problema | Verificação |
+|---|---|
+| Produto duplicado | Confira categoria, nome e unidade; os três formam a validação. |
+| Categoria não aparece | Ela pode estar excluída ou pertencer a outro contexto da empresa. |
+| Entrada exige série/patrimônio/MAC | O produto está sob controle patrimonial com exigências específicas. |
+| Patrimônio rejeitado | Confirme produto, nota de compra, estoque e quantidade igual a um. |
+| Produto removido ainda aparece no histórico | A exclusão é lógica e preserva referências anteriores. |
+
+![Lista de produtos](/assets/screenshots/cadastros/estoque/produtos.png)
+
+![Cadastro de produto](/assets/screenshots/cadastros/estoque/produtos-formulario.png)

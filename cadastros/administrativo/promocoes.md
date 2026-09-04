@@ -2,80 +2,62 @@
 title: Promoções
 published: true
 editor: markdown
-description: ''
+description: Configure descontos vinculados aos serviços contratados, com vigência, filiais e prazo por adesão.
 ---
 
 # Promoções
 
-## Objetivo
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Cadastrar e manter promoções com período de vigência, nome e dados básicos exibidos em uma listagem operacional.
+Uma promoção é uma regra de desconto associada ao **serviço contratado**. Ela não reduz o preço-base do plano: durante a geração da mensalidade, o LHISP grava na conta a promoção, o tipo e o desconto aplicáveis. O valor efetivo pago depende também da pontualidade quando essa opção estiver habilitada.
 
-## Quando usar
+## Elegibilidade e duração
 
-Use esta tela quando precisar:
+Para selecionar uma promoção na contratação ou edição do serviço, ela precisa:
 
-- localizar uma promoção já cadastrada;
-- cadastrar uma nova promoção;
-- consultar período de início e término;
-- exportar a lista para planilha;
-- navegar entre registros da listagem.
+- estar associada à filial do contrato;
+- já ter alcançado **Disponível a partir de**;
+- não ter ultrapassado **Disponível até**, quando informado.
 
-## Pré-requisitos
+Essas datas controlam quando a promoção pode ser contratada. **Validade (meses)** controla por quantas competências o desconto vale para cada cliente, contando a partir da data de adesão gravada no serviço.
 
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o menu **Cadastros > Administrativo > Promoções**.
-- Saber o nome da promoção e o período de vigência que será cadastrado ou consultado.
+No cálculo do limite mensal, o backend alinha a primeira competência ao dia de vencimento do cliente e limita o dia a 28. Por isso, valide casos de adesão no fim do mês e vencimentos anteriores/posteriores ao dia da contratação.
 
-## Passo a passo
+## Tipos de desconto
 
-1. Acesse **Cadastros > Administrativo > Promoções**.
-2. Use o campo **Procurar** para localizar uma promoção já existente.
-3. Clique no botão de busca para executar o filtro.
-4. Clique em **Cadastrar** para iniciar uma nova promoção.
-5. Use **Baixar Planilha** para exportar a listagem exibida.
-6. Selecione um item da lista para consultar os dados detalhados.
-7. Navegue entre páginas quando houver mais resultados.
+- **Percentual:** maior que zero e no máximo 100%.
+- **Fixo:** maior que zero e, no backend atual, menor que R$ 100,00.
+- **Somente se pagamento em dias:** conserva o desconto até o próximo dia útil após o vencimento, considerando fins de semana e os [Feriados](/cadastros/administrativo/feriados) cadastrados. Depois disso, o desconto deixa de compor o valor a pagar.
 
-## Campos importantes
+Sem a opção de pontualidade, o desconto permanece na conta mesmo após o vencimento; multa e juros podem ser calculados separadamente.
 
-| Campo / ação | Descrição |
+## Cadastrar
+
+1. Acesse **Cadastros > Administrativo > Promoções** e pesquise o nome.
+2. Informe nome único e a observação que será exibida no boleto.
+3. Defina o intervalo em que novas adesões serão permitidas.
+4. Se o benefício for temporário por cliente, informe a validade em meses.
+5. Escolha desconto percentual ou fixo e preencha o valor.
+6. Defina se depende de pagamento em dia.
+7. Selecione todas as filiais elegíveis e salve.
+8. Faça uma contratação de teste e simule mensalidades dentro e fora do período promocional.
+
+Inclusão, edição e exclusão exigem `promocao_add`, `promocao_edit` e `promocao_del`.
+
+## Efeitos de mudanças
+
+Editar a promoção altera a regra consultada em gerações e cálculos posteriores. Contas já criadas guardam a promoção e os dados de desconto aplicados no momento da geração; não presuma que a edição recalculará todo o contas a receber.
+
+Ao trocar a promoção de um serviço contratado, o LHISP atualiza a data de adesão usada para contar os meses. Remover a promoção do serviço impede aplicação nas próximas mensalidades, sem cancelar contas existentes.
+
+A exclusão é lógica e retira a promoção das seleções usuais. Antes de apagar, localize serviços e contas ainda associados para preservar rastreabilidade.
+
+| Problema | Verificação |
 |---|---|
-| **Procurar** | Campo de busca textual para localizar promoções. |
-| **Botão de busca** | Executa a consulta com o termo digitado. |
-| **Cadastrar** | Inicia o cadastro de uma nova promoção. |
-| **Baixar Planilha** | Exporta a listagem em arquivo de planilha. |
-| **Id** | Identificador da promoção. |
-| **Nome** | Nome exibido para a promoção. |
-| **Data Inicial** | Início da vigência. |
-| **Data Final** | Término da vigência. |
-
-## Resultado esperado
-
-- A listagem mostra as promoções cadastradas com período de vigência.
-- O operador consegue consultar, cadastrar e exportar os registros.
-- O período de cada promoção fica visível para validação rápida.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| A promoção não aparece na lista | Refine a pesquisa pelo nome ou verifique a paginação. |
-| A data final aparece vazia | Confirme se a promoção está sem vencimento definido. |
-| O cadastro não abre | Verifique se a sessão está ativa e se há permissão suficiente. |
-| A exportação não gera arquivo | Refaça a busca e tente novamente com a listagem carregada. |
-
-## Observações
-
-- O demo exibe **Promoções** como uma tela de listagem, com busca, criação e exportação.
-- Os itens visíveis na lista mostram **Id**, **Nome**, **Data Inicial** e **Data Final**.
-- A tela permite consultar promoções como **promo teste**, **desconto até vencimento** e outras entradas já cadastradas no demo.
-- A captura usada nesta página veio do ambiente de demonstração.
-
-## Screenshots sugeridos
-
-- Tela **Promoções** no demo: `assets/screenshots/cadastros/administrativo/promocoes.png`
+| Promoção não aparece no contrato | Confira filial e datas de disponibilidade. |
+| Desconto terminou antes/depois do esperado | Revise data de adesão, validade em meses, dia do vencimento e limite no dia 28. |
+| Desconto perdido após vencimento | A opção de pagamento em dia está ativa; confira o próximo dia útil e os feriados. |
+| Valor fixo rejeitado | O código atual exige valor menor que R$ 100,00. |
+| Boleto sem observação | Confira o texto da promoção e se a conta foi gerada com ela. |
 
 ![Promoções no demo](/assets/screenshots/cadastros/administrativo/promocoes.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

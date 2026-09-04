@@ -1,80 +1,79 @@
 ---
-title: Estoque por Funcionário
+title: Estoque por funcionário
 published: true
 editor: markdown
-description: ''
+description: Controle materiais e patrimônios sob responsabilidade de técnicos e outros funcionários.
 ---
 
-# Estoque por Funcionário
-
-## Objetivo
-
-Consultar e administrar o estoque associado a um funcionário, com filtros por funcionário e categoria e ações de atualização, histórico, devolução e impressão.
-
-## Quando usar
-
-Use esta tela quando precisar:
-
-- verificar os itens vinculados a um funcionário;
-- filtrar por categoria;
-- atualizar os dados exibidos;
-- consultar o histórico;
-- registrar devoluções;
-- imprimir o resumo do estoque.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o fluxo **Estoque do Funcionário**.
-- Saber qual funcionário será consultado.
-
-## Passo a passo
-
-1. Acesse **Estoque > Estoque por Funcionário**.
-2. Selecione o **Funcionário** desejado.
-3. Marque ou desmarque a opção de exibição por **Categoria** conforme necessário.
-4. Selecione a **Categoria** quando for preciso restringir o resultado.
-5. Clique em **Atualizar** para carregar os itens do estoque.
-6. Use **Histórico**, **Devolução** ou **Imprimir** conforme a necessidade operacional.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Funcionário** | Seleciona o colaborador cujo estoque será consultado. |
-| **Categoria** | Filtra os produtos por categoria. |
-| **Exibir Somente Produtos da iCategoria Selecionada !** | Controla se a listagem ficará limitada à categoria marcada. |
-| **Produto** | Campo exibido na tela para o item do estoque. |
-| **Atualizar** | Recarrega a visualização do estoque do funcionário. |
-| **Histórico** | Abre o histórico de movimentações. |
-| **Devolução** | Inicia a devolução de itens. |
-| **Imprimir** | Gera a impressão do conteúdo exibido. |
-
-## Resultado esperado
-
-- A tela mostra os filtros do funcionário e da categoria.
-- Os botões operacionais ficam disponíveis para consulta e impressão.
-- A área inferior é preenchida quando houver itens retornados pela consulta.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| O botão **Atualizar** fica indisponível | Verifique se o funcionário foi selecionado corretamente. |
-| Não aparecem itens | Confirme se a categoria e a opção de exibição estão coerentes. |
-| O histórico não abre | Revise a permissão do perfil. |
-
-## Observações
-
-- A rota observada no demo foi `/estoque/por_funcionario`.
-- A captura limpa mostra um formulário com seleção de funcionário, categoria e ações no topo.
-- A área de resultados estava vazia no momento da captura.
-- A tela é operacional normal.
-
-## Screenshots sugeridos
-
-- Tela **Estoque por Funcionário** no demo: `assets/screenshots/estoque/estoque-por-funcionario.png`
-
-![Estoque por Funcionário no demo](/assets/screenshots/estoque/estoque-por-funcionario.png)
+# Estoque por funcionário
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+O estoque do funcionário representa materiais que saíram do almoxarifado, mas ainda permanecem sob responsabilidade da empresa e da pessoa que os recebeu. É usado principalmente para técnicos levarem insumos e equipamentos a campo sem registrá-los prematuramente como consumidos ou locados a um cliente.
+
+O saldo é mantido por funcionário e produto. Patrimônios acrescentam a identificação individual do equipamento; por isso, a quantidade de um item controlado deve corresponder aos patrimônios atualmente vinculados ao estoque daquela pessoa.
+
+## Como o material chega e sai
+
+O fluxo normal é:
+
+1. uma ordem de separação reserva produtos de um almoxarifado para o funcionário;
+2. a confirmação retira o saldo da origem e adiciona ao estoque do funcionário;
+3. patrimônios selecionados deixam o estoque físico e passam à posse do funcionário;
+4. uma OS pode consumir o material e criar a locação no contrato;
+5. itens não utilizados podem ser devolvidos a um almoxarifado.
+
+Essas etapas gravam histórico. Para estoque patrimonial, também atualizam a localização exclusiva do equipamento. Consulte [Ordens de separação](/estoque/ordens-de-separacao), [Material para técnico](/estoque/material-para-tecnico) e [Agenda Técnica](/agenda-tecnica/agenda-tecnica).
+
+## Consultar saldo e histórico
+
+1. Acesse **Estoque > Estoque por funcionário**.
+2. Selecione a pessoa marcada como funcionário.
+3. Filtre por categoria ou produto, se necessário.
+4. Atualize para visualizar somente saldos maiores que zero.
+5. Abra **Histórico** para conferir entradas e saídas no período.
+
+O filtro da categoria pode incluir somente a categoria selecionada ou excluir essa categoria. A pesquisa principal de produto procura pelo início do nome. A impressão reproduz o resumo carregado.
+
+O histórico identifica data, usuário, produto, quantidade e descrição. Quando a movimentação pertence a uma OS, a tela substitui a descrição genérica por **Utilizado no contrato** ou **Retirado do contrato**, com o número do contrato. Isso permite conciliar o material levado a campo com a execução registrada.
+
+## Devolver ao almoxarifado
+
+1. Abra **Devolução** no estoque do funcionário.
+2. Selecione o almoxarifado de destino.
+3. Para cada produto comum, informe a quantidade a devolver.
+4. Para produto patrimonial, marque cada número de série.
+5. Escolha o local interno de destino para todo item com devolução.
+6. Confirme e revise os dois estoques e seus históricos.
+
+A devolução é transacional para os itens processados: reduz o estoque do funcionário, aumenta o saldo no almoxarifado e grava o histórico de devolução. Patrimônios são reassociados ao estoque de destino e deixam a posse do funcionário.
+
+Em produto patrimonial, a quantidade é derivada dos equipamentos marcados e deve coincidir com a lista de IDs. O backend valida que os patrimônios pertencem ao produto antes de movê-los.
+
+A interface oferece somente patrimônios vinculados aos estoques do funcionário. A validação atual da API de devolução, porém, não confirma novamente essa posse ao receber os IDs; ela confirma o produto. Integrações devem enviar exclusivamente os IDs obtidos para aquela pessoa, e o operador deve revisar as séries exibidas.
+
+O backend atual ignora, sem mensagem específica, uma linha cuja quantidade seja inválida ou superior ao saldo do funcionário. A interface limita o valor normalmente, mas integrações podem enviar dados inconsistentes. Sempre confira o saldo após a operação; não considere a mensagem geral de sucesso como prova de que todas as linhas foram devolvidas.
+
+## Consumo em ordem de serviço
+
+Ao concluir uma OS com materiais, o sistema exige que o produto e os patrimônios estejam com o técnico e que haja saldo suficiente. O material comum é baixado da pessoa e locado no contrato. Para produto patrimonial, cada equipamento selecionado é retirado do estoque do funcionário e movido para a locação do cliente.
+
+Uma baixa incorreta afeta simultaneamente responsabilidade do técnico, saldo, locação e contrato. Corrija pelo fluxo operacional correspondente; não compense com uma entrada avulsa desconectada da OS.
+
+## Cuidados
+
+- Material entregue diretamente ao técnico deve passar por ordem de separação para manter origem e autorização.
+- A devolução deve ir para o almoxarifado e local físicos onde o item foi realmente recebido.
+- Não altere o produto de um patrimônio enquanto ele estiver no estoque de funcionário; o backend bloqueia essa mudança.
+- Antes de inativar um funcionário, confira e zere seu estoque por devolução ou consumo regular.
+
+| Problema | Verificação |
+|---|---|
+| Funcionário não aparece | A pessoa precisa estar marcada como funcionário e visível nas filiais permitidas ao usuário. |
+| Material não aparece | A tela mostra somente quantidade positiva; revise filtros e histórico. |
+| Patrimônio não pode ser devolvido | Confirme que ele está vinculado ao estoque desse funcionário e ao produto exibido. |
+| Devolução terminou, mas um item permaneceu | A quantidade inválida ou acima do saldo pode ter sido ignorada; confira o histórico e repita com o valor correto. |
+| OS recusa o produto | O técnico precisa possuir saldo e, para item controlado, os patrimônios exatos. |
+| Saldo do funcionário diverge dos equipamentos | Compare o histórico e o Controle patrimonial antes de novas movimentações. |
+
+![Estoque por funcionário](/assets/screenshots/estoque/estoque-por-funcionario.png)
