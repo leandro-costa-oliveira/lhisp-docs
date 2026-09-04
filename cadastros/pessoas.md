@@ -2,92 +2,72 @@
 title: Pessoas
 published: true
 editor: markdown
-description: ''
+description: Mantenha a identidade compartilhada por clientes, fornecedores, funcionários, técnicos e vendedores.
 ---
 
 # Pessoas
 
-## Objetivo
-
-Consultar e manter o cadastro de pessoas no LHISP, incluindo dados básicos, contato, tipo de pessoa, endereço e vínculos operacionais do registro.
-
-## Quando usar
-
-Use esta tela quando precisar:
-
-- consultar um cadastro existente;
-- cadastrar ou editar pessoas;
-- revisar dados de identificação e contato;
-- vincular a pessoa a perfis operacionais, como técnico ou vendedor;
-- acessar ações relacionadas a filiais e senhas técnicas/comerciais.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter permissão para acessar o menu **Cadastros > Pessoas**.
-- Possuir os dados da pessoa a ser cadastrada ou revisada.
-
-## Passo a passo
-
-1. Acesse o menu **Cadastros > Pessoas**.
-2. Use **Procurar** para localizar um cadastro existente, se necessário.
-3. Clique em **Novo** para criar um registro ou em **Editar** para alterar o cadastro atual.
-4. Preencha os dados de identificação, contato e endereço.
-5. Selecione o tipo de pessoa e os perfis operacionais aplicáveis.
-6. Clique em **Salvar** para gravar as alterações.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Id** | Identificador interno do cadastro. |
-| **Data de Cadastro** | Data e hora em que o registro foi criado. |
-| **Técnico / Fornecedor / Vendedor** | Marcadores de perfil operacional associados à pessoa. |
-| **Filiais** | Vincula a pessoa às filiais permitidas. |
-| **Senha Tec. / Senha Vend.** | Ações relacionadas a credenciais técnicas e comerciais. |
-| **Veículo** | Campo de associação com veículo, quando aplicável. |
-| **Nome** | Nome principal da pessoa. |
-| **Apelido** | Nome curto ou de uso operacional. |
-| **Tipo** | Define se a pessoa é física ou jurídica. |
-| **Data Nasc.** | Data de nascimento. |
-| **Cpf / Rg** | Documentos de identificação. |
-| **Telefone / Celular / Email** | Dados de contato. |
-| **Pai / Mãe** | Campos cadastrais adicionais exibidos no demo. |
-| **Logradouro / Número / Ponto de Referência** | Dados de endereço. |
-| **Banco** | Dados bancários associados ao cadastro. |
-| **Novo** | Cria um novo cadastro. |
-| **Editar** | Altera o registro atual. |
-| **Apagar** | Remove o cadastro selecionado. |
-| **Salvar** | Persiste as alterações. |
-| **Cancelar** | Desfaz a edição em andamento. |
-| **Procurar** | Localiza registros existentes. |
-
-## Resultado esperado
-
-- O cadastro da pessoa fica acessível para consulta e edição.
-- O operador consegue revisar os principais dados de identificação e endereço.
-- As marcações operacionais, como técnico e vendedor, ficam disponíveis no mesmo formulário.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| O cadastro não salva | Verifique se os campos obrigatórios foram preenchidos. |
-| O registro não é localizado | Use **Procurar** e revise o critério de busca. |
-| Os botões ficam desabilitados | Confirme se a tela está em modo de edição ou se o perfil tem permissão. |
-| O veículo aparece como carregando | Aguarde a listagem ou revise a integração do cadastro. |
-
-## Observações
-
-- O demo exibe a tela **Pessoas** no fluxo principal do sistema.
-- A captura usada nesta página mostra um cadastro já preenchido com dados fictícios do ambiente de demonstração.
-- A área superior reúne ações rápidas como navegação, criação, edição, exclusão e pesquisa.
-- A captura usada nesta página veio do ambiente de demonstração.
-
-## Screenshots sugeridos
-
-- Tela **Pessoas** no demo: `assets/screenshots/cadastros/pessoas.png`
-
-![Pessoas no demo](/assets/screenshots/cadastros/pessoas.png)
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+Pessoa é o cadastro central de identidade do LHISP. Nome, CPF/CNPJ, contatos e endereço são reutilizados por contratos de clientes e também por papéis operacionais como fornecedor, funcionário, técnico e vendedor.
+
+**Pessoa não é contrato.** Uma mesma pessoa pode possuir vários contratos; situação, filial, plano, acesso e cobrança pertencem a cada contrato. Antes de cadastrar um cliente, pesquise a pessoa pelo documento para não fragmentar seu histórico.
+
+## Identificação e validações
+
+- Nome, CPF/CNPJ, telefone principal e endereço são obrigatórios.
+- O tipo aceito é **Física** ou **Jurídica**. Quando omitido pela integração, o backend infere pelo número de dígitos do documento.
+- CPF/CNPJ é único dentro da empresa; duplicidade impede novo cadastro.
+- A API possui uma rotina para apresentar documentos com 11 ou 14 dígitos no padrão de CPF/CNPJ.
+- Vários e-mails podem ser informados separados por vírgula, mas cada item precisa ser um endereço válido e sem espaços indevidos.
+- Nome igual é permitido; documento igual não.
+
+Data de nascimento, RG/inscrição, nome conhecido, filiação e contato responsável complementam identificação e processos específicos. Para pessoa jurídica, mantenha razão/nome e documentos coerentes com o cadastro fiscal.
+
+## Endereços e contatos
+
+O endereço selecionado é um logradouro compartilhado; número, complemento e ponto de referência ficam na pessoa. Também pode existir endereço de cobrança separado.
+
+Esses dados podem alimentar contratos, notas, fornecedores e comunicações. Contudo, o contrato mantém seus próprios endereços de instalação e cobrança: alterar a pessoa não substitui automaticamente os dados já gravados em cada contrato.
+
+Telefones e e-mail são usados por atendimento, portal/app, notificações, aceite e assinatura digital. O envio de documento à D4Sign, por exemplo, exige pelo menos um e-mail válido.
+
+## Papéis operacionais
+
+As marcações **Funcionário**, **Fornecedor**, **Técnico** e **Vendedor** permitem que a mesma identidade participe de módulos diferentes:
+
+- fornecedor em despesas, contas a pagar e notas de compra;
+- técnico em agenda, ordens de serviço, estoque individual e comissões;
+- vendedor em contratações e relatórios comerciais;
+- funcionário em vínculos de filial e rotinas administrativas.
+
+Marcar um papel não significa, por si só, criar usuário de acesso ao LHISP. Senhas técnicas/comerciais e vínculos de filiais possuem ações próprias.
+
+## Cadastrar ou alterar
+
+1. Acesse **Cadastros > Pessoas** e pesquise primeiro CPF/CNPJ, nome, e-mail ou telefone.
+2. Reutilize o registro quando for a mesma identidade.
+3. Em novo cadastro, defina tipo, nome e documento.
+4. Informe telefone principal, demais contatos e e-mails.
+5. Selecione o endereço correto e complete número, complemento e referência.
+6. Preencha endereço de cobrança apenas quando diferente.
+7. Marque somente os papéis efetivamente exercidos e salve.
+8. Se a pessoa será cliente, crie ou associe o contrato no fluxo de **Contratos**.
+
+Inclusão, edição e exclusão usam `pessoa_add`, `pessoa_edit` e `pessoa_del`.
+
+## Impacto de alterações e exclusão
+
+Corrigir documento ou contato afeta os módulos que consultam a pessoa posteriormente, mas registros históricos — como notas já emitidas — conservam seus próprios dados. Antes de alterar CPF/CNPJ, confirme que se trata de correção da mesma entidade, não de troca de titular.
+
+A exclusão é lógica na API atual. Contratos, financeiro, estoque, SPC, documentos e atendimentos podem depender da pessoa; encerre ou transfira esses vínculos antes de apagar. Nunca exclua para resolver duplicidade sem definir qual cadastro preservará o histórico.
+
+| Problema | Verificação |
+|---|---|
+| Documento já cadastrado | Abra a pessoa indicada e associe o novo contrato/papel a ela. |
+| E-mail inválido | Valide cada endereço separado por vírgula e remova espaços. |
+| Pessoa não aparece como técnico/fornecedor | Confira a marcação do papel e os vínculos de filial exigidos pelo módulo. |
+| Alteração não mudou o contrato | Pessoa e contrato guardam dados próprios; edite o endereço/contato no contexto correto. |
+| Exclusão falha | Existem referências operacionais ou o usuário não possui `pessoa_del`. |
+
+![Cadastro de pessoas](/assets/screenshots/cadastros/pessoas.png)
