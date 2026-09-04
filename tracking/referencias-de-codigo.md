@@ -107,7 +107,7 @@ O commit de conclusão identifica o ponto do histórico de `lhisp-docs` em que o
 | `sistema/**` | Pendente de revisão completa | — | — |
 | `lhsac/**` | Pendente de revisão completa | — | — |
 | `suporte/**` | Pendente de revisão completa | — | — |
-| `README.md`, `CLAUDE.md` e `tasks/**` | Pendente de revisão editorial | — | — |
+| `README.md`, `.claude/CLAUDE.md` e `tasks/**` | Pendente de revisão editorial | — | — |
 
 ## Como detectar alterações
 
