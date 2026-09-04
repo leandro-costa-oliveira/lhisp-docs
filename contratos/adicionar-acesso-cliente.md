@@ -86,6 +86,26 @@ A linha do acesso combina dados do serviço e da rede:
 
 O botão geral **Utilização de Banda** consolida o consumo do contrato. **Hotspot**, quando habilitado na empresa, é um cadastro separado e não substitui o acesso PPPoE/IP fixo.
 
+## Diagnóstico de autenticação RADIUS
+
+Usuários com a permissão `view_log_radius` possuem, na linha do acesso, a ação **Diagnosticar por que o acesso não autentica**. Ela decompõe as condições usadas pelo RADIUS e combina o cadastro atual com a última tentativa encontrada no log.
+
+O diagnóstico verifica:
+
+- se o acesso é PPPoE ou IP fixo;
+- vínculo e situação do serviço contratado;
+- existência da rede e do servidor, inclusive se o servidor foi apagado;
+- IP do servidor e disponibilidade dos daemons que o publicam para o RADIUS;
+- preenchimento exato de usuário e senha, com distinção entre maiúsculas e minúsculas;
+- trava de MAC e o equipamento que originou a última tentativa;
+- quando existe sessão anterior, se o IP anunciado pelo NAS coincide com o IP cadastrado no servidor.
+
+O serviço pode aparecer como **Ativo**, **Bloqueado** ou **Suspenso** e ainda ser localizado pela consulta de autenticação. Isso só significa que as credenciais podem ser avaliadas, não que a navegação será liberada sem restrições: atributos de resposta e configurações do equipamento aplicam bloqueio ou suspensão. Situações diferentes dessas não entram na consulta do assinante.
+
+A leitura da última linha distingue, quando o log permite, senha incorreta de cadastro não localizado. Se todas as verificações estiverem corretas e não existir tentativa, confira se o PPPoE foi iniciado, a rota/firewall até o RADIUS e o segredo configurado no NAS. **Ver o log completo** abre o conteúdo bruto para investigação técnica.
+
+O diagnóstico é somente leitura. Ele não corrige servidor, MAC, credenciais ou situação do serviço e pode funcionar apenas com os dados cadastrais quando o serviço de logs estiver indisponível.
+
 ## Alteração e exclusão
 
 Editar um acesso pode reconfigurar servidor, endereçamento e equipamento. Use o **Registro de Alterações** para conferir os principais campos modificados.
@@ -113,6 +133,8 @@ Erros comuns:
 | Rede não pertence ao servidor | Use o servidor configurado na rede ou uma rede global adequada. |
 | Usuário já cadastrado | Verifique a abrangência da regra de duplicidade antes de alterar a credencial. |
 | MAC inválido | Informe endereço no formato aceito; não use valor zerado quando a configuração o proibir. |
+| Diagnóstico não encontra tentativa | Confirme PPPoE iniciado, segredo do RADIUS, conectividade do NAS e IP usado como `NAS-IP-Address`. |
+| Diagnóstico informa cadastro não localizado | Revise situação do serviço, rede, servidor, usuário, IP anunciado e trava de MAC antes de trocar a senha. |
 | Porta já em uso | Revise ONU, Pacswitch, CTO e suas associações físicas. |
 | Falha ao autorizar/configurar ONU | Confirme OLT, PON, serial, VLAN e o estado real do equipamento antes de tentar novamente. |
 

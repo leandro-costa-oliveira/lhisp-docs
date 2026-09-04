@@ -2,121 +2,115 @@
 title: Cadastrar rede
 published: true
 editor: markdown
-description: ''
+description: Definição de redes de acesso e backbone usadas para liberar clientes e provisionar equipamentos.
 ---
 
 # Cadastrar rede
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-## Objetivo
+Uma rede representa o ponto lógico e físico em que um acesso será entregue. Ela liga setor, concentrador, interface, prefixos e, conforme a tecnologia, ponto de acesso ou porta de OLT. Ao liberar um cliente, o LHISP usa essa definição para validar capacidade e POP, atribuir endereçamento e provisionar o acesso nos equipamentos.
 
-Cadastrar uma nova **rede** no módulo **Rede/Infra** do LHISP.
+Existem dois usos distintos:
 
-## Quando usar
+- **Rede de acesso:** selecionável no contrato para liberação de clientes. Define tecnologia e pode herdar blocos IPv4/IPv6 do servidor.
+- **Rede administrativa:** representa enlaces de uso interno ou backbone. Exige rede, máscara e interface e não participa do mesmo fluxo de seleção tecnológica do assinante.
 
-Use este fluxo para registrar redes de acesso, redes administrativas/backbone e suas parametrizações de acesso por tecnologia.
+## Antes de cadastrar
 
-## Pré-requisitos
+Cadastre primeiro os elementos referenciados pela rede:
 
-- Acesso ao menu **Rede/ Infra**.
-- Permissão para criar/editar redes.
-- Dados da rede disponíveis: descrição, servidor, prefixo IPv4/IPv6, tecnologia e parâmetros específicos.
-- Usar apenas dados fictícios no ambiente demo.
+- [setor](/rede-infra/setores), para organizar a área de atendimento;
+- [servidor](/rede-infra/servidores), que concentra e provisiona os acessos;
+- [prefixos IPv4 e IPv6](/rede-infra/prefixos-de-ip), quando a rede distribuir endereços;
+- ponto de acesso Wireless ou OLT GePON/GPON, quando aplicável.
 
-## Passo a passo
+A descrição deve ser única. O backend também impede usar como interface da rede uma das interfaces de saída configuradas no servidor.
 
-1. Acesse o menu lateral e abra **Rede/ Infra**.
-2. Clique em **Redes**.
-3. Clique em **Novo** para abrir o formulário em modo de criação.
-4. Preencha os campos principais:
-   - **Tipo** da rede
-   - **Limitar Quantidade de Acessos**
-   - **Setor**
-   - **Descrição**
-   - **Servidor**
-   - **Interface**
-   - **Prefixo IPv4**
-   - **Prefixo IPv6**
-   - **Tecnologia**
-5. Selecione a tecnologia correta e complete os campos adicionais exibidos para o cenário.
-6. Marque **Nat** e **Exigir Pop** quando aplicável.
-7. Clique em **Salvar**.
-8. Valide se a rede passou a aparecer na lista e se os vínculos com servidor/prefixos foram gravados.
+## Criar a rede
 
-## Campos importantes
+Em **Rede e Infraestrutura → Redes**, clique em **Novo** e defina:
 
-### Identificação da rede
+1. se a rede é de acesso ou administrativa;
+2. setor, descrição e servidor;
+3. interface e limite de acessos;
+4. prefixos IPv4/IPv6 ou endereço e máscara, conforme o tipo;
+5. tecnologia e dados do equipamento de acesso;
+6. opções **NAT** e **Exigir POP**.
 
-| Campo | Descrição |
+Depois de salvar, confira a rede na listagem e no cadastro do servidor. Para redes ópticas, valide também se OLT, slot, porta, uplink e VLAN correspondem à topologia real.
+
+## Tecnologia e vínculos
+
+| Tecnologia | O que a rede passa a representar |
 |---|---|
-| **Tipo** | Define se a rede é de **Acesso** ou **Administrativa/Backbone**. |
-| **Limitar Quantidade de Acessos** | Limite numérico de acessos permitido na rede. |
-| **Setor** | Setor vinculado à rede. |
-| **Descrição** | Nome/descrição da rede. |
-| **Servidor** | Servidor associado à rede. Possui botão de busca. |
-| **Interface** | Interface de vínculo na rede. |
-| **Prefixo IPv4** | Prefixo IPv4 associado à rede. |
-| **Prefixo IPv6** | Prefixo IPv6 associado à rede. |
+| **Wireless** | Um ponto de acesso e sua interface de entrega. |
+| **GePON** | Uma placa e porta PON de uma OLT GePON. A OLT é obrigatória. |
+| **GePON - Auth Mac** | A mesma topologia GePON, com autenticação baseada em MAC no fluxo correspondente. |
+| **GPON** | Uma OLT GPON, slot, porta PON, uplink e VLAN usados no provisionamento de ONUs. A OLT é obrigatória. |
+| **Cabo UTP / Outros** | Entrega genérica sem vínculo obrigatório com OLT ou ponto de acesso. |
 
-### Tecnologia
+Ao trocar a tecnologia, o backend limpa vínculos que pertenciam ao tipo anterior. Não reutilize uma rede existente apenas para alterar a topologia sem antes avaliar os acessos já associados.
 
-| Opção | Descrição |
-|---|---|
-| **Wireless** | Rede de acesso sem fio. |
-| **GePON** | Rede óptica com configuração GePON. |
-| **GePON - Auth Mac** | Variante GePON com autenticação por MAC. |
-| **GPON** | Rede óptica GPON. |
-| **Cabo UTP / Outros** | Rede cabeada ou cenário genérico/outros. |
+## Endereçamento
 
-### Campos específicos observados na tela
+Em rede de acesso, **Prefixo IPv4** e **Prefixo IPv6** apontam para blocos cadastrados no servidor. Esses vínculos orientam a escolha e a associação de subprefixos aos acessos.
 
-| Campo | Descrição |
-|---|---|
-| **Rede:** | Campo de configuração específico do perfil da rede. |
-| **Máscara:** | Máscara de rede. |
-| **Ponto de Acesso:** | Vínculo para redes wireless. |
-| **GePON OLT:** | OLT usada no cenário GePON. |
-| **Placa OLT:** | Placa da OLT. |
-| **Porta PON:** | Porta PON utilizada. |
-| **GPON OLT:** | OLT usada no cenário GPON. |
-| **Porta UPLINK:** | Porta uplink no cenário GPON. |
-| **Vlan:** | VLAN associada à rede. |
+Em rede administrativa, informe o endereço, a máscara e a interface. O backend aceita máscaras entre `/24` e `/31`, calcula rede, máscara e broadcast e recusa intervalos sobrepostos detectados. Para máscaras menores que `/31`, o endereço informado não pode ser o broadcast.
 
-### Opções
+O campo **NAT** participa da configuração da rede no concentrador. Ele não substitui o cadastro de CGNAT nem define sozinho o endereço público do cliente.
 
-| Campo | Descrição |
-|---|---|
-| **Nat** | Indica uso de NAT na rede. |
-| **Exigir Pop** | Exige POP para a rede. |
+## Limite de acessos e POP obrigatório
 
-## Resultado esperado
+**Limitar quantidade de acessos** é uma trava de capacidade. Na criação de um acesso, o backend conta os acessos já liberados na rede e recusa o novo quando o limite foi atingido. Valor zero deixa a rede sem esse limite.
 
-- A rede fica cadastrada no módulo **Rede/Infra**.
-- O registro passa a ser usado em vínculos com servidores e liberações de clientes.
-- As configurações específicas da tecnologia ficam disponíveis para operação.
+**Exigir POP** torna o ponto de presença obrigatório na liberação e na alteração do acesso. Existe uma exceção no cadastro inicial quando a empresa configurou o POP para ser escolhido pelo técnico na baixa da OS de instalação; nesse caso, a exigência é adiada para a execução da ordem.
+
+Essas opções afetam contratos e ordens de serviço, não apenas a exibição desta tela.
+
+## Automações ao salvar
+
+Ao criar uma rede, o backend grava o vínculo e solicita sua configuração no servidor. Em rede GPON, também chama o configurador da OLT para criar a rede na uplink indicada. Por fim, publica um evento de cadastro para os demais serviços.
+
+Alterar uma rede pode ter efeitos maiores:
+
+- os dados GPON de todos os acessos da rede recebem o novo slot e a nova porta;
+- a configuração anterior é removida e a nova é enviada ao concentrador;
+- se o servidor mudou, acessos não cancelados nem suspensos perdem as associações antigas de prefixos, recebem os próximos subprefixos livres do novo servidor quando disponíveis e são removidos do equipamento antigo e adicionados ao novo;
+- o servidor gravado nos acessos acompanha o novo servidor da rede;
+- em GPON, a nova configuração também é aplicada à OLT;
+- um evento de alteração é publicado.
+
+Por isso, trate mudança de servidor, prefixo, tecnologia, VLAN, slot ou PON como migração de rede. Planeje janela, confira disponibilidade de endereços e valide os comandos/equipamentos depois da operação.
+
+## TR-069
+
+Quando o módulo comercial TR-069 está ativo e a rede já foi salva, a página apresenta o painel de autoconfiguração de CPEs. A ativação exige VLAN e pool CIDR. O setup é aplicado de forma assíncrona pelo daemon e passa pelos estados **PENDENTE**, **APLICADO** ou **ERRO**; a tela também permite reaplicar ou desativar.
+
+Salvar os dados básicos da rede não significa que o setup TR-069 já foi aplicado. Aguarde o status e examine a mensagem de retorno.
+
+## Transferir acessos
+
+A função legada **Transferir acessos** move todos os acessos de uma rede de origem para outra. Para cada acesso, o LHISP remove a configuração anterior, altera a rede e recria a configuração. Se o servidor for diferente, também desassocia os prefixos antigos e tenta reservar os próximos IPv4 e IPv6 disponíveis no destino.
+
+A rotina processa um acesso por transação. Uma falha no meio pode deixar parte dos clientes já transferida; valide contagem, prefixos, autenticação e conectividade após a execução.
+
+## Exclusão
+
+A rede não pode ser apagada enquanto houver nela acessos cujo serviço esteja **ATIVO** ou **BLOQUEADO**. Transfira ou regularize os acessos antes. A remoção também comunica o configurador da tecnologia e publica evento para os serviços integrados.
+
+Não interprete a ausência de acessos ativos como garantia de que a rede é descartável: confira acessos suspensos/cancelados, histórico, OLT, prefixos e dependências operacionais.
 
 ## Problemas comuns
 
-| Problema | Como tratar |
+| Sintoma | Verificação |
 |---|---|
-| O botão **Salvar** não grava | Revise **Descrição**, **Servidor**, **Prefixo IPv4/IPv6** e a tecnologia escolhida. |
-| O servidor não aparece no campo de busca | Confirme se o servidor já foi cadastrado e está ativo. |
-| A rede não aparece na lista | Verifique se o registro foi salvo e se a lista foi atualizada. |
-| Campos de tecnologia não aparecem | Confirme se a tecnologia correta foi selecionada. |
-| O cadastro não fecha corretamente | Use **Cancelar** e reabra o registro para validar o estado. |
-
-## Observações
-
-- Na exploração, o formulário ficou disponível em modo de criação com os botões **Salvar** e **Cancelar** no topo.
-- A aba da tela possui apenas **Dados** e **Detalhes**.
-- Os campos e opções mudam conforme a tecnologia escolhida.
-- Foi observada a ação **Transferir Acessos**, que indica integração da rede com migração/liberação de clientes.
-
-
-## Screenshots sugeridos
-
-- Formulário de cadastro de rede: `assets/screenshots/rede-infra/cadastrar-rede-form.png`
+| Rede administrativa não salva | Informe rede, máscara `/24` a `/31` e interface; verifique sobreposição e broadcast. |
+| Interface é recusada | Ela coincide com uma interface de saída do servidor. Use a interface de entrega correta. |
+| OLT ou campos ópticos não aparecem | Confira a tecnologia selecionada e cadastre a OLT correspondente. |
+| Novo acesso informa rede lotada | Revise o limite e a quantidade de acessos já liberados; não aumente sem validar capacidade real. |
+| Liberação exige POP | Selecione o POP ou confira a configuração que delega a escolha à OS de instalação. |
+| Cliente perdeu IP após mudar o servidor | Verifique se havia subprefixos livres no novo servidor e revise as associações IPv4/IPv6. |
+| TR-069 permanece pendente ou com erro | Confira daemon, VLAN, pool CIDR e mensagem do setup; reaplique somente após corrigir a causa. |
 
 ![Cadastro de rede](/assets/screenshots/rede-infra/cadastrar-rede-form.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

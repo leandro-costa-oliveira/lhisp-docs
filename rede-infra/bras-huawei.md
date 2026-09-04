@@ -2,195 +2,106 @@
 title: BRAS Huawei
 published: true
 editor: markdown
-description: ''
+description: Integração de um concentrador Huawei ao RADIUS, monitoramento e automações de rede do LHISP.
 ---
 
 # BRAS Huawei
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-## Objetivo
+O BRAS Huawei é o concentrador que termina as sessões PPPoE dos assinantes. No LHISP ele é cadastrado como um **servidor de rede do tipo Huawei**: o endereço do equipamento identifica o NAS no RADIUS, os acessos dos contratos fornecem usuário, senha e endereçamento, a bilhetagem registra as sessões e o SNMP fornece o tráfego apresentado no contrato.
 
-Registrar o procedimento descrito na wiki para configurar um **BRAS Huawei** e integrar o equipamento ao ecossistema **LHISP**.
+Esse cadastro não é uma OLT Huawei. O BRAS concentra autenticação e tráfego IP; a OLT provisiona ONUs na rede óptica e possui cadastro e integração próprios em [OLT Huawei](/rede-infra/olt-huawei).
 
-## Quando usar
+## O que precisa estar alinhado
 
-Use este fluxo quando for necessário:
+A integração depende de configurações nos dois lados:
 
-- realizar a configuração inicial de um BRAS/Huawei;
-- habilitar acesso remoto ao equipamento;
-- configurar comunicação com **Radius**;
-- ajustar parâmetros de **PPPoE** e **SNMP**;
-- preparar o equipamento para integração operacional com o LHISP.
-
-## Pré-requisitos
-
-- Acesso físico ao equipamento via console serial.
-- Cabo console RS232/DB9 e adaptador, se necessário.
-- Credenciais de acesso ao equipamento.
-- Endereço IP do BRAS e do servidor LHISP.
-- Chave compartilhada do Radius.
-- Permissão para alterar a configuração do equipamento.
-- Validação prévia de que o equipamento pertence ao ambiente de demonstração ou a um laboratório autorizado.
-
-## Passo a passo
-
-### 1. Acessar o BRAS
-
-1. Conecte o cabo console ao equipamento.
-2. No computador, abra uma sessão serial.
-3. Entre com as credenciais de acesso.
-4. Após o login, entre no modo de configuração.
-
-### 2. Entrar no modo de configuração
-
-```text
-system-view
-```
-
-### 3. Configuração inicial
-
-- Defina o **sysname** do equipamento.
-- Verifique as interfaces disponíveis.
-- Habilite o acesso remoto por SSH.
-- Ajuste a autenticação dos usuários locais e via rede.
-
-### 4. Criar usuários locais
-
-Crie usuários com privilégios elevados para acesso administrativo, conforme a política do ambiente.
-
-### 5. Configurar endereço IP e gateway
-
-- Acesse a interface desejada.
-- Aplique o endereço IP.
-- Configure a rota padrão do equipamento.
-
-### 6. Configurar comunicação com o Radius
-
-- Crie o grupo Radius do LHISP.
-- Configure a chave compartilhada.
-- Informe os endereços do servidor de autenticação e accounting.
-- Ajuste a autenticação e accounting no `aaa`.
-- Associe o domínio ao Radius configurado.
-
-### 7. Configurar servidor PPPoE
-
-- Defina a interface de serviço.
-- Ajuste o comportamento de VLAN, quando aplicável.
-- Habilite os parâmetros de acesso necessários.
-
-### 8. Configurar SNMP
-
-- Habilite a comunidade de leitura.
-- Ajuste a versão SNMP conforme o padrão do ambiente.
-- Valide se o LHISP poderá coletar informações de monitoramento.
-
-### 9. Finalizar e salvar
-
-Finalize a sessão e salve a configuração.
-
-```text
-quit
-save
-```
-
-## Campos importantes
-
-### Parâmetros observados na wiki
-
-| Campo / comando | Descrição |
+| No equipamento | No LHISP |
 |---|---|
-| **Login / Password** | Credenciais de console do equipamento. Na wiki, os valores aparecem como padrão de laboratório e devem ser tratados com cuidado. |
-| **sysname** | Nome do equipamento na rede. |
-| **display interfaces description** | Comando para listar descrições das interfaces. |
-| **SSH** | Habilita acesso remoto seguro ao equipamento. |
-| **Radius shared-key** | Chave usada na integração com autenticação. |
-| **radius-server authentication/accounting** | Endereços do LHISP para autenticação e contabilização. |
-| **SNMP community** | Comunidade usada para coleta de informações. |
-| **PPPoE / VLAN** | Ajustes de acesso de assinantes, quando o cenário usa esse perfil. |
+| IP alcançável a partir da infraestrutura do LHISP | Servidor com fabricante **Huawei**, IP e porta SSH correspondentes |
+| Cliente RADIUS apontando para autenticação e accounting do LHISP | Opção **Usar RADIUS** habilitada e segredo igual ao configurado no BRAS |
+| Domínio e perfil PPPoE que consultem o RADIUS | Acesso do contrato associado a esse servidor, com usuário e senha válidos |
+| SSH administrativo | Usuário, senha e porta capazes de executar comandos no equipamento |
+| SNMP permitido a partir do LHISP | Comunidade e versão SNMP corretas |
 
-## Resultado esperado
+O código do equipamento varia por modelo e versão do VRP. Valide a sintaxe na documentação da Huawei e aplique a configuração inicial por console fora do LHISP. Em termos funcionais, ela deve habilitar SSH, AAA/RADIUS, accounting, o domínio PPPoE e SNMP. Salve a configuração somente depois dos testes.
 
-- O BRAS fica com acesso remoto habilitado.
-- O equipamento passa a autenticar usuários via Radius/LHISP.
-- Os serviços de PPPoE e SNMP ficam prontos para operação e monitoramento.
-- A equipe pode seguir com a configuração de rede/assinantes conforme o padrão do ambiente.
+## Cadastrar no LHISP
 
-## Problemas comuns
+Em **Rede e Infraestrutura → Servidores**, crie ou edite o concentrador:
 
-| Problema | Como tratar |
-|---|---|
-| Não consigo acessar a console | Verifique o cabo, o adaptador serial e a porta COM/tty utilizada. |
-| O comando `system-view` não entra | Confirme se o login foi feito com permissão administrativa. |
-| Radius não autentica | Revise o endereço do LHISP, a chave compartilhada e a porta configurada. |
-| SNMP não responde no LHISP | Verifique comunidade, versão SNMP e conectividade de rede. |
-| PPPoE não sobe | Confirme interface, VLAN, parâmetros de acesso e serviço associado. |
-| Usuário PPPoE não conecta | Use `display aaa online-fail-record username <NomeDoUsuarioPppoe>` para consultar o motivo da falha de login do usuário. |
-| Erro de conflito de IP | Use `display access-user ip-address <IpAddress>` para localizar o usuário/assinante associado ao IP em conflito e verifique se há algum *pool* configurado no Huawei na mesma faixa do LHISP. Se houver, remova o *pool* do Huawei ou altere o bloco no LHISP. |
-| Preciso localizar o usuário por PPPoE username | Use `display access-user username <NomeUsuarioPppoe>` para localizar a sessão AAA associada ao nome de usuário informado. |
+1. selecione o tipo **Huawei**;
+2. informe nome, IP, credenciais e porta SSH;
+3. associe o ponto de presença quando aplicável;
+4. habilite **Usar RADIUS**;
+5. configure comunidade e versão SNMP se houver leitura de tráfego;
+6. confira o segredo RADIUS pela ação específica do servidor;
+7. salve e valide autenticação, accounting e desconexão com um acesso de teste.
 
-## Debug
+O IP e a porta SSH não podem duplicar outro servidor. Ao cadastrar ou alterar o registro, o backend atualiza o serviço de monitoramento e solicita a recarga do RADIUS. Alterar apenas o cadastro não configura automaticamente AAA, interfaces ou VLANs no Huawei.
 
-- Quando houver suspeita de **conflito de IP**, consulte o usuário associado ao endereço com:
+## Relação com os acessos de clientes
+
+O RADIUS localiza o servidor pelo atributo `NAS-IP-Address`. Em seguida valida o acesso ligado a esse servidor, inclusive usuário e senha com diferenciação entre maiúsculas e minúsculas. Serviço, contrato, endereço de rede e eventual bloqueio por MAC também participam da autorização.
+
+Uma sessão autenticada gera bilhetagem. Para Huawei, o identificador de conexão gravado nessa sessão é usado como índice das OIDs proprietárias de tráfego. Sem accounting correto, o LHISP pode até autenticar o cliente, mas perder a associação necessária para histórico, sessão e gráfico.
+
+Ao desconectar um acesso, o backend enfileira comandos Huawei para cortar as sessões pelo usuário e pelo IPv4. A execução depende do serviço de comandos, da conectividade SSH e das credenciais cadastradas; portanto, a alteração no contrato pode ser persistida antes de o comando chegar ao equipamento.
+
+## SNMP e leitura de tráfego
+
+O LHISP consulta contadores Huawei específicos de entrada e saída usando o identificador da última sessão. Para que o gráfico funcione:
+
+- permita SNMP somente a partir dos endereços de gestão necessários;
+- use no cadastro a mesma comunidade e versão do equipamento;
+- mantenha o accounting RADIUS ativo;
+- confirme que o acesso está associado ao BRAS correto.
+
+SNMP sem resposta não impede necessariamente a autenticação PPPoE, mas impede ou degrada a leitura de tráfego e o monitoramento.
+
+## CGNAT
+
+Quando o Huawei também executa CGNAT, os prefixos públicos e privados são mantidos no cadastro do servidor. O LHISP valida a proporção dos blocos e, para Huawei, exige faixas de portas múltiplas de 256. A combinação sugerida pelo próprio backend é um `/32` público para um `/25` privado.
+
+Depois de alterar prefixos, revise os comandos gerados antes de aplicá-los. Um bloco incorreto pode provocar sobreposição de portas, falta de tradução ou conflito com endereços já entregues aos assinantes. Consulte também [CGNAT](/rede-infra/cgnat) e [Prefixos de IP](/rede-infra/prefixos-de-ip).
+
+## Diagnóstico no equipamento
+
+Use os comandos abaixo em uma sessão administrativa autorizada. Eles consultam estado e não corrigem o cadastro:
 
 ```text
-display access-user ip-address <IpAddress>
-```
-
-- Também é possível localizar a sessão pelo *username* do PPPoE com:
-
-```text
-display access-user username <NomeUsuarioPppoe>
-```
-
-- Para ver um **sumário geral dos usuários** no BRAS, use:
-
-```text
+display aaa online-fail-record username <usuario_pppoe>
+display access-user username <usuario_pppoe>
+display access-user ip-address <endereco_ip>
 display access-user summary
-```
-
-Exemplo de saída:
-
-```text
-display access-user summary
-  Normal users                       : 656
-  RUI Local users                    : 0
-  RUI Remote users                   : 0
-  -----------------------------------------------
-  Radius authentication              : 655
-  Radius proxy authentication        : 0
-  No authentication                  : 0
-  Local authentication               : 1
-  Tacacs authentication              : 0
-  -----------------------------------------------
-  Total users                        : 656
-```
-
-- Para ver um **sumário dos usuários conectados em um domínio específico**, use:
-
-```text
 display access-user domain lhisp summary
-```
-
-- Para listar **todos os usuários conectados no domínio específico**, use:
-
-```text
 display access-user domain lhisp
 ```
 
-- O comando ajuda a identificar qual sessão/assinante está usando o IP informado, além de mostrar visão consolidada por domínio e acelerar a análise do incidente.
+- `online-fail-record` ajuda a identificar a causa de uma tentativa negada;
+- `access-user username` e `access-user ip-address` localizam a sessão ativa;
+- os comandos `summary` conferem volume total e por domínio.
 
-## Observações
+No LHISP, use também o diagnóstico RADIUS disponível no acesso do contrato. Ele compara servidor, serviço, usuário, senha, MAC, último NAS e o registro recente do RADIUS sem modificar o acesso.
 
-- A wiki descreve o BRAS Huawei como um conjunto de comandos de configuração e integração com o LHISP.
-- A credencial exibida na wiki foi tratada como informação sensível e deve ser validada antes de qualquer uso.
-- O demo foi usado apenas como referência visual para o contexto de servidores/equipamentos de rede.
-- O conteúdo da wiki mescla instruções para BRAS Huawei e comandos de configuração que afetam a integração com o sistema.
+## Problemas comuns
 
+| Sintoma | Verificação |
+|---|---|
+| RADIUS não autentica | Compare `NAS-IP-Address`, segredo, domínio AAA, usuário e senha; confirme que o servidor está ativo e com RADIUS habilitado. |
+| Autentica, mas não contabiliza | Revise o servidor de accounting e confirme a chegada de início, atualização e encerramento da sessão. |
+| Gráfico de tráfego não aparece | Confira accounting, identificador da sessão, comunidade/versão SNMP e liberação de rede. |
+| Desconexão não chega ao BRAS | Verifique serviço de comandos, fila pendente, SSH, privilégio do usuário e IP cadastrado. |
+| PPPoE informa conflito de IP | Localize a sessão com `display access-user ip-address` e confira se um pool local do Huawei sobrepõe os prefixos do LHISP. |
+| CGNAT é recusado ao salvar | Ajuste a relação entre blocos e use quantidade de portas múltipla de 256. |
 
-## Screenshots sugeridos
+## Segurança operacional
 
-- Tela de servidor/equipamento no demo usada como referência visual: `assets/screenshots/rede-infra/bras-huawei.png`
+- Restrinja console, SSH, SNMP e RADIUS por rede de origem.
+- Não registre credenciais reais, segredos ou comunidades nesta documentação.
+- Faça backup da configuração antes de uma mudança e teste com poucos acessos.
+- Não execute comandos de corte ou alteração em massa sem validar o equipamento e o domínio atuais.
+- Após a implantação, confirme autenticação, accounting, gráfico, desconexão e persistência da configuração após reinício.
 
-![BRAS Huawei no demo](/assets/screenshots/rede-infra/bras-huawei.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![BRAS Huawei](/assets/screenshots/rede-infra/bras-huawei.png)
