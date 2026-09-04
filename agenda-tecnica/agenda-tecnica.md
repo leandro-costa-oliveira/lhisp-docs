@@ -89,6 +89,14 @@ Quando Cobli ou Traccar estiver configurado, a agenda exibe **Otimização de ro
 
 A ordem sugerida pode ser rearranjada manualmente e é persistida de forma transacional. O atalho individual da Cobli aparece apenas quando a OS possui técnico e dispositivo associado.
 
+### Consulta e PDF por integração
+
+A [API de Parceiros](/sistema/api-parceiros) pode consultar as ordens de serviço de um cliente pelo identificador da pessoa ou pelo CPF/CNPJ. A consulta aceita filtros de situação, período e intervalo da data agendada, retorna 25 registros por página por padrão e apresenta primeiro os agendamentos mais recentes.
+
+A integração também pode gerar uma URL temporária para o PDF de uma OS. O documento usa o mesmo conteúdo cadastral e operacional da impressão do painel e é limitado à empresa e à ordem informadas no token. O link é válido por 12 horas e abre sem uma sessão do painel porque a própria URL contém a credencial assinada. Trate-o como informação confidencial: não publique, não encaminhe fora do destinatário e gere outro link após a expiração.
+
+Consultar ou imprimir o PDF não agenda, inicia, conclui nem altera a OS. São operações de leitura; qualquer mudança operacional deve ocorrer pelas ações próprias da agenda ou pela rota de integração correspondente.
+
 ## Operação segura
 
 1. Filtre a filial, situação e período corretos.
@@ -107,5 +115,6 @@ A ordem sugerida pode ser rearranjada manualmente e é persistida de forma trans
 | Aplicativo não conclui a OS | Inicie a OS e forneça fotos, GPS e tipos de anexo obrigatórios. |
 | Cobrança surgiu após a baixa | Verifique as configurações de OS improdutiva ou serviços diversos e o resultado informado. |
 | Rota não é calculada | Selecione técnico com veículo e ao menos duas OS com coordenadas ou endereço geolocalizável. |
+| Link do PDF não abre | Confirme se a URL está completa, se ainda está dentro das 12 horas e se a OS pertence à mesma empresa que emitiu o token. |
 
 ![Agenda Técnica](/assets/screenshots/agenda-tecnica/agenda-tecnica.png)
