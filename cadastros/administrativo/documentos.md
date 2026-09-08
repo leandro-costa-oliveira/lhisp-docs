@@ -116,7 +116,9 @@ Quando o contrato pertence a uma filial e a filial tem o dado preenchido, o valo
 
 Equivalentes legados: `{PROVEDOR_NOME}`, `{PROVEDOR_CNPJ}`, `{PROVEDOR_ENDERECO}`, `{PROVEDOR_NUMERO}`, `{PROVEDOR_BAIRRO}`, `{PROVEDOR_CIDADE}`, `{PROVEDOR_ESTADO}`, `{PROVEDOR_ESTADO_EXTENSO}`, `{PROVEDOR_CEP}`, `{PROVEDOR_TELEFONE}`, `{PROVEDOR_TELEFONE1}`, `{PROVEDOR_TELEFONE2}`, `{PROVEDOR_WEBSITE}`, `<company>`, `<company_addr>`, `<company_city>`, `<company_state>`, `<company_cnpj>`, `<company_phone1>`, `<company_phone2>`.
 
-> **⚠️ Atenção** `{PROVEDOR_ESTADO_EXTENSO}` é preenchido com a **sigla** da UF, não com o nome do estado por extenso.
+`{PROVEDOR_ESTADO_EXTENSO}` devolve o nome do estado por extenso e em caixa alta (`RIO GRANDE DO SUL`), acompanhando o padrão dos demais campos de endereço, que o sistema grava em maiúsculas. Sigla desconhecida é reproduzida como está.
+
+> **⚠️ Atenção** Até a correção aplicada em setembro de 2026, essa tag devolvia a **sigla** da UF, e não o nome do estado.
 
 ### Cliente (pessoa)
 
