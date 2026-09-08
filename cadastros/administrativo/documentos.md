@@ -372,10 +372,11 @@ Mensagens de cobrança, de bloqueio e de envio de boleto por e-mail aceitam toda
 |---|---|
 | `#VENCIMENTO#` | Vencimento da conta |
 | `#NRDOC#` | Número do documento da conta |
-| `#CODIGODEBARRRAS#` | Linha digitável / código de barras |
+| `#CODIGODEBARRAS#` | Código de barras do boleto |
+| `#CODIGODEBARRRAS#` | Código de barras (grafia legada com três letras R; mesmo valor) |
 | `#QRCODEPIX#` | Link do QR Code Pix da cobrança |
 
-> **⚠️ Atenção** `#CODIGODEBARRRAS#` é grafada com **três letras R**, conforme o código do sistema. Escrita com dois R a tag não é substituída.
+> **⚠️ Atenção** Até a correção aplicada em setembro de 2026, o sistema lia o código de barras de um campo inexistente e a tag era sempre substituída por texto vazio. Mensagens antigas com `#CODIGODEBARRRAS#` continuam funcionando, mas prefira `#CODIGODEBARRAS#` em textos novos.
 
 ### Envio de comandos a equipamentos
 
