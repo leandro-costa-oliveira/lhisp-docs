@@ -1,9 +1,17 @@
 ---
 title: Tracking da Documentação
-published: true
+published: false
 editor: markdown
 description: Baselines Git e cobertura usadas para atualizar a documentação de forma incremental
 ---
+
+<!--
+Documento interno de trabalho, não é uma página da wiki.
+
+Vive em `.tracking/` porque o módulo Git do Wiki.js ignora pastas iniciadas
+com ponto, do mesmo modo que `.claude/`. O `published: false` é redundante
+nessa pasta e serve apenas como salvaguarda caso o arquivo seja movido.
+-->
 
 # Tracking da Documentação
 
