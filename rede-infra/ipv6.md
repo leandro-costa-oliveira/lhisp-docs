@@ -28,8 +28,7 @@ Por exemplo, dividir um `/56` com tamanho de alocação `/62` produz 64 subprefi
 - servidor/concentrador previamente cadastrado;
 - bloco IPv6 válido e já encaminhado até o servidor;
 - definição do tamanho que será delegado aos clientes;
-- comunicação operacional entre o LHISP e o Mikrotik, quando houver configuração automática;
-- utilitário `sipcalc` disponível no ambiente do backend legado, pois ele é usado para gerar as subdivisões.
+- comunicação operacional entre o LHISP e o Mikrotik, quando houver configuração automática.
 
 Cadastrar o bloco não cria rotas, anúncios BGP ou regras no equipamento. Esses elementos devem existir de acordo com o projeto da operadora.
 
@@ -101,9 +100,9 @@ Selecione somente a rotina necessária e acompanhe a fila e a conectividade do s
 
 ## Sobre a habilitação do IPv6 no RouterOS
 
-Versões antigas desta página orientavam habilitar um pacote chamado `ipv6`, reiniciar o equipamento e distribuir esse comando em lote. Esse não é o fluxo implementado pela funcionalidade atual: o LHISP pressupõe que os menus `/ipv6` estejam disponíveis e não habilita pacote nem reinicia o roteador ao cadastrar ou atribuir prefixos.
+O LHISP pressupõe que os menus `/ipv6` estejam disponíveis e não habilita pacote nem reinicia o roteador ao cadastrar ou atribuir prefixos.
 
-Em instalações legadas, verifique a versão e os pacotes diretamente no equipamento antes de usar a automação. Não envie o antigo comando indiscriminadamente para todos os servidores.
+Verifique a versão e os recursos IPv6 diretamente no equipamento antes de usar a automação. Não distribua comandos de habilitação de pacotes ou reinicialização indiscriminadamente para todos os servidores.
 
 ## Diagnóstico
 

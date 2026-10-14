@@ -49,7 +49,7 @@ Envie o token no header:
 x-parceiro-auth: Bearer <TOKEN_DO_PARCEIRO>
 ```
 
-Use o domínio da instalação com o prefixo `/api-parceiros`. No ambiente publicado, o proxy do provedor injeta `dbname` e `EmpresaId`; o consumidor externo não precisa informar esses headers. Em desenvolvimento local, sem esse proxy, o integrador precisa fornecer a base e a empresa de teste explicitamente.
+Use o domínio da instalação com o prefixo `/api-parceiros`. A empresa é identificada pela instalação; o consumidor externo usa as credenciais da integração.
 
 O token identifica a integração do provedor. A tela REST não oferece seleção individual de endpoints; disponibilize a credencial somente a consumidores autorizados para as operações expostas.
 
@@ -74,7 +74,7 @@ A confirmação do pré-cadastro pode gravar a venda e depois falhar no faturame
 | A integração não autentica | Verifique se o token foi copiado corretamente e se o header correto está sendo usado. |
 | O parceiro não acessa os endpoints | Confirme se a opção **Ativo** está marcada e se o token ainda é válido. |
 | A documentação não abre | Teste o link da documentação e revise as permissões do ambiente. |
-| Erro de base/empresa | No ambiente publicado, confira o domínio e o proxy da instalação; em desenvolvimento local, confira `dbname` e `EmpresaId`. |
+| Erro de base/empresa | Confira o domínio da instalação e as credenciais; se persistir, encaminhe o erro ao suporte. |
 | Financeiro retorna pessoa não encontrada ou resultado inesperado | Use `PessoaId`; confira se não foi enviado o identificador do contrato ou serviço contratado. |
 | Venda confirmada, instalação não faturada | Confira `data.instalacao` e efetue o faturamento pendente pelo painel. |
 | O histórico não mostra uma chamada REST | O histórico depende dos eventos registrados pela integração; para auditoria de ferramentas MCP, consulte os logs da integração MCP. |

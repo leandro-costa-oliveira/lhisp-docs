@@ -2,7 +2,7 @@
 title: OLT Huawei
 published: true
 editor: markdown
-description: ''
+description: Preparação e integração de OLT Huawei ao cadastro GPON do LHISP.
 ---
 
 # OLT Huawei
@@ -11,6 +11,20 @@ description: ''
 ## Objetivo
 
 Registrar o procedimento descrito na wiki para configurar uma **OLT Huawei** e integrar o equipamento ao ecossistema **LHISP**.
+
+## Integração no LHISP
+
+Cadastre o equipamento em [GPON OLT](/rede-infra/gpon-olt), fabricante **Huawei**, com descrição, IP, porta e credenciais de gerência. Esse cadastro é diferente do [BRAS Huawei](/rede-infra/bras-huawei), registrado em **Servidores**.
+
+O configurador PHP atual da OLT usa **Telnet**, pelo endereço e porta cadastrados, e entra nos modos `enable` e `config`. Habilitar somente SSH no equipamento não atende esse caminho. Restrinja o transporte à rede de gerência autorizada.
+
+**Salvar não é apenas inventário:** depois de gravar o cadastro, o configurador cria/ajusta perfis DBA, service profile e OMCI na OLT. Antes de salvar, confirme modelo, permissões e configuração existente. Depois, confira **Chassi**, ONUs e a rede GPON vinculada; a rede define slot, PON, uplink e VLAN usados no provisionamento.
+
+A aba **Scripts** permite consultar os comandos extraídos do configurador sem se conectar à OLT. Use-a para revisão prévia. **Executar comandos**, autorização de ONU e atualização de acessos são ações operacionais; veja permissões e limites no guia de [GPON OLT](/rede-infra/gpon-olt).
+
+## Limite da preparação inicial
+
+As etapas de console abaixo descrevem objetivos de preparação. O código local não confirma a sequência de configuração inicial de todos os modelos Huawei. Confirmação de placas, interfaces de gerência e regras de acesso dependem do modelo e da versão; valide o manual correspondente antes de executar qualquer comando.
 
 ## Quando usar
 
@@ -61,7 +75,7 @@ sysname NOME-DO-SEU-EQUIPAMENTO
 ### 4. Verificar e ativar placas do chassi
 
 1. Liste as placas instaladas no chassi.
-2. Confirme as placas conectadas e ative-as quando necessário.
+2. Identifique modelo, slot e estado antes de confirmar ou ativar uma placa; não confirme todo o chassi indiscriminadamente.
 3. Valide o status das placas de uplink e PON antes de seguir.
 
 ### 5. Criar usuário administrativo
@@ -81,7 +95,7 @@ Configure a rota padrão apontando para o gateway do ambiente.
 
 ### 8. Controlar o acesso ao equipamento
 
-A wiki menciona regras de acesso para restringir serviços como telnet/gestão conforme os IPs permitidos.
+Restrinja os serviços de gerência aos endereços autorizados. Preserve o acesso usado pelo configurador atual ao ajustar essas regras.
 
 ## Campos importantes
 
@@ -94,12 +108,12 @@ A wiki menciona regras de acesso para restringir serviços como telnet/gestão c
 | **config** | Entrada no modo de configuração. |
 | **sysname** | Nome da OLT na rede. |
 | **display board 0** | Comando para visualizar as placas do chassi. |
-| **board confirm 0** | Confirma as placas instaladas/ativadas. |
+| **board confirm** | Operação de confirmação de placa; parâmetros dependem do modelo/slot e devem ser revisados antes da execução. |
 | **terminal user name** | Criação de usuário local para administração. |
 | **interface meth 0** | Configuração de gerenciamento *out of band*. |
 | **interface vlanif 250** | Exemplo de gerenciamento *inband* via VLAN. |
 | **ip route-static** | Configura a rota padrão do equipamento. |
-| **sysman firewall telnet enable** | Exemplo de controle de acesso exposto na wiki. |
+| **IP, Porta, Usuário e Senha** | Destino e credenciais usados pelo configurador Telnet do cadastro GPON. |
 
 ## Resultado esperado
 
@@ -116,7 +130,8 @@ A wiki menciona regras de acesso para restringir serviços como telnet/gestão c
 | `enable` ou `config` não funcionam | Confirme que a sessão foi aberta com credencial administrativa. |
 | A OLT não responde no IP de gerenciamento | Revise IP, máscara, VLAN de gerenciamento e gateway. |
 | Placas do chassi não aparecem corretamente | Refaça a leitura das placas e confirme o estado esperado antes de habilitar serviços. |
-| O acesso remoto fica bloqueado | Revise as regras de controle de acesso descritas na wiki. |
+| SSH funciona, mas a integração falha | Confira o transporte Telnet usado pelo configurador, a porta cadastrada e as regras de gerência. |
+| Salvar alterou perfis na OLT | O gancho de salvamento configura DBA, service profile e OMCI; revise a saída e os perfis existentes. |
 
 ## Observações
 

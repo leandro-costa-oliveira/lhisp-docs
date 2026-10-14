@@ -1,57 +1,36 @@
 ---
-title: Atualização do banco e canais de migrations
-description: Origem das migrations, seleção de canal, aplicação e limites do lhisp-dbupdater.
+title: Atualização da instalação
+description: Preparação, acompanhamento e conferência de uma atualização do LHISP.
 published: true
 editor: markdown
 ---
 
-# Atualização do banco e canais de migrations
+# Atualização da instalação
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Referência técnica baseada em `lhisp-manager` e `lhisp-dbupdater`, examinados em **14/10/2026**. Não constitui registro de atualização de uma instalação.
+Coordene atualizações com o responsável pela instalação e o suporte. Este guia reúne as verificações do provedor; não contém comandos de implantação ou de alteração do banco de dados.
 
-## Origem e publicação
+## Antes da atualização
 
-O schema é versionado no `lhisp-manager`, em `src/database/updates/lhupdate-<N>.sql`. Atualizações antigas podem estar em diretórios `src/database/updates-<faixa>/`. A versão aplicada fica em `LHISP.VERSAO` de cada banco.
+1. Confirme o escopo, a janela prevista e os responsáveis pelo acompanhamento.
+2. Identifique as empresas ou filiais abrangidas e os processos que podem ser afetados.
+3. Confira a existência de backup recente e o procedimento de recuperação. Consulte [Backup e recuperação](/operacao/backup-e-recuperacao).
+4. Combine quais atividades devem ser interrompidas durante a janela e como será comunicada a conclusão.
+5. Registre as operações que precisarão ser conferidas após a atualização, incluindo integrações utilizadas pelo provedor.
 
-O workflow `.forgejo/workflows/deploy-updates.yml` publica SQLs e `version.txt` no bucket de atualizações. Os canais `development` e `master` recebem arquivos em prefixos próprios. A publicação envia os SQLs antes de `version.txt`; o canal `master` também mantém a publicação legada na raiz.
+O tempo e o impacto dependem da instalação e da atualização. Confirme essas condições antes de comunicar uma previsão aos usuários.
 
-## Seleção de canal no updater
+## Conferir a conclusão
 
-| `LHISP_UPDATES_CHANNEL` | Origem relativa no bucket |
-|---|---|
-| Ausente ou vazia | Raiz legada. |
-| `development` | Prefixo `development/`. |
-| `master` | Prefixo `master/`. |
-| Outro valor não vazio | Erro de inicialização; o updater não aceita o canal. |
+Após a liberação pelo responsável, verifique o acesso ao sistema, os menus utilizados e uma amostra dos cadastros relevantes em cada empresa ou filial abrangida. Confira os fluxos financeiros, de atendimento e de rede utilizados pelo provedor conforme o escopo combinado.
 
-O canal do banco deve corresponder às imagens previstas para o ambiente. Trocar a variável não reverte migrations já aplicadas. O nome da branch do checkout local também não seleciona o canal em tempo de execução.
+Uma mensagem de conclusão isolada não substitui a conferência dos resultados. Não execute operações financeiras ou alterações em equipamentos apenas para testar: combine verificações que evitem efeitos indevidos.
 
-## Comportamento da aplicação
+## Se houver divergência
 
-1. O updater prioriza as bases de `/etc/lhisp/databases.json` e ignora entradas com `desativarLhisp` habilitado. Se o arquivo não existir, usa um fallback embutido; não o trate como configuração válida da implantação.
-2. Para cada base, lê a versão atual e consulta `version.txt` do canal escolhido.
-3. Busca os arquivos `lhupdate-<N>.sql` em ordem crescente até a versão publicada.
-4. Divide cada arquivo pelo caractere `;`, executa os trechos e atualiza `LHISP.VERSAO` dentro do callback transacional.
-5. Depois de processar o schema da base, tenta atualizar os menus consultando a gerência.
+Registre a página, a empresa ou filial, o identificador do registro, o horário e a mensagem apresentada. Informe se a operação já estava em andamento antes da atualização e se houve resultado parcial.
 
-O runner não interpreta SQL como um cliente completo: não use `;` em comentários/strings nem dependa de `DELIMITER` ou de procedures que exijam esse tratamento. A chamada transacional também não garante rollback de DDL que faça commit implícito no MySQL/MariaDB.
+Encaminhe as evidências ao [suporte](/suporte/contato-suporte), ocultando dados pessoais desnecessários e credenciais. Aguarde a orientação antes de repetir ações que possam gerar cobranças, documentos fiscais ou alterações de rede.
 
-## Como verificar uma atualização autorizada
-
-Antes de executar o procedimento de implantação da instalação, identifique o canal, as versões de origem/destino, o intervalo de SQLs e a compatibilidade das imagens. Prepare backup e recuperação conforme o procedimento operacional daquele ambiente.
-
-Após a execução, confira **cada base esperada**, a versão e as mensagens de erro. Consulta de referência, no banco correto:
-
-```sql
-SELECT VERSAO FROM LHISP LIMIT 1;
-```
-
-No código atual, erros de uma base são capturados para permitir processar as demais; falhas de menus também são registradas separadamente. O processo pode terminar com código zero e imprimir `DONE` mesmo após falha de uma base. Portanto, saída do processo isoladamente não comprova sucesso de todas as atualizações.
-
-Não avance `LHISP.VERSAO` manualmente para ocultar uma falha. Verifique o SQL afetado e o estado real antes de repetir uma execução: alterações DDL parcialmente aplicadas podem persistir.
-
-## Pendências operacionais
-
-Ainda faltam neste repositório procedimentos homologados de backup/restauração, matriz de compatibilidade entre imagens e schema, duração/bloqueios das migrations e recuperação após falha parcial. Esses itens dependem da implantação e precisam de validação em ambiente apropriado. Nenhum updater, banco ou servidor foi executado durante esta revisão documental.
+Não altere dados diretamente no banco para contornar um erro de atualização. A retomada ou recuperação deve considerar o estado real da instalação e as operações realizadas durante a janela.

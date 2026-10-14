@@ -2,52 +2,33 @@
 title: Notificações dos Contratos
 published: true
 editor: markdown
-description: ''
+description: Revise mensagens registradas por contrato, canal e status da integração sem reenviá-las.
 ---
 
 # Notificações dos Contratos
 
-## Objetivo
-
-Revisar as notificações relacionadas aos contratos do sistema.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Notificações dos Contratos** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Notificações dos Contratos**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Notificações dos Contratos**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela `/relatorios/notificacoes_contrato` consulta **registros de notificação** dos contratos acessíveis ao usuário. Uma notificação pode conter mais de um canal; uma linha não equivale a uma mensagem entregue por canal nem a um cliente único.
+
+## Filtros e operação
+
+1. Abra o relatório com sessão e acesso ao menu/Contratos.
+2. Selecione uma ou mais **Filiais**, se necessário.
+3. Informe **Data Inicial** e **Data Final**, relativas à criação da notificação. O padrão é o mês atual.
+4. Em **Filtros**, selecione os tipos **SMS**, **Email**, **App** e **WhatsApp**.
+5. Confira as linhas e use **Imprimir** quando necessário.
+
+A consulta combina os canais selecionados com **OU**: basta um dos indicadores estar marcado no registro. Os quatro canais começam selecionados. Desmarcar todos não constitui um modo confiável de pedir resultado vazio; mantenha ao menos um para uma consulta definida.
+
+## Resultado e interpretação
+
+A grade mostra filial, contrato, cliente, tipos, texto da notificação e **Status**. O status é o texto registrado pela integração; esta tela não traduz todos os códigos nem consulta o provedor em tempo real para comprovar entrega.
+
+O período usa a criação do registro. Não filtra pelo momento de envio, confirmação, leitura ou recebimento pelo cliente. Os limites são enviados sem expansão explícita do último dia para 23:59:59; confira registros com horário no dia final quando faltar uma mensagem esperada.
+
+## Limitações operacionais
+
+O botão **Atualizar** não força nova leitura do servidor. Para confirmar uma mudança de status ocorrida depois da abertura, recarregue a página.
+
+A tela imprime pelo navegador e não oferece CSV, reenvio, cancelamento ou alteração de mensagens. Para investigar uma falha, confira contrato, canal e texto de status e use o fluxo próprio da integração. O conteúdo pode conter dados pessoais; mantenha a impressão no atendimento autorizado.

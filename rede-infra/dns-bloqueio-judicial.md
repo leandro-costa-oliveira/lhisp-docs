@@ -24,7 +24,7 @@ O backend expõe dois arquivos:
 
 Ao gerar o `.conf`, o backend tenta normalizar entradas legadas: remove caracteres não imprimíveis, usa o trecho posterior a ponto e vírgula, trata prefixos de protocolo, descarta caminhos após `/` e ignora valores sem ponto. Domínios repetidos no resultado são emitidos uma só vez. O tratamento atual de `https:/` antes de `https://` pode descartar uma URL HTTPS antiga; confira o `.conf` gerado e corrija o cadastro para conter somente o domínio.
 
-O contexto da empresa é necessário para gerar a lista correta. Use a URL da própria instância e os cabeçalhos/contexto definidos na implantação; ao acessar diretamente o backend, confirme `dbname` e `EmpresaId`. Uma configuração obtida no tenant errado pode aplicar bloqueios de outra base ou retornar lista vazia.
+Use a URL da instalação e a configuração de acesso fornecida para a empresa correta. Uma configuração de outra empresa pode aplicar uma lista de bloqueios indevida ou retornar lista vazia. Se houver divergência, encaminhe o caso ao suporte.
 
 ## Manter a lista no LHISP
 
@@ -66,7 +66,7 @@ A extração usa texto e posição das colunas do PDF. Não há OCR para arquivo
 
 ## Opção de DNS no cadastro MikroTik
 
-O cadastro de servidor exibe **DNS Bloqueio Judicial** para equipamentos MikroTik marcados como **Servidor de DNS**, além de um botão de sincronização após salvar. No checkout auditado em 14/10/2026, a interface chama `/api/DnsBloqueioJudicial.sincronizarServidor`, mas essa operação não foi localizada nas rotas ou no BI do backend. A presença do campo e do botão não comprova aplicação no equipamento. Confirme a compatibilidade das versões instaladas antes de depender desse fluxo; a publicação BIND descrita nesta página é um caminho separado.
+O cadastro de servidor exibe **DNS Bloqueio Judicial** para equipamentos MikroTik marcados como **Servidor de DNS**, além de um botão de sincronização após salvar. A presença do campo e do botão não comprova aplicação no equipamento. Confirme a disponibilidade da sincronização com o suporte antes de depender desse fluxo; a publicação BIND descrita nesta página é um caminho separado.
 
 ## Configurar o BIND
 
@@ -96,7 +96,7 @@ Não escreva a resposta HTTP diretamente sobre o arquivo ativo. Falha de rede, e
 
 ## Automatização
 
-O repositório do LHISP não contém uma tarefa que atualize automaticamente o BIND externo. Agende no próprio servidor DNS um script que:
+O LHISP não agenda a atualização do BIND externo por esse fluxo. A equipe responsável pelo DNS deve configurar a automação no próprio servidor, com um script que:
 
 1. use trava para impedir execuções simultâneas;
 2. baixe zona e configuração para temporários;

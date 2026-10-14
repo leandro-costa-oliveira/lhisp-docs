@@ -2,52 +2,45 @@
 title: Clientes com Mensalidades Pagas no Período
 published: true
 editor: markdown
-description: ''
+description: Entenda a seleção legada de contratos por quantidade de títulos pagos e os limites da conferência de mensalidades.
 ---
 
 # Clientes com Mensalidades Pagas no Período
 
-## Objetivo
-
-Revisar clientes com mensalidades quitadas no período.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes com Mensalidades Pagas no Período** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes com Mensalidades Pagas no Período**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes com Mensalidades Pagas no Período**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+O relatório legado seleciona contratos a partir de títulos **pagos com vencimento no intervalo de meses**. O caminho interno é `/lgc/relatorios|clientes_mensalidades_pagas_no_periodo`.
+
+**A seleção atual não comprova que todas as mensalidades de cada mês estão pagas.** Apesar do aviso da tela, a consulta conta títulos pagos e compara essa quantidade com o número de meses. Não verifica cada competência, não elimina contratos com outras contas abertas e não restringe o tipo a Mensalidade.
+
+## Usar a consulta
+
+1. Informe **Período Inicial** e **Período Final**, cada um com mês e ano.
+2. Se necessário, escolha **Vencimento** e marque **Somente pagamentos em dias**.
+3. Clique em **Exibir** e confira os contratos encontrados.
+4. Use **Imprimir** ou **Download** somente depois de revisar o recorte.
+
+Os períodos iniciam no mês corrente. O filtro usa o primeiro dia do mês inicial e o último dia do mês final, comparando **vencimento**, não data de pagamento. O campo Vencimento restringe o dia configurado no **serviço contratado**, e não extrai o dia de cada título. As opções vêm dos dias de vencimento configurados na empresa.
+
+**Somente pagamentos em dias** usa a classificação de pagamento já gravada no título. Não recalcula atraso durante a consulta.
+
+## Critério efetivamente aplicado
+
+Para cada contrato, o sistema exige:
+
+- contas na situação paga, com vencimento no intervalo;
+- quantidade dessas contas maior ou igual à quantidade de meses, contando início e fim;
+- quando informado, dia de vencimento do serviço igual ao escolhido;
+- quando marcada, classificação de pagamento em dia.
+
+Exemplo: numa consulta de janeiro a março, três títulos pagos com vencimento em janeiro podem atingir a quantidade exigida, mesmo com fevereiro ou março ainda abertos. Vários serviços no mesmo contrato também aumentam a contagem.
+
+A consulta usa a empresa e o escopo de filiais da sessão. **O seletor Filial do formulário não é repassado à consulta nesta implementação.** Não o use como garantia de restringir o resultado a uma filial específica.
+
+## Resultado e exportação
+
+A listagem mostra **Filial, Contrato, Cliente, Endereço e Telefones** e conta contratos retornados. O endereço vem do contrato; uma pessoa com vários contratos pode aparecer várias vezes. O título interno do painel também usa a expressão “Contas a Pagar”, mas a origem é o contas a receber de clientes.
+
+**Download** gera o CSV legado com esses dados de contato. A saída não possui cabeçalho de colunas nem quebra de linha explícita entre contratos; confira sua estrutura antes de importá-la em outra ferramenta. A impressão utiliza a listagem visual.
+
+Para confirmar quitação, consulte cada contrato no [relatório de contas a receber](/relatorios/contas-a-receber) ou na [aba financeira do contrato](/contratos/gerar-contas-cliente), verificando competências, tipos, contas abertas, pagamentos parciais e negociações. Este relatório isolado não é uma certidão de adimplência.

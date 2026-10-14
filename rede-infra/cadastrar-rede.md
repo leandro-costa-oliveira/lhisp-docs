@@ -22,7 +22,7 @@ Cadastre primeiro os elementos referenciados pela rede:
 
 - [setor](/rede-infra/setores), para organizar a área de atendimento;
 - [servidor](/rede-infra/servidores), que concentra e provisiona os acessos;
-- [prefixos IPv4 e IPv6](/rede-infra/prefixos-de-ip), quando a rede distribuir endereços;
+- prefixos IPv4 e [IPv6](/rede-infra/ipv6) na aba correspondente do [servidor](/rede-infra/servidores), quando a rede distribuir endereços;
 - ponto de acesso Wireless ou OLT GePON/GPON, quando aplicável.
 
 A descrição deve ser única. O backend também impede usar como interface da rede uma das interfaces de saída configuradas no servidor.
@@ -70,7 +70,7 @@ Essas opções afetam contratos e ordens de serviço, não apenas a exibição d
 
 ## Automações ao salvar
 
-Ao criar uma rede, o backend grava o vínculo e solicita sua configuração no servidor. Em rede GPON, também chama o configurador da OLT para criar a rede na uplink indicada. Por fim, publica um evento de cadastro para os demais serviços.
+Ao criar uma rede, o LHISP grava o vínculo e solicita sua configuração no equipamento. Em rede GPON, também solicita a criação da rede na uplink indicada da OLT.
 
 Alterar uma rede pode ter efeitos maiores:
 
@@ -79,25 +79,25 @@ Alterar uma rede pode ter efeitos maiores:
 - se o servidor mudou, acessos não cancelados nem suspensos perdem as associações antigas de prefixos, recebem os próximos subprefixos livres do novo servidor quando disponíveis e são removidos do equipamento antigo e adicionados ao novo;
 - o servidor gravado nos acessos acompanha o novo servidor da rede;
 - em GPON, a nova configuração também é aplicada à OLT;
-- um evento de alteração é publicado.
+- o equipamento recebe a solicitação de atualização.
 
 Por isso, trate mudança de servidor, prefixo, tecnologia, VLAN, slot ou PON como migração de rede. Planeje janela, confira disponibilidade de endereços e valide os comandos/equipamentos depois da operação.
 
 ## TR-069
 
-Quando o módulo comercial TR-069 está ativo e a rede já foi salva, a página apresenta o painel de autoconfiguração de CPEs. A ativação exige VLAN e pool CIDR. O setup é aplicado de forma assíncrona pelo daemon e passa pelos estados **PENDENTE**, **APLICADO** ou **ERRO**; a tela também permite reaplicar ou desativar.
+Quando o módulo comercial TR-069 está ativo e a rede já foi salva, a página apresenta o painel de autoconfiguração de CPEs. A ativação exige VLAN e pool CIDR. A configuração pode permanecer pendente até a aplicação e passa pelos estados **PENDENTE**, **APLICADO** ou **ERRO**; a tela também permite reaplicar ou desativar.
 
 Salvar os dados básicos da rede não significa que o setup TR-069 já foi aplicado. Aguarde o status e examine a mensagem de retorno.
 
 ## Transferir acessos
 
-A função legada **Transferir acessos** move todos os acessos de uma rede de origem para outra. Para cada acesso, o LHISP remove a configuração anterior, altera a rede e recria a configuração. Se o servidor for diferente, também desassocia os prefixos antigos e tenta reservar os próximos IPv4 e IPv6 disponíveis no destino.
+Na listagem de **Redes**, clique em **Transferir Acessos** na linha da origem, selecione a **Rede de Destino** e confirme em **Transferir**. A função move todos os acessos da origem para o destino. Para cada acesso, o LHISP remove a configuração anterior, altera a rede e recria a configuração. Se o servidor for diferente, também desassocia os prefixos antigos e tenta reservar os próximos IPv4 e IPv6 disponíveis no destino.
 
 A rotina processa um acesso por transação. Uma falha no meio pode deixar parte dos clientes já transferida; valide contagem, prefixos, autenticação e conectividade após a execução.
 
 ## Exclusão
 
-A rede não pode ser apagada enquanto houver nela acessos cujo serviço esteja **ATIVO** ou **BLOQUEADO**. Transfira ou regularize os acessos antes. A remoção também comunica o configurador da tecnologia e publica evento para os serviços integrados.
+A rede não pode ser apagada enquanto houver nela acessos cujo serviço esteja **ATIVO** ou **BLOQUEADO**. Transfira ou regularize os acessos antes. A remoção também solicita a atualização do equipamento correspondente.
 
 Não interprete a ausência de acessos ativos como garantia de que a rede é descartável: confira acessos suspensos/cancelados, histórico, OLT, prefixos e dependências operacionais.
 
@@ -111,6 +111,6 @@ Não interprete a ausência de acessos ativos como garantia de que a rede é des
 | Novo acesso informa rede lotada | Revise o limite e a quantidade de acessos já liberados; não aumente sem validar capacidade real. |
 | Liberação exige POP | Selecione o POP ou confira a configuração que delega a escolha à OS de instalação. |
 | Cliente perdeu IP após mudar o servidor | Verifique se havia subprefixos livres no novo servidor e revise as associações IPv4/IPv6. |
-| TR-069 permanece pendente ou com erro | Confira daemon, VLAN, pool CIDR e mensagem do setup; reaplique somente após corrigir a causa. |
+| TR-069 permanece pendente ou com erro | Confira VLAN, pool CIDR e mensagem do setup; se persistir, acione o suporte. Reaplique somente após corrigir a causa. |
 
 ![Cadastro de rede](/assets/screenshots/rede-infra/cadastrar-rede-form.png)

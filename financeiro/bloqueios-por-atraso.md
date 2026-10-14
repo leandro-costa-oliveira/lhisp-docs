@@ -13,9 +13,12 @@ Esta rotina relaciona inadimplência financeira ao estado operacional do serviç
 
 O bloqueio não cancela nem baixa a dívida. Ele muda a situação do serviço, atualiza a situação do contrato, bloqueia os acessos de rede associados e propaga a ação para OTT e telefonia vinculados. O desbloqueio faz o caminho operacional inverso e registra ambas as ações no histórico do serviço.
 
+O provedor escolhe e configura a quantidade de dias para bloqueio. Essa definição deve observar a regulamentação aplicável da Anatel, as condições contratuais e a política do provedor. A configuração no sistema não verifica automaticamente o cumprimento de prazos, notificações e demais condições exigidas para cada bloqueio.
+
 ## Antes da ação em lote
 
 - Use **Visualizar** com os mesmos filtros da ação.
+- Confirme as notificações, os prazos aplicáveis e eventuais contestações antes de autorizar o bloqueio.
 - Confira pagamentos e retornos bancários ainda pendentes de processamento.
 - Revise títulos prorrogados: os dias de atraso consideram a prorrogação, quando existe.
 - Identifique exceções comerciais. Serviços marcados para não sofrer bloqueio automático também são excluídos desta tela.
@@ -60,7 +63,7 @@ Desbloquear não altera a conta a receber. Se a dívida continuar aberta, o serv
 
 ## Relação com a automação financeira
 
-O daemon financeiro também pode bloquear serviços pós-pagos quando **Bloqueio automático** está habilitado e **Dias para corte** é maior que zero. Essa automação não executa cobranças nem bloqueios aos sábados e domingos e pula feriados no momento do bloqueio. Serviços pré-pagos possuem tratamento próprio: podem ser bloqueados após o vencimento da conta.
+A automação financeira também pode bloquear serviços pós-pagos quando **Bloqueio automático** está habilitado e **Dias para corte** é maior que zero. Essa automação não executa cobranças nem bloqueios aos sábados e domingos e pula feriados no momento do bloqueio. Serviços pré-pagos possuem tratamento próprio: podem ser bloqueados após o vencimento da conta, observadas as condições aplicáveis definidas pelo provedor.
 
 A tela manual usa os filtros e confirmações do operador; não depende de ser dia útil. Portanto, não a utilize como simples “prévia” da próxima execução automática sem considerar essas diferenças.
 

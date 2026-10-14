@@ -43,7 +43,7 @@ CPEs que usam TR-181 para os parâmetros de PPPoE/Wi-Fi, múltiplas instâncias 
 | **PROVISIONADO** | A CPE aceitou os parâmetros enviados, ou o acesso não tinha parâmetros e foi registrado somente como inventário. Confira a mensagem retornada. |
 | **DESCONHECIDA** | O MAC informado não corresponde a um acesso válido. |
 | **ERRO_PROV** | A CPE retornou `Fault` durante o provisionamento. |
-| **SEM_MODULO** | Valor previsto no contrato de estados. No fluxo atual, o ACS responde ao `Inform` sem inventariar nem provisionar a CPE, e não publica esse callback. |
+| **SEM_MODULO** | Módulo indisponível. Sem o módulo ativo, a CPE não é inventariada nem provisionada; esse rótulo pode não aparecer na tela. |
 
 ## Limitações
 
@@ -51,7 +51,7 @@ CPEs que usam TR-181 para os parâmetros de PPPoE/Wi-Fi, múltiplas instâncias 
 - A ativação, desativação e reaplicação são feitas no cadastro de cada rede.
 - Não use comandos de configuração sugeridos genericamente para um fabricante. Esses comandos não fazem parte da implementação do LHISP e variam por equipamento e firmware.
 - Quando houve envio de parâmetros, **PROVISIONADO** confirma a resposta ao `SetParameterValues`; a mensagem pode indicar que é necessário reiniciar a CPE. Em casos de somente inventário, esse status não comprova alteração de configuração. Valide PPPoE e Wi-Fi no equipamento homologado.
-- As sessões CWMP ficam em memória e expiram após 60 segundos de inatividade. Reinício do daemon ou diálogo interrompido não garante callback **ERRO_PROV**; investigue os logs e o próximo `Inform` se a tela permanecer com estado antigo.
+- Uma comunicação interrompida pode deixar a tela com o estado anterior, sem mostrar **ERRO_PROV**. Confira a conectividade da CPE e aguarde nova comunicação; se persistir, encaminhe ao suporte.
 
 ## Problemas comuns
 
@@ -61,11 +61,5 @@ CPEs que usam TR-181 para os parâmetros de PPPoE/Wi-Fi, múltiplas instâncias 
 | CPE responde com falha | Confira o modelo de dados e os caminhos CWMP aceitos pelo firmware. |
 | PPPoE funciona, mas Wi-Fi não é alterado | Verifique se o acesso possui Wi-Fi habilitado, SSID e senha, e se a CPE aceita os caminhos TR-098 usados pelo ACS. |
 | Rede não aparece na consulta | Confirme que o TR-069 está ativo no cadastro da rede. |
-
-## Referências de implementação
-
-- `lhisp-daemon-tr069/src/services/Provisionamento.ts`
-- `lhisp-daemon-tr069/src/services/MacDiscovery.ts`
-- `lhisp-frontend/src/paginas/redeinfra/tr069/Tr069.tsx`
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

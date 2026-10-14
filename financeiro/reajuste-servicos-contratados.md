@@ -13,6 +13,8 @@ Esta rotina altera o valor cobrado nos serviços já contratados. O reajuste pod
 
 O preço do plano e o preço do serviço contratado são dados distintos. Reajustar apenas o plano não corrige contratos existentes; reajustar apenas os serviços não muda o valor oferecido em novas contratações.
 
+Planeje o reajuste e a comunicação prévia aos clientes conforme a regulamentação aplicável e as condições contratuais. A elegibilidade calculada pela tela não substitui essa conferência pelo provedor.
+
 ## Como a elegibilidade é calculada
 
 Entram na consulta serviços em situação **ATIVO** ou **BLOQUEADO** que cumpram a carência informada. A data de referência é a mais recente entre:
@@ -38,6 +40,8 @@ A prévia é recalculada no navegador e não grava alterações.
 
 ## Aplicar o reajuste
 
+Antes de executar, confirme que os avisos prévios e as demais condições aplicáveis ao reajuste foram atendidos.
+
 1. Mantenha os filtros usados na conferência e clique em **Reajustar**.
 2. No modal, confirme se deseja **Reajustar Plano**.
 3. Confirme se deseja **Reajustar Contas a Receber**.
@@ -53,6 +57,8 @@ Disponível somente quando um plano foi selecionado. Altera o valor cadastral de
 ### Reajustar serviços contratados
 
 Sempre ocorre para todos os serviços considerados elegíveis na execução. O sistema atualiza o valor e a data do último reajuste, adiciona histórico e dispara a notificação de reajuste configurada para o contrato.
+
+Essa notificação é disparada durante a execução do lote e não substitui a comunicação prévia exigida para o reajuste.
 
 ### Reajustar contas a receber
 
@@ -86,7 +92,7 @@ O cálculo em reais é aplicado corretamente, mas os textos atuais de histórico
 - Se for reajustar mensalidades existentes, selecione explicitamente o plano e confira se nenhuma delas já foi remetida.
 - Valores percentuais são arredondados para duas casas decimais.
 - O acréscimo fixo incide por serviço e por conta elegível, não sobre o total do contrato.
-- Gere uma listagem final e confronte amostras de cada filial antes de comunicar os clientes.
+- Gere uma listagem final e confronte amostras de cada filial para conferir a execução do lote.
 - Não repita a operação apenas porque a tela perdeu os filtros após o sucesso; o primeiro lote pode já ter sido aplicado.
 
 ## Diagnóstico

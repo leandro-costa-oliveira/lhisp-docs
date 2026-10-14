@@ -36,7 +36,7 @@ Configurar o bot e o chat usados pelo LHISP para enviar notificações ao Telegr
 
 ## Funcionamento
 
-O backend usa os dois campos da empresa ao executar `Empresa.NotificarTelegram`. Se token ou Chat ID não estiver configurado, a operação retorna erro. Falhas no envio ao Telegram também são reportadas pela ação.
+O envio usa os dois campos da empresa. Se token ou Chat ID não estiver configurado, a operação retorna erro. Falhas no envio ao Telegram também são reportadas pela ação.
 
 Essa configuração não corresponde à tela **Notificações em Massa**, que possui canais e filtros próprios.
 
@@ -53,11 +53,5 @@ Essa configuração não corresponde à tela **Notificações em Massa**, que po
 - Trate o token do bot como credencial secreta.
 - Não publique o token em chamados, capturas de tela ou documentação.
 - Revogue e gere outro token se houver exposição.
-
-## Referências de implementação
-
-- `lhisp-php/web/form/sistema/empresa/tab_preferencias.php`
-- `lhisp-php/web/form/sistema/empresa.js`
-- `lhisp-php/web/inc/actions/Empresa.php`
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

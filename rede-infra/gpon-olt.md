@@ -21,27 +21,27 @@ A OLT se relaciona diretamente com:
 - **Acessos de clientes:** o acesso registra OLT, slot, PON, VLAN, número de série e modo da ONU. Ao criar um acesso, o LHISP autoriza a ONU e depois aplica a configuração do cliente.
 - **Alterações e cancelamentos:** a troca da ONU pode desautorizar a anterior e autorizar a nova. A remoção do acesso tenta retirar sua configuração na OLT; alguns fluxos de cancelamento também desautorizam e removem o registro local da ONU.
 - **Agenda técnica:** operações de liberação de acesso podem obter o configurador da OLT para concluir o provisionamento.
-- **Monitoramento:** o banco aceita ocorrências de disponibilidade ligadas a uma GPON OLT, embora o daemon de monitoramento atual trate ativamente os servidores e apenas modele esse vínculo para OLT.
+- **Monitoramento:** o cadastro da OLT, por si só, não confirma coleta ativa de disponibilidade. Confira quais informações estão sendo atualizadas na sua instalação.
 
 Uma inconsistência neste cadastro pode afetar vários clientes ao mesmo tempo. Mudanças de fabricante, modelo, IP ou credenciais devem ser tratadas como alteração de infraestrutura.
 
 ## Fabricantes, modelos e transporte
 
-O fabricante e a versão selecionam a classe de integração; não são campos meramente informativos.
+O fabricante e a versão definem os comandos compatíveis; não são campos meramente informativos.
 
-| Fabricante | Modelos/versões expostos | Caminho atual |
+| Fabricante | Modelos/versões expostos | Conexão ao equipamento |
 |---|---|---|
-| **Fiberhome** | AN5000 RP0700, variações AN5000, AN6000 e AN5000 RP1200 | Configuradores PHP por versão, via Telnet. |
-| **Huawei** | Sem seletor de versão específico | Configurador PHP via Telnet para várias operações; parte das operações também pode ser encaminhada ao daemon de OLT. |
-| **Intelbras** | 8820i e G8/G08 | Configuradores PHP distintos, via SSH. |
-| **ZTE** | C600/C610/C620/C650 e C300/C320 | Configuradores PHP distintos, via SSH. |
-| **Datacom** | Sem seletor de versão específico | Configurador PHP via SSH. |
-| **Nokia** | Sem seletor de versão específico | Integração por EventBus com o `lhisp-daemon-olt`, que atualmente implementa Nokia por conexão Telnet. |
-| **VSOL** | V1600 com firmware V1.5 ou V2.3 | Configuradores PHP distintos, via SSH. |
+| **Fiberhome** | AN5000 RP0700, variações AN5000, AN6000 e AN5000 RP1200 | Telnet. |
+| **Huawei** | Sem seletor de versão específico | Telnet. Confirme a disponibilidade da operação desejada. |
+| **Intelbras** | 8820i e G8/G08 | SSH. |
+| **ZTE** | C600/C610/C620/C650 e C300/C320 | SSH. |
+| **Datacom** | Sem seletor de versão específico | SSH. |
+| **Nokia** | Sem seletor de versão específico | Telnet. |
+| **VSOL** | V1600 com firmware V1.5 ou V2.3 | SSH. |
 
 Há identificadores legados de fabricante para Intelbras G8, ZTE C300 e VSOL V2.3. O código continua aceitando esses registros e os converte para o configurador equivalente. Em novos cadastros, use a marca consolidada e escolha o modelo em **Versão**.
 
-O `lhisp-daemon-olt` possui configuradores somente para Huawei e Nokia. Para marcas encaminhadas ao EventBus sem implementação no daemon, a operação é registrada como fabricante não implementado. As demais marcas conhecidas são atendidas diretamente pelos configuradores PHP.
+A disponibilidade de cada operação depende do fabricante e modelo. Ao receber mensagem de fabricante não implementado, confirme o cadastro e encaminhe o caso ao suporte.
 
 ## Cadastro e credenciais
 
@@ -62,12 +62,11 @@ O cadastro exige `gpon_add`, a alteração `gpon_edit` e a exclusão `gpon_del`.
 
 ### Efeito ao salvar
 
-Depois de gravar o registro, o LHISP chama `afterSave` no configurador:
+Depois de gravar o registro:
 
 - Huawei cria ou ajusta perfis DBA, service profile e OMCI;
 - Datacom cria perfis GPON e persiste a configuração;
-- Nokia recebe um evento de cadastro/alteração, mas o daemon atual não trata esses dois tópicos como uma ação de configuração;
-- Fiberhome, Intelbras, ZTE e VSOL não executam ação adicional nesse gancho atual.
+- Nokia, Fiberhome, Intelbras, ZTE e VSOL não executam configuração adicional somente pelo salvamento.
 
 Portanto, **Salvar** pode se conectar imediatamente ao equipamento e alterar sua configuração, dependendo da marca.
 
@@ -77,7 +76,7 @@ As abas são montadas conforme o fabricante. A disponibilidade e o formato dos d
 
 ### Chassi
 
-Consulta slots, placas e portas PON/uplink. Algumas telas permitem confirmar uma placa detectada, ação que envia comando ao equipamento. A ação genérica **Deletar placa** chama um método inexistente no DAO base atual; não a considere funcional até correção e não use essa tentativa como confirmação de que uma placa foi removida.
+Consulta slots, placas e portas PON/uplink. Algumas telas permitem confirmar uma placa detectada, ação que envia comando ao equipamento. A ação genérica **Deletar placa** não está funcional; não use essa tentativa como confirmação de que uma placa foi removida.
 
 ### ONUs autorizadas
 
@@ -87,7 +86,7 @@ Lê as ONUs já autorizadas na OLT, com filtros por slot, PON, modelo e número 
 
 Mostra ONUs descobertas que ainda aguardam autorização. O resultado fica em cache por aproximadamente 30 segundos fora do desenvolvimento. A rotina impede duas consultas simultâneas com a mesma chave durante o processamento.
 
-Autorizar ou desautorizar por essas abas altera diretamente a OLT. O fluxo genérico dessas ações apresenta inconsistências no código atual, inclusive na remoção do registro local após desautorizar: ele usa o ID da OLT onde seria necessário identificar a ONU. Use preferencialmente o fluxo de acesso do contrato, que mantém rede, ONU e cliente relacionados, e valide o banco e o equipamento após qualquer ação manual.
+Autorizar ou desautorizar por essas abas altera diretamente a OLT. A desautorização pode deixar o registro da ONU no LHISP. Use preferencialmente o fluxo de acesso do contrato, que mantém rede, ONU e cliente relacionados, e confira o cadastro e o equipamento após qualquer ação manual.
 
 ### Executar comandos
 
@@ -109,7 +108,7 @@ Esta aba **não se conecta à OLT e não executa comandos**. Ela serve para audi
 
 A atualização não é uma simples sincronização de leitura: ela pode provisionar várias ONUs. A rotina considera como ausência uma mensagem específica da CLI (`The required ONT does not exist`), de modo que seu resultado depende do fabricante e do texto retornado. Execute-a somente após conferir o filtro de slot/PON.
 
-No caminho Nokia/EventBus, o daemon atual não trata o tópico `testConnection`; por isso, o teste pode retornar “sem resposta” mesmo quando outras consultas da OLT funcionam.
+Para Nokia, o teste pode retornar “sem resposta” mesmo quando outras consultas da OLT funcionam. Confira também as consultas operacionais e encaminhe dúvidas ao suporte.
 
 ## Provisionamento pelo contrato
 
@@ -124,26 +123,26 @@ Na remoção, as chamadas ao equipamento são protegidas por tratamento de erro 
 
 ## Exclusão da OLT
 
-A exclusão é física e emite um evento de remoção. As portas registradas e ocorrências de monitoramento possuem exclusão em cascata, mas as ONUs possuem chave estrangeira sem cascata e normalmente bloqueiam a operação enquanto existirem.
+A exclusão remove o cadastro, suas portas e ocorrências de monitoramento. ONUs ainda vinculadas podem impedir a operação.
 
-As tabelas de redes e acessos guardam o ID da GPON OLT sem uma chave estrangeira equivalente no esquema atual. Se a exclusão ocorrer após remover as ONUs, esses registros podem permanecer apontando para um ID inexistente. Antes de apagar:
+Redes e acessos podem manter referência à OLT apagada. Para evitar cadastros sem equipamento válido, antes de apagar:
 
 1. liste redes, acessos e ONUs vinculados;
 2. migre ou remova os clientes e valide a desautorização no equipamento;
 3. altere ou remova as redes GPON;
-4. só então exclua a OLT e confira os consumidores do evento.
+4. só então exclua a OLT e confira os cadastros e equipamentos envolvidos.
 
 ## Diagnóstico de problemas
 
 | Sintoma | Verificação recomendada |
 |---|---|
 | **Falha no teste de conexão** | Confirme IP, porta, transporte esperado pelo fabricante, usuário, senha, senha enable, rota e ACL. |
-| **Chassi ou ONUs não carregam** | Verifique modelo/versão, disponibilidade do configurador e, para Nokia, RabbitMQ e `lhisp-daemon-olt`. Aguarde também o vencimento do cache. |
+| **Chassi ou ONUs não carregam** | Verifique modelo/versão, conexão e credenciais da OLT. Aguarde a atualização da consulta; se persistir, acione o suporte. |
 | **Comandos incompatíveis ou saída não interpretada** | Confirme fabricante e versão; famílias da mesma marca podem ter CLIs diferentes. |
-| **ONU continua visível após autorização/desautorização** | Aguarde o cache, atualize a aba e confira diretamente a OLT e o registro `GPONONU`. |
+| **ONU continua visível após autorização/desautorização** | Aguarde a atualização da consulta e confira diretamente a OLT e o cadastro da ONU. |
 | **Acesso foi removido, mas a ONU permanece configurada** | A limpeza no equipamento pode ter falhado sem impedir a exclusão local. Faça a conferência e correção controlada na OLT. |
 | **Atualizar não reprovisiona** | A rotina depende da ONU local, da rede correta e do texto de ausência retornado pela CLI. Consulte o resultado detalhado da janela. |
-| **Fabricante não implementado no daemon** | O caminho EventBus atual aceita apenas Huawei e Nokia; confirme se a marca deveria usar um configurador PHP ou se falta suporte no serviço. |
+| **Fabricante não implementado** | Confirme fabricante/modelo e a disponibilidade da operação com o suporte. |
 
 ## Screenshot
 

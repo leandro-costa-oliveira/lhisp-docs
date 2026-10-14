@@ -17,7 +17,7 @@ O cadastro e a visualização desse monitor permanecem em páginas PHP legadas. 
 
 - Acesso autenticado e permissão para o cadastro.
 - Gráficos cadastrados nos servidores que serão acompanhados.
-- SNMP e daemon de gráficos funcionando para produzir o histórico RRD.
+- SNMP acessível e coleta ativa para produzir o histórico dos gráficos.
 
 ## Montar o painel
 
@@ -38,13 +38,13 @@ A visualização apresenta servidor, IP e título de cada gráfico. Em **Exibir*
 
 Sem alternância, a página atualiza as imagens a cada 60 segundos. Com **Alterar entre os gráficos** habilitado, passa ao próximo painel cadastrado, voltando ao primeiro ao terminar; nessa navegação usa contagem de 10 segundos. Essa opção alterna os painéis, não as séries de um único gráfico.
 
-Atualizar a imagem consulta o histórico já coletado. Isso não força nova coleta SNMP nem garante um ponto por minuto: a consolidação RRD mais fina usada pelo daemon é de cinco minutos.
+Atualizar a imagem consulta o histórico já coletado. Isso não força nova coleta SNMP nem garante um ponto por minuto: a menor resolução do histórico é de cinco minutos.
 
 A página tenta manter a sessão autenticada e renovar a credencial quando uma imagem falha. Se a renovação for recusada, exibe **Sessão expirada, faça login novamente no sistema.** Reautentique-se e reabra o monitor.
 
 ## Coleta e retenção
 
-O daemon de gráficos coleta por padrão a cada 60 segundos. Nos arquivos RRD, o passo é de 300 segundos e o heartbeat padrão também é 300 segundos: atrasos prolongados sem atualizações geram trechos desconhecidos no histórico. Coleta, atualização da imagem e resolução do gráfico são intervalos diferentes.
+A coleta ocorre por padrão a cada 60 segundos, e o histórico usa resolução mínima de cinco minutos. Atrasos prolongados sem atualizações geram lacunas no gráfico. Coleta, atualização da imagem e resolução do gráfico são intervalos diferentes.
 
 Alterar apenas a frequência de coleta sem revisar o heartbeat dos arquivos existentes pode aumentar os buracos no gráfico. A configuração `RRD_AUTO_TUNE` é desativada por padrão; não presuma que mudar `RRD_HEARTBEAT` no ambiente modificou os RRDs já gravados. Consulte a operação responsável antes de ajustar esses parâmetros.
 
@@ -57,7 +57,7 @@ Um gráfico vazio pode indicar ausência de coleta ou falha de imagem/sessão. O
 | Não permite salvar | Informe descrição e ao menos um gráfico válido; confira quantidade por linha. |
 | Não aparece o botão de visualização | Salve e saia do modo de edição. |
 | Janela não abre | Autorize o popup para o LHISP e tente novamente. |
-| Painel aparece sem dados recentes | Confira SNMP, daemon, arquivo RRD e data da última coleta. |
+| Painel aparece sem dados recentes | Confira SNMP e data da última coleta; se persistir, encaminhe o caso ao suporte. |
 | Gráficos desaparecem depois de algum tempo | Verifique a mensagem de sessão e faça login novamente se a renovação falhar. |
 | Lacunas no histórico | Compare duração do ciclo, falhas SNMP e heartbeat; não preencha lacunas sem preservar evidência do incidente. |
 | Não encontro o gráfico no painel | Confira a composição salva e o cadastro original no servidor. |

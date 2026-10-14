@@ -17,7 +17,7 @@ A integração MCP expõe recursos da [API de Parceiros](/sistema/api-parceiros)
 - Tenha acesso a **Sistema > Integrações > MCP** e permissão para configurar a integração.
 - Defina quais consultas e operações o cliente MCP poderá executar.
 
-As credenciais MCP são geradas pelo servidor e independem do token da API REST. Em produção, base e empresa são definidas pelo proxy da instalação; o cliente envia a autorização OAuth.
+As credenciais MCP são geradas pelo servidor e independem do token da API REST. Use o domínio da instalação e envie a autorização OAuth.
 
 ## Configurar credenciais e acesso
 
@@ -57,7 +57,7 @@ Revise especialmente as ferramentas de escrita. A indicação de leitura/escrita
 
 O access token dura **15 minutos**. No fluxo `client_credentials`, solicite outro quando expirar; `offline_access` é recusado nesse fluxo. As chamadas MCP usam `Authorization: Bearer <ACCESS_TOKEN>`.
 
-As credenciais atuais são compartilhadas pelos consumidores MCP do provedor. Todo token representa a integração, e as operações ficam atribuídas ao usuário de sistema `McpLH` (-2); a autorização no navegador não identifica um operador do LHISP.
+As credenciais atuais são compartilhadas pelos consumidores MCP do provedor. Todo token representa a integração; a autorização no navegador não identifica um operador do LHISP.
 
 ## Rotação e desativação
 

@@ -33,7 +33,11 @@ Use esta tela quando precisar:
 2. Verifique o setor exibido na tela.
 3. Use **Anterior** e **Próximo** para navegar entre registros.
 4. Use **Novo**, **Editar** ou **Apagar** para manutenção.
-5. Revise as filiais marcadas na seção inferior.
+5. Informe o nome em **Setor**, marque ao menos uma filial e salve.
+
+O cadastro exige `setorrede_add`, a edição `setorrede_edit` e a exclusão `setorrede_del`. Os nomes das filiais vêm do cadastro da empresa; **MATRIZ** e **TESTE** são apenas exemplos da captura.
+
+A exclusão é recusada enquanto houver redes vinculadas ao setor. Transfira essas redes para o setor correto antes de remover o registro. A remoção aceita é lógica: o setor deixa de aparecer nas consultas normais.
 
 ## Campos importantes
 
@@ -41,8 +45,6 @@ Use esta tela quando precisar:
 |---|---|
 | **Setor** | Nome do setor de rede. |
 | **Filiais** | Lista de filiais vinculadas ao setor. |
-| **MATRIZ** | Checkbox indicando a filial matriz. |
-| **TESTE** | Checkbox de outra filial disponível no cadastro. |
 | **Anterior** | Vai para o registro anterior. |
 | **Próximo** | Vai para o próximo registro. |
 | **Novo** | Cria um novo setor. |
@@ -62,6 +64,8 @@ Use esta tela quando precisar:
 |---|---|
 | Setor vazio ou incorreto | Use **Procurar** para localizar o registro desejado. |
 | Filiais não marcadas | Verifique a configuração do setor e as permissões do usuário. |
+| `Selecione ao menos uma Filial` | Marque uma filial antes de salvar. |
+| Setor não pode ser removido | Existem redes cadastradas nele; altere o setor dessas redes primeiro. |
 
 ## Observações
 

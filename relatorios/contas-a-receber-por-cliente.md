@@ -2,52 +2,42 @@
 title: Contas a Receber por Cliente
 published: true
 editor: markdown
-description: ''
+description: Consulte títulos abertos pelo CPF/CNPJ, agrupando os contratos do cliente e distinguindo valor nominal de saldo.
 ---
 
 # Contas a Receber por Cliente
 
-## Objetivo
-
-Consultar o contas a receber segmentado por cliente.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Contas a Receber por Cliente** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Contas a Receber por Cliente**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Contas a Receber por Cliente**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+Esta consulta busca **contas abertas de todos os contratos vinculados ao CPF/CNPJ informado**, dentro do período de vencimentos. O mesmo documento pode reunir vários contratos e filiais acessíveis ao usuário.
+
+## Consultar
+
+1. Abra **Relatórios > Clientes > Contas a Receber**.
+2. Preencha **CPF / CNPJ** e saia do campo para aplicar o documento à pesquisa.
+3. Informe o intervalo de vencimentos e aguarde a consulta.
+4. Use **Atualizar** para repetir a busca ou **Imprimir** para imprimir a tabela.
+5. Abra o número do contrato para investigar a cobrança na aba financeira.
+
+O documento é comparado por igualdade no cadastro da pessoa. A consulta automática só é habilitada depois que existe um documento aplicado; digitar sem sair do campo pode manter a pesquisa anterior. O intervalo inicial vai de cinco anos atrás até o fim do mês corrente.
+
+A leitura exige acesso às contas a receber. O backend restringe a empresa e os contratos às filiais do usuário; a tela não oferece seletor adicional de filial ou conta bancária.
+
+## Ler o resultado
+
+Cada linha corresponde a uma conta: **Contrato, Cliente, Descrição, Vencimento e Valor**. O rodapé informa a quantidade de títulos e a soma dos valores nominais.
+
+**O total não desconta valores já recebidos parcialmente**, nem calcula multa, juros ou desconto. Uma conta aberta de R$ 100 com R$ 40 recebidos continua contribuindo com R$ 100 nessa consulta. Confira o saldo atual no contrato ou na [Gerência Financeira](/financeiro/gerencia-financeira).
+
+A pesquisa fixa a situação em **Aberta**. Contas pagas, canceladas e negociadas não entram, e registros excluídos logicamente ficam fora da consulta padrão. Também podem aparecer contas ainda não vencidas quando o período as inclui.
+
+## Resultado vazio ou divergente
+
+| Situação | Conferência |
+|---|---|
+| Nada aparece após digitar | Saia do campo do documento e confira o CPF/CNPJ armazenado na pessoa. |
+| Conta conhecida não aparece | Confira vencimento, situação, exclusão e acesso à filial do contrato. |
+| Cliente aparece em mais de um contrato | É esperado: a seleção usa o documento da pessoa, não um único contrato. |
+| Valor difere do saldo do contrato | O relatório soma valor nominal, sem abater recebimentos parciais. |
+
+A tela não oferece CSV nem paginação própria. Para filtros de situação, banco, geração e pagamento, use [Contas a Receber](/relatorios/contas-a-receber); para um documento de quitação, revise os títulos no contrato.

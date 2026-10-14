@@ -46,7 +46,7 @@ As opções **Ativo**, **Enviar alertas** e **Efetuar backups** controlam a eleg
 
 ## RADIUS e PPPoE
 
-**Usar RADIUS** controla a delegação da autenticação PPP ao RADIUS na configuração gerada para Mikrotik. A lista de NAS do FreeRADIUS é carregada dos servidores não apagados de empresas com daemons habilitados. O IP cadastrado deve coincidir com o `NAS-IP-Address` enviado pelo concentrador, e o segredo mostrado na ação **Visualizar Radius Secret** deve ser o mesmo nos dois lados. Salvar o servidor ou alterar o segredo solicita a recarga do serviço RADIUS; confira o resultado no serviço.
+**Usar RADIUS** controla a delegação da autenticação PPP ao RADIUS na configuração gerada para Mikrotik. O IP cadastrado deve coincidir com o `NAS-IP-Address` enviado pelo concentrador, e o segredo mostrado na ação **Visualizar Radius Secret** deve ser o mesmo nos dois lados. Salvar o servidor ou alterar o segredo solicita a recarga do serviço RADIUS; confira o resultado no serviço.
 
 O formulário atual não oferece seleção dos métodos de autenticação PPP. O gerador Mikrotik utiliza **PAP e CHAP**, independentemente do valor legado `pppAuth` armazenado no cadastro. Não procure os antigos campos PAP/CHAP/MSCHAP nas telas atuais. Confirme a compatibilidade do concentrador antes de reaplicar a configuração.
 
@@ -77,10 +77,9 @@ No primeiro cadastro, o backend:
 2. grava o servidor e calcula os parâmetros de CGNAT;
 3. cria redirecionamentos necessários quando há gateway;
 4. para Mikrotik, gera a configuração inicial de firewall, redes, acessos, monitoramento, IPv6, CGNAT e rotas;
-5. solicita recarga do RADIUS;
-6. publica a alteração para o serviço de monitoramento.
+5. atualiza a autenticação RADIUS e o monitoramento associados ao cadastro.
 
-Na edição, o LHISP remove as regras do caminho de conexão anterior, atualiza NAT e recria redirecionamentos, recarrega o RADIUS e notifica monitoramento e serviço de comandos. Se o **Tipo** for alterado, os comandos pendentes do servidor são apagados para evitar aplicar instruções do fabricante anterior.
+Na edição, o LHISP remove as regras do caminho de conexão anterior, atualiza NAT e recria redirecionamentos, atualiza a autenticação RADIUS e o monitoramento. Se o **Tipo** for alterado, os comandos pendentes do servidor são apagados para evitar aplicar instruções do fabricante anterior.
 
 Salvar dados e aplicar comandos são etapas diferentes. Confira a fila e o estado do equipamento após mudanças operacionais.
 
@@ -99,7 +98,7 @@ O diálogo também oferece **Limpar Comandos da Fila** e **Checar Conexão SSH**
 
 ## Exclusão
 
-O servidor não pode ser apagado enquanto possuir redes associadas. Ao excluir um servidor elegível, o backend desfaz seus vínculos em enlaces, tenta remover o peer BGP do gateway relacionado, faz exclusão lógica do cadastro, elimina seus comandos pendentes e publica um evento de remoção.
+O servidor não pode ser apagado enquanto possuir redes associadas. Ao excluir um servidor elegível, o backend desfaz seus vínculos em enlaces, tenta remover o peer BGP do gateway relacionado, faz exclusão lógica do cadastro, elimina seus comandos pendentes.
 
 Antes disso, migre redes e acessos, confira prefixos, gráficos, rotas, backups e dependências externas. A exclusão do registro não equivale a remover toda configuração já aplicada no equipamento.
 
@@ -109,9 +108,9 @@ Antes disso, migre redes e acessos, confira prefixos, gráficos, rotas, backups 
 |---|---|
 | IP/porta SSH já cadastrados | Localize o servidor existente; não duplique o mesmo equipamento. |
 | ICMP funciona, mas SSH está offline | Revise porta, credencial, algoritmo aceito, ACL e caminho **Conectar por**. |
-| RADIUS nega todos os acessos | Confira daemons da empresa, cadastro do NAS, **Usar RADIUS** no concentrador, IP anunciado, segredo e recarga do serviço. |
+| RADIUS nega todos os acessos | Confira cadastro do NAS, **Usar RADIUS** no concentrador, IP anunciado, segredo e recarga do serviço. |
 | Gráficos ou interfaces não aparecem | Valide SNMP, comunidade, versão, índice máximo e permissão de rede. |
-| Mudança não chegou ao equipamento | Examine a fila de comandos, daemon, status SSH e saída de **Atualizar Servidor**. |
+| Mudança não chegou ao equipamento | Examine a fila de comandos, status SSH e saída de **Atualizar Servidor**; se persistir, acione o suporte. |
 | Não é possível apagar | O servidor ainda possui uma ou mais redes associadas. |
 
 ![Cadastro de servidor](/assets/screenshots/rede-infra/cadastrar-servidor-form.png)

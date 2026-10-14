@@ -2,52 +2,28 @@
 title: Relatório de Usuários Voip
 published: true
 editor: markdown
-description: ''
+description: Relação de usuários ou números VoIP vinculados aos contratos, com filtro de filial.
 ---
 
 # Relatório de Usuários Voip
 
-## Objetivo
-
-Consultar usuários e relacionar os dados de VoIP.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Relatório de Usuários Voip** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Relatório de Usuários Voip**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Relatório de Usuários Voip**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela `/relatorios/voip` tem o título **Relatório de Clientes com Números VoIP**. Lista os registros de `ContratoVoip`, seus contratos e pessoas, apresentando o campo de **usuário** como **Número**.
+
+## Consultar
+
+1. Selecione **Filial**, ou deixe sem seleção para consultar o escopo disponível.
+2. Aguarde a atualização.
+3. Confira **Contrato**, **Cliente** e **Número**.
+4. Clique em **Imprimir**.
+
+Não há período, filtro de servidor VoIP nem seletor de situação nessa tela. A consulta não exige explicitamente serviço ativo ou registro provisionado; não use a lista como inventário certificado de ramais ativos no servidor externo. Registros excluídos logicamente seguem o comportamento padrão do modelo.
+
+Uma linha corresponde a um cadastro VoIP, não necessariamente a um cliente único. Um contrato pode aparecer várias vezes quando possui mais de um usuário/número. O rodapé conta registros retornados. O campo exibido pode conter o identificador de login cadastrado, e não um número telefônico público homologado.
+
+## Limites e diagnóstico
+
+O BI aplica a restrição de filial por contrato, e o filtro adicional de filial é aplicado no vínculo do contrato. Registros sem vínculo válido podem ter dados cadastrais incompletos; confira-os na área VoIP do contrato.
+
+A página não exibe senha, saldo, consumo, chamadas ou resultado da integração, e não oferece CSV próprio. Para status de provisionamento ou divergência de número, verifique o cadastro do contrato e os retornos do serviço VoIP. Imprimir o relatório não consulta o servidor de telefonia nem envia comandos para ele.

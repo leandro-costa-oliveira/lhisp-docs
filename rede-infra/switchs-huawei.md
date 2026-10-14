@@ -2,7 +2,7 @@
 title: Switchs Huawei
 published: true
 editor: markdown
-description: ''
+description: Cadastro e monitoramento de switch Huawei, com limites da configuração inicial de gerência.
 ---
 
 # Switchs Huawei
@@ -11,6 +11,14 @@ description: ''
 ## Objetivo
 
 Registrar o procedimento descrito na wiki para configurar **Switchs Huawei** e integrar o equipamento ao ecossistema **LHISP**.
+
+## Cadastro e limites da integração
+
+No LHISP, o switch de infraestrutura é cadastrado em [Servidores](/rede-infra/servidores), com tipo **Huawei**, nome, IP, porta SSH, usuário e senha. Informe POP e parâmetros SNMP quando o equipamento participar do monitoramento. Confira as abas de interfaces e [gráficos](/rede-infra/monitoramento-de-graficos) após salvar.
+
+Esse cadastro não configura automaticamente interfaces, VLAN de gerência, AAA ou autenticação administrativa por RADIUS no switch. A opção **Usar Radius** e as rotinas de corte de assinantes pertencem ao fluxo de concentrador; não habilite **Servidor de Acesso/PPPoE** apenas porque o equipamento é Huawei. Para um concentrador, siga [BRAS Huawei](/rede-infra/bras-huawei).
+
+O código local não fornece uma receita de configuração inicial homologada para todo switch/VRP. As etapas abaixo definem os pontos a preparar e verificar com o manual do modelo. A captura no fim da página pertence ao fluxo GePON PACSWITCH e não comprova a tela nem a CLI de um switch Huawei.
 
 ## Quando usar
 
@@ -21,7 +29,7 @@ Use este fluxo quando for necessário:
 - criar usuários locais de administração;
 - configurar o endereço IP de gerenciamento;
 - definir a rota padrão do equipamento;
-- integrar autenticação via Radius com o LHISP.
+- preparar a gerência e conferir o monitoramento no LHISP.
 
 ## Pré-requisitos
 
@@ -30,7 +38,7 @@ Use este fluxo quando for necessário:
 - Credenciais administrativas válidas.
 - Endereço IP de gerenciamento do switch.
 - Gateway padrão da rede de gerência.
-- Dados do servidor Radius do LHISP.
+- Modelo/versão e desenho de gerência definidos.
 - Permissão para alterar a configuração do equipamento.
 - Validação prévia de que o cenário pertence ao ambiente de demonstração ou a um laboratório autorizado.
 
@@ -48,7 +56,7 @@ Use este fluxo quando for necessário:
 A wiki descreve dois estados principais do prompt:
 
 - **Execução**: prompt inicial após o login.
-- **Enable**: modo com privilégios elevados, acessado com `system-view`.
+- **Configuração**: visão de sistema, acessada com `system-view` nas CLIs que oferecem esse comando. Ela não é um modo chamado `enable`.
 
 ### 3. Definir o nome do equipamento
 
@@ -60,62 +68,36 @@ sysname NOME-DO-SEU-EQUIPAMENTO
 
 ### 4. Visualizar interfaces
 
-Use o comando indicado na wiki para listar as descrições das interfaces e validar a conectividade.
-
-```text
-display interfaces description
-```
+Consulte o inventário e o estado das interfaces com a sintaxe da versão instalada. Confirme a porta física e sua função no projeto antes de qualquer alteração.
 
 ### 5. Habilitar acesso remoto por SSH
 
-Ative o servidor SSH e permita autenticação por senha, conforme a política do ambiente.
-
-```text
-stelnet server enable
-ssh authentication-type default password
-```
+Prepare SSH e autenticação conforme o manual do modelo e a política da rede de gerência. Use no cadastro do servidor o mesmo endereço, porta e credenciais. Não habilite protocolos adicionais como efeito colateral dessa etapa.
 
 ### 6. Habilitar autenticação local e via rede
 
-Configure a interface VTY para aceitar autenticação via AAA e tráfego inbound conforme necessário.
-
-```text
-user-interface vty 0 4
-authentication-mode aaa
-protocol inbound all
-```
+Configure as linhas VTY para o método de autenticação previsto no projeto e restrinja os protocolos de entrada. Preserve console ou outro caminho de retorno antes de alterar AAA; uma configuração aceita pode bloquear a próxima sessão.
 
 ### 7. Criar usuários locais
 
-Crie usuários administrativos com privilégios elevados para console, SSH e HTTP.
+Crie um usuário exclusivo para a integração, com acesso SSH e permissões para as operações necessárias. Habilite serviços administrativos adicionais somente quando houver uso definido.
 
 ### 8. Configurar endereço IP
 
-Acesse a interface de gerenciamento apropriada e aplique o endereço IP do switch.
-
-```text
-interface 40GE0/0/2
-undo portswitch
-ip address 192.168.0.10 24
-```
+Identifique a interface física, VLANIF ou porta dedicada de gerência prevista no projeto e configure IP/máscara. Não converta uma porta de comutação em roteada apenas para seguir um exemplo: isso altera sua função e pode interromper o tráfego existente.
 
 ### 9. Configurar gateway padrão
 
-Ajuste a rota padrão do equipamento apontando para o gateway da rede de gerência.
+Confirme a rota de retorno entre o switch e a infraestrutura do LHISP. Configure gateway/rota somente conforme a topologia de gerência existente.
 
-```text
-ip route-static 0.0.0.0 0 192.168.0.1
-```
+### 10. Conferir SSH e SNMP no LHISP
 
-### 10. Configurar autenticação via Radius
+1. Salve o cadastro do servidor com tipo **Huawei** e os parâmetros corretos.
+2. Confira o estado ICMP/SSH e a leitura de interfaces por SNMP.
+3. Configure apenas os gráficos necessários.
+4. Valide o serviço real e a persistência da configuração do equipamento.
 
-1. Entre no modo `system-view`.
-2. Defina o template Radius do LHISP.
-3. Informe o endereço do servidor Radius.
-4. Configure autenticação, accounting e o domínio do ambiente.
-5. Valide que o acesso ao switch passará a usar o fluxo integrado ao LHISP.
-
-Use uma chave Radius exclusiva e armazenada com segurança. O valor não deve ser previsível nem exposto nesta documentação.
+A autenticação administrativa do switch por RADIUS exige projeto e validação próprios. O cadastro no LHISP não comprova que esse fluxo foi configurado ou é compatível com o equipamento.
 
 ### 11. Finalizar e salvar
 
@@ -131,23 +113,16 @@ Use uma chave Radius exclusiva e armazenada com segurança. O valor não deve se
 | **Login / Password** | Credenciais administrativas do equipamento. A wiki traz valores padrão de laboratório; neste documento foram tratados como sensíveis. |
 | **system-view** | Entra no modo de configuração do switch. |
 | **sysname** | Nome do switch na rede. |
-| **display interfaces description** | Lista descrições de interfaces. |
-| **stelnet server enable** | Habilita o servidor SSH no equipamento. |
-| **user-interface vty 0 4** | Configuração das linhas virtuais de acesso remoto. |
-| **authentication-mode aaa** | Ativa autenticação via AAA. |
-| **interface 40GE0/0/2** | Exemplo de interface usada para configurar o IP. |
-| **ip route-static** | Define a rota padrão. |
-| **radius-server template lhisp** | Template Radius associado ao LHISP. |
-| **radius-server shared-key cipher** | Chave compartilhada do Radius. |
-| **domain huawei** | Domínio usado para integrar autenticação e accounting. |
+| **Portas SSH** | Porta usada para a conexão ao equipamento. |
+| **Comunidade SNMP / Versão SNMP** | Parâmetros usados para consultar interfaces e métricas. |
+| **Ponto de Presença** | Localização do equipamento no monitor. |
 
 ## Resultado esperado
 
 - O switch fica com acesso remoto habilitado.
 - Os usuários locais passam a existir para administração.
 - O endereço IP e o gateway ficam configurados.
-- A autenticação Radius passa a apontar para o LHISP.
-- O equipamento fica pronto para operação e monitoramento.
+- O cadastro e o monitoramento correspondem ao equipamento correto.
 
 ## Problemas comuns
 
@@ -155,14 +130,14 @@ Use uma chave Radius exclusiva e armazenada com segurança. O valor não deve se
 |---|---|
 | Não consigo acessar a console | Verifique cabo, adaptador serial e porta COM/tty. |
 | `system-view` não entra | Confirme a credencial administrativa. |
-| O SSH não responde | Revise `stelnet server enable` e a configuração da VTY. |
-| O switch não responde no IP de gerência | Revise IP, máscara e interface usada no `undo portswitch`. |
-| Radius não autentica | Revise o template, a chave compartilhada e o domínio configurado. |
+| O SSH não responde | Revise porta, usuário, senha, VTY, ACL e caminho de gerência. |
+| O switch não responde no IP de gerência | Revise IP, máscara, VLAN/interface de gerência e rota de retorno. |
+| Interfaces ou gráficos não carregam | Confira comunidade/versão SNMP, alcance e OIDs do equipamento. |
 
 ## Observações
 
-- A wiki descreve o switch Huawei como um fluxo completo de acesso, gerenciamento e integração via Radius.
-- A documentação mistura comandos de console, configuração de IP e autenticação centralizada.
+- A preparação inicial por console depende do modelo/VRP e não foi validada em equipamento nesta revisão.
+- Evite aplicar rotinas de atualização feitas para RouterOS a um switch Huawei; revise o fabricante e os comandos antes de executar.
 - O demo foi usado apenas como referência visual para um fluxo similar de equipamento de rede (`GePON PACSWITCH`), já que não há uma tela 1:1 do switch Huawei no ambiente de demonstração.
 
 

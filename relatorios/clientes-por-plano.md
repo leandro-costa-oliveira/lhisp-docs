@@ -2,52 +2,36 @@
 title: Clientes por Plano
 published: true
 editor: markdown
-description: ''
+description: Conte serviços por plano usando ativação, situação atual, filial e inclusão de valores gratuitos.
 ---
 
 # Clientes por Plano
 
-## Objetivo
-
-Listar clientes segmentados pelo plano contratado.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes por Plano** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes por Plano**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes por Plano**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela `/relatorios/clientes_por_plano` apresenta gráfico e tabela agrupados por **plano**. Embora os rótulos falem em clientes e assinantes, a consulta usa a quantidade de **serviços contratados**, sem deduplicar pessoa ou contrato.
+
+## Filtros
+
+| Campo | Critério |
+|---|---|
+| **Filial** | Filial do contrato associado, dentro das filiais permitidas ao usuário. |
+| **Data de Ativação** | Campo de ativação do serviço; começa no primeiro dia do mês de um ano atrás e termina no fim do mês atual. |
+| **Listar VIP?** | Inclui valores gratuitos; desmarcado exige valor maior que zero. |
+| **Filtros > Situação do Serviço** | Ativo e Bloqueado começam selecionados. Pode incluir outras situações. |
+
+Os filtros integram a consulta ao serem alterados. Desmarcar todas as situações **remove a restrição de situação**, em vez de produzir uma lista vazia. A consulta exige associação a contrato e segue as restrições de filial da API. Abra com sessão autenticada e acesso ao relatório/Contratos.
+
+## Resultado
+
+Cada plano ocupa uma linha com ID/nome, **valor atual do catálogo do plano** e quantidade de serviços encontrados. O total soma serviços, não pessoas. O gráfico mostra a mesma quantidade por plano.
+
+O valor da tabela não é a soma dos serviços nem a receita daquele plano. Serviços com preço individual, descontos ou quantidades diferentes continuam somando uma unidade na contagem.
+
+Use **Imprimir** para a saída do navegador. Não há botão de CSV nessa tela. Para nomes e contatos dos assinantes, consulte [Lista de Clientes por Plano](/relatorios/lista-de-clientes-por-plano) ou [Relatório de Clientes](/relatorios/relatorio-de-clientes).
+
+## Período e comparação
+
+O relatório seleciona ativação no intervalo e verifica a **situação atual** do serviço. Não conta todas as assinaturas que estiveram ativas em algum momento do período e não reconstrói a base no último dia escolhido.
+
+As datas são enviadas sem expansão explícita para 23:59:59 do último dia. Ao conferir ativações próximas do limite final, valide o horário no histórico ou amplie o limite para o dia seguinte. Para analisar eventos de ativação e cancelamento, use [Ativações / Cancelamentos](/relatorios/ativacoes-cancelamentos).

@@ -2,52 +2,33 @@
 title: Clientes VIP
 published: true
 editor: markdown
-description: ''
+description: Liste serviços de valor zero por filial, tipo de pessoa e situação, com os limites da tela legada.
 ---
 
 # Clientes VIP
 
-## Objetivo
-
-Acompanhar clientes classificados como VIP.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes VIP** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes VIP**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes VIP**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+No relatório legado `relatorios/clientes_vip`, **VIP significa serviço contratado com valor exatamente zero**. Não é uma classificação de pessoa e não exige que todos os serviços do contrato sejam gratuitos.
+
+## Consultar
+
+1. Abra o relatório com sessão autenticada e acesso ao formulário.
+2. Selecione **Filial** e **Tipo de Pessoa**, se necessário.
+3. Marque as situações dos serviços: **Ativo**, **Bloqueado**, **Cancelado** e/ou **Suspenso**.
+4. Clique em **Exibir** e confira os serviços de valor zero.
+5. Use **Imprimir** para imprimir a listagem.
+
+Ativos e bloqueados começam selecionados. Desmarcar todas as situações elimina a restrição de situação; isso não representa resultado vazio. Não existe filtro de período nem CSV próprio nessa tela.
+
+## Resultado e unidade
+
+A consulta retorna serviços de valor zero com dados de contrato, filial, pessoa e acesso quando disponível. A grade mostra contrato, filial, cliente, telefones, identificação/descrição do serviço, usuário/IP de acesso e situação.
+
+O rodapé separa **Contratos** e **Serviços**. O mesmo contrato pode ter várias linhas; a identificação do contrato e da pessoa aparece apenas na primeira linha consecutiva desse contrato.
+
+## Limitações da consulta
+
+Podem ocorrer mensagens de erro, células auxiliares ausentes ou cores inconsistentes na listagem. Confira o serviço diretamente no contrato antes de usar o resultado para alteração cadastral; encaminhe divergências ao suporte.
+
+A opção **Incluir clientes VIP** do [Relatório de Clientes](/relatorios/relatorio-de-clientes) tem outro critério: inclui contratos sem serviço vigente de valor positivo. Portanto, os totais dessas duas consultas não são equivalentes em contratos com serviços gratuitos e pagos.

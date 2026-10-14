@@ -38,8 +38,8 @@ A presença de uma conta bancária Pix vinculada ou de um identificador de trans
 
 Informe ao suporte o identificador da conta a receber, a conta bancária e a mensagem exibida. Preserve senhas, tokens e certificados.
 
-## Serviços Pix por empresa
+## Configuração Pix por empresa
 
-O sistema possui dois caminhos de processamento: o serviço Pix legado e o fluxo integrado de cobranças. A escolha é feita pela configuração persistida de cada empresa, com o mesmo comando operacional para o usuário. Uma empresa migrada pode usar um caminho diferente de outra no mesmo ambiente.
+A configuração de processamento Pix é definida por empresa. Em caso de divergência, informe ao suporte a empresa, a conta bancária e o título afetado.
 
-Essa escolha não é corrigida trocando o banco do cliente nem marcando uma opção na tela do QR Code. Em divergências após migração, peça ao suporte que confira a configuração da empresa e o serviço responsável, junto com o cadastro bancário.
+Não troque o banco do cliente nem altere dados da cobrança apenas para contornar uma falha na consulta do QR Code. Peça ao suporte que confira a configuração da empresa junto com o cadastro bancário.

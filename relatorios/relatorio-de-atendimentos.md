@@ -2,52 +2,38 @@
 title: Relatório de Atendimentos
 published: true
 editor: markdown
-description: ''
+description: Atendimentos abertos no período, com motivo, situação e quantidade de OS associadas.
 ---
 
 # Relatório de Atendimentos
 
-## Objetivo
-
-Consultar atendimentos registrados no período.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Relatório de Atendimentos** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Relatório de Atendimentos**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Relatório de Atendimentos**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela `/relatorios/agendatecnica/atendimentos` lista atendimentos pela **data de abertura**, com opção de filtrar o motivo. Não filtra por data de fechamento nem pelo agendamento das ordens de serviço.
+
+## Consultar
+
+1. Informe **Data do Atendimento**, com início e fim; o padrão é o mês corrente.
+2. Selecione **Motivo do Atendimento**, ou mantenha sem seleção.
+3. Use **Atualizar** para refazer a consulta.
+4. Confira a tabela e use **Imprimir**.
+
+| Coluna | Origem |
+|---|---|
+| Contrato / Cliente | Contrato e pessoa vinculados ao atendimento. |
+| Atendimento | Identificador do atendimento. |
+| Aberto Por | Usuário que abriu o registro. |
+| Canal / Motivo | Canal registrado e motivo associado. |
+| Data | Data de abertura, apresentada sem horário. |
+| Situação | Situação atual do atendimento. |
+| Qtd OSs | Contagem das OS cujo `AtendimentoId` corresponde à linha. |
+
+A consulta de OS é separada e agrupa pelo atendimento. Ela não repete o filtro de período nem exige OS concluída: uma OS criada fora do período pode ser contada se pertencer a um atendimento selecionado. O rodapé conta atendimentos, não soma de OS.
+
+O relatório inclui as situações retornadas pela consulta, sem seletor de situação na tela. Um atendimento aberto no mês e concluído depois permanece no período original, com sua situação atual. Registros sem contrato ou motivo podem apresentar colunas vazias.
+
+## Escopo e conferência
+
+A área usa o BI de Agenda técnica: empresa e restrições de filiais do usuário influenciam o resultado, incluindo filiais atendidas pelo técnico quando aplicável. A ausência de uma linha não deve ser interpretada como exclusão do atendimento antes de conferir esse escopo.
+
+Os limites de data são enviados pela interface à consulta. Para conferência por horário no último dia, compare com o registro de abertura, pois a tela imprime somente a data e não oferece seleção de hora. Não há exportação CSV própria nesta página. Para distribuição agregada, consulte [Atendimentos por Canal](/relatorios/relatorio-de-atendimentos-por-canal).
