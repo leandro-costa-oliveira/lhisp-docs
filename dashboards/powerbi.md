@@ -2,22 +2,20 @@
 title: PowerBI — disponibilidade
 published: true
 editor: markdown
-description: Estado das rotas e componentes do painel de cancelamentos PowerBI no frontend atual.
+description: Disponibilidade do painel PowerBI e alternativas para acompanhar cancelamentos.
 ---
 
 # PowerBI — disponibilidade
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-O frontend possui a rota pai `/dashboard/powerbi/*`, mas seu roteador interno não registra telas ativas. A rota **Cancelamentos** e a importação do componente estão comentadas. Abrir esse endereço não disponibiliza atualmente um painel operacional de cancelamentos por essa implementação.
+O endereço `/dashboard/powerbi/*` não disponibiliza atualmente um painel operacional de cancelamentos. Para acompanhar esses indicadores, utilize os relatórios relacionados abaixo.
 
-## Componentes existentes
+## Cuidados com a consulta
 
-Há um componente de **Relatório de Cancelamentos Geral** com campos previstos para mês, ano e filial, gráficos por dia e filial e cartões de cancelamentos, perda de receita e ticket médio.
+Cartões vazios ou zerados nessa área não confirmam ausência de cancelamentos. Confira os resultados nos relatórios operacionais antes de usar os valores para decisões comerciais.
 
-A consulta de dados e o processamento dos resultados também estão comentados nesse componente. Os cartões usam estados iniciais vazios/zerados. Esses zeros não podem ser interpretados como ausência de cancelamentos reais.
-
-Não foram encontrados carregamento de relatório externo do Microsoft Power BI, configuração de incorporação, exportação ou autenticação nesse conjunto de componentes. Isso delimita esta implementação local; não determina se a empresa mantém relatórios externos por outros canais.
+Se o provedor mantém relatórios externos no Microsoft Power BI, confirme o endereço e as permissões com o responsável por esses relatórios.
 
 ## Alternativas disponíveis
 
@@ -25,4 +23,4 @@ Não foram encontrados carregamento de relatório externo do Microsoft Power BI,
 - [Radar de Clientes](/dashboards/radar-de-clientes): contratos distintos com cancelamento efetivo e cobertura explícita.
 - [Clientes Cancelados](/relatorios/clientes-cancelados): carteira atualmente cancelada no relatório legado.
 
-A reativação do componente exige trabalho de implementação e validação; não basta liberar o menu para obter dados reais.
+Confirme com o suporte a disponibilidade de qualquer painel adicional antes de incluí-lo na rotina de apuração.

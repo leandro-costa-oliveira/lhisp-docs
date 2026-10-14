@@ -23,17 +23,8 @@ O frontend envia o dia inicial às `00:00:00Z` e o final às `23:59:59Z`, explic
 
 No legado, selecione a **Data** e clique em **Exibir**; **Imprimir** imprime a listagem. O método PHP inclui acessos com **pelo menos cinco registros de histórico** no dia. Primeiro tenta reutilizar o relatório arquivado para essa data; se existir, a saída pode refletir o arquivo, e não uma nova apuração.
 
-A tabela mostra contrato, cliente, rede, MAC, usuário, IP e quantidade de registros. A opção de filial é apresentada, mas a chamada da listagem não passa a filial ao método de apuração. Também não utiliza o parâmetro de quantidade lido pela página: o limiar está fixado em cinco no DAO.
+A tabela mostra contrato, cliente, rede, MAC, usuário, IP e quantidade de registros. A opção de filial é apresentada, mas não restringe o resultado desta consulta. A quantidade mínima também não é ajustável nesse fluxo: o limiar é de cinco registros.
 
 ## Investigar reincidência
 
 Confira sessões e motivos de desconexão no acesso, equipamento e horários afetados. Compare o mesmo período, fuso e critério antes de confrontar os dois relatórios: o limiar diário, o possível relatório arquivado e os limites UTC do ranking produzem recortes diferentes. Contagem alta indica necessidade de investigação, não diagnóstico automático de defeito.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/redes/RelTopNDesconexoes.tsx:25`
-- `lhisp-backend/src/lhisp-business/src/business/redeinfra/BilhetagemAcessoBI.js:11`
-- `lhisp-php/web/form/relatorios/acessos_desconectando_listagem.php:57`
-- `lhisp-php/web/inc/classes/AcessoDAO.php:1173`

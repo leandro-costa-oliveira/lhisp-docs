@@ -21,6 +21,6 @@ A grade apresenta número do contrato, nome do cliente e data de envio cadastrad
 
 O **Período** aparece no formulário, mas não é enviado no filtro da API. Alterar as datas não restringe o resultado. A filial é o único filtro efetivo apresentado nessa tela, além da exigência de data de envio preenchida.
 
-**Atualizar** altera um contador local que não participa da consulta; não força nova leitura. Recarregue a página para confirmar mudanças feitas em outra aba. **Imprimir** usa a saída do navegador. Não há CSV próprio, envio, retirada da carteira ou atualização do prestador por esse relatório.
+**Atualizar** não força nova leitura. Recarregue a página para confirmar mudanças feitas em outra aba. **Imprimir** usa a saída do navegador. Não há CSV próprio, envio, retirada da carteira ou atualização do prestador por esse relatório.
 
 Uma data antiga não comprova dívida atual. Para selecionar contas abertas elegíveis para cobrança, consulte [Clientes para Cobrança](/relatorios/clientes-para-cobranca). Para explicar uma situação específica, confira as contas e o histórico diretamente no contrato e na integração utilizada.

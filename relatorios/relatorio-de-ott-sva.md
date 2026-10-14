@@ -28,13 +28,4 @@ A tabela e o CSV mostram **Data/Hora**, **Filial**, **Gateway**, **Contrato**, *
 
 O contador por gateway conta **IDs únicos de serviço contratado para cada gateway**, enquanto o rodapé conta registros OTT da listagem. Um serviço associado a vários gateways pode contar uma vez em cada gateway; a soma dos contadores não precisa coincidir com número de contratos ou linhas.
 
-A situação exibida é do serviço contratado. Ela não é confirmação do provisionamento na plataforma nem do estado da fila do daemon OTT. Se houver divergência, confira vínculo do plano e retorno da integração antes de reprovisionar. Empresa e filiais do contrato limitam o escopo visível ao operador.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/sva/RelOttSva.tsx:18`
-- `lhisp-frontend/src/paginas/relatorios/sva/RelOttSva.tsx:267`
-- `lhisp-backend/src/lhisp-business/src/business/contratos/ContratoBI.js:6`
-- `lhisp-backend/src/lhisp-business/src/business/contratos/ContratoOttBI.js:15`
+A situação exibida é do serviço contratado. Ela não é confirmação do provisionamento na plataforma nem da conclusão da sincronização. Se houver divergência, confira vínculo do plano e retorno da integração antes de reprovisionar. Empresa e filiais do contrato limitam o escopo visível ao operador.

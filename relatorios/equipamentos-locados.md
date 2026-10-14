@@ -30,17 +30,8 @@ O texto de produto é procurado em qualquer posição do nome. A consulta não l
 
 ## Limites conferidos
 
-Os arquivos de saída resolvem o **Plano** usando `CategoriaDAO`, embora o filtro SQL depois compare o ID com `SERVICO.ID`. Essa inconsistência pode ignorar o filtro ou usar um ID indevido. Confira o serviço na saída detalhada; não considere esse filtro homologado sem validação da versão instalada.
+O filtro **Plano** pode ser ignorado ou selecionar serviços indevidos. Confira o serviço na saída detalhada antes de usar o resultado para apuração; encaminhe divergências ao suporte.
 
-O DAO compara a data final diretamente com o valor recebido, sem acrescentar `23:59:59`. Uma data sem hora pode excluir locações feitas depois da meia-noite do último dia. Confira os registros dessa data ao fechar uma apuração.
+Uma data final sem hora pode excluir locações feitas depois da meia-noite do último dia. Confira os registros dessa data ao fechar uma apuração.
 
 Se um equipamento devolvido ainda aparece, confira a situação e o encerramento da locação no contrato. O relatório apenas lê registros; não confirma recolhimento nem altera estoque.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-php/web/form/relatorios/equipamentos_locados.php:23`
-- `lhisp-php/web/form/relatorios/equipamentos_locados_listagem_agrupado.php:20`
-- `lhisp-php/web/form/relatorios/equipamentos_locados_listagem_detalhado.php:20`
-- `lhisp-php/web/inc/classes/LocacaoDAO.php:116`

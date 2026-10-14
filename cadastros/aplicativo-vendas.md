@@ -9,7 +9,7 @@ editor: markdown
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-O aplicativo `lhisp-vendas` é a interface do vendedor, publicada em `/vendas` conforme a configuração do provedor. Ele registra **pré-vendas**; a confirmação de plano, filial, vencimento e condições comerciais acontece no [pré-cadastro do painel](/cadastros/pre-cadastros).
+O aplicativo de vendas é a interface do vendedor, publicada em `/vendas` conforme a configuração do provedor. Ele registra **pré-vendas**; a confirmação de plano, filial, vencimento e condições comerciais acontece no [pré-cadastro do painel](/cadastros/pre-cadastros).
 
 ## Acesso
 

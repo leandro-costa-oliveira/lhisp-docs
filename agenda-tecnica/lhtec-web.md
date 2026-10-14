@@ -9,7 +9,7 @@ editor: markdown
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-O LHTEC web é a aplicação técnica publicada em `/lhtec` na instalação do provedor. O repositório correspondente é `lhisp-tecnico`. O [aplicativo Expo](/agenda-tecnica/app-tecnico) possui outro fluxo; suas regras offline não são equivalentes.
+O LHTEC web é a aplicação técnica publicada em `/lhtec` na instalação do provedor. O [aplicativo Expo](/agenda-tecnica/app-tecnico) possui outro fluxo; suas regras offline não são equivalentes.
 
 ## Entrar e localizar a OS
 

@@ -140,7 +140,7 @@ A wiki lista a OLT como um equipamento **V-Solutions** e indica que a configura�
 - O material mistura cadastro de equipamento com a lógica operacional de PON/uplink.
 - O demo foi usado apenas como referência visual para o contexto de OLT e cadastro de rede.
 - Os detalhes exatos de criação de VLAN e gravação dependem do ambiente e do firmware do equipamento.
-- As etapas do painel web são uma referência de planejamento. Os repositórios locais não permitem confirmar os nomes dos menus nem a sequência de cliques de cada firmware.
+- As etapas do painel web são uma referência de planejamento. Confira os nomes dos menus e a sequência de configuração no manual do firmware instalado.
 
 
 ## Screenshots sugeridos

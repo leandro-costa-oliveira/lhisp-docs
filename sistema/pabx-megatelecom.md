@@ -28,7 +28,7 @@ O primeiro cadastro da integração usa uma rotina compartilhada que inicia a in
 - Salvar substitui as credenciais no servidor VoIP MegaTelecom encontrado para a empresa; cria **Pabx Megatelecom** quando ele ainda não existe.
 - Esse passo ocorre também quando a configuração é salva como inativa. Desmarcar Ativo não apaga o servidor nem limpa sua senha.
 - A tela não possui seleção de ambiente, URL da API, botão de teste ou histórico de eventos próprio.
-- O daemon VoIP possui leitura de saldo e registros locais para esse tipo de servidor. Isso não demonstra consulta em tempo real ou provisionamento externo na MegaTelecom.
+- Saldos e registros apresentados no LHISP não confirmam, isoladamente, consulta em tempo real ou provisionamento externo na MegaTelecom.
 
 ## Conferência operacional
 

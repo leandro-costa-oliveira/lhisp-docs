@@ -25,16 +25,8 @@ A situação inicial é **ABERTA**. O backend agrupa por contrato do serviço (`
 
 A interface exibe **Com Sucesso** e **Sem Sucesso**, mas envia sempre `situacao_conclusao_in: []`. O backend combina essa lista vazia com `situacao_conclusao: null`; assim, os controles não expressam a seleção mostrada. Resultados de OS concluídas precisam ser confrontados com a Agenda técnica e os dados de conclusão antes de uso gerencial.
 
-O botão **Atualizar** incrementa um contador local que não participa da consulta nem chama `refetch`. Com os mesmos filtros, ele não garante uma nova requisição. Para consultar uma seleção diferente, altere o filtro; para atualizar a seleção idêntica, reabra a página e confira o resultado. A mudança de filtros é incluída na chave de consulta.
+O botão **Atualizar** não garante nova consulta com os mesmos filtros. Para consultar uma seleção diferente, altere o filtro; para atualizar a seleção idêntica, reabra a página e confira o resultado.
 
 O filtro de situação usa conversão numérica; a opção vazia de **Todos** pode resultar em zero, não em ausência de filtro. Não interprete resultado vazio como prova de que não houve OS sem revisar a situação enviada.
 
 A lista é restrita pelos BIs de OS e contrato, incluindo filiais acessíveis. A contagem não informa visitas efetivamente realizadas nem número de atendimentos: refere-se às OS que satisfazem os filtros implementados.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/ordenservico/RelatorioTopNOrdensServico.tsx:31`
-- `lhisp-frontend/src/api/queries/relatorios/useRelatorioTopNOrdensServico.ts:14`
-- `lhisp-backend/src/rotas/rotas-base.js:1481`

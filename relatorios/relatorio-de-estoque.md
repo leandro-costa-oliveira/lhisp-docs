@@ -30,11 +30,3 @@ A consulta lê registros separados por almoxarifado/local. A saída não mostra 
 Produtos patrimoniais não são discriminados por série ou patrimônio nesta listagem. Para identificar unidades físicas, abra o controle patrimonial; a quantidade agregada não substitui essa conferência.
 
 O BI de estoque restringe a empresa, e a consulta depende do acesso do usuário à área de almoxarifados. Para entradas/saídas e saldo do intervalo, use [Movimentações de Produtos](/relatorios/movimentacoes-de-produtos).
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/almoxarifado/RelEstoqueAlmoxarifado.tsx:17`
-- `lhisp-frontend/src/paginas/relatorios/almoxarifado/CardListaEstoqueAlmoxarifado.tsx:4`
-- `lhisp-backend/src/lhisp-business/src/business/estoque/EstoqueBI.js:4`

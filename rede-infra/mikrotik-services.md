@@ -80,7 +80,7 @@ Alterar somente a porta não restringe as origens que podem acessar o serviço. 
 
 ## Observações
 
-- O daemon de comandos atual conecta por SSH; habilitar apenas Winbox ou API não atende esse fluxo.
+- A integração conecta por SSH; habilitar apenas Winbox ou API não atende esse fluxo.
 - SNMP e RADIUS possuem configuração própria. Desativar um serviço de gerência não configura esses protocolos.
 - Os ícones e campos do Winbox dependem da versão. Confira o estado final do serviço e preserve um caminho administrativo de retorno.
 

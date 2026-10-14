@@ -19,7 +19,7 @@ O relatório legado `relatorios/contratos_sem_acesso` procura **serviços contra
 4. Escolha a **Situação do serviço**, ou deixe vazia para não restringir.
 5. Clique em **Exibir**, confira o serviço e use **Imprimir** quando necessário.
 
-Sem período, a consulta não restringe o cadastro do contrato. Quando um dos limites é enviado, o DAO utiliza os dois em `BETWEEN`; preencha o par para obter um recorte definido. Não há CSV próprio.
+Sem período, a consulta não restringe o cadastro do contrato. Quando utilizar o período, preencha as duas datas para obter um recorte definido. Não há CSV próprio.
 
 ## Critério técnico
 

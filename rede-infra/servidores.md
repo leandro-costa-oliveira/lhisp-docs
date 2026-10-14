@@ -49,7 +49,7 @@ A página React atual não possui a aba **Servidores** que aparecia no formulár
 | **Atualizar Servidor** | Exige `servidor_update`. Seleciona partes da configuração a regenerar e pode enfileirar comandos reais. |
 | **Visualizar Senha** | Exibida para perfis administrativos, incluindo administrador de filial; consulte apenas para uma necessidade autorizada. |
 | **Visualizar Radius Secret** | Exige `servidor_edit`; permite consultar e alterar o segredo do NAS. |
-| **Atualizar DNS judicial** | O frontend oferece o botão para Mikrotik com a opção habilitada e `servidor_update`; a implementação do endpoint não foi localizada no backend deste checkout. Confira os limites em [Bloqueio Judicial](/rede-infra/dns-bloqueio-judicial). |
+| **Atualizar DNS judicial** | Disponível para Mikrotik com a opção habilitada e `servidor_update`. O botão não confirma aplicação no equipamento; confirme a disponibilidade da sincronização com o suporte. Confira os limites em [Bloqueio Judicial](/rede-infra/dns-bloqueio-judicial). |
 | **Importar CGNAT** | Disponível para A10; não é uma importação genérica entre fabricantes. |
 
 O status ICMP não comprova funcionamento de SSH, SNMP, RADIUS ou PPPoE. A resposta de um ping pontual também não altera imediatamente o estado mantido pelo monitoramento automático. Consulte [Operação dos serviços de rede](/rede-infra/operacao-servicos-rede).

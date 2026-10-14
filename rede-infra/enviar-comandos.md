@@ -15,7 +15,7 @@ description: Execução SSH direta de comandos em um ou vários equipamentos fil
 
 ## Diferença para a fila automática
 
-As automações de contratos, redes e servidores normalmente gravam comandos na fila e notificam um daemon. Esta ferramenta abre uma conexão SSH durante a própria requisição e executa o comando imediatamente em cada destino, um após o outro.
+Esta ferramenta abre uma conexão SSH e executa o comando imediatamente em cada destino, um após o outro. Confira os destinos antes de confirmar.
 
 Consequências:
 

@@ -44,7 +44,7 @@ Use esta tela quando for necessário informar a URL da API, revisar credenciais 
 
 ## Resultado esperado
 
-- O sistema envia `modulo: "A2Billing"`, `url`, `usuario`, `senha` e o estado de ativação para `POST /api/Integracao.salvar`.
+- O sistema grava a URL, as credenciais e o estado de ativação da integração.
 - Após a gravação, a tela mostra **Configurações Atualizadas com Sucesso !**.
 - O histórico apresenta os eventos persistidos para o módulo `A2Billing`.
 

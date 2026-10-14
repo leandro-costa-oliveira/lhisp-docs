@@ -41,17 +41,13 @@ Patrimônios usam vínculos exclusivos: estoque, item de separação, remessa, f
 
 O LHISP possui um módulo de solicitações para registrar uma demanda antes da separação. Uma solicitação pode conter produto específico ou categoria, quantidade e almoxarifado. As situações previstas são **Em aberto**, **Autorizada**, **Não autorizada** e **Cancelada**.
 
-Pela regra do backend, somente uma solicitação em aberto pode ser autorizada ou cancelada. A autorização deveria criar, na mesma transação, uma ordem de separação do tipo transferência entre almoxarifados, copiar seus itens e vincular a ordem à solicitação.
+Somente uma solicitação em aberto pode ser autorizada ou cancelada. A autorização tem como objetivo gerar uma ordem de separação do tipo transferência entre almoxarifados, com os itens da solicitação.
 
-### Limitações atuais da SPA
+### Limitações atuais
 
-O código atual não oferece um fluxo confiável de criação/edição e autorização:
+A criação/edição e a autorização de solicitações podem falhar: o salvamento pode não executar a ação esperada e a autorização pode ser recusada sem gerar a ordem de separação.
 
-- o manipulador de salvar da página está comentado e o botão visível não chama a mutação existente;
-- a permissão escolhida no backend está invertida: inclusão verifica `solicitacao_material_edit` e edição verifica `solicitacao_material_add`;
-- a autorização envia `itens`, mas o serviço de ordem de separação exige `ItensOrdemSeparacao`, fazendo a criação ser recusada.
-
-Até esses pontos serem corrigidos, não dependa de **Solicitações de material** para liberar itens. Use uma ordem de separação direta e confirme todo o percurso. Solicitações já existentes podem ser consultadas; o cancelamento de uma solicitação em aberto exige `solicitacao_material_del` e muda sua situação, sem gerar movimentação.
+Não dependa de **Solicitações de material** para liberar itens. Use uma ordem de separação direta e confirme todo o percurso. Solicitações já existentes podem ser consultadas; o cancelamento de uma solicitação em aberto exige `solicitacao_material_del` e muda sua situação, sem gerar movimentação. Encaminhe falhas ao suporte.
 
 ## Regras importantes
 

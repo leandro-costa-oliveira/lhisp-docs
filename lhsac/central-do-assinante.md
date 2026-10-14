@@ -9,7 +9,7 @@ editor: markdown
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Referência para suporte do LHSAC, baseada nos serviços do `lhsac-backend`. A disposição de botões no aplicativo do assinante depende do cliente publicado; este guia descreve os serviços e regras confirmados, sem presumir uma interface que não está neste workspace.
+Referência para suporte e operação do LHSAC. A disposição dos botões e os recursos disponíveis dependem do aplicativo publicado e da configuração do provedor.
 
 ## Acesso e recuperação de senha
 
@@ -57,7 +57,7 @@ O diagnóstico enviado pode ser registrado junto ao atendimento. Antes de repeti
 
 ## Desbloqueio em confiança
 
-O serviço encaminha a solicitação ao backend do LHISP para o serviço contratado indicado. Permissão e elegibilidade seguem as regras de desbloqueio da instalação. Não representa quitação, perdão de dívida ou garantia de liberação imediata: confira retorno, prazo e estado do acesso.
+A solicitação se aplica ao serviço contratado indicado. Permissão e elegibilidade seguem as regras de desbloqueio da instalação. Não representa quitação, perdão de dívida ou garantia de liberação imediata: confira retorno, prazo e estado do acesso.
 
 ## Diagnóstico de suporte
 

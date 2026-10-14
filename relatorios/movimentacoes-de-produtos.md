@@ -31,13 +31,4 @@ A coluna de localização é prevista na saída, mas o método de consulta não 
 
 ## Consulta atual por produto
 
-Também existe histórico na área **Almoxarifados**, rota `/almoxarifados/<AlmoxarifadoId>/<ProdutoId>/historico`, com período, usuário, local, descrição e quantidade. Esse caminho usa `HistoricoEstoque` com vínculos ao estoque e à locação; é útil para conferir a origem de uma movimentação. Para saldo atual, consulte [Relatório de Estoque](/relatorios/relatorio-de-estoque).
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-php/web/form/relatorios/produtos.php:18`
-- `lhisp-php/web/form/relatorios/produtos_listagem.php:70`
-- `lhisp-php/web/inc/classes/AlmoxarifadoDAO.php:238`
-- `lhisp-frontend/src/paginas/almoxarifados/HistoricoEstoque.tsx:20`
+Também existe histórico na área **Almoxarifados**, rota `/almoxarifados/<AlmoxarifadoId>/<ProdutoId>/historico`, com período, usuário, local, descrição e quantidade. Esse histórico relaciona estoque e locação e permite conferir a origem de uma movimentação. Para saldo atual, consulte [Relatório de Estoque](/relatorios/relatorio-de-estoque).

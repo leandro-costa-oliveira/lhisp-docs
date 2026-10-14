@@ -35,12 +35,3 @@ A consulta de despesas não acrescenta um filtro explícito de situação paga: 
 O detalhamento rotula linhas pela posição no retorno, enquanto as consultas podem retornar meses ausentes ou vários tipos de nota no mesmo mês. Confira mês, tipo e soma nos relatórios financeiros/fiscais de origem antes de usar as legendas como detalhamento mensal certificado.
 
 O código de **Tráfego Médio da Rede** e a opção **Somente Fiscal** estão comentados nesta tela; não fazem parte da saída atual. Não há exportação ou transmissão regulatória implementada neste formulário.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/anatel/trimestral/RelAnatelTrimestral.tsx:20`
-- `lhisp-frontend/src/api/queries/financeiro/useSumContasPagarMesAno.ts:18`
-- `lhisp-frontend/src/api/queries/financeiro/useSumNotasFiscaisMesAno.ts:25`
-- `lhisp-frontend/src/paginas/relatorios/anatel/trimestral/RenderAnatelTrimestralDet.tsx:24`

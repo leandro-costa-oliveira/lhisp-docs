@@ -19,7 +19,7 @@ A consulta é implementada no legado como **Relatório de Clientes por Rede**. L
 4. Opcionalmente marque **Simplificado**, **Exibir Nível de Sinal** e **Listar somente Clientes com a Velocidade Reduzida**.
 5. Clique em **Exibir** e confira o resultado antes de imprimir.
 
-A opção de reduzidos verifica o indicador `downloadReduzido`, não recalcula toda diferença entre acesso e plano. O estado online vem de `ACESSO.ONLINE`.
+A opção de reduzidos considera a marcação de redução do acesso, sem recalcular toda diferença entre acesso e plano. O estado online é o atualmente registrado no cadastro.
 
 ## Campos e totais
 
@@ -32,11 +32,3 @@ O valor é acumulado por linha de acesso. Se vários acessos usam o mesmo servi�
 Os campos **Conectados em** e o título com período continuam no formulário, mas o trecho que consultaria o histórico de sessões está comentado na listagem atual. Portanto, informar datas **não transforma a saída em histórico de quem estava conectado no período**. Para sessões e horários, use a bilhetagem do acesso; para volume, consulte [Uso de Banda](/relatorios/relatorio-de-uso-de-banda).
 
 A listagem completa contém credenciais e dados pessoais. Restrinja a impressão e prefira a saída simplificada quando a tarefa não exigir esses campos.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-php/web/form/relatorios/rel_clientes_rede.php:22`
-- `lhisp-php/web/form/relatorios/rel_clientes_rede_listagem.php:32`
-- `lhisp-php/web/form/relatorios/rel_clientes_rede_listagem.php:100`

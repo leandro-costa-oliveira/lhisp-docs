@@ -27,13 +27,6 @@ A primeira tabela lista contrato, cliente, tipo e data de execução. Todas as O
 
 Por tipo, `total = quantidade contabilizada × valor informado`; o total geral soma os tipos. A contagem de OS no rodapé da lista pode ser maior que a soma das quantidades comissionadas. A primeira ocorrência também define em qual tipo aquele contrato será contado; confira duplicidades entre tipos, pois a consulta não define ordenação específica para essa decisão.
 
-Os valores por tipo são guardados no **localStorage do navegador**, compartilhando a chave `store_valores_por_tipo_os`. Eles não constituem uma tabela central de comissões; outro navegador/perfil pode apresentar valores diferentes. Registre os parâmetros usados junto da impressão.
+Os valores por tipo são guardados no **armazenamento local do navegador**. Eles não constituem uma tabela central de comissões; outro navegador/perfil pode apresentar valores diferentes. Registre os parâmetros usados junto da impressão.
 
 O backend de OS restringe empresa e filiais do usuário. Se faltarem ordens, confira técnico, data de execução, situação concluída, vínculo ao serviço/contrato e escopo de filial. Para quantidade bruta de OS, use [Relatório de Ordens de Serviço](/relatorios/relatorio-de-ordens-de-servico).
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/ordenservico/RelComissaoTecnicoPorOs.tsx:35`
-- `lhisp-backend/src/lhisp-business/src/business/agendatecnica/OrdemServicoBI.js:5`

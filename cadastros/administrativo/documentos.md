@@ -60,7 +60,7 @@ O envio à D4Sign gera um PDF A4 e exige ao menos um e-mail válido da pessoa. O
 
 ## Campos dinâmicos (tags)
 
-Esta seção lista as tags reconhecidas pelo motor de substituição do LHISP. A rotina central é `parseCamposDinamicos()`, aplicada a modelos de documento, boletos, notas fiscais, recibos, ordens de serviço, ordens de separação e mensagens de bloqueio/cobrança. Além dela, cada tela de impressão acrescenta um conjunto próprio de tags.
+Esta seção lista as tags usadas em modelos de documento, boletos, notas fiscais, recibos, ordens de serviço, ordens de separação e mensagens de bloqueio/cobrança. Cada contexto pode acrescentar tags próprias; confira a substituição na pré-visualização.
 
 Regras gerais:
 
@@ -72,7 +72,7 @@ Regras gerais:
 
 ### Gerais e de formatação
 
-Disponíveis em todos os contextos que passam por `parseCamposDinamicos()`.
+Tags gerais para os contextos de substituição descritos acima.
 
 | Tag | Conteúdo |
 |---|---|
@@ -117,8 +117,6 @@ Quando o contrato pertence a uma filial e a filial tem o dado preenchido, o valo
 Equivalentes legados: `{PROVEDOR_NOME}`, `{PROVEDOR_CNPJ}`, `{PROVEDOR_ENDERECO}`, `{PROVEDOR_NUMERO}`, `{PROVEDOR_BAIRRO}`, `{PROVEDOR_CIDADE}`, `{PROVEDOR_ESTADO}`, `{PROVEDOR_ESTADO_EXTENSO}`, `{PROVEDOR_CEP}`, `{PROVEDOR_TELEFONE}`, `{PROVEDOR_TELEFONE1}`, `{PROVEDOR_TELEFONE2}`, `{PROVEDOR_WEBSITE}`, `<company>`, `<company_addr>`, `<company_city>`, `<company_state>`, `<company_cnpj>`, `<company_phone1>`, `<company_phone2>`.
 
 `{PROVEDOR_ESTADO_EXTENSO}` devolve o nome do estado por extenso e em caixa alta (`RIO GRANDE DO SUL`), acompanhando o padrão dos demais campos de endereço, que o sistema grava em maiúsculas. Sigla desconhecida é reproduzida como está.
-
-> **⚠️ Atenção** Até a correção aplicada em setembro de 2026, essa tag devolvia a **sigla** da UF, e não o nome do estado.
 
 ### Cliente (pessoa)
 
@@ -378,7 +376,7 @@ Mensagens de cobrança, de bloqueio e de envio de boleto por e-mail aceitam toda
 | `#CODIGODEBARRRAS#` | Código de barras (grafia legada com três letras R; mesmo valor) |
 | `#QRCODEPIX#` | Link do QR Code Pix da cobrança |
 
-> **⚠️ Atenção** Até a correção aplicada em setembro de 2026, o sistema lia o código de barras de um campo inexistente e a tag era sempre substituída por texto vazio. Mensagens antigas com `#CODIGODEBARRRAS#` continuam funcionando, mas prefira `#CODIGODEBARRAS#` em textos novos.
+Prefira `#CODIGODEBARRAS#` em textos novos. `#CODIGODEBARRRAS#` é a grafia legada; confira a substituição na pré-visualização da mensagem.
 
 ### Envio de comandos a equipamentos
 

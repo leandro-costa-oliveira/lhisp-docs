@@ -11,11 +11,12 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 LINK = re.compile(r"!?\[[^\]]*\]\(([^\s)]+)(?:\s+[^)]*)?\)")
 REQUIRED = ("title", "description", "published", "editor")
+INTERNAL_ROOTS = {".tracking", "tracking", ".claude", ".internal", "tasks"}
 
 
 def main():
     names = subprocess.check_output(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", "*.md"],
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         cwd=ROOT,
     ).decode().split("\0")
     pages = sorted(
@@ -23,13 +24,17 @@ def main():
             name
             for name in names
             if name
-            and name != "README.md"
+            and Path(name).suffix == ".md"
             and not any(part.startswith(".") for part in Path(name).parts)
-            and Path(name).parts[0] != "tasks"
+            and Path(name).parts[0] not in INTERNAL_ROOTS
             and (ROOT / name).is_file()
         }
     )
-    errors = []
+    errors = [
+        f"{name}: arquivo interno incluído no sync Git; mantenha-o local e ignorado"
+        for name in names
+        if name and Path(name).parts[0] in INTERNAL_ROOTS
+    ]
     links = 0
     for name in pages:
         content = (ROOT / name).read_text(encoding="utf-8")
@@ -59,6 +64,14 @@ def main():
             destination = (base / path.lstrip("/")).resolve()
             if not destination.is_relative_to(ROOT):
                 errors.append(f"{name}: link fora do repositório: {target}")
+            elif (
+                destination.relative_to(ROOT).parts
+                and (
+                    destination.relative_to(ROOT).parts[0] in INTERNAL_ROOTS
+                    or any(part.startswith(".") for part in destination.relative_to(ROOT).parts)
+                )
+            ):
+                errors.append(f"{name}: link público para arquivo interno: {target}")
             elif not destination.is_file() and not Path(str(destination) + ".md").is_file():
                 errors.append(f"{name}: destino ausente: {target}")
 

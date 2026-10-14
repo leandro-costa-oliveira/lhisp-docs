@@ -24,9 +24,7 @@ Selecione a página e confira as datas. Ausência de saída pode representar ses
 
 ## Estado do relatório agregado legado
 
-A tela **Relatórios → Bilhetagem dos Acessos** continua no PHP e oferece **Servidor**, **Período**, **Exibir** e **Imprimir**. Porém, o destino `rel_bilhetagem_listagem.php` consulta `UsodeipDAO.listarPorIpPeriodo`, tenta ler um IP que esse formulário não envia e não usa o servidor informado.
-
-Além disso, passa a data final como argumento de hora dessa consulta. A saída contém contrato, cliente, data inicial/final e IP, sem contadores de tráfego. **Esse formulário não pode ser tratado como relatório validado de bilhetagem por servidor no checkout auditado.** A existência do menu não garante coerência entre os filtros e a listagem.
+A tela legada **Relatórios → Bilhetagem dos Acessos** oferece **Servidor**, **Período**, **Exibir** e **Imprimir**, mas a consulta não aplica corretamente o servidor e o período informados. A saída contém contrato, cliente, data inicial/final e IP, sem contadores de tráfego. **Não use esse formulário para apurar bilhetagem por servidor.** Utilize as alternativas abaixo e encaminhe divergências ao suporte.
 
 ## Alternativas verificadas
 
@@ -35,12 +33,3 @@ Além disso, passa a data final como argumento de hora dessa consulta. A saída 
 - Para reconexões frequentes: [Acessos Desconectando](/relatorios/acessos-desconectando).
 
 Não use o resultado do formulário agregado como prova histórica de titularidade de IP. Essa análise exige consulta de uso de IP apropriada, horário/fuso e, quando houver CGNAT, faixa de portas e período do vínculo.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-php/web/form/contratos/dialogBilhetagemAcesso.php:15`
-- `lhisp-php/web/form/relatorios/rel_bilhetagem.php:19`
-- `lhisp-php/web/form/relatorios/rel_bilhetagem_listagem.php:36`
-- `lhisp-php/web/inc/classes/UsodeipDAO.php:115`

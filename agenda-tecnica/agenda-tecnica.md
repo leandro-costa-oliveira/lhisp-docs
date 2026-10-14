@@ -105,7 +105,7 @@ Nas preferências de ordens de serviço da empresa, **OS de Retirada automática
 
 Para cada serviço elegível, ela abre um atendimento e uma OS de retirada na categoria de cancelamento. Cada serviço é tratado em sua própria transação; uma falha não desfaz as ordens já geradas para outros serviços. A rotina não recolhe o equipamento nem encerra a locação: esses registros dependem da execução e baixa operacional.
 
-O código da rotina está disponível em `daemons/lhos_retirada.php`. Sua presença e a preferência marcada não comprovam que a instalação a esteja executando; frequência e agendamento devem ser conferidos pela operação técnica. Para tratar uma carteira manualmente, use [Produtos para Retirada](/relatorios/produtos-para-retirada), que permite filtrar pendências e gerar as OS faltantes mediante confirmação.
+A preferência marcada não comprova que a rotina automática esteja em execução; confirme a frequência e a disponibilidade com o suporte. Para tratar uma carteira manualmente, use [Produtos para Retirada](/relatorios/produtos-para-retirada), que permite filtrar pendências e gerar as OS faltantes mediante confirmação.
 
 ## Consulta e PDF por integração
 

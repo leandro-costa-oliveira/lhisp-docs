@@ -12,7 +12,7 @@ description: Usuário de integração SSH do Mikrotik e vínculo com o cadastro 
 
 Registrar o procedimento para criar um usuário local no **Mikrotik** com permissões completas para integração com o LHISP.
 
-O daemon de comandos usa **SSH**, com usuário e senha cadastrados no [servidor](/rede-infra/servidores). A criação do usuário no Winbox não atualiza essas credenciais no LHISP.
+A integração usa **SSH**, com usuário e senha cadastrados no [servidor](/rede-infra/servidores). A criação do usuário no Winbox não atualiza essas credenciais no LHISP.
 
 ## Quando usar
 

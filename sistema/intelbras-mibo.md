@@ -34,7 +34,7 @@ Use uma sessão administrativa para manter as credenciais. Salvar a integração
 | **Bloqueio ou suspensão do serviço** | Adiciona à blacklist; quando confirmado, fica **BLOQUEADA**. |
 | **Cancelamento do serviço** | Solicita desvinculação e depois adiciona à blacklist. |
 
-A aplicação grava o estado pendente e publica o evento. O daemon de OTT realiza a chamada externa e devolve a confirmação para atualizar o patrimônio. Salvar o contrato ou concluir uma movimentação local não comprova que a câmera já foi liberada/bloqueada na Intelbras.
+A sincronização pode permanecer pendente até a confirmação da Intelbras. Salvar o contrato ou concluir uma movimentação local não comprova que a câmera já foi liberada/bloqueada na Intelbras.
 
 O processamento de operações que adicionam blacklist possui limite de **100 por hora por empresa**. Ao atingir o limite, a fila aguarda nova janela; grandes lotes não têm conclusão imediata garantida.
 
@@ -54,6 +54,6 @@ No [Controle Patrimonial](/estoque/controle-patrimonial), confira o estado de si
 | Evento não é gerado | Assinatura do módulo, integração ativa e produto na lista gatilho. |
 | Patrimônio recusado na OS | Plano habilitado, produto permitido, posse do técnico e ausência de outro vínculo. |
 | Credenciais não configuradas / autenticação recusada | Client ID e Client Secret da API Intelbras e situação da conta no parceiro. |
-| Pendência prolongada | Mensagem do patrimônio, fila de OTT, confirmação de retorno e limite de blacklist. |
+| Pendência prolongada | Confira a mensagem do patrimônio e o limite de blacklist; encaminhe falhas persistentes ao suporte. |
 
-Desativar a integração interrompe o tratamento de novos eventos pelo consumidor; não executa a liberação/desvinculação automática dos dispositivos já existentes. Revise o estado externo antes de retirar a integração de operação.
+Desativar a integração interrompe o processamento de novas operações; não executa a liberação/desvinculação automática dos dispositivos já existentes. Revise o estado externo antes de retirar a integração de operação.

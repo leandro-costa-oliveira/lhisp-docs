@@ -27,11 +27,3 @@ Uma linha corresponde a um cadastro VoIP, não necessariamente a um cliente úni
 O BI aplica a restrição de filial por contrato, e o filtro adicional de filial é aplicado no vínculo do contrato. Registros sem vínculo válido podem ter dados cadastrais incompletos; confira-os na área VoIP do contrato.
 
 A página não exibe senha, saldo, consumo, chamadas ou resultado da integração, e não oferece CSV próprio. Para status de provisionamento ou divergência de número, verifique o cadastro do contrato e os retornos do serviço VoIP. Imprimir o relatório não consulta o servidor de telefonia nem envia comandos para ele.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/contrato_voip/RelVoip.tsx:13`
-- `lhisp-frontend/src/api/queries/contratos/useContratosVoip.ts:6`
-- `lhisp-backend/src/lhisp-business/src/business/contratos/ContratoVoipBI.js:5`

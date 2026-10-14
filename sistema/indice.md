@@ -11,7 +11,7 @@ description: Índice de administração, comunicação, segurança e integraçõ
 
 Use o guia da configuração ou integração desejada. Cadastro salvo, evento publicado e efeito no serviço externo são etapas diferentes; os guias indicam os limites verificados, inclusive protótipos e incompatibilidades encontradas.
 
-A habilitação de uma integração não substitui credenciamento no fornecedor, configuração do serviço executor ou contratação do módulo quando exigida. Para localizar o componente responsável, consulte [Arquitetura e serviços](/operacao/arquitetura-e-servicos).
+A habilitação de uma integração não substitui credenciamento no fornecedor, configuração da integração ou contratação do módulo quando exigida. Para conferir resultados e preparar um chamado, consulte [Operação e suporte](/operacao/arquitetura-e-servicos).
 
 ## Administração e acesso
 

@@ -9,7 +9,7 @@ editor: markdown
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Este guia trata do aplicativo do repositório `app-tecnico`. Ele consulta a URL técnica recebida na seleção da empresa. O [LHTEC web](/agenda-tecnica/lhtec-web), publicado em `/lhtec`, é outra aplicação e tem fila de baixa própria.
+Este guia trata do aplicativo técnico para dispositivos móveis. Selecione a empresa antes de entrar. O [LHTEC web](/agenda-tecnica/lhtec-web), publicado em `/lhtec`, é outra aplicação e tem fila de baixa própria.
 
 ## Entrar
 
@@ -42,7 +42,7 @@ O aplicativo persiste o cache de consultas por até 24 horas. A versão do aplic
 
 A rota offline encontra a OS na **lista já carregada** e permite registrar um horário de início no armazenamento local. O rótulo **Horário armazenado local** não comprova registro no servidor.
 
-Na implementação examinada, a chamada de início recebe um argumento de horário na interface de programação, mas não o envia no corpo da requisição. Portanto, não use esse registro local como comprovação de que o servidor preservou automaticamente o horário original da visita. Após reconectar, confira o início no painel e trate divergências pelo fluxo administrativo.
+O horário registrado localmente não é enviado ao iniciar a OS no servidor. Não use esse registro local como comprovação de que o painel preservou automaticamente o horário original da visita. Após reconectar, confira o início no painel e trate divergências pelo fluxo administrativo.
 
 Não foi localizada neste aplicativo a mesma rotina de restauração/retomada de baixas registrada no LHTEC web. As mutações também não usam repetição automática por padrão. Mantenha conexão para concluir baixas e confira o resultado antes de repetir uma tentativa com resposta incerta. Cache persistido não equivale a uma fila homologada de todas as operações offline.
 
@@ -56,4 +56,4 @@ Não foi localizada neste aplicativo a mesma rotina de restauração/retomada de
 | Início local difere do painel | O horário local não é enviado pela chamada de início atual. |
 | Baixa sem retorno | Confira a ordem e os materiais no servidor antes de reenviar. |
 
-As diferenças entre os dois aplicativos são verificadas no código; não implicam paridade de versão publicada ou homologação em todos os dispositivos. Consulte [Agenda técnica](/agenda-tecnica/agenda-tecnica) para regras administrativas.
+Os dois aplicativos possuem comportamentos distintos; confirme os recursos disponíveis na versão instalada. Consulte [Agenda técnica](/agenda-tecnica/agenda-tecnica) para regras administrativas.

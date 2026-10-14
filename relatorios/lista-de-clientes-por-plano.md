@@ -19,7 +19,7 @@ A lista nominal por plano permanece no formulário legado `relatorios/clientes_p
 4. Clique em **Exibir**.
 5. Use **Imprimir** ou **Baixar em CSV**.
 
-Não há filtro de data de ativação, período, filial ou inclusão de VIP no formulário. Valores gratuitos entram se satisfizerem os outros critérios. As restrições de empresa/filial do DAO continuam aplicadas à consulta.
+Não há filtro de data de ativação, período, filial ou inclusão de VIP no formulário. Valores gratuitos entram se satisfizerem os outros critérios. As restrições de empresa/filial do usuário continuam aplicadas à consulta.
 
 ## Saída
 

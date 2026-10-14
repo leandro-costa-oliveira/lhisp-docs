@@ -44,7 +44,7 @@ A inclusão exige `servidor_edit`. O backend grava o par e imediatamente reconfi
 | **Huawei** | Calcula seções, pools e `static-mapping`, produz a configuração Huawei e registra o mapa IP/portas. A aplicação deve ser validada no fluxo operacional do equipamento. |
 | **Outros** | A geração automática nesta rotina não está implementada. Não presuma que apenas cadastrar o bloco configurou o equipamento. |
 
-No Mikrotik atual, cada cadeia recursiva recebe nome derivado do subprefixo privado que atende, como `lhcgnat_100_64_200_0_23`. Isso evita colisões entre blocos diferentes. Servidores configurados por versões anteriores devem passar por **Atualizar Servidor → CGNAT** para uma reconstrução completa: a rotina remove as regras identificadas por `lhcgnat` e recria as cadeias com os nomes atuais.
+No Mikrotik, cada cadeia recebe nome derivado do subprefixo privado que atende, como `lhcgnat_100_64_200_0_23`. Para reconstruir a configuração completa, use **Atualizar Servidor → CGNAT**: a rotina remove as regras identificadas por `lhcgnat` e recria as cadeias.
 
 No Huawei, a quantidade de portas precisa ser múltipla de 256. O backend sugere a proporção `/32` público para `/25` privado. A configuração gerada contém referências que precisam corresponder à instância, ACL e interface de saída reais; revise antes de aplicar.
 

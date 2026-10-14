@@ -9,19 +9,16 @@ description: ''
 
 ## Estado atual
 
-Não foi localizada uma implementação de relatório **Clientes por Aceite** nos repositórios disponíveis.
+O relatório consolidado **Clientes por Aceite** não está disponível neste fluxo. Consulte os documentos de cada contrato para conferir o aceite.
 
-As buscas incluíram rotas e componentes de relatórios no `lhisp-frontend`, formulários e actions no `lhisp-php`, além de rotas, regras de negócio e modelos no `lhisp-backend`.
-
-## Funcionalidade relacionada localizada
+## Consultar o aceite de documentos
 
 O sistema possui aceite eletrônico de documentos do contrato na central do assinante:
 
-- `web/central/central_principal.php` lista documentos pendentes de aceite;
-- `web/central/central_docs.php` registra e apresenta a data do aceite;
-- `web/callback/d4sign.php` também grava `DATA_ACEITE` em retorno da assinatura;
-- planos podem usar a configuração `exigirAceite`.
+- a central do assinante lista documentos pendentes e apresenta a data do aceite;
+- assinaturas concluídas pela integração D4Sign também podem registrar a data de aceite;
+- os planos podem exigir o aceite dos documentos.
 
-Esses fluxos não comprovam a existência de uma tela consolidada **Clientes por Aceite**. Por isso, filtros, colunas, exportação e regras do relatório não são descritos aqui.
+Essas consultas são feitas por contrato e não substituem uma listagem consolidada de clientes por aceite.
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

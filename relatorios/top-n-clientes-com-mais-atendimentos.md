@@ -31,12 +31,3 @@ A contagem de **OS** usa outra consulta: considera `createdAt` da ordem no mesmo
 O motivo corresponde à coluna `MotivoId` do atendimento, exposta no modelo como `MotivoAtendimentoId`. O gráfico consulta novamente os atendimentos dos dez primeiros contratos e separa **Em aberto** (inclui em atendimento), **Concluídos** e **Aguardando OS**. Situações fora desses grupos não viram uma série adicional; por isso a soma visual deve ser confrontada com a contagem da tabela. O filtro de motivo não é reaplicado à contagem independente de OS.
 
 A consulta respeita o escopo dos BIs de atendimento, OS e contrato. Para comparar operadores, mantenha o mesmo acesso às filiais. O relatório não identifica automaticamente defeito recorrente: investigue motivo e histórico antes de classificar o cliente.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/atendimentos/RelatorioTopNAtendimentos.tsx:21`
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/atendimentos/CardGraficoTopAtendimentos.tsx:29`
-- `lhisp-backend/src/rotas/rotas-base.js:1427`
-- `lhisp-backend/src/lhisp-business/src/models/agendatecnica/Atendimento.js:22`

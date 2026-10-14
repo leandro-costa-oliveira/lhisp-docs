@@ -86,7 +86,7 @@ Salvar o plano antes dessas ações garante que os valores de origem sejam os re
 
 O cadastro armazena a opção **Reajuste Automático**, tipo percentual ou valor fixo, valor e quantidade de meses de carência. Também existe o fluxo separado [Reajuste de Serviços Contratados](/financeiro/reajuste-servicos-contratados), que permite selecionar e confirmar a aplicação.
 
-> **Limitação verificada:** nos repositórios revisados foi encontrada a persistência dessas opções e os métodos de aplicação de reajuste, mas não uma tarefa agendada que consuma automaticamente a configuração do plano. Valide o processo operacional implantado antes de depender apenas dessa marcação.
+> **Atenção:** marcar **Reajuste Automático** não confirma que haverá execução agendada na instalação. Confirme o processo com o suporte antes de depender apenas dessa opção.
 
 ## Cadastro seguro
 

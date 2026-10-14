@@ -43,7 +43,7 @@ Gerar a OS não dá baixa na locação nem devolve o equipamento ao estoque. A r
 
 Existe também uma rotina de servidor para serviços cancelados há uma quantidade configurada de dias e com material retornável ainda locado. Ela depende das preferências de OS da empresa e da execução operacional da rotina; este relatório não habilita nem agenda essa automação.
 
-Consulte [Agenda técnica](/agenda-tecnica/agenda-tecnica) para as condições e os limites dessa rotina. A presença do código no repositório não confirma que ela esteja agendada na instalação.
+Consulte [Agenda técnica](/agenda-tecnica/agenda-tecnica) para as condições e os limites dessa rotina. Confirme com o suporte se ela está agendada na instalação.
 
 | Situação | Verificação |
 |---|---|

@@ -28,6 +28,6 @@ A consulta agrupa por contrato antes de escolher o serviço para conferir a fide
 
 ## Limitação atual importante
 
-Na montagem da listagem, a variável que guardava o contrato é reutilizada ao percorrer suas contas a receber. Isso pode deixar a coluna **Contrato** vazia ou incorreta quando o serviço possui contas. Não use essa coluna isoladamente para identificar um cliente ou justificar cobrança.
+A coluna **Contrato** pode ficar vazia ou incorreta quando o serviço possui contas a receber. Não use essa coluna isoladamente para identificar um cliente ou justificar cobrança.
 
 Confira o contrato, o serviço, os documentos e a condição de fidelidade diretamente no cadastro antes de tomar uma decisão. Para um inventário atual de serviços com identificação consistente, utilize [Relatório de Clientes](/relatorios/relatorio-de-clientes) e abra a aba **Serviços** do contrato.

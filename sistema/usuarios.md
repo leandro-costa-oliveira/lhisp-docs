@@ -64,7 +64,7 @@ Use esta tela para criar, editar ou revisar o cadastro de usuários do sistema.
 |---|---|
 | **Menus** | Define opções disponibilizadas na navegação. Ver um menu não substitui a permissão da operação no servidor. |
 | **Permissões** | Autoriza operações específicas; consulta, cadastro, alteração e exclusão podem exigir permissões diferentes. |
-| **Filiais** | Define o recorte de filiais visíveis conforme a consulta/DAO e o perfil. |
+| **Filiais** | Define o recorte de filiais visíveis conforme a consulta e o perfil. |
 | **Filiais Atendidas** | Define elegibilidade para receber protocolos da fila; é independente de apenas visualizar a filial. |
 | **Grupo de Atendimento** | Restringe a distribuição da fila. Usuário sem grupo recebe protocolos sem grupo. |
 | **Caixas e Contas Bancárias** | Restringem recursos financeiros conforme a operação; não são substituídos pela simples seleção de filial. |
@@ -84,7 +84,7 @@ Essa implementação não copia todos os dados do cadastro: filiais atendidas, c
 
 ## Credencial de equipamentos
 
-A senha de acesso aos equipamentos é diferente da senha de login no painel. O cadastro atual grava essa credencial cifrada e exige chave própria do tenant; ausência da chave impede a gravação. Não reutilize a senha do painel como indicação de que o acesso RADIUS administrativo está configurado.
+A senha de acesso aos equipamentos é diferente da senha de login no painel. Se houver erro ao gravá-la, encaminhe a mensagem ao suporte sem informar a senha. O login no painel não comprova que o acesso administrativo aos equipamentos está configurado.
 
 ## Problemas comuns
 

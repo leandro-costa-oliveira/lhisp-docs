@@ -23,7 +23,7 @@ Abra o relatório com sessão e acesso ao menu/Contratos. Alterar os filtros mud
 
 **Imprimir** usa a impressão do navegador. Não há exportação CSV, edição em lote ou envio de notificações nessa tela.
 
-O botão **Atualizar** da implementação atual altera somente um contador local que não participa da consulta; ele não força nova leitura do servidor. Se houve correção em outra aba, recarregue a página para conferir o resultado com segurança.
+O botão **Atualizar** não força nova leitura do servidor. Se houve alteração em outra aba, recarregue a página para conferir o resultado com segurança.
 
 Os limites de data são enviados sem expansão explícita do último dia para 23:59:59. Cadastros com horário no dia final podem exigir um limite posterior para conferência.
 

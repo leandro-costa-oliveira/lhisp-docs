@@ -38,12 +38,3 @@ Os contadores são **bytes**, embora o formatador se chame `formatarVelocidade`.
 O endpoint usa diretamente as datas enviadas, sem expandir explicitamente o final para `23:59:59`. Confira sessões no último dia ao fechar o período. Também seleciona pela entrada: uma sessão iniciada antes do intervalo e encerrada nele pode ficar fora, e não há rateio de bytes apenas pelo tempo dentro do período.
 
 Para sessões individuais, consulte [Bilhetagem dos Acessos](/relatorios/bilhetagem-dos-acessos). Divergência de total exige conferir accounting, início de sessão, filtros e retenção do histórico; a consulta não recupera contadores que não foram gravados.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/uso_de_banda/RelUsoDeBanda.tsx:20`
-- `lhisp-frontend/src/api/queries/relatorios/useRelUsoBandaTopN.ts:32`
-- `lhisp-backend/src/rotas/rotas-base.js:1209`
-- `lhisp-frontend/src/misc/utils.ts:83`

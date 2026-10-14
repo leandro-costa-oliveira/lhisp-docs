@@ -29,11 +29,3 @@ No código atual, o filtro combina **conclusão com sucesso**, quando marcado, c
 Para situação **Todos**, a implementação usa o sentinela negativo; o backend só recebe situação numérica quando o valor é não negativo. Confira os filtros aplicados ao comparar com a Agenda técnica.
 
 O gráfico define um limite visual de eixo de 12; para volumes maiores, confira os números da tabela, pois a escala pode limitar a visualização. Não há exportação CSV própria. Para comissão por data de execução e deduplicação, consulte [Comissão dos Técnicos](/relatorios/comissao-de-tecnicos-por-ordem-de-servico).
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/ordenservico/RelatorioOrdensServico.tsx:45`
-- `lhisp-backend/src/lhisp-business/src/business/agendatecnica/OrdemServicoBI.js:5`
-- `lhisp-backend/src/lhisp-business/src/models/agendatecnica/OrdemServico.js:21`

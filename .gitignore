@@ -63,3 +63,11 @@ MinhaEmpresa.pfx
 # Wiki.js local: configuração e chaves fora do versionamento
 .env
 /wiki-ssh/
+
+# Registros e instruções locais: não enviar ao repositório sincronizado com a wiki.
+# O sync incremental do Wiki.js também processa arquivos em pastas com ponto.
+/.tracking/
+/tracking/
+/.claude/
+/.internal/
+/tasks/

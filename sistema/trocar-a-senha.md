@@ -29,7 +29,7 @@ O botão permanece indisponível enquanto faltarem campos, a confirmação diver
 
 ## Conferência
 
-O retorno confirma a gravação da credencial escolhida. A senha de equipamentos é gravada cifrada e depende da configuração de chave do tenant; uma falha nessa configuração precisa ser tratada pela operação técnica.
+O retorno confirma a gravação da credencial escolhida. Se houver erro ao gravar a senha de equipamentos, encaminhe a mensagem ao suporte sem informar a senha.
 
 A mudança não substitui cadastro de NAS, grupos de acesso ou conectividade RADIUS. Confira esses itens quando a senha foi gravada, mas o equipamento ainda recusa o login.
 
@@ -39,7 +39,7 @@ A mudança não substitui cadastro de NAS, grupos de acesso ou conectividade RAD
 | Nova senha igual à atual | Informe uma senha diferente para o sistema. |
 | Segundo fator inválido | Código atual do autenticador ou recuperação ainda não usada. |
 | Cartão de equipamentos ausente | Conta sem acesso aos equipamentos no cadastro de [Usuários](/sistema/usuarios). |
-| Erro de gravação da senha de equipamentos | Chave de cifra do tenant e configuração do serviço. |
+| Erro de gravação da senha de equipamentos | Registre a mensagem e acione o suporte, sem compartilhar a senha. |
 
 O formulário PHP legado **Sistema > Trocar a Senha** continua sendo um caminho distinto, com validações próprias. A captura abaixo é histórica e não representa os dois cartões da tela atual; não use seus rótulos para inferir os requisitos da SPA.
 

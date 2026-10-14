@@ -35,6 +35,6 @@ O primeiro gráfico distribui os eventos por grupo. Sem filial selecionada, há 
 
 A grade mostra filial, contrato, cliente, plano, telefone, data de aquisição/cadastro e situação atual. O rodapé apresenta totais e médias dos **valores atuais dos serviços** por grupo. Não soma pagamentos, não aplica uma fotografia de preço da época e não multiplica automaticamente o valor pela quantidade contratada.
 
-**Imprimir** usa a saída do navegador. Não existe CSV ou alteração comercial nessa tela. O botão **Atualizar** muda somente um contador local, sem forçar nova consulta; recarregue a página para conferir alterações feitas em outra aba.
+**Imprimir** usa a saída do navegador. Não existe CSV ou alteração comercial nessa tela. O botão **Atualizar** não força nova consulta; recarregue a página para conferir alterações feitas em outra aba.
 
 As datas são enviadas sem expansão explícita para o fim do último dia; confira eventos com horário nas bordas do intervalo. Para eventos de entrada/saída efetivamente ocorridos no período, consulte [Ativações / Cancelamentos](/relatorios/ativacoes-cancelamentos).

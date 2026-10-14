@@ -29,6 +29,6 @@ O período usa a criação do registro. Não filtra pelo momento de envio, confi
 
 ## Limitações operacionais
 
-O botão **Atualizar** altera um contador local que não integra a chave da consulta; não força nova leitura do servidor. Para confirmar uma mudança de status ocorrida depois da abertura, recarregue a página.
+O botão **Atualizar** não força nova leitura do servidor. Para confirmar uma mudança de status ocorrida depois da abertura, recarregue a página.
 
 A tela imprime pelo navegador e não oferece CSV, reenvio, cancelamento ou alteração de mensagens. Para investigar uma falha, confira contrato, canal e texto de status e use o fluxo próprio da integração. O conteúdo pode conter dados pessoais; mantenha a impressão no atendimento autorizado.

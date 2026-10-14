@@ -39,7 +39,7 @@ Em **Rede e Infraestrutura → Servidores**, crie ou edite o concentrador:
 6. confira o segredo RADIUS pela ação específica do servidor;
 7. salve e valide autenticação, accounting e desconexão com um acesso de teste.
 
-O IP e a porta SSH não podem duplicar outro servidor. Ao cadastrar ou alterar o registro, o backend atualiza o serviço de monitoramento e solicita a recarga do RADIUS. Alterar apenas o cadastro não configura automaticamente AAA, interfaces ou VLANs no Huawei.
+O IP e a porta SSH não podem duplicar outro servidor. Ao cadastrar ou alterar o registro, o LHISP atualiza o monitoramento e a autenticação RADIUS associados ao cadastro. Alterar apenas o cadastro não configura automaticamente AAA, interfaces ou VLANs no Huawei.
 
 ## Relação com os acessos de clientes
 
@@ -47,7 +47,7 @@ O RADIUS localiza o servidor pelo atributo `NAS-IP-Address`. Em seguida valida o
 
 Uma sessão autenticada gera bilhetagem. Para Huawei, o identificador de conexão gravado nessa sessão é usado como índice das OIDs proprietárias de tráfego. Sem accounting correto, o LHISP pode até autenticar o cliente, mas perder a associação necessária para histórico, sessão e gráfico.
 
-Ao desconectar um acesso, o backend enfileira comandos Huawei para cortar as sessões pelo usuário e pelo IPv4. A execução depende do serviço de comandos, da conectividade SSH e das credenciais cadastradas; portanto, a alteração no contrato pode ser persistida antes de o comando chegar ao equipamento.
+Ao desconectar um acesso, o LHISP solicita o encerramento das sessões pelo usuário e pelo IPv4. A execução depende da conectividade SSH e das credenciais cadastradas; portanto, a alteração no contrato pode aparecer antes de o comando chegar ao equipamento.
 
 ## SNMP e leitura de tráfego
 
@@ -94,7 +94,7 @@ No LHISP, use também o diagnóstico RADIUS disponível no acesso do contrato. E
 | RADIUS não autentica | Compare `NAS-IP-Address`, segredo, domínio AAA, usuário e senha; confirme que o servidor está ativo e com RADIUS habilitado. |
 | Autentica, mas não contabiliza | Revise o servidor de accounting e confirme a chegada de início, atualização e encerramento da sessão. |
 | Gráfico de tráfego não aparece | Confira accounting, identificador da sessão, comunidade/versão SNMP e liberação de rede. |
-| Desconexão não chega ao BRAS | Verifique serviço de comandos, fila pendente, SSH, privilégio do usuário e IP cadastrado. |
+| Desconexão não chega ao BRAS | Verifique comandos pendentes, SSH, privilégio do usuário e IP cadastrado; se persistir, acione o suporte. |
 | PPPoE informa conflito de IP | Localize a sessão com `display access-user ip-address` e confira se um pool local do Huawei sobrepõe os prefixos do LHISP. |
 | CGNAT é recusado ao salvar | Ajuste a relação entre blocos e use quantidade de portas múltipla de 256. |
 

@@ -29,7 +29,7 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 | [Relatórios](/relatorios/indice) | Consultas operacionais, financeiras, comerciais, fiscais e técnicas. |
 | [Dashboard Comercial](/dashboards/dashboard-comercial) | Indicadores de serviços vendidos e andamento das instalações. |
 | [Radar de Clientes](/dashboards/radar-de-clientes) | Cancelamentos, cobertura do histórico, simulações de risco e saúde dos dados. |
-| [Arquitetura e serviços](/operacao/arquitetura-e-servicos) | Responsabilidades dos componentes, rotas e dependências para desenvolvimento e suporte técnico. |
+| [Operação e suporte](/operacao/arquitetura-e-servicos) | Conferência de resultados, diagnóstico e informações para acionar o suporte. |
 
 ## Guias por tarefa
 
@@ -41,7 +41,7 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 - [Executar e baixar OS no LHTEC web](/agenda-tecnica/lhtec-web) ou no [aplicativo técnico Expo](/agenda-tecnica/app-tecnico).
 - [Registrar pré-vendas pelo aplicativo do vendedor](/cadastros/aplicativo-vendas) e [atender dúvidas da central do assinante](/lhsac/central-do-assinante).
 - [Configurar autenticador e passkeys](/sistema/seguranca-da-conta).
-- [Conferir backup e preparar recuperação do tenant](/operacao/backup-e-recuperacao).
+- [Conferir backup e preparar recuperação da instalação](/operacao/backup-e-recuperacao).
 
 ## Fluxo básico de um novo cliente
 

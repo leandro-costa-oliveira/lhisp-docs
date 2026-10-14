@@ -37,11 +37,3 @@ O relatório inclui as situações retornadas pela consulta, sem seletor de situ
 A área usa o BI de Agenda técnica: empresa e restrições de filiais do usuário influenciam o resultado, incluindo filiais atendidas pelo técnico quando aplicável. A ausência de uma linha não deve ser interpretada como exclusão do atendimento antes de conferir esse escopo.
 
 Os limites de data são enviados pela interface à consulta. Para conferência por horário no último dia, compare com o registro de abertura, pois a tela imprime somente a data e não oferece seleção de hora. Não há exportação CSV própria nesta página. Para distribuição agregada, consulte [Atendimentos por Canal](/relatorios/relatorio-de-atendimentos-por-canal).
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/atendimentos/RelatorioAtendimentos.tsx:18`
-- `lhisp-backend/src/lhisp-business/src/business/agendatecnica/AtendimentoBI.js:6`
-- `lhisp-backend/src/lhisp-business/src/business/agendatecnica/OrdemServicoBI.js:5`

@@ -29,11 +29,3 @@ O CSV contém **id, Nome, Cpf/Cnpj, Telefones e Email**. Há uma inconsistência
 A página usa o endpoint de Pessoas e não altera o cadastro. Se um fornecedor esperado não aparece, confira o início do nome digitado e a opção de fornecedor na pessoa. Para compras, valores devidos e pagamentos, consulte notas de compra e contas a pagar: esses dados não fazem parte deste relatório.
 
 A saída inclui documentos e contatos. Limite sua distribuição à finalidade da consulta e ao acesso autorizado ao cadastro de pessoas.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/fornecedores/RelatorioFornecedores.tsx:16`
-- `lhisp-frontend/src/api/queries/sistema/usePessoas.ts:6`
-- `lhisp-backend/src/lhisp-business/src/business/sistema/PessoaBI.js:4`

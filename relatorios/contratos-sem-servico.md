@@ -18,7 +18,7 @@ O formulário legado `relatorios/contratos_sem_servico` procura contratos cujo i
 3. Preencha início e fim de **Cadastrado em** para limitar o cadastro do contrato.
 4. Clique em **Exibir** e use **Imprimir** para a listagem resultante.
 
-Sem período, não há restrição por data de cadastro. Quando um limite é informado, o DAO usa ambos em `BETWEEN`; informe o par completo. A seleção exclui contratos e filiais apagados e segue o escopo de consulta do usuário. Não há filtro de situação ou CSV próprio.
+Sem período, não há restrição por data de cadastro. Quando utilizar o período, informe as duas datas. A seleção exclui contratos e filiais apagados e segue o escopo de consulta do usuário. Não há filtro de situação ou CSV próprio.
 
 ## Resultado e conferência
 

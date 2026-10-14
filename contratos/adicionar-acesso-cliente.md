@@ -95,7 +95,7 @@ O diagnóstico verifica:
 - se o acesso é PPPoE ou IP fixo;
 - vínculo e situação do serviço contratado;
 - existência da rede e do servidor, inclusive se o servidor foi apagado;
-- IP do servidor e disponibilidade dos daemons que o publicam para o RADIUS;
+- IP do servidor e disponibilidade da autenticação RADIUS;
 - preenchimento exato de usuário e senha, com distinção entre maiúsculas e minúsculas;
 - trava de MAC e o equipamento que originou a última tentativa;
 - quando existe sessão anterior, se o IP anunciado pelo NAS coincide com o IP cadastrado no servidor.

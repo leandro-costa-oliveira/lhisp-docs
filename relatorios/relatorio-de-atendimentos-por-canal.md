@@ -27,12 +27,3 @@ A tabela contém **Canal**, **SubCanal** e **Quantidade**. A interface traduz os
 A consulta passa pelo BI de atendimentos, com empresa e restrições de filial aplicáveis ao usuário. O volume pode diferir entre operadores com acesso a filiais diferentes. Alterações posteriores do canal/subcanal no cadastro também podem mudar a distribuição de um período passado.
 
 Compare com o [Relatório de Atendimentos](/relatorios/relatorio-de-atendimentos) usando o mesmo período e escopo. Não compare diretamente com número de mensagens do WhatsApp ou OS: são unidades distintas. Não há botão de CSV nem envio automático desse relatório no código desta página.
-
-## Fontes conferidas
-
-Comportamento confrontado com os checkouts locais em 14/10/2026. Não comprova a versão instalada nem execução com dados reais.
-
-- `lhisp-frontend/src/paginas/relatorios/agendatecnica/atendimentos/AtendimentosPorCanal.tsx:17`
-- `lhisp-frontend/src/api/queries/relatorios/useRelatorioAtendimentosPorCanal.ts:13`
-- `lhisp-backend/src/rotas/rotas-base.js:1406`
-- `lhisp-backend/src/lhisp-business/src/business/agendatecnica/AtendimentoBI.js:16`
