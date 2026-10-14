@@ -21,6 +21,12 @@ Este documento registra as versões do código usadas como fonte da documentaç�
 
 O hash de um repositório **não significa que toda a documentação foi validada contra ele**. A referência só é válida para os caminhos marcados como **Revisado** na matriz de cobertura.
 
+## Continuidade A003 — 14/10/2026
+
+O [relatório A003](continuidade-a003-2026-10-14.md) registra a substituição dos 47 relatórios genéricos, novos guias funcionais e revisão complementar de rede, no commit de conteúdo `a4d7dd1`. A evidência de 27 páginas está em `evidencias-a003-fluxos.json`; os demais grupos têm fontes nos guias e no relatório. As políticas de privacidade LHSAC/NFibra foram excluídas do escopo pelo usuário e permanecem preservadas.
+
+Não promover diretórios inteiros nem tratar verificações estáticas como homologação das instalações. A003 sucede a fila documental de A002; os relatos anteriores abaixo ficam como histórico.
+
 ## Auditoria A002 — 14/10/2026
 
 O [relatório A002](auditoria-2026-10-14.md) contém o inventário atual dos repositórios, os hashes observados, alterações locais preexistentes, páginas atualizadas e a fila priorizada de lacunas. As correções estão no commit `64777c2`. A revisão foi parcial por funcionalidade; **não promove B001 nem valida diretórios inteiros**.

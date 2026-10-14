@@ -11,6 +11,8 @@ editor: markdown
 
 Documento interno de manutenção. **A documentação não está completa.** Existem guias operacionais úteis e detalhados, mas o número de páginas não representa cobertura das funcionalidades nem atualização em relação ao código.
 
+Este é o registro histórico A002. A [continuidade A003](continuidade-a003-2026-10-14.md) atualiza o estado das entregas e pendências, incluindo a exclusão das políticas de privacidade do escopo pelo usuário.
+
 ## Escopo e método
 
 - Ponto inicial de `lhisp-docs`: `41fcd97a6e8e3e66502bc6b7bbb143b67db4bd42`, branch `dev`, sem alterações locais.
