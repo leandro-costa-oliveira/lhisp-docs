@@ -21,6 +21,12 @@ Este documento registra as versões do código usadas como fonte da documentaç�
 
 O hash de um repositório **não significa que toda a documentação foi validada contra ele**. A referência só é válida para os caminhos marcados como **Revisado** na matriz de cobertura.
 
+## Auditoria A002 — 14/10/2026
+
+O [relatório A002](auditoria-2026-10-14.md) contém o inventário atual dos repositórios, os hashes observados, alterações locais preexistentes, páginas atualizadas e a fila priorizada de lacunas. As correções estão no commit `64777c2`. A revisão foi parcial por funcionalidade; **não promove B001 nem valida diretórios inteiros**.
+
+As tabelas B001 e a fila abaixo são registros históricos. Seus HEADs observados não representam o estado atual do workspace. Algumas páginas receberam correções posteriores sem promoção de baseline; portanto, a matriz antiga também não descreve sozinha o conteúdo atual. Para retomar, use as evidências e pendências de A002 e compare com o código mais recente.
+
 ## Snapshot B001
 
 - Data de coleta: **2026-09-04**.
