@@ -40,17 +40,18 @@ CPEs que usam TR-181 para os parâmetros de PPPoE/Wi-Fi, múltiplas instâncias 
 
 | Estado | Significado |
 |---|---|
-| **PROVISIONADO** | A CPE aceitou os parâmetros enviados. |
+| **PROVISIONADO** | A CPE aceitou os parâmetros enviados, ou o acesso não tinha parâmetros e foi registrado somente como inventário. Confira a mensagem retornada. |
 | **DESCONHECIDA** | O MAC informado não corresponde a um acesso válido. |
-| **ERRO_PROV** | A CPE retornou falha ou o diálogo CWMP não foi concluído. |
-| **SEM_MODULO** | A empresa não possui o módulo TR-069 ativo. |
+| **ERRO_PROV** | A CPE retornou `Fault` durante o provisionamento. |
+| **SEM_MODULO** | Valor previsto no contrato de estados. No fluxo atual, o ACS responde ao `Inform` sem inventariar nem provisionar a CPE, e não publica esse callback. |
 
 ## Limitações
 
 - A tela **Rede e Infra > TR-069** é somente para consulta das redes ativas e do status do setup.
 - A ativação, desativação e reaplicação são feitas no cadastro de cada rede.
 - Não use comandos de configuração sugeridos genericamente para um fabricante. Esses comandos não fazem parte da implementação do LHISP e variam por equipamento e firmware.
-- Um status **PROVISIONADO** confirma a aceitação do `SetParameterValues`; a validação funcional de PPPoE e Wi-Fi ainda deve ser feita no equipamento homologado.
+- Quando houve envio de parâmetros, **PROVISIONADO** confirma a resposta ao `SetParameterValues`; a mensagem pode indicar que é necessário reiniciar a CPE. Em casos de somente inventário, esse status não comprova alteração de configuração. Valide PPPoE e Wi-Fi no equipamento homologado.
+- As sessões CWMP ficam em memória e expiram após 60 segundos de inatividade. Reinício do daemon ou diálogo interrompido não garante callback **ERRO_PROV**; investigue os logs e o próximo `Inform` se a tela permanecer com estado antigo.
 
 ## Problemas comuns
 

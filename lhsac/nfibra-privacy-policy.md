@@ -2,11 +2,12 @@
 title: NFibra Privacy Policy
 published: true
 editor: markdown
-description: ''
+description: Roteiro de revisão; o texto integral da política de privacidade ainda não está documentado nesta página.
 ---
 
 # NFibra Privacy Policy
 
+> **Conteúdo pendente:** esta página contém um roteiro de revisão, sem o texto integral da política de privacidade. Não a use como substituta da política publicada da aplicação.
 
 ## Objetivo
 
@@ -45,9 +46,8 @@ Use esta referência quando for necessário:
 
 ## Resultado esperado
 
-- O conteúdo institucional da política fica registrado no repositório.
-- A equipe consegue localizar rapidamente os trechos legais mais importantes.
-- O texto fica disponível para consulta e futura padronização.
+- A revisão identifica o texto institucional aprovado, sua versão e o local de publicação.
+- O conteúdo integral e seus dados institucionais precisam ser incorporados após confirmação do responsável.
 
 ## Problemas comuns
 

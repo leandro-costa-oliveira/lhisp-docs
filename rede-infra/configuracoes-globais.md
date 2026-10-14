@@ -17,7 +17,7 @@ Por esse alcance, trate a edição como mudança de infraestrutura. Um valor inc
 
 Os quatro campos formam a lista global enviada aos Mikrotiks. O primeiro DNS é obrigatório para salvar; os demais só entram no comando quando contêm um IPv4 ou IPv6 válido.
 
-Em cada servidor, o LHISP executa a configuração de `/ip dns` com essa lista, cache de 20.480 KiB e `allow-remote-requests` conforme a opção **Servidor de DNS** do cadastro daquele equipamento. Assim, a mesma lista pode ser usada apenas pelo próprio roteador ou também para atender consultas remotas, dependendo do servidor.
+Em cada servidor, o LHISP executa a configuração de `/ip dns` com essa lista e `allow-remote-requests` conforme a opção **Servidor de DNS** do cadastro daquele equipamento. A rotina atual não altera o tamanho do cache DNS. Assim, a mesma lista pode ser usada apenas pelo próprio roteador ou também para atender consultas remotas, dependendo do servidor.
 
 O atalho **Bloqueio Judicial** leva ao cadastro de domínios que devem ser tratados pela rotina específica de DNS. Ele é um processo separado: alterar os resolvedores globais não cadastra nem remove bloqueios judiciais. Consulte [DNS — Bloqueio Judicial](/rede-infra/dns-bloqueio-judicial).
 

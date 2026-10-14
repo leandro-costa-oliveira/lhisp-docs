@@ -95,6 +95,16 @@ O botão DANFE monta atualmente a consulta do portal com ambiente de produção 
 
 Valide arquivos no programa fiscal pertinente antes de transmitir. Download não equivale a entrega ao fisco.
 
+## NFS-e Fortaleza: parâmetros do plano
+
+As notas do tipo **Serviço** usam os códigos configurados em **Configuração Fiscal > NFS-e Fortaleza — notas de serviço** do [cadastro de planos](/cadastros/financeiro/planos): item da lista, NBS, INDOP, CST IBS/CBS, classificação tributária, tributação municipal e CNAE opcional.
+
+Na emissão, o sistema guarda os parâmetros na nota. O plano registrado no primeiro serviço da composição determina a origem; outro item com cadastro mais completo não é escolhido automaticamente. Alterar o plano depois não sobrescreve os valores já gravados na nota.
+
+Na exportação ou impressão, campos ainda nulos podem ser complementados pelo plano de origem. Se restarem campos obrigatórios ausentes ou combinações inválidas, a mensagem identifica nota, contrato, plano e pendência. Corrija o cadastro indicado ou encaminhe os valores já preservados ao responsável fiscal.
+
+O lote RPS de Fortaleza é validado antes de disponibilizar o arquivo: uma pendência impede o download do XML de todo o lote. A impressão histórica continua disponível com aviso quando houver pendência. Esses parâmetros não se aplicam aos tipos SVA, locação e NFCom.
+
 ## Diagnóstico
 
 | Situação | Verificação |
@@ -106,6 +116,7 @@ Valide arquivos no programa fiscal pertinente antes de transmitir. Download não
 | Reenvio não aparece | A nota precisa ser NFCom pendente/erro e o usuário precisa de `notafiscal_add`. |
 | Nova nota não pode usar a conta | A nota cancelada pode ter mantido o vínculo da conta a receber. |
 | E-mail não chega | Verifique destinatário, configuração de e-mail e log do serviço; a ação para em erro se uma nota do lote não existir. |
+| Lote RPS de Fortaleza recusado | Leia a pendência da nota e revise os códigos no plano de origem; valores já gravados na nota são preservados. |
 
 Para preparar a integração modelo 62, consulte [Configurar emissão de NFCom no LHNFE](/financeiro/nf-com).
 

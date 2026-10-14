@@ -49,6 +49,8 @@ Na visualização, nenhum título é gravado nem enviado a gateway.
 - As contas são agrupadas pela conta bancária antes do registro no gateway. Assim, contratos com serviços em bancos diferentes usam a integração correta.
 - Uma falha é tratada por contrato: a linha fica destacada com a mensagem retornada e as contas daquele contrato criadas durante a tentativa são removidas.
 
+Contas utilizadas como origem de [compensação de baixa](/financeiro/compensacao-de-baixa) deixam de ocupar a competência para a geração. A reposição válida ocupa esse lugar. Se a reposição foi cancelada e não há outra cobrança válida do mês, a geração pode recriá-la com os dados da conta original, mesmo que o valor atual do serviço tenha mudado.
+
 ## Limitação do filtro de fidelidade
 
 Na implementação atual, **Gerar somente serviços com fidelidade?** é verificado depois que o sistema chama a geração do contrato. Portanto:

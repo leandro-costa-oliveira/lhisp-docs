@@ -63,7 +63,9 @@ Uma solicitação autorizada pode originar uma ordem de separação, que então 
 
 Enquanto aguarda entrega, uma ordem pode ter seus itens alterados. Ao salvar uma edição, o backend recria os itens e libera as associações patrimoniais removidas, reassociando as unidades mantidas.
 
-A exclusão exige `ordem_separacao_del`. Como o backend da exclusão não recompõe movimentações já confirmadas, não exclua uma ordem concluída. Para preservar a rastreabilidade, trate correções de saldo por uma movimentação identificada no almoxarifado e mantenha a ordem que originou a saída.
+A exclusão exige `ordem_separacao_del` e confirmação na interface. O backend recusa ordens **Concluídas**, pois o material já saiu do estoque. Também recusa ordens vinculadas a uma solicitação de material; nesse caso, a orientação da própria operação é cancelar a solicitação.
+
+Ao apagar uma ordem permitida, o sistema libera os patrimônios associados, remove seus itens e exclui a ordem logicamente, na mesma transação. A ação não serve para estornar entregas. Para corrigir material já despachado, use o fluxo de devolução ou uma movimentação identificada que preserve a origem.
 
 ## Cuidados importantes
 

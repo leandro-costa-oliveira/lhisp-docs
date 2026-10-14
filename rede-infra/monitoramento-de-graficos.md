@@ -2,83 +2,64 @@
 title: Monitor de Gráficos
 published: true
 editor: markdown
-description: ''
+description: Montagem e visualização de painéis com gráficos existentes de vários servidores.
 ---
 
 # Monitor de Gráficos
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-## Objetivo
+O Monitor de Gráficos reúne gráficos já cadastrados em um painel para acompanhamento contínuo. **Descrição** é o nome do painel, não um filtro da tabela. A composição associa gráficos de um ou vários servidores; não cria novas coletas SNMP.
 
-Registrar a tela de **Monitor de Gráficos** do módulo **Rede/ Infra**, que exibe um filtro por descrição e uma listagem de servidores associados a um conjunto de gráficos/monitoramento.
-
-## Quando usar
-
-Use este fluxo para:
-
-- consultar registros de monitoramento por descrição;
-- revisar quais servidores estão vinculados ao monitor;
-- ajustar a quantidade de itens exibidos por linha;
-- navegar entre os itens do cadastro/monitor.
+O cadastro e a visualização desse monitor permanecem em páginas PHP legadas. O cadastro de cada gráfico também está disponível na aba **Gráficos** do [Servidor](/rede-infra/servidores).
 
 ## Pré-requisitos
 
-- Acesso ao módulo **Rede/ Infra**.
-- Permissão para consultar os dados do monitor.
-- Tela carregada no demo com os dados do monitor disponíveis.
+- Acesso autenticado e permissão para o cadastro.
+- Gráficos cadastrados nos servidores que serão acompanhados.
+- SNMP e daemon de gráficos funcionando para produzir o histórico RRD.
 
-## Passo a passo
+## Montar o painel
 
-1. Acesse **Rede/ Infra > Monitor de Gráficos**.
-2. Use o campo **Descrição** para filtrar os registros desejados.
-3. Ajuste **Exibir por linha** conforme necessário.
-4. Consulte a grade inferior com os dados retornados.
-5. Use os botões de ação do topo conforme a necessidade do fluxo.
+1. Abra **Rede e Infraestrutura → Monitor de Gráficos** e selecione **Novo**, ou **Editar** para um painel existente.
+2. Informe a **Descrição** que identificará o painel.
+3. Defina **Exibir por linha**, de 1 a 4 na interface.
+4. Clique em **Adicionar Gráfico** (`+`) e selecione um gráfico existente.
+5. Repita para os demais gráficos. A tabela apresenta ID, servidor e descrição de cada um.
+6. Para retirar um item, use **Remover Gráfico da Composição** e confirme.
+7. Salve o painel com pelo menos um gráfico.
+8. Em modo de consulta, clique em **Visualizar Monitoramento** para abrir o painel em outra janela.
 
-## Campos importantes
+O backend valida os IDs dos gráficos e a quantidade por linha, e salva a descrição em maiúsculas. Retirar um item da composição não apaga o gráfico do servidor nem seu histórico. Ao editar e salvar, a relação de gráficos do painel é substituída pela composição enviada.
 
-| Campo / Elemento | Observação |
-|---|---|
-| **Descrição** | Campo de filtro textual visível no topo da tela. |
-| **Exibir por linha** | Seletor com valor numérico para controlar a listagem. |
-| **Link lateral** | Botão à direita do formulário principal, com ícone de vínculo. |
-| **Tabela de resultados** | Exibe colunas de identificação e associação com servidores. |
+## Acompanhar o painel
 
-### Colunas visíveis na lista
+A visualização apresenta servidor, IP e título de cada gráfico. Em **Exibir**, selecione o período de 15 minutos a um dia; o padrão é **Último Dia**.
 
-| Coluna | Observação |
-|---|---|
-| **#** | Coluna de ordenação/linha. |
-| **Id** | Identificador do registro. |
-| **Servidor** | Nome do servidor associado. |
-| **Descrição** | Descrição exibida na listagem. |
+Sem alternância, a página atualiza as imagens a cada 60 segundos. Com **Alterar entre os gráficos** habilitado, passa ao próximo painel cadastrado, voltando ao primeiro ao terminar; nessa navegação usa contagem de 10 segundos. Essa opção alterna os painéis, não as séries de um único gráfico.
 
-## Resultado esperado
+Atualizar a imagem consulta o histórico já coletado. Isso não força nova coleta SNMP nem garante um ponto por minuto: a consolidação RRD mais fina usada pelo daemon é de cinco minutos.
 
-- O monitor exibe os registros filtrados pela descrição informada.
-- A listagem apresenta pelo menos um servidor associado ao monitor.
-- Os controles de navegação e manutenção permanecem visíveis no topo.
+A página tenta manter a sessão autenticada e renovar a credencial quando uma imagem falha. Se a renovação for recusada, exibe **Sessão expirada, faça login novamente no sistema.** Reautentique-se e reabra o monitor.
+
+## Coleta e retenção
+
+O daemon de gráficos coleta por padrão a cada 60 segundos. Nos arquivos RRD, o passo é de 300 segundos e o heartbeat padrão também é 300 segundos: atrasos prolongados sem atualizações geram trechos desconhecidos no histórico. Coleta, atualização da imagem e resolução do gráfico são intervalos diferentes.
+
+Alterar apenas a frequência de coleta sem revisar o heartbeat dos arquivos existentes pode aumentar os buracos no gráfico. A configuração `RRD_AUTO_TUNE` é desativada por padrão; não presuma que mudar `RRD_HEARTBEAT` no ambiente modificou os RRDs já gravados. Consulte a operação responsável antes de ajustar esses parâmetros.
+
+Um gráfico vazio pode indicar ausência de coleta ou falha de imagem/sessão. O painel não diagnostica a causa sozinho. Consulte [Operação dos serviços de rede](/rede-infra/operacao-servicos-rede) e [Central de Alertas](/rede-infra/central-de-alertas).
 
 ## Problemas comuns
 
-| Problema | Como tratar |
+| Sintoma | Verificação |
 |---|---|
-| Nenhum registro aparece | Verifique o texto informado em **Descrição** e confirme se há dados no ambiente. |
-| O botão lateral não responde | Recarregue a tela e confirme se o carregamento do monitor terminou. |
-| A lista parece incompleta | Ajuste **Exibir por linha** e confirme a paginação/quantidade de itens. |
+| Não permite salvar | Informe descrição e ao menos um gráfico válido; confira quantidade por linha. |
+| Não aparece o botão de visualização | Salve e saia do modo de edição. |
+| Janela não abre | Autorize o popup para o LHISP e tente novamente. |
+| Painel aparece sem dados recentes | Confira SNMP, daemon, arquivo RRD e data da última coleta. |
+| Gráficos desaparecem depois de algum tempo | Verifique a mensagem de sessão e faça login novamente se a renovação falhar. |
+| Lacunas no histórico | Compare duração do ciclo, falhas SNMP e heartbeat; não preencha lacunas sem preservar evidência do incidente. |
+| Não encontro o gráfico no painel | Confira a composição salva e o cadastro original no servidor. |
 
-## Observações
-
-- A tela mostra o título **Monitoramento de Gráficos** no cabeçalho do painel.
-- A captura validada estava limpa, sem marcações ou anotações visuais.
-- A grade exibida no demo contém um exemplo com **Id 658**, **Servidor ROT-TESTE** e **Descrição CORE-CARBON**.
-- A rota exata do demo não foi revalidada nesta continuação; a documentação se baseia na tela observada e validada visualmente.
-
-
-## Screenshots sugeridos
-
-- Tela principal do **Monitor de Gráficos** no demo: `assets/screenshots/rede-infra/monitoramento-de-graficos.png`
-
-![Monitor de Gráficos no demo](/assets/screenshots/rede-infra/monitoramento-de-graficos.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+![Cadastro do Monitor de Gráficos legado](/assets/screenshots/rede-infra/monitoramento-de-graficos.png)

@@ -59,3 +59,7 @@ assets/screenshots/cadastros/pessoas-click.png
 *.wmv
 
 MinhaEmpresa.pfx
+
+# Wiki.js local: configuração e chaves fora do versionamento
+.env
+/wiki-ssh/
