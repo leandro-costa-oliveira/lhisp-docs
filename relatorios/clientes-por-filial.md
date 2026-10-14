@@ -2,52 +2,38 @@
 title: Clientes por Filial
 published: true
 editor: markdown
-description: ''
+description: Compare contratos e serviços por filial na consulta atual e na listagem legada.
 ---
 
 # Clientes por Filial
 
-## Objetivo
-
-Listar clientes agrupados por filial para conferência operacional.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes por Filial** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes por Filial**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes por Filial**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A distribuição por filial está disponível no [Relatório de Clientes](/relatorios/relatorio-de-clientes), em `/relatorios/clientes`, e no relatório legado `relatorios/clientes`. As duas implementações têm critérios diferentes; compare totais somente depois de alinhar situações, valores gratuitos e unidade de contagem.
+
+## Consulta atual
+
+Na tela atual, selecione filial e use **Mais filtros** para tipo de pessoa, categoria B2C/B2B, segmento, plano, data de referência e inclusão de bloqueados/suspensos. **Incluir clientes VIP** controla o recorte de contratos gratuitos.
+
+Os cartões contam contratos distintos e serviços separadamente. O gráfico por filial representa serviços ativos, bloqueados e suspensos. Cada linha detalhada é um serviço. **Exportar CSV** inclui o resultado detalhado da consulta, com as outras páginas.
+
+A data de referência limita o cadastro do contrato. As situações e os valores continuam atuais; não se reconstrói uma base histórica fechada. Consulte o guia completo antes de comparar esse resultado com um mês já encerrado.
+
+## Consulta legada por filial
+
+1. Abra o formulário legado com sessão e acesso ao menu.
+2. Deixe **Filial** e **Plano** vazios e **Exibir Lista Detalhada** desmarcado para consultar o resumo por filial.
+3. Defina tipo de pessoa, categoria, segmento, VIP, bloqueados e suspensos.
+4. Clique em **Exibir** e use **Imprimir**.
+
+O resumo conta **contratos distintos** com ao menos um serviço elegível. Sem **Listar Clientes VIP**, o serviço precisa ter valor positivo. Ativos entram sempre; bloqueados e suspensos dependem das opções. Não há período no formulário legado.
+
+Selecionar uma filial marca automaticamente a opção de lista detalhada na interface. O backend também assume detalhamento quando recebe filial ou plano sem o campo dessa opção. O modo detalhado mostra dados de pessoa/endereço, serviço, valor e situação, com CSV da tabela.
+
+## Diferenças importantes no legado
+
+O modo detalhado agrupa por contrato e seleciona um serviço sem ordem definida. Plano e opções de bloqueados/suspensos são conferidos depois dessa escolha, podendo omitir um contrato que teria outro serviço compatível. Seu total não é uma contagem completa de serviços.
+
+O filtro **Plano** não é aplicado na consulta resumida por filial, embora apareça no formulário. Para analisar um plano específico, prefira [Clientes por Plano](/relatorios/clientes-por-plano) ou o filtro de plano da consulta atual.
+
+Os valores exibidos são mensais cadastrais; não equivalem a dinheiro recebido. O acesso a filiais e contratos deve estar autorizado no perfil utilizado.

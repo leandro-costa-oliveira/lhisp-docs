@@ -1,53 +1,30 @@
 ---
-title: Clientes Sem Email
+title: Clientes sem E-mail
 published: true
 editor: markdown
-description: ''
+description: Identifique contratos cujo titular tem e-mail vazio ou nulo, por filial, cadastro e situação.
 ---
 
-# Clientes Sem Email
-
-## Objetivo
-
-Localizar clientes que não possuem e-mail cadastrado.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes Sem Email** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes Sem Email**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes Sem Email**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
+# Clientes sem E-mail
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela `/relatorios/clientes_sem_email` consulta **contratos** cujo titular possui e-mail **nulo ou exatamente vazio**. Não valida sintaxe, existência da caixa postal, devoluções ou entrega de mensagens. Um endereço preenchido apenas com espaços também não é procurado por esses dois critérios.
+
+## Consulta
+
+- **Filial:** permite selecionar várias filiais; sem seleção adicional, mantém o escopo autorizado do usuário.
+- **Data Inicial/Final:** referem-se ao cadastro do **contrato**, não ao cadastro da pessoa ou à ativação do serviço. O padrão é o ano atual.
+- **Situação:** situação do contrato, não dos serviços individuais; vazio não restringe.
+
+Abra o relatório com sessão e acesso ao menu/Contratos. Alterar os filtros muda a consulta. Confira filial, data de cadastro, número do contrato e nome do cliente na tabela. A mesma pessoa com dois contratos pode aparecer duas vezes.
+
+## Saída e atualização
+
+**Imprimir** usa a impressão do navegador. Não há exportação CSV, edição em lote ou envio de notificações nessa tela.
+
+O botão **Atualizar** da implementação atual altera somente um contador local que não participa da consulta; ele não força nova leitura do servidor. Se houve correção em outra aba, recarregue a página para conferir o resultado com segurança.
+
+Os limites de data são enviados sem expansão explícita do último dia para 23:59:59. Cadastros com horário no dia final podem exigir um limite posterior para conferência.
+
+Para corrigir, abra a pessoa/contrato e atualize o e-mail após confirmar o contato com o titular. Essa mudança pode afetar todos os contratos da mesma pessoa. Veja também [Pessoas](/cadastros/pessoas) e [Notificações dos Contratos](/relatorios/notificacoes-dos-contratos).

@@ -1,8 +1,8 @@
 ---
-title: Mikrotik: Services
+title: 'Mikrotik: Services'
 published: true
 editor: markdown
-description: ''
+description: Serviços de gerência do Mikrotik e porta SSH usada pelo LHISP.
 ---
 
 # Mikrotik: Services
@@ -48,6 +48,9 @@ Use este fluxo quando for necessário:
 1. Dê **duplo clique** sobre o serviço desejado.
 2. No campo **Port**, informe a nova porta.
 3. No caso do **SSH**, a porta configurada no Mikrotik deve ser igual à cadastrada no servidor do sistema.
+4. Atualize o campo **Portas SSH** no cadastro do [servidor](/rede-infra/servidores) e confira a comunicação antes de encerrar o acesso administrativo atual.
+
+Alterar somente a porta não restringe as origens que podem acessar o serviço. Revise também a rede de gerência e as regras de acesso do equipamento. Se o servidor usa **Conectar por**, confira o encaminhamento pelo servidor intermediário.
 
 ## Campos importantes
 
@@ -63,7 +66,7 @@ Use este fluxo quando for necessário:
 ## Resultado esperado
 
 - Serviços desnecessários ficam desativados.
-- Portas de serviços podem ser ajustadas para reduzir exposição.
+- A porta SSH do equipamento corresponde à cadastrada no LHISP.
 - SSH permanece habilitado para integração com o LHISP.
 - Winbox pode permanecer habilitado para facilitar a administração.
 
@@ -77,15 +80,8 @@ Use este fluxo quando for necessário:
 
 ## Observações
 
-- A wiki recomenda desativar tudo o que não for utilizado para reduzir riscos.
-- O SSH é tratado como obrigatório para a comunicação do sistema com o Mikrotik.
-- A wiki reforça que Winbox deve continuar habilitado quando for o meio de acesso administrativo.
-- Não foi encontrada no demo uma tela equivalente 1:1 para essa página; por isso a migração foi feita diretamente a partir da wiki.
-
-
-## Screenshots sugeridos
-
-- A wiki não fornece uma captura operacional 1:1 e o demo não expõe essa mesma tela.
-- Se surgir uma tela equivalente no demo, ela poderá ser adicionada em `assets/screenshots/rede-infra/mikrotik-services.png`.
+- O daemon de comandos atual conecta por SSH; habilitar apenas Winbox ou API não atende esse fluxo.
+- SNMP e RADIUS possuem configuração própria. Desativar um serviço de gerência não configura esses protocolos.
+- Os ícones e campos do Winbox dependem da versão. Confira o estado final do serviço e preserve um caminho administrativo de retorno.
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

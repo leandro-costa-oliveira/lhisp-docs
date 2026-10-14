@@ -24,7 +24,7 @@ Use este fluxo para:
 ## Pré-requisitos
 
 - Acesso ao módulo **Monitor de Redes**.
-- Permissão para editar ou cadastrar POPs.
+- Permissão `monitor_add_torre` para cadastrar POPs e `monitor_edit_torre` para alterá-los.
 - Endereço/localização válida para o novo POP.
 - Navegador com suporte a localização, caso o cadastro seja feito por GPS.
 
@@ -47,9 +47,11 @@ Use este fluxo para:
 ### Cadastro por geolocalização
 
 1. Acesse o Monitor de Redes com um navegador que suporte geolocalização.
-2. Quando o navegador solicitar, permita o acesso à localização.
-3. O sistema exibirá a tela de cadastro já posicionada na localização informada.
-4. Complete os dados do POP e salve.
+2. Acione o botão de cadastro de POP por geolocalização na barra do monitor.
+3. Quando o navegador solicitar, permita o acesso à localização. A função centraliza o mapa e abre o cadastro nas coordenadas recebidas.
+4. Confira latitude e longitude, complete os dados do POP e salve.
+
+Se a geolocalização falhar ou não estiver disponível, a função abre o cadastro no **centro atual do mapa**. Confira as coordenadas antes de salvar; o formulário aberto não comprova que o GPS foi obtido.
 
 ## Campos importantes
 
@@ -85,7 +87,7 @@ Use este fluxo para:
 | Problema | Como tratar |
 |---|---|
 | Não consigo entrar no modo de edição | Verifique a permissão de usuário e o ícone correto na barra de ferramentas. |
-| O navegador bloqueia a localização | Permita o acesso à geolocalização para prosseguir com o cadastro por GPS. |
+| O navegador bloqueia a localização | Revise a permissão; o cadastro pode abrir no centro do mapa. Corrija as coordenadas ou use o cadastro manual. |
 | O POP não aparece no mapa | Confirme se foi salvo e se a localização está correta. |
 | Não encontro o ativo na lista lateral | Verifique o agrupamento do mapa e o filtro/visão atual. |
 

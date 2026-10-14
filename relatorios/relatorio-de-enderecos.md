@@ -2,7 +2,7 @@
 title: Relatório de Endereços
 published: true
 editor: markdown
-description: ''
+description: Estado da tela legada não implementada e alternativas para consulta de endereços e clientes.
 ---
 
 # Relatório de Endereços
@@ -11,7 +11,7 @@ description: ''
 
 O item **Relatórios > Clientes > Relatório de Endereços** abre a rota legada `/lgc/relatorios|enderecos`, mas a página apresenta somente a mensagem **NÃO IMPLEMENTADO**. Não existem filtros, consulta, impressão ou exportação disponíveis nesse fluxo.
 
-Esse comportamento foi confirmado no staging e no arquivo `lhisp-php/web/form/relatorios/rel_enderecos.php`.
+A revisão local de 14/10/2026 conferiu esse estado no arquivo `lhisp-php/web/form/relatorios/rel_enderecos.php`, sem executar ambiente remoto. A captura abaixo é preexistente.
 
 ## Alternativas disponíveis
 

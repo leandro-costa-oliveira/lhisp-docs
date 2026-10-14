@@ -22,7 +22,7 @@ Cadastre primeiro os elementos referenciados pela rede:
 
 - [setor](/rede-infra/setores), para organizar a área de atendimento;
 - [servidor](/rede-infra/servidores), que concentra e provisiona os acessos;
-- [prefixos IPv4 e IPv6](/rede-infra/prefixos-de-ip), quando a rede distribuir endereços;
+- prefixos IPv4 e [IPv6](/rede-infra/ipv6) na aba correspondente do [servidor](/rede-infra/servidores), quando a rede distribuir endereços;
 - ponto de acesso Wireless ou OLT GePON/GPON, quando aplicável.
 
 A descrição deve ser única. O backend também impede usar como interface da rede uma das interfaces de saída configuradas no servidor.
@@ -91,7 +91,7 @@ Salvar os dados básicos da rede não significa que o setup TR-069 já foi aplic
 
 ## Transferir acessos
 
-A função legada **Transferir acessos** move todos os acessos de uma rede de origem para outra. Para cada acesso, o LHISP remove a configuração anterior, altera a rede e recria a configuração. Se o servidor for diferente, também desassocia os prefixos antigos e tenta reservar os próximos IPv4 e IPv6 disponíveis no destino.
+Na listagem de **Redes**, clique em **Transferir Acessos** na linha da origem, selecione a **Rede de Destino** e confirme em **Transferir**. A função move todos os acessos da origem para o destino. Para cada acesso, o LHISP remove a configuração anterior, altera a rede e recria a configuração. Se o servidor for diferente, também desassocia os prefixos antigos e tenta reservar os próximos IPv4 e IPv6 disponíveis no destino.
 
 A rotina processa um acesso por transação. Uma falha no meio pode deixar parte dos clientes já transferida; valide contagem, prefixos, autenticação e conectividade após a execução.
 

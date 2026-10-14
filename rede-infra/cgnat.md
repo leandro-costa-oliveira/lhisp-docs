@@ -48,6 +48,10 @@ No Mikrotik atual, cada cadeia recursiva recebe nome derivado do subprefixo priv
 
 No Huawei, a quantidade de portas precisa ser múltipla de 256. O backend sugere a proporção `/32` público para `/25` privado. A configuração gerada contém referências que precisam corresponder à instância, ACL e interface de saída reais; revise antes de aplicar.
 
+Há uma diferença no caminho Huawei: a inclusão valida as máscaras, descontando os endereços de rede e broadcast dos blocos privados, mas o gerador usa a quantidade de portas legada gravada no servidor (`portas_cgnat`). Portanto, o cálculo mostrado para o novo par não comprova que o gerador usará o mesmo valor. Confira os parâmetros do servidor, a saída e os mapas antes da aplicação. O gerador reconhece apenas as relações internas de 126, 62 ou 30 privados por público e pode encerrar sem gerar o bloco quando essa relação não existe.
+
+O texto Huawei inclui literalmente `GigabitEthernet0/5/SuaInteraceDeSaida`, além de identificadores fixos de pools, instância e ACL. Ele não é um script pronto para aplicação e não é enviado automaticamente por essa rotina. Substitua as referências de acordo com o projeto e valide cada bloco no equipamento.
+
 ## Mapeamentos e vínculo com contratos
 
 Para cada endereço privado, a tabela registra:
@@ -103,5 +107,6 @@ TCP e UDP recebem a mesma faixa no gerador Mikrotik, mas o protocolo continua im
 | Resultado por porta parece ambíguo | Informe também o IP público e confirme data/hora e servidor. |
 | Mikrotik contém cadeias antigas ou conflitantes | Faça backup e execute reconstrução completa pela flag **CGNAT**. |
 | Prefixo Huawei foi apagado, mas continua ativo | Remova manualmente a configuração correspondente do equipamento e valide as traduções. |
+| Huawei informa que não possui relação de bitmask | Confira a quantidade legada de portas no servidor e a relação reconhecida pelo gerador; o cadastro aceito não garante geração concluída. |
 
 ![CGNAT](/assets/screenshots/rede-infra/cgnat.png)

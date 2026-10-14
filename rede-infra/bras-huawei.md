@@ -66,6 +66,8 @@ Quando o Huawei também executa CGNAT, os prefixos públicos e privados são man
 
 Depois de alterar prefixos, revise os comandos gerados antes de aplicá-los. Um bloco incorreto pode provocar sobreposição de portas, falta de tradução ou conflito com endereços já entregues aos assinantes. Consulte também [CGNAT](/rede-infra/cgnat) e [Prefixos de IP](/rede-infra/prefixos-de-ip).
 
+O gerador Huawei ainda usa a quantidade legada de portas cadastrada no servidor e produz texto com interface de saída e identificadores que precisam ser ajustados. A inclusão de um par de prefixos não confirma que esse texto foi aplicado ao BRAS nem que o valor de portas coincide com o cálculo da inclusão. Confira as limitações do [CGNAT Huawei](/rede-infra/cgnat) antes de reconstruir mapas.
+
 ## Diagnóstico no equipamento
 
 Use os comandos abaixo em uma sessão administrativa autorizada. Eles consultam estado e não corrigem o cadastro:

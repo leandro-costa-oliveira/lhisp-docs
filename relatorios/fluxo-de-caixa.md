@@ -2,79 +2,53 @@
 title: Fluxo de Caixa
 published: true
 editor: markdown
-description: ''
+description: Consulte movimentos pela data do caixa, interprete saldo e filtros e confira as diferenças da exportação legada.
 ---
 
 # Fluxo de Caixa
 
-## Objetivo
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
-Consultar o relatório de fluxo de caixa por caixa, período, tipo de movimentação e descrição.
+O relatório legado mostra entradas e saídas de um caixa pela **data operacional do caixa**. Ele inclui movimentos associados a contas e lançamentos manuais. Use o atalho legado correspondente, em `/lgc/relatorios|movimento_caixa`.
 
-## Quando usar
+## Consultar
 
-Use esta tela quando precisar:
+1. Selecione o **Caixa**.
+2. Informe o período inicial e final; o padrão é o mês corrente.
+3. Escolha **Entradas**, **Saídas** ou **Todos**.
+4. Se desejar, informe um trecho da **Descrição**.
+5. Clique em **Exibir**, confira o resultado no quadro inferior e use **Imprimir** ou **Baixar Arquivo**.
 
-- conferir entradas, saídas ou todos os movimentos do caixa;
-- filtrar um período específico;
-- restringir o relatório por caixa;
-- localizar lançamentos por descrição;
-- emitir ou baixar a saída do relatório.
+Caixa e datas são obrigatórios no formulário. A lista e a consulta usam os caixas disponíveis ao usuário e à empresa. O período considera `Data do Caixa`, não a hora em que o operador cadastrou o movimento nem o vencimento das contas associadas.
 
-## Pré-requisitos
+## Ler movimentos e saldo
 
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Fluxo de Caixa**.
-- Ter caixas e movimentações cadastrados para consulta.
+Cada linha mostra **Usuário, Data, Descrição, Espécie, Nrdoc e Valor**. Entradas são identificadas como crédito (**C**) e saídas como débito (**D**). A descrição pode detalhar contas a receber, contas a pagar e observações vinculadas, com os respectivos valores associados.
 
-## Passo a passo
-
-1. Acesse o menu **Relatórios > Fluxo de Caixa**.
-2. Selecione o **Caixa** desejado.
-3. Informe o **Período** inicial e final.
-4. Escolha o **Tipo de Movimentação** entre **Entradas**, **Saídas** ou **Todos**.
-5. Preencha a **Descrição** quando quiser filtrar por texto.
-6. Clique em **Exibir** para gerar o relatório.
-7. Use **Imprimir** ou **Baixar Arquivo** conforme a necessidade.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
+| Total | Regra |
 |---|---|
-| **Caixa** | Seleção do caixa que será usado na consulta. |
-| **Período** | Data inicial e final do relatório. |
-| **Tipo de Movimentação** | Define se o relatório mostra entradas, saídas ou todos os movimentos. |
-| **Descrição** | Filtro textual para localizar lançamentos específicos. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão. |
-| **Baixar Arquivo** | Faz o download da saída do relatório. |
+| **Saldo Anterior** | Entradas menos saídas de todas as datas do caixa anteriores ao primeiro dia escolhido. |
+| **Entradas / Saídas** | Soma dos movimentos retornados pelo período e filtros. |
+| **Saldo** | Saldo anterior mais entradas filtradas menos saídas filtradas. |
 
-## Resultado esperado
+Com filtro de tipo ou descrição, o saldo final usa **somente os movimentos selecionados**, mas mantém o saldo anterior completo. Ele pode diferir do saldo real ao final do período. Para conferir o saldo do caixa, use **Todos** e deixe Descrição em branco.
 
-- O sistema exibe os movimentos financeiros conforme os filtros selecionados.
-- O relatório pode ser impresso ou baixado.
-- O operador consegue revisar o caixa sem sair da tela.
+A configuração da empresa pode ocultar saldo anterior e rodapé para usuários sem administração de filial. A ausência dos totais pode ser uma restrição de exibição, não ausência de movimentos.
 
-## Problemas comuns
+## Impressão e CSV
 
-| Problema | Como tratar |
-|---|---|
-| O relatório vem vazio | Verifique o caixa, o período e o tipo de movimentação. |
-| A data está fora do esperado | Confirme se o período foi preenchido corretamente. |
-| Não há caixas na lista | Confira o cadastro de caixas e as permissões do usuário. |
-| A exportação não abre | Teste novamente após gerar o relatório com **Exibir**. |
+**Imprimir** imprime a listagem carregada no quadro inferior. **Baixar Arquivo** usa outra rotina e gera CSV com Descrição, Data e Valor, incluindo saldo anterior e total; as saídas recebem sinal negativo.
 
-## Observações
+Na versão revisada, o download **não recebe o filtro Entradas/Saídas** e trata Descrição separadamente da consulta visual. Também há divergência no cálculo do total exportado quando existem entradas. Compare o CSV com a listagem sem filtros e com o controle diário; não use o total do arquivo como saldo conciliado sem essa conferência.
 
-- No demo, a tela equivalente aparece como **Relatório de Fluxo de Caixa**.
-- A captura mostra a tela inicial do relatório, antes da execução de uma consulta.
-- A área central fica em branco até o usuário clicar em **Exibir**.
-- A captura usada nesta página veio do ambiente de demonstração.
+O arquivo pode conter descrições em várias linhas por causa dos títulos e observações vinculados. Abra com um leitor CSV que respeite campos entre aspas.
 
-## Screenshots sugeridos
+## Diferenças em relação a outros relatórios
 
-- Tela **Relatório de Fluxo de Caixa** no demo: `assets/screenshots/relatorios/fluxo-de-caixa.png`
+- [Movimentações por Usuário](/relatorios/movimentacoes-financeiras-por-usuario) seleciona movimentos pela data/hora de registro e operador; pode mostrar outro conjunto para as mesmas datas.
+- [Contas a Pagar](/relatorios/contas-a-pagar) e [Contas a Receber](/relatorios/contas-a-receber) trabalham com títulos e seus estados, não apenas dinheiro movimentado.
+- [Projeções e Recebimentos](/relatorios/projecoes-e-recebimentos) contém valores consolidados e despesas nominais; seu saldo efetivo não é o saldo deste caixa.
+
+Se uma linha estiver inesperada, confira data do caixa, usuário, tipo, associações e histórico na [Gerência Financeira](/financeiro/gerencia-financeira).
 
 ![Fluxo de Caixa no demo](/assets/screenshots/relatorios/fluxo-de-caixa.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

@@ -54,4 +54,4 @@ Não avance `LHISP.VERSAO` manualmente para ocultar uma falha. Verifique o SQL a
 
 ## Pendências operacionais
 
-Ainda faltam neste repositório procedimentos homologados de backup/restauração, matriz de compatibilidade entre imagens e schema, duração/bloqueios das migrations e recuperação após falha parcial. Esses itens dependem da implantação e precisam de validação em ambiente apropriado. Nenhum updater, banco ou servidor foi executado durante esta revisão documental.
+O guia de [Backup e recuperação](/operacao/backup-e-recuperacao) descreve como conferir os artefatos e preparar uma restauração isolada. A homologação da recuperação, a matriz de compatibilidade entre imagens e schema e a duração/bloqueios das migrations dependem da implantação e precisam de validação em ambiente apropriado. Nenhum updater, banco ou servidor foi executado durante esta revisão documental.

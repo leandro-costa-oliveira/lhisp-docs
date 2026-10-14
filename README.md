@@ -4,7 +4,7 @@
 
 Guias operacionais em português, publicados no Wiki.js pelo módulo de armazenamento Git. Comece por [home.md](home.md).
 
-A documentação **ainda tem lacunas**. O [relatório de auditoria de 14/10/2026](.tracking/auditoria-2026-10-14.md) registra correções, prioridades e limites. As referências de código e a cobertura ficam em [.tracking/referencias-de-codigo.md](.tracking/referencias-de-codigo.md); esses arquivos internos não são páginas da wiki.
+O [relatório A003 de 14/10/2026](.tracking/continuidade-a003-2026-10-14.md) registra os relatórios reescritos, novos guias e limites de validação, em continuidade à [auditoria A002](.tracking/auditoria-2026-10-14.md). As referências de código e a cobertura ficam em [.tracking/referencias-de-codigo.md](.tracking/referencias-de-codigo.md); esses arquivos internos não são páginas da wiki.
 
 ## Organização
 

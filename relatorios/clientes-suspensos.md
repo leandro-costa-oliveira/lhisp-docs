@@ -2,52 +2,30 @@
 title: Clientes Suspensos
 published: true
 editor: markdown
-description: ''
+description: Consulte serviços suspensos há mais dias que o limite informado, conforme o último histórico de suspensão.
 ---
 
 # Clientes Suspensos
 
-## Objetivo
-
-Acompanhar clientes suspensos e a situação atual do contrato.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes Suspensos** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes Suspensos**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes Suspensos**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+O formulário legado `relatorios/clientes_suspensos` lista **serviços atualmente suspensos** cujo último histórico de suspensão ultrapassa o limite em dias informado. Uma linha é um serviço; um contrato pode aparecer várias vezes apesar do rodapé “Contratos”.
+
+## Consultar
+
+1. Abra o relatório com sessão autenticada e acesso ao formulário.
+2. Selecione filial e plano, quando necessário.
+3. Informe **Dias** e clique em **Exibir**.
+4. Confira a data de suspensão e o serviço; use **Imprimir** para a listagem.
+
+O formulário começa com **Dias = 0**. O cálculo usa dias inteiros transcorridos desde o último histórico **Suspenso** e exige quantidade **maior que** o limite. Com limite 30, uma suspensão com exatamente 30 dias fica fora. Sem histórico de suspensão com data válida, o serviço também fica fora.
+
+O resultado apresenta contrato, filial, cliente, endereço, telefones, serviço, dia de vencimento, valor, situação, data de suspensão e dias suspenso. Não há data de referência histórica, intervalo de datas ou CSV próprio.
+
+## Limites de seleção
+
+A pré-seleção busca contratos com algum serviço ativo, bloqueado ou suspenso de valor positivo. Depois percorre seus serviços e aplica suspensão, dias e plano. Assim, um contrato composto somente por serviços gratuitos pode ficar fora; em um contrato misto, um serviço gratuito suspenso pode aparecer.
+
+O estado apresentado é atual. O relatório não reconstitui todos os períodos de suspensão anteriores, não distingue automaticamente a causa da suspensão e não reativa o serviço.
+
+Se houver divergência, confira o último histórico do serviço e o horário do servidor utilizado no cálculo. Para listar pendências de contratação use [Serviços Pendentes](/relatorios/servicos-pendentes), que utiliza outra situação.

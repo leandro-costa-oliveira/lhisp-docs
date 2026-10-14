@@ -2,52 +2,34 @@
 title: Clientes por Endereço
 published: true
 editor: markdown
-description: ''
+description: Localize contratos pelo endereço de instalação e confira o serviço representado na listagem legada.
 ---
 
 # Clientes por Endereço
 
-## Objetivo
-
-Listar clientes agrupados por endereço.
-
-## Quando usar
-
-Use esta tela quando for necessário consultar o relatório **Clientes por Endereço** no LHISP.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter acesso ao menu **Relatórios > Clientes por Endereço**.
-- Ter permissão para consultar relatórios.
-
-## Passo a passo
-
-1. Acesse **Relatórios > Clientes por Endereço**.
-2. Preencha os filtros disponíveis na tela.
-3. Clique em **Exibir** para gerar o resultado.
-4. Use somente as ações de impressão ou download disponibilizadas pela tela.
-
-## Campos importantes
-
-| Campo / ação | Descrição |
-|---|---|
-| **Filtros** | Variam conforme o relatório e o recorte operacional. |
-| **Exibir** | Executa a consulta do relatório. |
-| **Imprimir** | Abre a saída para impressão quando a tela disponibiliza essa ação. |
-| **Baixar Arquivos** | Faz o download da saída do relatório quando disponível. |
-
-## Resultado esperado
-
-- O sistema apresenta o relatório filtrado conforme os critérios informados.
-- Quando aplicável, é possível imprimir ou baixar o resultado.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Relatório vazio | Rever filtros, período e recorte escolhido. |
-| Dados inesperados | Conferir o menu e o título da página antes de gerar a consulta. |
-| Exportação não abre | Repetir a ação após gerar a consulta. |
-
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+O formulário legado `relatorios/clientes_enderecos` seleciona contratos pelo **endereço de instalação cadastrado no contrato**. Usa UF, cidade, bairro e identificador do logradouro/endereço; o endereço de cobrança não determina a seleção.
+
+## Consultar
+
+1. Abra o relatório com sessão autenticada e acesso ao formulário.
+2. Use as buscas de **UF**, **Cidade**, **Bairro** ou **Endereço** para montar o recorte.
+3. Para ampliar as situações, marque **Exibir cancelados**.
+4. Clique em **Exibir** e confira contrato e endereço antes de **Imprimir**.
+
+Escolher um nível mais amplo limpa seleções dependentes no formulário. Os filtros textuais enviados são de igualdade, não uma busca parcial digitada sobre a rua. A consulta não possui período nem exportação CSV própria.
+
+## Situações e unidade
+
+Sem **Exibir cancelados**, entram contratos com serviço ativo, bloqueado ou suspenso. Ao marcar a opção, o código retira essa restrição de situação; outras situações também podem aparecer, não somente cancelados. Serviços de valor zero são incluídos pela consulta deste relatório.
+
+A listagem agrupa por **contrato** e mostra contrato, filial, cliente, endereço/referência, telefones, descrição do serviço, valor e situação. O total é de contratos retornados, não pessoas nem acessos físicos.
+
+Em contratos com vários serviços, o agrupamento seleciona um serviço sem ordem definida. A descrição, o valor e a situação exibidos representam esse serviço, não necessariamente todos os serviços do endereço. Um contrato com plano gratuito e outro pago continua contando uma única vez.
+
+## Conferência
+
+Se um cliente esperado não aparecer, confira o endereço de instalação no contrato e as situações de seus serviços. Evite comparar o valor exibido com o faturamento total do contrato; abra a aba **Serviços** para esse levantamento.
+
+Veja também [Endereços](/cadastros/administrativo/enderecos) e [Relatório de Clientes](/relatorios/relatorio-de-clientes).

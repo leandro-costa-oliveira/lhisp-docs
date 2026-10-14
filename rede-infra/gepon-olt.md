@@ -40,7 +40,7 @@ Acesse **Rede/ Infra > GePON > GePON OLT** e use **Novo** ou **Editar**.
 | **Tipo** | Obrigatório. Seleciona o adaptador usado para interpretar as informações e executar comandos no equipamento. Um tipo incorreto não é apenas uma classificação errada: ele faz o sistema usar comandos e OIDs incompatíveis. |
 | **Conectar por** | Servidor intermediário opcional, descrito na interface como redirecionamento para acesso remoto ao Pacswitch. O vínculo é armazenado, porém a fábrica de drivers da OLT não o utiliza nas chamadas SNMP atuais; não presuma que ele crie um túnel para a OLT. |
 | **IP** | Obrigatório e validado como endereço IP. É o destino das consultas e operações. |
-| **Comunidade SNMP** | Credencial usada pelo adaptador do fabricante. Para FIT FNL 5000, quando o campo fica vazio, o código usa `SNMPWRITE`. |
+| **Comunidade SNMP** | Credencial usada pelo adaptador do fabricante. Para FIT FNL 5000, campo vazio usa um valor interno de fallback; cadastre explicitamente a comunidade autorizada e não dependa desse padrão. |
 | **Porta SNMP** | Usa `161` quando não informada. FIT FNL 5000, Cianet e V-Solutions recebem explicitamente IP e porta; os adaptadores FIT FNL 1000/2000 usam apenas o IP no código atual. |
 | **Timeout SNMP (s)** | Valor salvo no cadastro. Atualmente é repassado explicitamente ao adaptador V-Solutions; os demais adaptadores não o recebem nessa integração. |
 | **Descrição** | Obrigatória. Identifica a OLT nas buscas e nos vínculos de rede. |

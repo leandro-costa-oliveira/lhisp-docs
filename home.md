@@ -25,8 +25,8 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 | [Agenda Técnica](/agenda-tecnica/agenda-tecnica) | Atendimento, agendamento e execução de ordens de serviço. |
 | [Estoque](/estoque/almoxarifados) | Saldos, entradas, notas de compra, patrimônios, materiais de técnicos e transferências. |
 | [Rede e Infraestrutura](/rede-infra/redes) | Servidores, redes, endereçamento, equipamentos, monitoramento e provisionamento. |
-| [Sistema e integrações](/sistema/empresa) | Configuração da empresa, usuários, comunicação e serviços de terceiros. |
-| [Relatórios](/relatorios/contas-a-receber) | Consultas operacionais, financeiras, comerciais, fiscais e técnicas. |
+| [Sistema e integrações](/sistema/indice) | Configuração da empresa, usuários, comunicação e serviços de terceiros. |
+| [Relatórios](/relatorios/indice) | Consultas operacionais, financeiras, comerciais, fiscais e técnicas. |
 | [Dashboard Comercial](/dashboards/dashboard-comercial) | Indicadores de serviços vendidos e andamento das instalações. |
 | [Radar de Clientes](/dashboards/radar-de-clientes) | Cancelamentos, cobertura do histórico, simulações de risco e saúde dos dados. |
 | [Arquitetura e serviços](/operacao/arquitetura-e-servicos) | Responsabilidades dos componentes, rotas e dependências para desenvolvimento e suporte técnico. |
@@ -38,6 +38,10 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 - [Consultar o controle patrimonial](/estoque/controle-patrimonial) e [gerar OS de retirada de produtos](/relatorios/produtos-para-retirada).
 - [Consultar o relatório unificado de clientes](/relatorios/relatorio-de-clientes).
 - [Configurar acesso MCP](/sistema/mcp).
+- [Executar e baixar OS no LHTEC web](/agenda-tecnica/lhtec-web) ou no [aplicativo técnico Expo](/agenda-tecnica/app-tecnico).
+- [Registrar pré-vendas pelo aplicativo do vendedor](/cadastros/aplicativo-vendas) e [atender dúvidas da central do assinante](/lhsac/central-do-assinante).
+- [Configurar autenticador e passkeys](/sistema/seguranca-da-conta).
+- [Conferir backup e preparar recuperação do tenant](/operacao/backup-e-recuperacao).
 
 ## Fluxo básico de um novo cliente
 

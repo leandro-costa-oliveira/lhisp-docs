@@ -84,4 +84,4 @@ Para investigar uma divergência, registre versão do componente, empresa/filial
 - Não comprova imagens, migrations, filas ou agendamentos implantados em um tenant.
 - A presença de uma rota no frontend não comprova uma implementação compatível no backend instalado.
 - Planos em `docs/` dos repositórios de código descrevem também trabalho futuro; confirme implementação antes de tratá-los como funcionalidades disponíveis.
-- Backups, restauração, retenção de logs e resposta a incidentes ainda precisam de procedimentos próprios com validação operacional.
+- O guia de [Backup e recuperação](/operacao/backup-e-recuperacao) descreve os artefatos e a restauração isolada. Retenção efetiva, tempo de recuperação e resposta a incidentes precisam de validação na implantação.

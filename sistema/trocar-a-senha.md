@@ -2,64 +2,45 @@
 title: Trocar a Senha
 published: true
 editor: markdown
-description: ''
+description: Altere a senha do painel e a credencial separada dos equipamentos, com confirmação do segundo fator quando ativo.
 ---
 
-# Trocar a Senha
-
-## Objetivo
-
-Permitir que o usuário altere a senha de acesso ao sistema no menu **Sistema**.
-
-## Quando usar
-
-Use esta tela quando for necessário atualizar a senha do usuário logado.
-
-## Pré-requisitos
-
-- Estar autenticado no LHISP.
-- Ter a senha atual válida.
-
-## Passo a passo
-
-1. Acesse **Sistema > Trocar a Senha**.
-2. Informe a **Senha Atual**.
-3. Preencha a **Nova Senha**.
-4. Confirme a senha no campo **Confirmar Senha**.
-5. Clique em **Trocar**.
-
-## Campos importantes
-
-| Campo | Descrição |
-|---|---|
-| **Senha Atual** | Senha atual do usuário. |
-| **Nova Senha** | Nova senha desejada. |
-| **Confirmar Senha** | Repetição da nova senha para validação. |
-| **Trocar** | Confirma a alteração. |
-
-## Resultado esperado
-
-- A senha é atualizada com sucesso quando os campos são válidos.
-- O usuário passa a autenticar com a nova senha.
-
-## Problemas comuns
-
-| Problema | Como tratar |
-|---|---|
-| Senha atual inválida | Verificar se a senha foi digitada corretamente. |
-| Confirmação diferente da nova senha | Repetir a mesma senha nos dois campos. |
-| Falha ao trocar a senha | Revisar conexão, permissões e mensagens exibidas pelo sistema. |
-
-## Observações
-
-- A tela do demo mostra apenas os campos de senha e o botão **Trocar**.
-- A área do formulário aparece no demo.
-
-
-## Screenshots sugeridos
-
-- `assets/screenshots/sistema/trocar-a-senha.png` — captura limpa da tela de troca de senha no demo.
-
-![Trocar a Senha no demo](/assets/screenshots/sistema/trocar-a-senha.png)
+# Trocar a senha
 
 > **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
+
+A tela atual **Minhas senhas**, em `/conta/senhas`, separa a senha de login no LHISP da credencial usada pelo operador para acessar equipamentos via RADIUS. Trocar uma não altera a outra, nem a senha PPPoE do assinante.
+
+## Alterar
+
+1. Abra **Minhas senhas**, também acessível pelo link em [Segurança da conta](/sistema/seguranca-da-conta).
+2. Escolha **Senha do sistema** ou, se disponível, **Senha de acesso aos equipamentos**.
+3. Em **Sua senha do sistema**, informe a senha atual do painel, inclusive ao alterar a senha dos equipamentos.
+4. Preencha **Nova senha** e **Confirme a nova senha** com o mesmo valor.
+5. Se o autenticador estiver ativo, selecione autenticador ou código de recuperação e informe o segundo fator.
+6. Clique em **Alterar senha** e aguarde a confirmação.
+
+| Credencial | Regras do fluxo atual |
+|---|---|
+| Sistema | De 12 a 1.024 caracteres; deve ser diferente da senha atual. |
+| Equipamentos | De 8 a 50 caracteres ASCII visíveis, sem espaços ou acentos. O cartão só aparece para contas com acesso aos equipamentos. |
+
+O botão permanece indisponível enquanto faltarem campos, a confirmação divergir, a senha não atender ao formato ou houver operação em andamento. Um código de recuperação utilizado nessa confirmação é consumido; não reutilize o mesmo na operação seguinte.
+
+## Conferência
+
+O retorno confirma a gravação da credencial escolhida. A senha de equipamentos é gravada cifrada e depende da configuração de chave do tenant; uma falha nessa configuração precisa ser tratada pela operação técnica.
+
+A mudança não substitui cadastro de NAS, grupos de acesso ou conectividade RADIUS. Confira esses itens quando a senha foi gravada, mas o equipamento ainda recusa o login.
+
+| Mensagem/sintoma | Conferência |
+|---|---|
+| Senha atual incorreta | Use a senha do painel, não a antiga senha do equipamento. |
+| Nova senha igual à atual | Informe uma senha diferente para o sistema. |
+| Segundo fator inválido | Código atual do autenticador ou recuperação ainda não usada. |
+| Cartão de equipamentos ausente | Conta sem acesso aos equipamentos no cadastro de [Usuários](/sistema/usuarios). |
+| Erro de gravação da senha de equipamentos | Chave de cifra do tenant e configuração do serviço. |
+
+O formulário PHP legado **Sistema > Trocar a Senha** continua sendo um caminho distinto, com validações próprias. A captura abaixo é histórica e não representa os dois cartões da tela atual; não use seus rótulos para inferir os requisitos da SPA.
+
+![Formulário legado de troca de senha](/assets/screenshots/sistema/trocar-a-senha.png)

@@ -37,6 +37,8 @@ Marcar várias opções usa lógica **E**: o equipamento precisa atender a todas
 
 O botão de limpeza remove a seleção explícita e retorna para **Todos**. Antes de executar, confira os rótulos mostrados e mantenha filtros restritivos. Nunca use “Todos” para experimentar sintaxe.
 
+Há uma limitação na seleção atual: limpar remove os campos enviados, mas mantém em memória os IDs anteriormente escolhidos. Tentar selecionar novamente um desses servidores pode não adicioná-lo à lista, deixando o destino como **Todos**. Se isso ocorrer, recarregue a aplicação principal e refaça a seleção antes de preencher/executar o comando. Não recarregue a página de resultado de uma execução para corrigir a seleção.
+
 ## Variáveis por servidor
 
 Antes de abrir o SSH, o backend substitui marcadores no texto:
@@ -85,6 +87,7 @@ Ausência de erro de transporte não significa que a CLI aceitou a mudança. Mui
 |---|---|
 | `Acesso Negado` | O usuário não possui `enviar_comandos`. |
 | Nenhum servidor aparece | Revise IDs, tipo e combinação dos filtros; **Ativo** vem marcado. |
+| Selecionar um servidor após limpar mantém **Todos** | Recarregue a aplicação principal e refaça a seleção; não execute enquanto os destinos explícitos não aparecerem. |
 | Erro de conexão SSH | Confira IP, porta, credenciais, algoritmo, ACL e caminho **Conectar por**. |
 | Funciona em um fabricante e falha em outro | Separe os lotes e use a sintaxe da CLI correspondente. |
 | Saída informa sucesso, mas cadastro diverge | A ferramenta não sincroniza de volta o estado do equipamento; ajuste pelo fluxo oficial quando necessário. |
