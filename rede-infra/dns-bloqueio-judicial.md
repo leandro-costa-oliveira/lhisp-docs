@@ -2,7 +2,7 @@
 title: DNS Bloqueio Judicial
 published: true
 editor: markdown
-description: Cadastro de domínios e publicação da configuração BIND usada no bloqueio por DNS.
+description: Cadastro de domínios, importação CSV/PDF e publicação da configuração BIND usada no bloqueio por DNS.
 ---
 
 # DNS Bloqueio Judicial
@@ -19,10 +19,10 @@ O backend expõe dois arquivos:
 
 | Endpoint | Conteúdo |
 |---|---|
-| `/api/dns/bloqueio.judicial.zone` | Zona-sumidouro comum, com respostas `127.0.0.1` e `::1`, inclusive para subdomínios por wildcard. |
+| `/api/dns/bloqueio.judicial.zone` | Zona-sumidouro comum: A para `127.0.0.1` no ápice e wildcard A/AAAA para `127.0.0.1` e `::1`. |
 | `/api/dns/bloqueio.judicial.conf` | Uma declaração `zone` para cada domínio da empresa, apontando para o arquivo de zona comum. |
 
-Ao gerar o `.conf`, o backend normaliza cada entrada: remove caracteres não imprimíveis, usa o trecho posterior a ponto e vírgula, retira prefixos `http://` ou `https://`, descarta caminhos após `/` e ignora valores sem ponto. Domínios repetidos no resultado são emitidos uma só vez.
+Ao gerar o `.conf`, o backend tenta normalizar entradas legadas: remove caracteres não imprimíveis, usa o trecho posterior a ponto e vírgula, trata prefixos de protocolo, descarta caminhos após `/` e ignora valores sem ponto. Domínios repetidos no resultado são emitidos uma só vez. O tratamento atual de `https:/` antes de `https://` pode descartar uma URL HTTPS antiga; confira o `.conf` gerado e corrija o cadastro para conter somente o domínio.
 
 O contexto da empresa é necessário para gerar a lista correta. Use a URL da própria instância e os cabeçalhos/contexto definidos na implantação; ao acessar diretamente o backend, confirme `dbname` e `EmpresaId`. Uma configuração obtida no tenant errado pode aplicar bloqueios de outra base ou retornar lista vazia.
 
@@ -37,20 +37,36 @@ Para inclusão individual:
 3. salve e confirme a entrada na pesquisa;
 4. aguarde a sincronização do DNS e teste a resposta no resolvedor do provedor.
 
-O domínio é único por empresa. A tela individual limita o valor a 100 caracteres. Excluir o item o remove logicamente da lista, mas a zona continuará carregada no BIND até a próxima atualização do arquivo `.conf` e recarga do serviço.
+O domínio é único por empresa. O backend remove espaços nas extremidades e o ponto final, converte para minúsculas e exige um domínio válido de até 100 caracteres. URLs completas, IPs, portas, caminhos e valores inválidos são recusados no cadastro e na inclusão em lote. A exportação BIND ainda normaliza entradas antigas; isso não significa que o cadastro atual aceite URLs.
 
-## Importar CSV
+Excluir o item o remove logicamente da lista, mas a zona continuará carregada no BIND até a próxima atualização do arquivo `.conf` e recarga do serviço. Recadastrar um domínio excluído restaura o registro existente.
 
-A importação foi preparada para planilhas de bloqueio/desbloqueio, inclusive formatos usados em comunicações da Anatel. O leitor procura uma linha de cabeçalho iniciada por **Site**, **URL/Endereço IP do host**, **IP Host Address or URL** ou contendo **Operação**. Depois, o usuário escolhe a coluna que contém o domínio.
+## Importar CSV ou PDF
+
+Na listagem, use **Importar CSV ou PDF**, selecione o arquivo e confira a prévia antes de salvar. A prévia mostra até 100 linhas; a importação envia todas as linhas carregadas.
+
+### CSV
+
+O leitor aceita vírgula ou ponto e vírgula, detectados pela primeira linha, campos entre aspas, aspas duplicadas e quebras de linha dentro de campos. Remove o BOM e ignora linhas vazias. Procura um cabeçalho iniciado por **Site**, **URL/Endereço IP do host**, **IP Host Address or URL** ou contendo **Operação**; se não encontrar, usa a primeira linha como cabeçalho.
+
+A coluna do domínio é reconhecida por esses títulos ou por **Domínio**, **Dominio**, **Domain**, **URL** e **Site**. Confira a coluna selecionada antes de confirmar.
 
 Se existir uma coluna **Operação**:
 
 - `desbloqueio` ou `desbloquear` procura correspondências exatas e remove os registros encontrados;
 - qualquer outro valor, coluna ausente ou célula vazia entra no lote de bloqueio.
 
-As inclusões são executadas em transação, atualizam duplicidades e registram log por item. Valores do lote são cortados em 255 caracteres pelo backend, mas isso não garante domínio válido.
+O backend valida todos os domínios do lote de inclusão antes de gravá-lo, elimina repetições, restaura registros excluídos e registra log por domínio. As inclusões compartilham uma transação. Os desbloqueios são enviados antes, em chamadas separadas: a importação inteira não é uma transação única. Se houver falha após um desbloqueio, confira a lista antes de repetir.
 
-O parser separa linhas por quebra e colunas por vírgula; ele não implementa toda a sintaxe CSV, como vírgula dentro de campo entre aspas. Antes de confirmar, revise a prévia, a coluna selecionada, operações e linhas vazias. Para arquivos complexos, normalize-os em uma ferramenta de planilha e exporte CSV simples.
+### PDF
+
+O parser reconhece dois layouts de PDF da Anatel pela primeira página: uma listagem com a marca `bet-legal.org/dominio/` e uma tabela de operações com **Todas/Any** e **Bloqueio**. Na listagem, os domínios são bloqueados; na tabela, a operação pode ser **Bloqueio** ou **Desbloqueio**. Repetições de domínio mantêm a última ocorrência extraída.
+
+A extração usa texto e posição das colunas do PDF. Não há OCR para arquivos digitalizados. Outros layouts, PDFs sem texto ou documentos sem domínios reconhecidos retornam erro. Revise as operações e compare a quantidade com o documento original; o reconhecimento do layout não comprova a interpretação de toda a ordem.
+
+## Opção de DNS no cadastro MikroTik
+
+O cadastro de servidor exibe **DNS Bloqueio Judicial** para equipamentos MikroTik marcados como **Servidor de DNS**, além de um botão de sincronização após salvar. No checkout auditado em 14/10/2026, a interface chama `/api/DnsBloqueioJudicial.sincronizarServidor`, mas essa operação não foi localizada nas rotas ou no BI do backend. A presença do campo e do botão não comprova aplicação no equipamento. Confirme a compatibilidade das versões instaladas antes de depender desse fluxo; a publicação BIND descrita nesta página é um caminho separado.
 
 ## Configurar o BIND
 
@@ -102,7 +118,7 @@ dig @IP_DO_DNS dominio-bloqueado.example AAAA
 dig @IP_DO_DNS sub.dominio-bloqueado.example A
 ```
 
-O resultado esperado para domínio e subdomínio é loopback. Teste também um domínio não bloqueado para garantir que a resolução normal continua funcionando. Considere cache e TTL de 3.600 segundos ao avaliar uma alteração recente.
+O resultado esperado para A do domínio e para A/AAAA dos subdomínios é loopback. No template atual, a linha `AAAA ::1` sem proprietário vem após a entrada `*`, e não há uma declaração explícita de AAAA no ápice. Não conte com uma resposta `::1` para AAAA do domínio raiz sem validar a zona efetivamente carregada. Teste também um domínio não bloqueado para garantir que a resolução normal continua funcionando. Considere cache e TTL de 3.600 segundos ao avaliar uma alteração recente.
 
 ## Problemas comuns
 
@@ -110,7 +126,9 @@ O resultado esperado para domínio e subdomínio é loopback. Teste também um d
 |---|---|
 | Domínio salvo continua resolvendo normalmente | Confira sincronização, include no `named.conf`, recarga, cache/TTL e resolvedor realmente usado pelo cliente. |
 | `.conf` não contém o domínio | Use apenas host válido; confira tenant e normalização de protocolo, caminho ou caracteres. |
-| Importação removeu/adicionou itens incorretos | Revise coluna **Operação**, coluna de domínio e limitações do parser CSV. |
+| Importação removeu/adicionou itens incorretos | Revise coluna **Operação**, coluna de domínio, prévia e possíveis operações já concluídas antes de uma falha. |
+| CSV contém URL completa ou domínio inválido | Informe somente o domínio válido, com até 100 caracteres; a inclusão em lote também valida esses limites. |
+| PDF não reconhecido | Confira se é um dos dois layouts suportados e se contém camada textual. PDFs digitalizados exigem preparação externa. |
 | `named-checkconf` falha | Mantenha os arquivos ativos anteriores e revise conteúdo, caminho e permissões dos temporários. |
 | BIND não recarrega | Consulte logs do serviço, SELinux/AppArmor, proprietário e acesso a `/var/named`. |
 | Apenas alguns clientes continuam acessando | Confirme DNS recebido, cache local, DNS seguro no navegador, VPN e resolvedores externos. |

@@ -2,15 +2,16 @@
 title: Empresa
 published: true
 editor: markdown
-description: ''
+description: Mantenha dados fiscais, preferências, regras de ordens de serviço e notificações; consulte as cobranças da assinatura do LHISP.
 ---
 
 # Empresa
 
+> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.
 
 ## Objetivo
 
-Consultar e manter os dados cadastrais e fiscais da empresa no LHISP, incluindo informações de identificação, contato, logomarca e parâmetros fiscais usados pelo sistema.
+Consultar e manter os dados cadastrais e fiscais da empresa no LHISP, incluindo identificação, contato, logomarca, preferências, regras de ordens de serviço e notificações. A tela possui cinco abas e um link **Minha assinatura** no cabeçalho.
 
 ## Quando usar
 
@@ -35,6 +36,31 @@ Use esta tela quando for necessário:
 4. Verifique a seção **Informações Fiscais** para conferir os parâmetros tributários.
 5. Use **Selecionar Logomarca** quando for necessário trocar a imagem da empresa.
 6. Se necessário, navegue para as demais abas para revisar configurações complementares da empresa.
+7. Clique em **Salvar** e aguarde a conclusão. Confira os valores depois do retorno da operação.
+
+## Abas e salvamento
+
+| Aba | Conteúdo |
+|---|---|
+| **Dados** | Identificação, endereço, logomarca e informações fiscais. |
+| **Preferências** | Parâmetros operacionais e de cobrança, gateways de envio, Telegram, WhatsApp, e-mail e dados do contador. |
+| **Ordens de Serviço** | LHTEC, exigência de POP, retirada automática, valores cobrados e anexos requeridos por tipo de OS. |
+| **Notificações** | Mensagem, canais SMS/App/WhatsApp/e-mail e template de e-mail por evento, incluindo tipos de OS cadastrados. |
+| **Financeiro** | Cobranças da assinatura do LHISP, com filtros **Em Aberto**, **Pagas** e **Todas**, totais e impressão do boleto quando há link. |
+
+Ao editar, o cabeçalho passa a mostrar **Salvar** e **Cancelar**. **Salvar** processa os formulários alterados; **Cancelar** restaura os dados carregados nos formulários pendentes.
+
+**Dados** e **Preferências** compartilham um formulário. **Ordens de Serviço** e **Notificações** possuem salvamento próprio. O botão do cabeçalho salva os formulários pendentes em sequência; se ocorrer falha, revise cada aba, pois uma anterior pode já ter sido salva.
+
+A aba **Financeiro** consulta as cobranças da própria empresa junto ao LHISP. Para operar contas de clientes e fornecedores, use [Gerência Financeira](/financeiro/gerencia-financeira).
+
+## Ordens de serviço e notificações
+
+Na aba **Ordens de Serviço**, a opção de retirada automática considera serviços cancelados com material locado e sem OS de retirada em aberto. Informe uma quantidade inteira de dias maior que zero. Confira também a conta bancária e os valores de OS improdutiva, retirada improdutiva e serviços diversos.
+
+Em **Anexos requeridos por tipo de OS**, adicione o tipo de ordem, marque os tipos de anexo exigidos na baixa e salve. Remover o tipo dessa configuração retira suas exigências de anexos.
+
+Na aba **Notificações**, revise evento, mensagem, canais e template antes de salvar. A mensagem aceita até 160 caracteres. Marcar o canal depende da configuração do respectivo gateway em **Preferências** e das integrações de envio.
 
 ## Campos importantes
 
@@ -77,19 +103,8 @@ Use esta tela quando for necessário:
 | A logomarca não carrega | Refaça o upload e confirme o formato da imagem. |
 | Os dados fiscais parecem inconsistentes | Confirme com o time fiscal antes de salvar qualquer alteração. |
 | A aba desejada não abre | Recarregue a página e teste novamente com outra sessão. |
-
-## Observações
-
-- O demo abre a tela **Empresa** com a aba **Dados** selecionada por padrão.
-- As abas visíveis no demo incluem **Dados**, **Preferências**, **Ordens de Serviço**, **Notificações** e **Financeiro**.
-- A captura usada nesta página foi feita no ambiente de demonstração e está sem marcações visuais.
-- O formulário do demo já vem preenchido com dados ilustrativos do tenant de teste.
-
-
-## Screenshots sugeridos
-
-- Tela **Empresa > Dados** no demo: `assets/screenshots/sistema/empresa.png`
+| Cabeçalho não mostra Salvar/Cancelar | Os botões aparecem quando algum formulário possui alterações pendentes. |
+| Falha ao salvar várias abas | Confira o resultado de cada formulário; o salvamento do cabeçalho é sequencial. |
+| Imprimir indisponível em Financeiro | A cobrança não retornou link do boleto. |
 
 ![Empresa no demo](/assets/screenshots/sistema/empresa.png)
-
-> **Aviso:** Esta documentação foi gerada por inteligência artificial e pode conter erros.

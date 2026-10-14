@@ -36,6 +36,8 @@ Uma conta aberta pode ser recebida parcial ou integralmente. A baixa exige caixa
 
 Contas canceladas podem ser reativadas conforme permissão. Edição e histórico ficam disponíveis por título; ações permitidas dependem da situação da conta.
 
+Na aba financeira do contrato também estão disponíveis [QR Code Pix](/financeiro/pix) e [Compensar baixa](/financeiro/compensacao-de-baixa). A compensação usa o pagamento de um título posterior para quitar outro anterior do mesmo contrato e cria uma reposição; acompanhe separadamente a conclusão financeira e as confirmações bancárias.
+
 ## Contas a Pagar
 
 Reúne obrigações manuais, [despesas recorrentes](/cadastros/financeiro/despesas), compras e lançamentos de folha. Os filtros incluem filial, fornecedor, centro de custo, categoria, caixa, descrição, vencimento e situação.

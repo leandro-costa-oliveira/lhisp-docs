@@ -65,5 +65,3 @@ A exclusão da SPA é lógica. O produto some das consultas usuais, mas estoques
 | Produto removido ainda aparece no histórico | A exclusão é lógica e preserva referências anteriores. |
 
 ![Lista de produtos](/assets/screenshots/cadastros/estoque/produtos.png)
-
-![Cadastro de produto](/assets/screenshots/cadastros/estoque/produtos-formulario.png)

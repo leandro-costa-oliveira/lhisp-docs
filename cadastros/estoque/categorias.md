@@ -50,6 +50,4 @@ Antes de apagar:
 | Ordem pede apenas uma categoria | O separador deverá definir o produto/estoque adequado durante o atendimento do material. |
 | Produto ficou sem categoria selecionável | Reclassifique-o antes de excluir o grupo antigo. |
 
-![Categorias de estoque](/assets/screenshots/cadastros/estoque/categorias.png)
-
 Veja também [Produtos](/cadastros/estoque/produtos) e [Material para Técnico](/estoque/material-para-tecnico).

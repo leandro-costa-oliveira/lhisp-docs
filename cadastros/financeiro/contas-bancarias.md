@@ -58,6 +58,18 @@ O backend sempre exige titular, CPF/CNPJ, moeda e uma carteira existente. També
 
 Outras carteiras podem exigir combinações próprias durante o registro da cobrança. Use somente credenciais emitidas para a empresa e para o ambiente selecionado.
 
+## Notificações Asaas
+
+Na carteira **Asaas**, o campo **Sincronizar notificações com o Asaas** controla quando o LHISP aplica ao cliente os canais configurados na conta bancária:
+
+| Modo | Efeito |
+|---|---|
+| **Não sincronizar** (`0`) | Mantém as configurações existentes no Asaas. Essa opção **não desativa** o envio de notificações pelo Asaas. |
+| **Somente no cadastro** (`1`) | Aplica os canais ao cadastrar um novo cliente no Asaas e preserva ajustes posteriores. É o padrão do cadastro. |
+| **A cada cobrança** (`2`) | Reaplica os canais a cada registro de cobrança do cliente no Asaas, podendo substituir ajustes feitos diretamente no provedor. |
+
+Escolha o modo antes de ajustar e-mail, SMS e WhatsApp. Para interromper notificações, confira os canais efetivos no Asaas; apenas escolher **Não sincronizar** não altera o que já está habilitado lá.
+
 ## Segurança e permissões
 
 - Certificados, senhas, tokens e segredos são credenciais. Não os inclua em chamados, capturas ou documentação.

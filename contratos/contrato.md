@@ -28,6 +28,8 @@ As cores ajudam na triagem: cancelados aparecem em vermelho, pendentes em azul-c
 
 Para incluir um cliente, use o botão **Novo**. Consulte [Cadastrar novo cliente](/contratos/cadastrar-novo-cliente).
 
+Administradores também dispõem de [Alterações em massa](/contratos/alteracoes-em-massa) para habilitar ou desabilitar a preferência de SMS nas posições de telefone. Essa operação usa todas as pessoas da empresa vinculadas a contratos; os filtros da listagem não limitam seu alcance.
+
 ## Cabeçalho do cadastro
 
 - Digite o número no campo do cabeçalho e pressione `Enter` para abrir outro contrato.

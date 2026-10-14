@@ -11,7 +11,7 @@ description: Registre recebimentos avulsos ou patrimoniais sem perder saldo, sé
 
 A entrada aumenta o saldo de um produto em um almoxarifado e cria o histórico que explica sua origem. O procedimento correto depende de o produto possuir controle patrimonial e de existir uma nota fiscal de compra.
 
-Veja também [Almoxarifados](/estoque/almoxarifados), [Notas fiscais de compra](/estoque/notas-fiscais-de-compra) e [Material para técnico](/estoque/material-para-tecnico).
+Veja também [Almoxarifados](/estoque/almoxarifados), [Controle patrimonial](/estoque/controle-patrimonial), [Notas fiscais de compra](/estoque/notas-fiscais-de-compra) e [Material para técnico](/estoque/material-para-tecnico).
 
 ## Escolher o fluxo correto
 
@@ -90,6 +90,4 @@ Depois do lançamento, confirme:
 | Produto exige patrimônio ou MAC | A tela atual por nota não coleta esses valores; encaminhe a configuração/fluxo para correção antes do lançamento. |
 | Algumas séries da lista falharam | Consulte as leituras concluídas e reprocesse somente as séries indicadas como falha. |
 
-![Almoxarifados](/assets/screenshots/estoque/almoxarifados.png)
-
-![Nova movimentação](/assets/screenshots/estoque/nova-movimentacao.png)
+![Almoxarifados](/assets/screenshots/almoxarifados/almoxarifados.png)

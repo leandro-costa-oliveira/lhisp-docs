@@ -52,6 +52,25 @@ Nas tabelas por faixa, a primeira faixa deve começar em 1, não pode haver lacu
 
 > **Atenção:** alterar uma tabela de faixas não recalcula os serviços contratados. Depois de salvar, use **Atualizar valores dos contratos** somente se a mudança tiver de ser propagada.
 
+## NFS-e Fortaleza — notas de serviço
+
+O cadastro possui uma seção própria para os códigos usados em notas de serviço:
+
+| Campo | Preenchimento no sistema |
+|---|---|
+| **Item da lista de serviços** | Seleção do item; a tela apresenta a descrição e preserva um valor anterior fora do recorte de opções para provedores. |
+| **Código NBS**, **INDOP**, **CST IBS/CBS** e **cClassTrib** | Seletores relacionados pelo catálogo fiscal incluído na versão do sistema. |
+| **Código de tributação municipal** | Até 20 caracteres, com dígitos e separadores ponto, barra ou hífen. Os separadores são preservados. |
+| **CNAE para o XML** | Opcional, com sete dígitos; não corresponde ao código da atividade municipal. |
+
+É possível salvar a configuração incompleta e completá-la depois. Códigos informados precisam ter formato válido; o backend recusa códigos ausentes no catálogo e combinações incompatíveis entre item, NBS, INDOP, CST e classificação tributária. Se o catálogo não carregar, os seletores ficam indisponíveis e a tela oferece **Tentar novamente**.
+
+Confirme os códigos com o responsável contábil. O catálogo da aplicação e seus avisos auxiliam o preenchimento; salvar o plano não comprova autorização da nota pelo município.
+
+Esses parâmetros são usados por **novas notas de serviço**, inclusive em planos com outras divisões fiscais. Notas existentes preservam os valores já gravados; campos ainda vazios podem ser complementados na exportação ou impressão. Quando houver vários serviços na composição da nota, o plano registrado no primeiro item determina a origem desses parâmetros; não se escolhe automaticamente o item mais completo.
+
+SVA, locação e NFCom não usam esse conjunto. O botão **Atualizar divisão fiscal dos contratos** também não propaga esses códigos: ele trata percentuais e regras de divisão, que são outra configuração.
+
 ## Ferramentas que afetam contratos existentes
 
 As ações abaixo pedem dupla confirmação e são tratadas como irreversíveis pela interface:

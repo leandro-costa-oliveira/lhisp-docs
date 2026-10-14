@@ -33,12 +33,16 @@ A visibilidade das OS respeita as filiais do usuário não administrador. A list
 
 A fila distribui protocolos ainda abertos. Ao solicitar o próximo atendimento, o backend:
 
-1. considera somente as filiais atendidas pelo usuário;
-2. restringe ao grupo de atendimento do usuário, quando definido;
+1. considera somente as **filiais atendidas** pelo usuário, configuradas em **Sistema > Usuários > Filiais Atendidas**;
+2. restringe ao grupo atual de atendimento do usuário; quem está **sem grupo** recebe somente protocolos **sem grupo**;
 3. seleciona o protocolo sem atendente mais antigo;
 4. atribui o usuário e muda a situação para **Em atendimento**.
 
 Sem vínculo com alguma filial, o usuário não pode iniciar uma tratativa. **Sair da fila** devolve todos os atendimentos em tratamento pelo usuário para a situação aberta e remove sua atribuição. Na agenda, **Liberar atendimentos** executa o mesmo tipo de devolução para os protocolos exibidos como em atendimento.
+
+Filiais atendidas são uma configuração diferente das filiais que o usuário pode visualizar. Ter acesso à filial não basta para receber seus protocolos. O grupo e as filiais atendidas são consultados no cadastro atual do usuário; uma mudança de grupo não depende de novo login para decidir o próximo atendimento.
+
+A fila apresenta o grupo, as filiais atendidas e os motivos pelos quais protocolos livres ficaram de fora: filial não atendida, outro grupo ou ausência de filial. **Atualizar** recarrega a lista e esse diagnóstico. Os totais respeitam os atendimentos visíveis ao usuário; não representam necessariamente toda a empresa.
 
 ## Criar e agendar uma OS
 
@@ -89,7 +93,21 @@ Quando Cobli ou Traccar estiver configurado, a agenda exibe **Otimização de ro
 
 A ordem sugerida pode ser rearranjada manualmente e é persistida de forma transacional. O atalho individual da Cobli aparece apenas quando a OS possui técnico e dispositivo associado.
 
-### Consulta e PDF por integração
+## Impressão da OS
+
+A impressão utiliza o formulário com dados da empresa, ordem, cliente, acessos, campos de execução, produtos e assinaturas. O modelo atual usa disposição compacta para papel A4; textos e quantidades extensos ainda podem ocupar mais de uma página. Ao imprimir várias ordens, a quebra separa uma OS da seguinte e é removida depois da última, evitando uma página final vazia causada somente por essa quebra.
+
+O documento inclui dados de acesso do cliente, inclusive a coluna de senha. Restrinja o compartilhamento ao atendimento autorizado e confira o destinatário antes de exportar ou enviar.
+
+## Retirada automática de material
+
+Nas preferências de ordens de serviço da empresa, **OS de Retirada automática** e o prazo em dias permitem autorizar uma rotina para serviços cancelados com material retornável ainda locado. A rotina seleciona serviços cancelados há pelo menos esse prazo e sem OS aberta dos tipos **Retirada** ou **Fast Loggi Retirada**.
+
+Para cada serviço elegível, ela abre um atendimento e uma OS de retirada na categoria de cancelamento. Cada serviço é tratado em sua própria transação; uma falha não desfaz as ordens já geradas para outros serviços. A rotina não recolhe o equipamento nem encerra a locação: esses registros dependem da execução e baixa operacional.
+
+O código da rotina está disponível em `daemons/lhos_retirada.php`. Sua presença e a preferência marcada não comprovam que a instalação a esteja executando; frequência e agendamento devem ser conferidos pela operação técnica. Para tratar uma carteira manualmente, use [Produtos para Retirada](/relatorios/produtos-para-retirada), que permite filtrar pendências e gerar as OS faltantes mediante confirmação.
+
+## Consulta e PDF por integração
 
 A [API de Parceiros](/sistema/api-parceiros) pode consultar as ordens de serviço de um cliente pelo identificador da pessoa ou pelo CPF/CNPJ. A consulta aceita filtros de situação, período e intervalo da data agendada, retorna 25 registros por página por padrão e apresenta primeiro os agendamentos mais recentes.
 
@@ -109,7 +127,7 @@ Consultar ou imprimir o PDF não agenda, inicia, conclui nem altera a OS. São o
 
 | Problema | Verificação |
 |---|---|
-| Usuário não recebe atendimento da fila | Associe filiais atendidas e confira o grupo de atendimento do usuário. |
+| Usuário não recebe atendimento da fila | Confira o diagnóstico, as **Filiais Atendidas** e o grupo. Usuário sem grupo recebe somente protocolos sem grupo. |
 | OS não pode ser agendada | A data não pode ser retroativa; valide período, técnico e conflito de horário. |
 | Baixa recusa material | O produto ou patrimônio precisa estar em posse do técnico e com saldo disponível. |
 | Aplicativo não conclui a OS | Inicie a OS e forneça fotos, GPS e tipos de anexo obrigatórios. |

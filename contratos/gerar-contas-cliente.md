@@ -67,6 +67,19 @@ Depois da criação, a conta pode participar de:
 
 O botão **Gerar Carnê** da mesma aba executa outra rotina: procura mensalidades ausentes em um período e as gera com base nos serviços contratados. **Relatório de Quitação de Débitos** apenas produz o relatório correspondente.
 
+### Exibir origem da geração
+
+A opção **Exibir origem da geração** acrescenta uma indicação calculada a partir dos dados da conta:
+
+| Indicação | Critério de apresentação |
+|---|---|
+| **Proporcional de cancelamento** | A descrição começa com `PROPORCIONAL DE CANCELAMENTO`. |
+| **Carnê** | Possui início e fim do período de faturamento. |
+| **Manual** | Não possui nenhum dos dois limites de faturamento. |
+| **Não identificada** | Possui somente um dos limites. |
+
+Essa indicação é uma **inferência de apresentação**, não um registro auditado da origem. Contas importadas ou alteradas podem receber uma classificação que não descreve sua criação real. Confira histórico e documentos antes de usar o rótulo para explicar ou corrigir uma cobrança.
+
 ## Conferências antes e depois de salvar
 
 | Situação | Conferência recomendada |

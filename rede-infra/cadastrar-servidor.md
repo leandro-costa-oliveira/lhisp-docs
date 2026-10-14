@@ -46,9 +46,9 @@ As opções **Ativo**, **Enviar alertas** e **Efetuar backups** controlam a eleg
 
 ## RADIUS e PPPoE
 
-**Usar RADIUS** inclui o servidor na autenticação dos acessos. O IP cadastrado deve coincidir com o `NAS-IP-Address` enviado pelo concentrador, e o segredo mostrado na ação **Visualizar Radius Secret** deve ser o mesmo nos dois lados. Salvar o servidor ou alterar o segredo solicita a recarga do serviço RADIUS.
+**Usar RADIUS** controla a delegação da autenticação PPP ao RADIUS na configuração gerada para Mikrotik. A lista de NAS do FreeRADIUS é carregada dos servidores não apagados de empresas com daemons habilitados. O IP cadastrado deve coincidir com o `NAS-IP-Address` enviado pelo concentrador, e o segredo mostrado na ação **Visualizar Radius Secret** deve ser o mesmo nos dois lados. Salvar o servidor ou alterar o segredo solicita a recarga do serviço RADIUS; confira o resultado no serviço.
 
-Os métodos PPP disponíveis no cadastro atual são **PAP** e **CHAP**. O frontend não oferece mais MSCHAP 1 ou MSCHAP 2 nesse campo. Deixe selecionados apenas os métodos realmente habilitados no concentrador.
+O formulário atual não oferece seleção dos métodos de autenticação PPP. O gerador Mikrotik utiliza **PAP e CHAP**, independentemente do valor legado `pppAuth` armazenado no cadastro. Não procure os antigos campos PAP/CHAP/MSCHAP nas telas atuais. Confirme a compatibilidade do concentrador antes de reaplicar a configuração.
 
 **Servidor de Acesso/PPPoE** e **Usar PCQ** são opções específicas de Mikrotik. **PPPoE Local Address = Loopback** influencia a geração dos perfis PPPoE. Alterações nesses itens exigem reaplicar a parte correspondente da configuração para refletirem no equipamento.
 
@@ -95,7 +95,7 @@ A ação **Atualizar Servidor**, disponível com `servidor_update`, reenvia sele
 - pools e perfis IPv6;
 - firewall IPv6, CGNAT e rotas.
 
-Também é possível limpar a fila ou apenas testar a conexão SSH. A atualização pode demorar e modificar muitas regras; selecione somente os grupos necessários, preserve backup e revise a saída apresentada.
+O diálogo também oferece **Limpar Comandos da Fila** e **Checar Conexão SSH**. Mesmo ao selecionar somente o teste SSH, o backend segue a rotina de atualização e regenera parâmetros comuns; essa ação não é uma sondagem isolada. A atualização pode demorar e modificar muitas regras; selecione somente os grupos necessários, preserve backup e revise a saída apresentada. Consulte [Servidores](/rede-infra/servidores) e [Operação dos serviços de rede](/rede-infra/operacao-servicos-rede).
 
 ## Exclusão
 
@@ -109,7 +109,7 @@ Antes disso, migre redes e acessos, confira prefixos, gráficos, rotas, backups 
 |---|---|
 | IP/porta SSH já cadastrados | Localize o servidor existente; não duplique o mesmo equipamento. |
 | ICMP funciona, mas SSH está offline | Revise porta, credencial, algoritmo aceito, ACL e caminho **Conectar por**. |
-| RADIUS nega todos os acessos | Confira servidor ativo, **Usar RADIUS**, IP do NAS, segredo e recarga do serviço. |
+| RADIUS nega todos os acessos | Confira daemons da empresa, cadastro do NAS, **Usar RADIUS** no concentrador, IP anunciado, segredo e recarga do serviço. |
 | Gráficos ou interfaces não aparecem | Valide SNMP, comunidade, versão, índice máximo e permissão de rede. |
 | Mudança não chegou ao equipamento | Examine a fila de comandos, daemon, status SSH e saída de **Atualizar Servidor**. |
 | Não é possível apagar | O servidor ainda possui uma ou mais redes associadas. |

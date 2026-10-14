@@ -28,6 +28,16 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 | [Sistema e integrações](/sistema/empresa) | Configuração da empresa, usuários, comunicação e serviços de terceiros. |
 | [Relatórios](/relatorios/contas-a-receber) | Consultas operacionais, financeiras, comerciais, fiscais e técnicas. |
 | [Dashboard Comercial](/dashboards/dashboard-comercial) | Indicadores de serviços vendidos e andamento das instalações. |
+| [Radar de Clientes](/dashboards/radar-de-clientes) | Cancelamentos, cobertura do histórico, simulações de risco e saúde dos dados. |
+| [Arquitetura e serviços](/operacao/arquitetura-e-servicos) | Responsabilidades dos componentes, rotas e dependências para desenvolvimento e suporte técnico. |
+
+## Guias por tarefa
+
+- [Alterar preferências de SMS em massa](/contratos/alteracoes-em-massa).
+- [Compensar baixa entre cobranças](/financeiro/compensacao-de-baixa) e [consultar o QR Code Pix](/financeiro/pix).
+- [Consultar o controle patrimonial](/estoque/controle-patrimonial) e [gerar OS de retirada de produtos](/relatorios/produtos-para-retirada).
+- [Consultar o relatório unificado de clientes](/relatorios/relatorio-de-clientes).
+- [Configurar acesso MCP](/sistema/mcp).
 
 ## Fluxo básico de um novo cliente
 

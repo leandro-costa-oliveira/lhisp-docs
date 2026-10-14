@@ -51,6 +51,10 @@ A busca textual atual consulta o nome. Os resultados são paginados em grupos de
 
 O botão **Confirmar cadastro** aparece apenas para uma oportunidade pendente. Antes de confirmar, escolha filial, plano, vendedor quando aplicável e vencimento.
 
+O diálogo também permite ajustar as condições do serviço: contas de boleto e Pix, promoção vigente para a filial, desconto da mensalidade, observação e opções de envio de cobrança e nota fiscal. Os padrões de contas e instalação vêm do plano selecionado; **trocar o plano redefine essas condições**, então revise os campos depois da troca.
+
+Quando o plano possui valor de instalação, informe conta bancária, valor, desconto permitido, forma de pagamento e entrada. Na forma à vista, a entrada deve cobrir o total da instalação após o desconto. A opção de aceitar cartão e o limite de parcelas no cartão aparecem somente quando a empresa possui gateway de cartão disponível. O desconto de instalação depende de `contrato_edit_desconto_se`.
+
 Na confirmação, o backend executa este encadeamento:
 
 1. cria ou reutiliza o endereço correspondente;
@@ -65,6 +69,12 @@ Na confirmação, o backend executa este encadeamento:
 Se o documento já pertencer a uma pessoa, os dados dessa pessoa são preservados e um novo contrato é criado para ela. Portanto, valide se o documento identifica realmente o titular antes de confirmar.
 
 A confirmação cria o contrato e o serviço, mas não significa que o acesso de internet já foi provisionado ou ativado. Continue o atendimento nos módulos de **Contratos**, **Serviços contratados** e **Acessos** conforme o processo da empresa.
+
+O mesmo pré-cadastro não pode ser confirmado novamente: o backend bloqueia registros já confirmados ou com contrato vinculado, inclusive em confirmações simultâneas. Para anexos faltantes, use a sincronização; para corrigir condições comerciais, abra o contrato criado.
+
+### Faturamento da instalação
+
+Quando a contratação retorna uma instalação pendente de faturamento, a interface tenta faturá-la em uma segunda operação. **O contrato pode ser criado com sucesso e o faturamento falhar depois.** Nesse caso, a mensagem informa o contrato e orienta usar **Faturar Instalação**, na aba **Serviços**. Confira a cobrança antes de tentar novamente; não reconfirme o pré-cadastro para corrigir essa pendência.
 
 ## Anexos
 
@@ -84,6 +94,9 @@ Evite apagar um pré-cadastro confirmado. Ele mantém a referência que explica 
 |---|---|
 | Confirmar cadastro não aparece | A situação precisa ser Pendente. |
 | Confirmação é recusada | Informe filial, plano válido para a filial e dia de vencimento; revise também os campos obrigatórios do cadastro. |
+| Entrada de instalação recusada | Na forma à vista, informe entrada que cubra o total depois do desconto. |
+| Contrato criado sem faturar a instalação | Abra **Serviços > Faturar Instalação** no contrato informado e confira as cobranças existentes. |
+| Pré-cadastro já confirmado | Continue pelo contrato vinculado; a confirmação não pode criar outra contratação para o mesmo registro. |
 | Documento já existe | O sistema reutiliza a pessoa existente; confirme se é o mesmo titular. |
 | Anexo não chegou ao contrato | Execute **Sincronizar com o contrato** e verifique a mensagem de arquivos copiados, existentes ou com falha. |
 | Registro não aparece na abertura da lista | O filtro inicial mostra apenas pendentes; selecione outra situação ou Todos. |
