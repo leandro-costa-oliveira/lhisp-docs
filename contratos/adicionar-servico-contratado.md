@@ -26,6 +26,8 @@ A inclusão pode ativar o serviço, abrir ordem de viabilidade, faturar instala�
 
 ## Serviços dependentes e principal
 
+Consulte o [guia de Planos dependentes](/cadastros/financeiro/planos-dependentes) para configurar os planos, associar extras existentes e entender cobrança, operações em grupo, cancelamento e reativação.
+
 Ao contratar um plano dependente, escolha o **Serviço principal** no mesmo contrato. O principal deve atender aos requisitos do plano. Serviços antigos sem vínculo precisam ser associados explicitamente; a rotina financeira não escolhe um principal por conta própria.
 
 Na nova contratação dependente, vencimento e opções de cobrança são copiados do principal e ficam travados. Para alterar esses campos depois, edite o principal e confirme a propagação aos dependentes. Associar serviços antigos preserva seus valores atuais; não sincroniza configurações anteriores automaticamente.

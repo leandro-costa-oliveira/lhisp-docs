@@ -2,7 +2,7 @@
 title: Planos
 published: true
 editor: markdown
-description: Catálogo comercial que define cobrança, velocidade, fiscal, fidelidade e integrações dos serviços.
+description: Configure cobrança, recursos, fiscal e vínculo Principal ou Dependente dos planos e associe serviços existentes.
 ---
 
 # Planos
@@ -23,6 +23,57 @@ Essa distinção é essencial: o plano é o catálogo; o serviço contratado é 
 - **Documentos e aceite:** o plano pode exigir aceite de um documento antes de determinadas etapas do contrato.
 - **Filiais:** somente filiais vinculadas oferecem o plano nos fluxos correspondentes.
 - **Hotspot, Intelbras Mibo e módulos:** opções aparecem e são aplicadas conforme as integrações/configurações habilitadas para a empresa.
+
+## Abas do cadastro
+
+| Aba | O que configurar |
+|---|---|
+| **Geral** | Identificação, situação, categoria, modelo de contrato, fidelidade, opções de adesão e filiais. |
+| **Cobrança** | Tipo de cobrança, mensalidade, instalação, contas de recebimento e reajuste. |
+| **Serviços e acesso** | Recursos do plano, tipo de vínculo Principal/Dependente, requisitos do principal e parâmetros técnicos de acesso. |
+| **Fiscal** | Divisão fiscal, exigências de OTT e códigos para notas de serviço. |
+| **Ferramentas** | Na edição de um plano salvo, associação de serviços existentes, atualizações em massa, migração e exclusão. |
+
+**Salvar** grava as alterações de todas as abas. Não é necessário salvar cada aba separadamente.
+
+## Tipo de vínculo: Principal ou Dependente
+
+Na aba **Serviços e acesso**, configure **Tipo de vínculo**:
+
+| Tipo | Uso |
+|---|---|
+| **Principal** | Plano independente. Seus serviços contratados podem receber dependentes quando atendem aos requisitos destes. É o padrão dos planos existentes. |
+| **Dependente** | Plano adicional, como roteador ou IP público, cujo serviço contratado deve ser vinculado a um principal do mesmo contrato. |
+
+Ao escolher **Dependente**, marque pelo menos um dos **Requisitos do plano principal**: **Acesso**, **E-mail**, **Telefonia**, **OTT** ou **Intelbras Mibo**. O mesmo plano principal precisa atender a todos os requisitos marcados. Uma opção desmarcada não é exigida.
+
+Esses requisitos descrevem o que o principal deve oferecer. Os recursos do próprio extra continuam sendo configurados separadamente. Para um roteador ou IP público vinculado à internet, marque **Acesso** nos requisitos do principal. A elegibilidade considera o recurso Acesso do plano principal, sem exigir login ou acesso técnico cadastrado, conexão online ou protocolo específico.
+
+Na versão atual, novas contratações dependentes ainda exigem o requisito **Acesso**. O cadastro permite definir outros requisitos, mas não trate cenários sem Acesso como disponíveis para contratação antes da validação da integração correspondente.
+
+Salvar um plano como dependente não associa serviços antigos automaticamente. O vínculo é escolhido na contratação ou resolvido nos fluxos de edição/associação existentes. Alterações de tipo, requisitos ou recursos incompatíveis com vínculos existentes são recusadas; resolva as dependências antes de concluir a alteração.
+
+### Exemplo: roteador adicional
+
+1. Mantenha o plano de internet como **Principal**, com o recurso **Acesso** habilitado.
+2. Cadastre ou edite o plano do roteador.
+3. Em **Serviços e acesso**, escolha **Dependente** e exija **Acesso** do principal.
+4. Configure preço, cobrança, fiscal e filiais do extra; salve o plano.
+5. Na contratação do extra, selecione o serviço de internet do cliente como **Serviço principal**.
+6. Para roteadores já contratados, use a ferramenta de associação abaixo.
+
+A dívida impeditiva de um extra vinculado pode bloquear a internet e os demais serviços ativos do grupo. A liberação automática depende da regularização de todo o grupo. Consulte o [guia de Planos dependentes](/cadastros/financeiro/planos-dependentes) para regras de cobrança, bloqueio, desbloqueio, cancelamento e reativação.
+
+### Vincular serviços já contratados
+
+1. Salve o plano como **Dependente**, com os requisitos configurados.
+2. Na aba **Ferramentas**, clique em **Vincular serviços contratados a um principal**. Salve alterações pendentes antes de continuar.
+3. Confira o nome do plano e clique em **Visualizar alterações**. Essa consulta não grava vínculos.
+4. Revise o principal sugerido em cada linha e selecione os serviços que deseja associar. Havendo mais de um candidato, é possível trocar a sugestão.
+5. Clique em **Executar** e confira sucessos, itens sem alteração e erros. Use **Próxima página** quando houver mais resultados.
+6. Confira os vínculos na aba **Serviços** dos contratos envolvidos.
+
+A associação preserva preço, vencimento, opções de cobrança e situação dos serviços existentes. Não ativa, bloqueia, cancela ou reativa serviços durante a execução. Após o vínculo, as próximas avaliações financeiras passam a considerar o grupo. Veja os [detalhes da associação e das pendências](/cadastros/financeiro/planos-dependentes).
 
 ## Configuração principal
 
@@ -73,7 +124,7 @@ SVA, locação e NFCom não usam esse conjunto. O botão **Atualizar divisão fi
 
 ## Ferramentas que afetam contratos existentes
 
-As ações abaixo pedem dupla confirmação e são tratadas como irreversíveis pela interface:
+Além de **Vincular serviços contratados a um principal**, descrita acima, a aba **Ferramentas** oferece as ações abaixo, que pedem dupla confirmação e são tratadas como irreversíveis pela interface:
 
 - **Atualizar valores dos contratos:** percorre serviços do plano, ignora cancelados e valores VIP/zerados, recalcula por tipo/quantidade/faixa e registra a alteração. Falhas são isoladas por serviço.
 - **Atualizar contas bancárias dos contratos:** copia as contas de boleto e, quando configurada, Pix para todos os serviços não cancelados do plano.
