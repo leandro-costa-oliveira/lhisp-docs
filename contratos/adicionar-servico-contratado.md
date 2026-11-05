@@ -24,6 +24,29 @@ A inclusão pode ativar o serviço, abrir ordem de viabilidade, faturar instala�
 
 É necessária a permissão `contrato_add_servico`.
 
+## Serviços dependentes e principal
+
+Ao contratar um plano dependente, escolha o **Serviço principal** no mesmo contrato. O principal deve atender aos requisitos do plano. Serviços antigos sem vínculo precisam ser associados explicitamente; a rotina financeira não escolhe um principal por conta própria.
+
+Na nova contratação dependente, vencimento e opções de cobrança são copiados do principal e ficam travados. Para alterar esses campos depois, edite o principal e confirme a propagação aos dependentes. Associar serviços antigos preserva seus valores atuais; não sincroniza configurações anteriores automaticamente.
+
+### Bloqueio e regularização do grupo
+
+O grupo é formado pelo principal e seus dependentes vinculados. Outro principal do mesmo contrato constitui outro grupo.
+
+| Situação | Resultado |
+|---|---|
+| Dívida impeditiva de qualquer integrante | Bloqueia o principal e os dependentes ativos, respeitando os prazos e a opção **Não efetuar bloqueio automático** do serviço devedor. |
+| Pagamento de apenas parte da dívida | Mantém o grupo bloqueado enquanto outro integrante tiver conta impeditiva. |
+| Todas as contas impeditivas regularizadas | Desbloqueia os integrantes bloqueados, inclusive dependente cujo principal já esteja ativo. |
+| Dependente cancelado com conta impeditiva | A dívida continua participando da decisão; pagar não reativa o dependente cancelado. |
+| Principal cancelado ou suspenso | O pagamento não o reativa nem libera os dependentes automaticamente. |
+| Desbloqueio em confiança | Mantém limites e prazo próprios; dispensa somente a pendência do principal solicitado e exige que os demais integrantes não tenham pendências impeditivas. |
+
+A liberação automática usa a adimplência do grupo. Bloqueios registrados apenas como **BLOQUEADO**, inclusive os realizados manualmente, não têm distinção de causa nesse fluxo e podem ser liberados após a regularização.
+
+Se uma integração de acesso ou serviço falhar durante a cascata, confira a situação e o histórico de cada integrante. A condição financeira é comum ao grupo, mas os efeitos nos equipamentos e serviços externos podem concluir parcialmente.
+
 ## Cobrança mensal
 
 | Campo | Comportamento |
