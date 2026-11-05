@@ -33,6 +33,7 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 
 ## Guias por tarefa
 
+- [Configurar planos dependentes e vincular extras à internet](/cadastros/financeiro/planos-dependentes).
 - [Alterar preferências de SMS em massa](/contratos/alteracoes-em-massa).
 - [Compensar baixa entre cobranças](/financeiro/compensacao-de-baixa) e [consultar o QR Code Pix](/financeiro/pix).
 - [Consultar o controle patrimonial](/estoque/controle-patrimonial) e [gerar OS de retirada de produtos](/relatorios/produtos-para-retirada).
