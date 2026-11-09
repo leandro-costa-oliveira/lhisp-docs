@@ -27,6 +27,7 @@ Esta documentação explica não apenas as telas, mas também as relações entr
 | [Rede e Infraestrutura](/rede-infra/redes) | Servidores, redes, endereçamento, equipamentos, monitoramento e provisionamento. |
 | [Sistema e integrações](/sistema/indice) | Configuração da empresa, usuários, comunicação e serviços de terceiros. |
 | [Relatórios](/relatorios/indice) | Consultas operacionais, financeiras, comerciais, fiscais e técnicas. |
+| [Comportamento de Pagamento](/dashboards/comportamento-de-pagamento) | Recorrência de atrasos, histórico individual, valores em aberto e exportação Excel. |
 | [Dashboard Comercial](/dashboards/dashboard-comercial) | Indicadores de serviços vendidos e andamento das instalações. |
 | [Radar de Clientes](/dashboards/radar-de-clientes) | Cancelamentos, cobertura do histórico, simulações de risco e saúde dos dados. |
 | [Operação e suporte](/operacao/arquitetura-e-servicos) | Conferência de resultados, diagnóstico e informações para acionar o suporte. |

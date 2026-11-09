@@ -40,6 +40,7 @@ Antes de comparar totais, confira no guia a **unidade contada**, o **campo de da
 
 ## Financeiro, cobrança e fiscal
 
+- [Comportamento de Pagamento dos Clientes](/dashboards/comportamento-de-pagamento)
 - [Contas a Receber](/relatorios/contas-a-receber)
 - [Contas a Receber por Cliente](/relatorios/contas-a-receber-por-cliente)
 - [Contas a Pagar](/relatorios/contas-a-pagar)
