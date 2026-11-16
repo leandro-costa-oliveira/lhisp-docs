@@ -90,6 +90,12 @@ A associação preserva preço, vencimento, opções de cobrança e situação d
 
 O backend exige nome, valor não negativo e conta bancária de cobrança válida. A SPA também exige ao menos uma filial e valida configurações de faixa e produtos de integrações antes de salvar.
 
+## Integração Turbomed
+
+Na aba **Serviços e acesso**, habilite **OTT** e associe o gateway Turbomed ao produto desejado em **Serviços OTT**. O recurso identifica o código Onix, por exemplo `7426` para **Individual Essencial**. O [guia Turbomed](/sistema/turbomed) detalha o catálogo, os dados obrigatórios da pessoa e os status provisórios.
+
+A troca automática de plano Onix não está disponível nesta integração. Coordene o cancelamento da adesão anterior e o cadastro da nova antes de considerar a alteração concluída na plataforma.
+
 ## Tipos de cobrança
 
 | Tipo | Cálculo do serviço contratado |

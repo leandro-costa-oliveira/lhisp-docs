@@ -63,6 +63,7 @@ A habilitação de uma integração não substitui credenciamento no fornecedor,
 - [Spc Brasil](/sistema/spc-brasil)
 - [TcIRR — configuração da integração](/sistema/tc-irr)
 - [Traccar](/sistema/traccar)
+- [Turbomed](/sistema/turbomed)
 - [Urbis](/sistema/urbis)
 - [Watch Brasil](/sistema/watch-tv)
 - [Xtream-UI](/sistema/xtream-ui)
