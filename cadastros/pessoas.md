@@ -24,6 +24,12 @@ Pessoa é o cadastro central de identidade do LHISP. Nome, CPF/CNPJ, contatos e 
 
 Data de nascimento, RG/inscrição, nome conhecido, filiação e contato responsável complementam identificação e processos específicos. Para pessoa jurídica, mantenha razão/nome e documentos coerentes com o cadastro fiscal.
 
+## Sexo
+
+O campo **Sexo** começa em **Não informado** (`null`). As opções são **Feminino** (`1`), **Masculino** (`2`) e **Indiferente** (`9`). Cadastros existentes permanecem sem informação até o preenchimento, e **Indiferente** não é atribuído automaticamente.
+
+O campo pode ser editado no cadastro de pessoas e nos dados da pessoa no contrato. Uma nova adesão à [Turbomed](/sistema/turbomed) exige seu preenchimento, além de nome, CPF e data de nascimento válida. A integração converte esses valores para o dicionário do parceiro.
+
 ## Endereços e contatos
 
 O endereço selecionado é um logradouro compartilhado; número, complemento e ponto de referência ficam na pessoa. Também pode existir endereço de cobrança separado.
