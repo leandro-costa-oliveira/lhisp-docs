@@ -1,6 +1,6 @@
 # Implantação de Servidor LHISP\.
 
-Para implantação do  lhisp, recomendamos a utilização do Fedora Server, Versão 36.
+Para implantação do lhisp, recomendamos a utilização do Fedora Server, Versão 36.
 
 Porém , teoricamente qualquer distro linux com suporte a docker é para funcionar.
 
@@ -10,18 +10,15 @@ Porém , teoricamente qualquer distro linux com suporte a docker é para funcion
 - 2G de RAM
 - 50G de Espaço em Disco.
 
-
 Requerimentos Recomendados ( Até 2 mil Assinantes ).
 
-- 4 vCPU 
+- 4 vCPU
 - 4G de RAM
 - 100G de Espaço em Disco.
-
 
 ### Configuração Inicial do Linux
 
 Uma vez com acesso à maquina linux, desative o selinux, instale o docker e crie a estrutura de pastas básica.
-
 
 Configurando Endereço IP:
 
@@ -31,7 +28,6 @@ nmcli con mod enps03 ipv4.gateway 192.168.2.1
 nmcli con mod enps03 ipv4.dns 1.1.1.1,8.8.8.8,1.1.2.2,8.8.4.4
 nmcli con mod enps03 ipv4.method manual
 ```
-
 
 ```
 sed -i s/SELINUX=enforcing/SELINUX=disabled/ /etc/selinux/config
@@ -56,7 +52,7 @@ mkdir -p /lh/nginx-custom.d
 mkdir -p /etc/letsencrypt
 
 
-cd /lh/lhisp/web 
+cd /lh/lhisp/web
 ln -s /lh/lhsistemas/frontend/index.html
 ```
 
@@ -66,7 +62,6 @@ Adicionando Chaves SSH
 echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+CcvpxLztd79003wLBJFCeLRcSq241IUTJ9XKeW+kY root@home-01.lhprovedor.com.br >> .ssh/authorized_keys
 echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+CcvpxLztd79003wLBJFCeLRcSq241IUTJ9XKeW+kY root@home-01.lhprovedor.com.br >> .ssh/authorized_keys2
 ```
-
 
 Agora configure o **firewald - FEDORA**.
 
@@ -160,8 +155,7 @@ nft -c -f /etc/ssh-whitelist.nft &&
 systemctl reload ssh-whitelist.service
 ```
 
-
-Configure o ambiente: 
+Configure o ambiente:
 
 ```
 touch /etc/profile.d/lhisp.sh
@@ -201,7 +195,6 @@ Aquivo: /lh/databases.json
 }
 ```
 
-
 Sistemas novos
 
 Criar o docker-compose
@@ -231,12 +224,11 @@ docker-compose version
 
 ### Sincronização Inicial
 
-Faça o Cadastro do Novo Servidor no LHISP da Altsoft. 
+Faça o Cadastro do Novo Servidor no LHISP da Altsoft.
 
-- Envie o docker-compose.yaml, pipeline: [https://bitbucket.org/leandro\_costa/lhisp-manager/pipelines](https://bitbucket.org/leandro_costa/lhisp-manager/pipelines/results/page/1)
-- Envie o php: [https://bitbucket.org/leandro\_costa/lhisp-php/pipelines](https://bitbucket.org/leandro_costa/lhisp-php/pipelines/)
-- Envia o FE: [https://bitbucket.org/leandro\_costa/lhisp-frontend](https://bitbucket.org/leandro_costa/lhisp-frontend) 
-
+- Envie o docker-compose.yaml, pipeline: [https://bitbucket.org/leandro_costa/lhisp-manager/pipelines](https://bitbucket.org/leandro_costa/lhisp-manager/pipelines/results/page/1)
+- Envie o php: [https://bitbucket.org/leandro_costa/lhisp-php/pipelines](https://bitbucket.org/leandro_costa/lhisp-php/pipelines/)
+- Envia o FE: [https://bitbucket.org/leandro_costa/lhisp-frontend](https://bitbucket.org/leandro_costa/lhisp-frontend)
 
 ### Banco de Dados
 
@@ -247,7 +239,6 @@ cd /lh
 docker-compose up -d database
 ```
 
-
 Criando o usuário:
 
 ```
@@ -256,14 +247,11 @@ GRANT ALL PRIVILEGES ON `lhisp-usuario`.*  TO `usuario`@'%';
 SET PASSWORD FOR `usuario`@'%' = PASSWORD('SenhaDoDb');
 ```
 
-
-Então  restaure um backup do banco `lhisp-base`. 
+Então restaure um backup do banco `lhisp-base`.
 
 ```
 cat lhisp-base.sql | mysql -u usuario -p -h 172.233.25.116 lhisp-usuario
 ```
-
-
 
 TODO: Expor esse backup em algum lugar aberto e criar um script de restauração.
 
@@ -357,8 +345,8 @@ TODO: Fazer um script de sync para automatizar esse processo.
 docker exec -it lh-database-1 sh
 mysql -u root -p SenhaConfiguradaNoDatabases.json
 use lhisp-nome-do-banco-de-dados
-UPDATE EMPRESA SET 
-NOME='Nome da Empresa', 
+UPDATE EMPRESA SET
+NOME='Nome da Empresa',
 RAZAOSOCIAL='Razao Social :)',
 CNPJ='12.123.123/0001-12'
 ServicoId=${Id do Serviço no LHISP da Altsoft}
